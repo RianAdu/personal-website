@@ -56,7 +56,7 @@ gulp.task('styles', function(){
 			image: outputDir + 'images',
 			style: 'expanded',
 			comments: sassComments,
-			require: ['susy', 'breakpoint']
+			require: ['susy', 'breakpoint','font-awesome-sass']
 		})
 		.on('error', gutil.log)) 
 		.pipe(gulpif(enviroment === 'production', minifyCSS()))

@@ -1,0 +1,20 @@
+//Google Font
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+
+//@include border-box-sizing; // uses border box sizing like the old IE
+
+//Font variables
+$textFont	: Raleway, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$logoFont	: Orbitron, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$light		: 300;
+$normal		: 400;
+$semiBold	: 600;
+$bold		: 700;
+$heavy		: 800;
+$realHeavy	: 900;
+
+$headerFont		: $light 1.5em/1.5em $textFont;
+$mainFont		: $light 1em/1.5em $textFont;
+
