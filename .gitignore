@@ -42,3 +42,4 @@ Thumbs.db
 node_modules
 builds/**/images/*
 .ico
+fonts

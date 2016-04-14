@@ -30,19 +30,17 @@ else {
 	sassComments = false;
 }
 
-
+//setting the files 
 sassSources = ['components/sass/style.scss'];
 htmlSources = [outputDir + '*.html'];
-
-jsSources 	= [
-	'components/scripts/require.js'
-];
+jsSources 	= ['components/scripts/rian.js'];
 
 
 gulp.task('scripts', function(){
 	gulp.src(jsSources)
 		.pipe(concat('script.js'))
 		.pipe(browserify())
+		.on('error', gutil.log)
 		.pipe(gulpif(enviroment === 'production', uglify()))
 		.pipe(gulp.dest(outputDir + '/js'))
 		.pipe(connect.reload()); 
@@ -54,13 +52,14 @@ gulp.task('styles', function(){
 		.pipe(compass({
 			sass: 'components/sass',
 			image: outputDir + 'images',
+			css:outputDir + 'css',
 			style: 'expanded',
 			comments: sassComments,
 			require: ['susy', 'breakpoint','font-awesome-sass']
 		})
 		.on('error', gutil.log)) 
 		.pipe(gulpif(enviroment === 'production', minifyCSS()))
-		.pipe(gulp.dest(outputDir + 'css'))
+		//.pipe(gulp.dest(outputDir + 'css'))
 		.pipe(connect.reload());
 }); //END OF style task
 
@@ -73,12 +72,21 @@ gulp.task('markup', function(){
 }); //END OF markup task
 
 
-
 gulp.task('watch', function(){
 	gulp.watch('builds/development/*.html', ['markup']);
 	gulp.watch(jsSources, ['scripts']);
 	gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['styles']);
 }); //END OF watch task
+
+
+// Copy images and font-awesome files to production
+gulp.task('move', function() {
+  gulp.src('builds/development/images/**/*.*')
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir+'images')));
+
+   gulp.src('builds/development/fonts/**/*.*')
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir+'fronts')));
+}); //END OF move task
 
 
 gulp.task('connect', function() {
@@ -88,8 +96,4 @@ gulp.task('connect', function() {
   });
 }); //END of connect task
 
-gulp.task('default', ['markup', 'scripts', 'styles', 'connect', 'watch']);
-
-
-
-
+gulp.task('default', ['markup', 'scripts', 'styles', 'connect', 'move', 'watch']);
