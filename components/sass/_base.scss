@@ -1,1 +1,35 @@
-//Base css
+//Base scss
+//==========
+html {
+	font-size: 100%;	
+}
+
+body {
+	font-family: $contentFontFam;
+	font-size: $mainTextSize;
+	font-weight: $light;
+	color: $black;
+	font-style: normal;
+}
+
+#{headings} {
+	font-family: $headerFontFam;
+	font-size: $headerFontSize;
+	font-weight: $semiBold;
+	line-height: $headerLineHeight;
+	color:$black;
+	font-style: normal;
+}
+
+h1 {
+	margin:0.889rem 0 1.424rem 0;
+}
+
+strong {
+	font-weight: $semiBold;
+}
+
+p {
+	line-height: $mainLineHeight;
+	margin: 1.266rem 0;
+}
