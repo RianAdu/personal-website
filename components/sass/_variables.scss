@@ -1,9 +1,9 @@
-//Google Fonts
+//google fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:400,600,700);
 @include border-box-sizing; // uses border box sizing like the old IE
 
 
-//Adding Color Palette
+//color palette
 $black 				: #111111;
 $white				: #ffffff;
 $grayLight			: #fafafa;
@@ -11,8 +11,8 @@ $grayDark			: #666666;
 $grayBorder			: #dddddd;
 $blue				: #08233e;
 
-//Font Variables
-$contentFontFam		: 'Open Sans', Helvetica, Arial, sans-serif;
+//font stacks
+$contentFontFam		: 'Open Sans', Helvetica, 'Helvetica Neue', Arial, sans-serif;
 $headerFontFam		: 'Raleway', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 
 //font-weights
@@ -22,8 +22,6 @@ $semiBold			: 600;
 $bold				: 700;
 $heavy				: 800;
 
-//font-sizes | using a modular scale ratio of 1.125 - major second 
+//font-sizes / using a modular scale ratio of 1.125 - major second 
 $mainTextSize		: 1.125rem;
 $mainLineHeight		: 1.602rem;
-$headerTextSize		: 3.247rem;
-$headerLineHeight	: 3.247rem;

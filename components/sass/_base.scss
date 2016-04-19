@@ -14,15 +14,23 @@ body {
 
 #{headings} {
 	font-family: $headerFontFam;
-	font-size: $headerFontSize;
 	font-weight: $semiBold;
-	line-height: $headerLineHeight;
 	color:$black;
 	font-style: normal;
 }
 
 h1 {
+	font-size: 3.247rem;
+	line-height: 3.247rem;
 	margin:0.889rem 0 1.424rem 0;
+}
+
+h2 {
+
+}
+
+h3{
+
 }
 
 strong {

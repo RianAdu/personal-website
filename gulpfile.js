@@ -33,7 +33,10 @@ else {
 //setting the files 
 sassSources = ['components/sass/style.scss'];
 htmlSources = [outputDir + '*.html'];
-jsSources 	= ['components/scripts/rian.js'];
+jsSources 	= [
+	'components/scripts/rian.js',
+	'components/scripts/picturefill.js'
+];
 
 
 gulp.task('scripts', function(){
@@ -59,7 +62,6 @@ gulp.task('styles', function(){
 		})
 		.on('error', gutil.log)) 
 		.pipe(gulpif(enviroment === 'production', minifyCSS()))
-		//.pipe(gulp.dest(outputDir + 'css'))
 		.pipe(connect.reload());
 }); //END OF style task
 
@@ -82,10 +84,14 @@ gulp.task('watch', function(){
 // Copy images and font-awesome files to production
 gulp.task('move', function() {
   gulp.src('builds/development/images/**/*.*')
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir+'images')));
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'images')));
 
    gulp.src('builds/development/fonts/**/*.*')
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir+'fronts')));
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'fonts')));
+
+  gulp.src('builds/development/inc/*.*')
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
+
 }); //END OF move task
 
 
