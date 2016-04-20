@@ -5,39 +5,44 @@ html {
 }
 
 body {
-	font-family: $contentFontFam;
+	/*font-family: $contentFontFam;*/
 	font-size: $mainTextSize;
 	font-weight: $light;
-	color: $black;
 	font-style: normal;
 }
 
-#{headings} {
+#{headings()} {
 	font-family: $headerFontFam;
 	font-weight: $semiBold;
-	color:$black;
 	font-style: normal;
 }
 
 h1 {
 	font-size: 3.247rem;
 	line-height: 3.247rem;
-	margin:0.889rem 0 1.424rem 0;
-}
+} //End of h1
 
 h2 {
 
-}
+}//End of h2
+
 
 h3{
 
-}
+}//End of h3
+
 
 strong {
 	font-weight: $semiBold;
-}
+}//End of strong
+
 
 p {
 	line-height: $mainLineHeight;
 	margin: 1.266rem 0;
+} //End of p
+
+
+a {
+	text-decoration:none;
 }

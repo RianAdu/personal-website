@@ -1,13 +1,13 @@
 //gulp require plug-ins
-var gulp 		= require('gulp'),
-	gutil 		= require('gulp-util'),
-	browserify 	= require('gulp-browserify'),
-	compass 	= require('gulp-compass'),
+var gulp		= require('gulp'),
+	gutil		= require('gulp-util'),
+	browserify	= require('gulp-browserify'),
+	compass		= require('gulp-compass'),
 	concat		= require('gulp-concat'),
 	connect		= require('gulp-connect'),
-	gulpif 		= require('gulp-if'),
+	gulpif		= require('gulp-if'),
 	minifyHTML	= require('gulp-minify-html'),
-	minifyCSS 	= require('gulp-minify-css'),
+	minifyCSS	= require('gulp-minify-css'),
 	uglify		= require('gulp-uglify');
 
 // declarating enviroment and component sources
@@ -19,7 +19,7 @@ var enviroment,
 	outputDir;
 
 //distinguishing between development and production enviroment
-enviroment 	= process.env.NODE_ENV || 'development';
+enviroment	= process.env.NODE_ENV || 'development';
 
 if(enviroment === 'development'){
 	outputDir = 'builds/development/';
@@ -33,7 +33,7 @@ else {
 //setting the files 
 sassSources = ['components/sass/style.scss'];
 htmlSources = [outputDir + '*.html'];
-jsSources 	= [
+jsSources	= [
 	'components/scripts/rian.js',
 	'components/scripts/picturefill.js'
 ];
@@ -46,7 +46,7 @@ gulp.task('scripts', function(){
 		.on('error', gutil.log)
 		.pipe(gulpif(enviroment === 'production', uglify()))
 		.pipe(gulp.dest(outputDir + '/js'))
-		.pipe(connect.reload()); 
+		.pipe(connect.reload());
 }); //END OF script task
 
 
@@ -60,7 +60,7 @@ gulp.task('styles', function(){
 			comments: sassComments,
 			require: ['susy', 'breakpoint','font-awesome-sass']
 		})
-		.on('error', gutil.log)) 
+		.on('error', gutil.log))
 		.pipe(gulpif(enviroment === 'production', minifyCSS()))
 		.pipe(connect.reload());
 }); //END OF style task
