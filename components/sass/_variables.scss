@@ -1,5 +1,5 @@
 //google fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:400,600,700|Orbitron);
 @include border-box-sizing; // uses border box sizing like the old IE
 
 
@@ -14,6 +14,7 @@ $blue				: #08233e;
 //font stacks
 $contentFontFam		: 'Open Sans', Helvetica, Arial, sans-serif;
 $headerFontFam		: 'Raleway', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+$logoFontFam		: 'Orbitron'; //look for alternative Fonts to complete font stack!!!
 
 //font-weights
 $light				: 300;

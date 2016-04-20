@@ -1,11 +1,11 @@
 header {
 	color:$white;
-	text-align: center;
 	
 	article {
 		padding: 6.583rem 0;
 		position:relative;
 		z-index: 1;
+		text-align: center;
 		
 		#darkLayer{
 			background-color: $blue;
@@ -30,7 +30,6 @@ header {
 			h1{
 				font-size: 2.887rem;
 				@include text-shadow(1px 1.732px 2px rgba(0, 0, 0, 0.5));
-				text-align: center;
 				font-weight: $bold;
 			} //h1
 		} //intro
@@ -40,14 +39,12 @@ header {
 			h2{
 				font-size: 1.266rem;
 				@include text-shadow(1px 1.732px 2px rgba(0, 0, 0, 0.5));
-				text-align: center;
 				font-weight:$light;
 			}//h2
 
 			p{
 				padding-top:2.886rem;
 				font-size: 4.624rem;
-				text-align: center;
 
 				a{
 					margin: 1.424rem 0;

@@ -1,0 +1,76 @@
+header #nav {
+	@include clearfix;
+	width:100%;
+	background-color: transparent;
+	position:fixed;
+	z-index:10;
+	top:0;
+
+	#navbar{
+		background-color: transparent;
+		text-align: center;
+		height:62px;
+		position:relative;
+		#logo{
+			float:left;
+			font-family: $logoFontFam;
+			background-color: transparent;
+			
+			//centering vertically
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			
+			a {
+				color:$white;
+				font-size: 2.281rem;
+				text-align: center;
+				display:inline-block;
+				padding:0.493rem;
+			} //a
+		} //logo:
+
+		#menuIcon{
+			float:right;
+			font-size: 1.802rem;
+			padding:0.493rem;
+			
+			//centering vertically
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			&:hover {
+				cursor: pointer; //remove in production | not necessary for mobile
+			}
+		} //menuIcon
+
+		ul {
+			position:absolute;
+			top:62px; //height of navbar
+			right: 0;
+			width:100%;
+			z-index:4;
+			vertical-align: bottom;
+			display:none;
+			
+			li {
+				background-color:$blue;
+				height:3.247rem;
+				line-height: 2.887rem;
+				border-bottom: 1px dotted darken($white, 50);
+
+				&:last-child{
+					border-bottom:none;
+				}
+				a {
+					color:$white;
+					font-size:1.602rem;
+					font-family: $headerFontFam;
+					display: block;
+				}
+			}//li
+		} //ul	
+
+	} //navbar
+} //header #nav
