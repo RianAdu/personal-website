@@ -8,27 +8,30 @@
 	z-index: 1000;
 }
 //Base scss
-//==========
+//=========
 html {
 	font-size: 100%;	
 }
 
 body {
-	font-family: $contentFontFam;
-	font-size: $mainTextSize;
+	@include remFontSize(font-size, 1.125);
+	@include remFontSize(line-height, 1.602);
+	font-family: $mainFont;
 	font-weight: $light;
 	font-style: normal;
 }
 
 #{headings()} {
-	font-family: $headerFontFam;
+	font-family: $headerFont;
 	font-weight: $semiBold;
 	font-style: normal;
+	text-rendering: optimizeLegibility;
 }
 
 h1 {
-	font-size: 3.247rem;
-	line-height: 3.247rem;
+	@include remFontSize(font-size, 3.247);
+	@include remFontSize(line-height, 3.247);
+
 } //End of h1
 
 h2 {
@@ -47,8 +50,7 @@ strong {
 
 
 p {
-	line-height: $mainLineHeight;
-	margin: 1.266rem 0;
+	@include remFontSize(margin, 1.266, 0);
 } //End of p
 
 

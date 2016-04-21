@@ -1,9 +1,9 @@
 //google fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:400,600,700|Orbitron);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Orbitron|Exo+2:400,600,700);
 @include border-box-sizing; // uses border box sizing like the old IE
 
 
-//color palette
+//color palette@import url(https://fonts.googleapis.com/css?family=Exo+2:400,500);
 $black 				: #111111;
 $white				: #ffffff;
 $grayLight			: #fafafa;
@@ -12,9 +12,9 @@ $grayBorder			: #dddddd;
 $blue				: #08233e;
 
 //font stacks
-$contentFontFam		: 'Open Sans', Helvetica, Arial, sans-serif;
-$headerFontFam		: 'Raleway', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-$logoFontFam		: 'Orbitron'; //look for alternative Fonts to complete font stack!!!
+$mainFont			: 'Open Sans', Helvetica, Arial, sans-serif;
+$headerFont			: 'Exo 2', Helvetica, Arial, sans-serif;
+$logoFont			: 'Orbitron'; //look for alternative Fonts to complete font stack!!!
 
 //font-weights
 $light				: 300;
@@ -22,7 +22,3 @@ $normal				: 400;
 $semiBold			: 600;
 $bold				: 700;
 $heavy				: 800;
-
-//font-sizes / using a modular scale ratio of 1.125 - major second 
-$mainTextSize		: 1.125rem;
-$mainLineHeight		: 1.602rem;

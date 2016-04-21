@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Raleway:400,600,700|Orbitron);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Orbitron|Exo+2:400,600,700);
 /* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -3459,37 +3459,43 @@ html {
 
 /* line 16, ../../../components/sass/_base.scss */
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 18px;
   font-size: 1.125rem;
+  line-height: 25.632px;
+  line-height: 1.602rem;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
-/* line 23, ../../../components/sass/_base.scss */
+/* line 24, ../../../components/sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: "Exo 2", Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-style: normal;
+  text-rendering: optimizeLegibility;
 }
 
-/* line 29, ../../../components/sass/_base.scss */
+/* line 31, ../../../components/sass/_base.scss */
 h1 {
+  font-size: 51.952px;
   font-size: 3.247rem;
+  line-height: 51.952px;
   line-height: 3.247rem;
 }
 
-/* line 44, ../../../components/sass/_base.scss */
+/* line 47, ../../../components/sass/_base.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 49, ../../../components/sass/_base.scss */
+/* line 52, ../../../components/sass/_base.scss */
 p {
-  line-height: 1.602rem;
-  margin: 1.266rem 0;
+  margin: 20.256px 0px;
+  margin: 1.266rem 0rem;
 }
 
-/* line 55, ../../../components/sass/_base.scss */
+/* line 57, ../../../components/sass/_base.scss */
 a {
   text-decoration: none;
 }
@@ -3500,80 +3506,81 @@ header {
 }
 /* line 4, ../../../components/sass/sections/_header.scss */
 header article {
-  padding: 6.583rem 0;
-  position: relative;
-  text-align: center;
   background: url("../images/skyline.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  padding: 105.328px 0px;
+  padding: 6.583rem 0rem;
+  position: relative;
+  text-align: center;
 }
 /* line 10, ../../../components/sass/sections/_header.scss */
 header article #hgroup {
-  padding: 5.852rem 0 2.887rem 0;
+  padding: 93.632px 0px 46.192px 0px;
+  padding: 5.852rem 0rem 2.887rem 0rem;
   text-shadow: 1px 1.732px 2px rgba(0, 0, 0, 0.5);
 }
 /* line 14, ../../../components/sass/sections/_header.scss */
 header article #hgroup h1 {
+  font-size: 105.328px;
   font-size: 6.583rem;
   font-weight: 300;
   font-family: "Orbitron";
 }
-/* line 20, ../../../components/sass/sections/_header.scss */
+/* line 19, ../../../components/sass/sections/_header.scss */
 header article #hgroup h2 {
+  font-size: 22.784px;
   font-size: 1.424rem;
-  font-weight: 600;
-  margin: 1.266rem 0 0.702rem 0;
+  margin: 20.256px 0px 11.232px 0px;
+  margin: 1.266rem 0rem 0.702rem 0rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-style: italic;
 }
-/* line 29, ../../../components/sass/sections/_header.scss */
+/* line 25, ../../../components/sass/sections/_header.scss */
 header article #hgroup h3 {
-  font-size: 1.125rem;
   font-weight: 300;
-  font-style: italic;
 }
-/* line 36, ../../../components/sass/sections/_header.scss */
+/* line 30, ../../../components/sass/sections/_header.scss */
 header article p {
-  margin: 0;
+  font-size: 73.984px;
   font-size: 4.624rem;
+  margin: 0px;
+  margin: 0rem;
 }
-/* line 40, ../../../components/sass/sections/_header.scss */
+/* line 34, ../../../components/sass/sections/_header.scss */
 header article p a {
-  margin: 1.424rem 0;
-}
-/* line 42, ../../../components/sass/sections/_header.scss */
-header article p a #enterButton {
+  display: inline-block;
+  margin: 22.784px 0px;
+  margin: 1.424rem 0rem;
   color: #ffffff;
-  font-weight: 300;
 }
 
 /* line 1, ../../../components/sass/sections/_navigation.scss */
-header #nav {
+header nav {
   zoom: 1;
   width: 100%;
   background-color: transparent;
 }
 /* line 4, ../../../components/sass/_mixins.scss */
-header #nav:before, header #nav:after {
+header nav:before, header nav:after {
   content: "";
   display: table;
 }
 /* line 9, ../../../components/sass/_mixins.scss */
-header #nav:after {
+header nav:after {
   clear: both;
 }
 /* line 6, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar {
+header nav #navbar {
+  position: relative;
   background-color: #ffffff;
   text-align: center;
   height: 62px;
-  position: relative;
 }
-/* line 11, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar #logo {
+/* line 12, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #logo {
   float: left;
   font-family: "Orbitron";
   background-color: transparent;
@@ -3581,30 +3588,34 @@ header #nav #navbar #logo {
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 19, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar #logo a {
-  color: #111111;
-  font-size: 2.281rem;
-  text-align: center;
+/* line 18, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #logo a {
   display: inline-block;
+  font-size: 36.496px;
+  font-size: 2.281rem;
+  color: #111111;
+  text-align: center;
+  padding: 7.888px;
   padding: 0.493rem;
 }
-/* line 28, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar #menuIcon {
+/* line 27, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #menuIcon {
   float: right;
+  font-size: 28.832px;
   font-size: 1.802rem;
+  padding: 7.888px;
   padding: 0.493rem;
-  color: #111111;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  color: #111111;
 }
-/* line 37, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar #menuIcon:hover {
+/* line 34, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #menuIcon:hover {
   cursor: pointer;
 }
-/* line 42, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar ul {
+/* line 39, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar ul {
   position: absolute;
   top: 62px;
   right: 0;
@@ -3613,21 +3624,24 @@ header #nav #navbar ul {
   vertical-align: bottom;
   display: none;
 }
-/* line 51, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar ul li {
-  background-color: #ffffff;
+/* line 48, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar ul li {
+  height: 51.952px;
   height: 3.247rem;
+  line-height: 46.192px;
   line-height: 2.887rem;
+  background-color: #ffffff;
   border-bottom: 1px dotted #cccccc;
 }
-/* line 57, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar ul li:last-child {
+/* line 54, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar ul li:last-child {
   border-bottom: none;
 }
-/* line 60, ../../../components/sass/sections/_navigation.scss */
-header #nav #navbar ul li a {
-  color: #111111;
+/* line 58, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar ul li a {
+  font-size: 25.632px;
   font-size: 1.602rem;
-  font-family: "Raleway", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: "Exo 2", Helvetica, Arial, sans-serif;
+  color: #111111;
   display: block;
 }

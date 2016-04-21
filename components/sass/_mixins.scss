@@ -33,8 +33,41 @@
 	box-shadow: 0 8px 6px -6px $shadowColor;
 }
 
+//
 @mixin valignment{
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+//rem to pixel fallback mixin
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin remFontSize($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
 }

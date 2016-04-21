@@ -2,48 +2,40 @@ header {
 	color:$white;
 	
 	article {
-		padding: 6.583rem 0;
+		@include fullPageBackground('../images/skyline.jpg');
+		@include remFontSize(padding, 6.583, 0);
 		position:relative;
 		text-align: center;
-		
-		@include fullPageBackground('../images/skyline.jpg');
+	
 		#hgroup {
-			padding:5.852rem 0 2.887rem 0;
+			@include remFontSize(padding, 5.852, 0, 2.887, 0);
 			@include text-shadow(1px 1.732px 2px rgba(0, 0, 0, 0.5));
 
 			h1{
-				font-size: 6.583rem;
+				@include remFontSize(font-size, 6.583);
 				font-weight: $light;
-				font-family: $logoFontFam;
-			} //h1
-			
+				font-family: $logoFont;
+			}
 			h2{
-				font-size: 1.424rem;
-				font-weight:$semiBold;
-				margin: 1.266rem 0 0.702rem 0;
+				@include remFontSize(font-size, 1.424);
+				@include remFontSize(margin, 1.266, 0, 0.702, 0);
 				text-transform: uppercase;
 				letter-spacing: 1px;
-				font-style: italic;
-			}//h2
-			
+			}
 			h3{
-				font-size: 1.125rem;
 				font-weight: $light;
-				font-style: italic;
-			}//h3
+			}
 		}//hgroup	
-
+	
 		p{
-			margin:0;
-			font-size: 4.624rem;
-			
+			@include remFontSize(font-size, 4.624);
+			@include remFontSize(margin, 0);
+
 			a{
-				margin: 1.424rem 0;
-				#enterButton{
-					color:$white;
-					font-weight: $light;
-				}
-			} //a
-		} //p
+				display: inline-block;
+				@include remFontSize(margin, 1.424, 0);
+				color:$white;
+			} 
+		}
 	}//article
 }//header
