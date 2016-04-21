@@ -1,3 +1,12 @@
+//showWindowSize
+.showSize{
+	position:absolute;
+	top:0;
+	left:15px;
+	color:$white;
+	font-weight: $semiBold;
+	z-index: 1000;
+}
 //Base scss
 //==========
 html {

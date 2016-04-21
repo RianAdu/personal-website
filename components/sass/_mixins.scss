@@ -32,3 +32,9 @@
 	-moz-box-shadow: 0 8px 6px -6px $shadowColor;
 	box-shadow: 0 8px 6px -6px $shadowColor;
 }
+
+@mixin valignment{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
