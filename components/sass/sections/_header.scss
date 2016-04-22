@@ -2,15 +2,18 @@ header {
 	color:$white;
 	
 	article {
+		
 		@include fullPageBackground('../images/header_bg.jpg');
 		@include remFontSize(padding, 6.583, 0);
-		position:relative;
 		text-align: center;
+		// @include display-flex();
+		// @include align-items(center);
+		// @include justify-content(center);
+		
 	
 		#hgroup {
-			@include remFontSize(padding, 5.852, 0, 2.887, 0);
+			@include remFontSize(padding, 6.583, 0, 2.887, 0);
 			@include text-shadow(1px 1.732px 2px rgba(0, 0, 0, 0.5));
-
 			h1{
 				@include remFontSize(font-size, 6.583);
 				font-weight: $light;
@@ -43,17 +46,17 @@ header {
 					} //breakpoint
 				}//span
 			}//h3
-		}//hgroup	
-	
-		p{
-			@include remFontSize(font-size, 4.624);
-			@include remFontSize(margin, 0);
+			p{
+				@include remFontSize(font-size, 4.624);
+				@include remFontSize(margin, 0);
+				
 
-			a{
-				display: inline-block;
-				@include remFontSize(margin, 1.424, 0);
-				color:$white;
-			} //a
-		} //p
+				a{
+					display: inline-block;
+					@include remFontSize(margin, 1.424, 0);
+					color:$white;
+				} //a
+			} //p
+		}//hgroup	
 	}//article
 }//header
