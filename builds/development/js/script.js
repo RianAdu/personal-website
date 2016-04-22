@@ -9,8 +9,8 @@ $(window).on('resize', function(){
 });
 
 //show mobile Menu function
-$('#menuIcon').on('click', function(){
-	$('nav ul').slideToggle();
+$('#mobileMenuIcon').on('click', function(){
+	$('#mobileDropDown').slideToggle();
 });
 
 /*! picturefill - v3.0.2 - 2016-02-12

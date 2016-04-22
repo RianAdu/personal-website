@@ -8,6 +8,6 @@ $(window).on('resize', function(){
 });
 
 //show mobile Menu function
-$('#menuIcon').on('click', function(){
-	$('nav ul').slideToggle();
+$('#mobileMenuIcon').on('click', function(){
+	$('#mobileDropDown').slideToggle();
 });

@@ -2,66 +2,96 @@ header nav {
 	@include clearfix;
 	width:100%;
 	background-color: transparent;
-
+	position: relative;
+	
 	#navbar{
-		position: relative;
+		@include container(90%);
 		background-color: $white;
 		text-align: center;
 		height:62px;
+
+		@include breakpoint($medium) {
+			@include container(80%);
+		} //breakpoint
 
 		#logo{
 			float:left;
 			font-family: $logoFont;
 			background-color: transparent;
-			@include valignment; //centering vertically
+			@include valignment;
 			
 			a {
 				display:inline-block;
 				@include remFontSize(font-size, 2.281);
-				color:$black;
-				text-align: center;
 				@include remFontSize(padding, 0.493);
-			}
+				color:$black;
+			} //a
 		} //logo
 
-		#menuIcon{
+		#mobileMenuIcon{
 			float:right;
 			@include remFontSize(font-size, 1.802);
 			@include remFontSize(padding, 0.493);
-			@include valignment; //centering vertically
+			@include valignment; 
 			color:$black;
+			&:hover { cursor:pointer; }
 
-			&:hover {
-				cursor: pointer; //remove in production | not necessary for mobile
-			}
+			@include breakpoint($medium){
+				display:none;
+			} //breakpoint
 		} //menuIcon
+		
+		#desktopMenu{
+			@include valignment;
+			display: none;
+			float:right;
 
-		ul {
-			position:absolute;
-			top:62px; //height of navbar
-			right: 0;
-			width:100%;
-			z-index:4;
-			vertical-align: bottom;
-			display:none;
-			
 			li {
-				@include remFontSize(height, 3.247);
-				@include remFontSize(line-height, 2.887);
-				background-color:$white;
-				border-bottom: 1px dotted darken($white, 20);
+				display: inline-block;
+				@include remFontSize(padding, 0 , 0.624);
 
-				&:last-child{
-					border-bottom:none;
-				}
-
-				a {
-					@include remFontSize(font-size, 1.602);
+				a{
 					font-family: $headerFont;
 					color:$black;
-					display: block;
+					@include remFontSize(font-size, 1.266);
 				} //a
-			}//li
-		} //ul	
+			} //li
+
+			@include breakpoint($medium){
+				display:block;
+			} //breakpoint
+		}
+
 	} //navbar
+
+	#mobileDropDown {
+		position:absolute;
+		top:62px; //height of navbar
+		right: 0;
+		width:100%;
+		z-index:10000;
+		vertical-align: bottom;
+		display:none;
+
+		@include breakpoint($medium){
+			display:none!important;
+		}//breakpoint
+					
+		li {
+			@include remFontSize(height, 3.247);
+			@include remFontSize(line-height, 2.887);
+			background-color:$white;
+			border-bottom: 1px dotted darken($white, 20);
+			text-align: center;
+			&:first-child{ border-top: 1px dotted darken($white, 20); }
+			&:last-child{ border-bottom:none; } 
+
+			a {
+				@include remFontSize(font-size, 1.602);
+				font-family: $headerFont;
+				color:$black;
+				display: block;
+			} //a
+		}//li
+	} //ul	
 } //header #nav

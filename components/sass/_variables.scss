@@ -2,23 +2,37 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300|Orbitron|Exo+2:400,600,700);
 @include border-box-sizing; // uses border box sizing like the old IE
 
-
-//color palette@import url(https://fonts.googleapis.com/css?family=Exo+2:400,500);
-$black 				: #111111;
-$white				: #ffffff;
-$grayLight			: #fafafa;
-$grayDark			: #666666;
-$grayBorder			: #dddddd;
-$blue				: #08233e;
+//color palette
+$black 		: #111111;
+$white		: #ffffff;
+$grayLight	: #fafafa;
+$grayDark	: #666666;
+$grayBorder	: #dddddd;
+$blue		: #08233e;
 
 //font stacks
-$mainFont			: 'Open Sans', Helvetica, Arial, sans-serif;
-$headerFont			: 'Exo 2', Helvetica, Arial, sans-serif;
-$logoFont			: 'Orbitron'; //look for alternative Fonts to complete font stack!!!
+$mainFont	: 'Open Sans', Helvetica, Arial, sans-serif;
+$headerFont	: 'Exo 2', Helvetica, Arial, sans-serif;
+$logoFont	: 'Orbitron'; //look for alternative Fonts to complete font stack!!!
 
 //font-weights
-$light				: 300;
-$normal				: 400;
-$semiBold			: 600;
-$bold				: 700;
-$heavy				: 800;
+$light		: 300;
+$normal		: 400;
+$semiBold	: 600;
+$bold		: 700;
+$heavy		: 800;
+
+//susy gridsystem
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
+
+//breakpoints
+$small		:480px;
+$medium		:768px;
+$large 		:1024px;
+$x-large	:1280px;

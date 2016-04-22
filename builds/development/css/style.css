@@ -3434,9 +3434,10 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  min-width: 320px;
 }
 
-/* line 7, ../../../components/sass/_layout.scss */
+/* line 8, ../../../components/sass/_layout.scss */
 section {
   position: relative;
   padding: 20px 0;
@@ -3506,7 +3507,7 @@ header {
 }
 /* line 4, ../../../components/sass/sections/_header.scss */
 header article {
-  background: url("../images/skyline.jpg") no-repeat center center fixed;
+  background: url("../images/header_bg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -3529,7 +3530,7 @@ header article #hgroup h1 {
   font-weight: 300;
   font-family: "Orbitron";
 }
-/* line 19, ../../../components/sass/sections/_header.scss */
+/* line 20, ../../../components/sass/sections/_header.scss */
 header article #hgroup h2 {
   font-size: 22.784px;
   font-size: 1.424rem;
@@ -3538,18 +3539,42 @@ header article #hgroup h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 25, ../../../components/sass/sections/_header.scss */
+@media (min-width: 768px) {
+  /* line 20, ../../../components/sass/sections/_header.scss */
+  header article #hgroup h2 {
+    font-size: 25.632px;
+    font-size: 1.602rem;
+  }
+}
+/* line 31, ../../../components/sass/sections/_header.scss */
 header article #hgroup h3 {
   font-weight: 300;
 }
-/* line 30, ../../../components/sass/sections/_header.scss */
+@media (min-width: 768px) {
+  /* line 31, ../../../components/sass/sections/_header.scss */
+  header article #hgroup h3 {
+    font-size: 20.256px;
+    font-size: 1.266rem;
+  }
+}
+/* line 38, ../../../components/sass/sections/_header.scss */
+header article #hgroup h3 span {
+  display: block;
+}
+@media (min-width: 480px) {
+  /* line 38, ../../../components/sass/sections/_header.scss */
+  header article #hgroup h3 span {
+    display: inline-block;
+  }
+}
+/* line 48, ../../../components/sass/sections/_header.scss */
 header article p {
   font-size: 73.984px;
   font-size: 4.624rem;
   margin: 0px;
   margin: 0rem;
 }
-/* line 34, ../../../components/sass/sections/_header.scss */
+/* line 52, ../../../components/sass/sections/_header.scss */
 header article p a {
   display: inline-block;
   margin: 22.784px 0px;
@@ -3562,6 +3587,7 @@ header nav {
   zoom: 1;
   width: 100%;
   background-color: transparent;
+  position: relative;
 }
 /* line 4, ../../../components/sass/_mixins.scss */
 header nav:before, header nav:after {
@@ -3572,14 +3598,36 @@ header nav:before, header nav:after {
 header nav:after {
   clear: both;
 }
-/* line 6, ../../../components/sass/sections/_navigation.scss */
+/* line 7, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar {
-  position: relative;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #ffffff;
   text-align: center;
   height: 62px;
 }
-/* line 12, ../../../components/sass/sections/_navigation.scss */
+/* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+header nav #navbar:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@media (min-width: 768px) {
+  /* line 7, ../../../components/sass/sections/_navigation.scss */
+  header nav #navbar {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+  header nav #navbar:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+/* line 17, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #logo {
   float: left;
   font-family: "Orbitron";
@@ -3588,18 +3636,17 @@ header nav #navbar #logo {
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 18, ../../../components/sass/sections/_navigation.scss */
+/* line 23, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #logo a {
   display: inline-block;
   font-size: 36.496px;
   font-size: 2.281rem;
-  color: #111111;
-  text-align: center;
   padding: 7.888px;
   padding: 0.493rem;
+  color: #111111;
 }
-/* line 27, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #menuIcon {
+/* line 31, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #mobileMenuIcon {
   float: right;
   font-size: 28.832px;
   font-size: 1.802rem;
@@ -3610,35 +3657,79 @@ header nav #navbar #menuIcon {
   transform: translateY(-50%);
   color: #111111;
 }
-/* line 34, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #menuIcon:hover {
+/* line 37, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #mobileMenuIcon:hover {
   cursor: pointer;
 }
-/* line 39, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar ul {
+@media (min-width: 768px) {
+  /* line 31, ../../../components/sass/sections/_navigation.scss */
+  header nav #navbar #mobileMenuIcon {
+    display: none;
+  }
+}
+/* line 44, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #desktopMenu {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  float: right;
+}
+/* line 49, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #desktopMenu li {
+  display: inline-block;
+  padding: 0px 9.984px;
+  padding: 0rem 0.624rem;
+}
+/* line 53, ../../../components/sass/sections/_navigation.scss */
+header nav #navbar #desktopMenu li a {
+  font-family: "Exo 2", Helvetica, Arial, sans-serif;
+  color: #111111;
+  font-size: 20.256px;
+  font-size: 1.266rem;
+}
+@media (min-width: 768px) {
+  /* line 44, ../../../components/sass/sections/_navigation.scss */
+  header nav #navbar #desktopMenu {
+    display: block;
+  }
+}
+/* line 67, ../../../components/sass/sections/_navigation.scss */
+header nav #mobileDropDown {
   position: absolute;
   top: 62px;
   right: 0;
   width: 100%;
-  z-index: 4;
+  z-index: 10000;
   vertical-align: bottom;
   display: none;
 }
-/* line 48, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar ul li {
+@media (min-width: 768px) {
+  /* line 67, ../../../components/sass/sections/_navigation.scss */
+  header nav #mobileDropDown {
+    display: none !important;
+  }
+}
+/* line 80, ../../../components/sass/sections/_navigation.scss */
+header nav #mobileDropDown li {
   height: 51.952px;
   height: 3.247rem;
   line-height: 46.192px;
   line-height: 2.887rem;
   background-color: #ffffff;
   border-bottom: 1px dotted #cccccc;
+  text-align: center;
 }
-/* line 54, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar ul li:last-child {
+/* line 86, ../../../components/sass/sections/_navigation.scss */
+header nav #mobileDropDown li:first-child {
+  border-top: 1px dotted #cccccc;
+}
+/* line 87, ../../../components/sass/sections/_navigation.scss */
+header nav #mobileDropDown li:last-child {
   border-bottom: none;
 }
-/* line 58, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar ul li a {
+/* line 89, ../../../components/sass/sections/_navigation.scss */
+header nav #mobileDropDown li a {
   font-size: 25.632px;
   font-size: 1.602rem;
   font-family: "Exo 2", Helvetica, Arial, sans-serif;

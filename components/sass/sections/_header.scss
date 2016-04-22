@@ -2,7 +2,7 @@ header {
 	color:$white;
 	
 	article {
-		@include fullPageBackground('../images/skyline.jpg');
+		@include fullPageBackground('../images/header_bg.jpg');
 		@include remFontSize(padding, 6.583, 0);
 		position:relative;
 		text-align: center;
@@ -15,16 +15,34 @@ header {
 				@include remFontSize(font-size, 6.583);
 				font-weight: $light;
 				font-family: $logoFont;
-			}
+			}//h1
+
 			h2{
 				@include remFontSize(font-size, 1.424);
 				@include remFontSize(margin, 1.266, 0, 0.702, 0);
 				text-transform: uppercase;
 				letter-spacing: 1px;
-			}
+
+				@include breakpoint($medium){
+					@include remFontSize(font-size, 1.602);
+				}
+			} //h2
+
 			h3{
 				font-weight: $light;
-			}
+				
+				@include breakpoint($medium){
+					@include remFontSize(font-size, 1.266);
+				} //breakpoint
+
+				span{
+					display:block;
+					
+					@include breakpoint($small){
+						display:inline-block;
+					} //breakpoint
+				}//span
+			}//h3
 		}//hgroup	
 	
 		p{
