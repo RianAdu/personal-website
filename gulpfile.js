@@ -33,7 +33,7 @@ else {
 //setting the files 
 sassSources = ['components/sass/style.scss'];
 htmlSources = [outputDir + '*.html'];
-jsSources	= [
+jsSources	= [ 
 	'components/scripts/rian.js',
 	'components/scripts/picturefill.js'
 ];
