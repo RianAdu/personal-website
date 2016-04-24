@@ -14,6 +14,7 @@ header {
 		#hgroup {
 			@include remFontSize(padding, 6.583, 0, 2.887, 0);
 			@include text-shadow(1px 1.732px 2px rgba(0, 0, 0, 0.5));
+			
 			h1{
 				@include remFontSize(font-size, 6.583);
 				font-weight: $light;
