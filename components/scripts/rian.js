@@ -1,5 +1,5 @@
-//require jQuery
-var $ = require('jquery');
+var $ = require('jquery'); //get jQuery
+var picturefill = require('picturefill'); //get responsive image polyfill
 
 //rian adu script
 $(function(){

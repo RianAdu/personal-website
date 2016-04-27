@@ -34,8 +34,7 @@ else {
 sassSources = ['components/sass/style.scss'];
 htmlSources = [outputDir + '*.html'];
 jsSources	= [ 
-	'components/scripts/rian.js',
-	'components/scripts/picturefill.js'
+	'components/scripts/rian.js'
 ];
 
 
