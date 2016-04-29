@@ -1,65 +1,155 @@
 section#about {
 	@include clearfix;
 	border-bottom: 1px solid $grayBorder;
+	@include remFontSize(padding-top, 2.566);
+
+	@include breakpoint($medium){
+		@include remFontSize(padding-top, 4.11);
+	} //breakpoiint
 
 	article {
 		@include container(90%);
 
 		@include breakpoint($medium){
-			@include container(85%);
-		}
-	}
+			@include container(80%);
+		}//breakpoint
+	}//article
 
 	#aboutImage{
-		max-width: 450px;
+		max-width: 400px;
 		margin: 36.491 auto 32.437px auto;
 		margin: 2.281rem auto 2.027rem auto;
+
+		@include breakpoint($sma_med) {
+			float:right;
+			@include remFontSize(margin, 0, 0, 1.125, 0);
+		} //breakpoint
+
 		img {
 			max-width:85%;	
 			display:block;
 			margin: 0 auto;
-
 			@include roundedCorners(50%);
-
-		}
-	}
-
-	#aboutCopy{
+			
+			@include breakpoint($sma_med) {
+				float: right;
+				margin:0;
+			} //breakpoint
+		} // img
+	} //#aboutImage
 		
-		#hello{
-			display:block;
-			@include remFontSize(font-size, 3.653);
-			@include remFontSize(line-height, 3.653);
-			@include remFontSize(margin-bottom, 0.79);
-		}
-		.introCopy {
-			@include remFontSize(font-size, 1.602);
-			@include remFontSize(line-height, 2.281);
-		}
-	}
+	#hello{
+		display:block;
+		@include remFontSize(font-size, 3.653);
+		@include remFontSize(line-height, 3.653);
+		@include remFontSize(margin-bottom, 0.79);
+	} //#hello
+
+	.introCopy {
+		@include remFontSize(font-size, 1.602);
+		@include remFontSize(line-height, 2.281);
+	} //introCopy
 
 	#devSkills {
 		@include remFontSize(padding-top, 1.802);
+		@include clearfix;
+
+		h2 {
+			@include remFontSize(margin-bottom, 2.027);
+		} //h2
 
 		h3{
 			@include remFontSize(margin-bottom, 0.702 );
-		}
+		}//h3
+
+		h4 {
+			clear:both;
+			font-style: italic;
+		} //h4
 
 		ul{
 			@include remFontSize(padding-left, 1.266);
 			list-style-type: disc;
-		}
+		} //ul
 
 		div{
 			@include remFontSize(margin-bottom,1.602);
 
 			&:last-child{
-				margin-bottom:0;
-			}
-		}
+				@include remFontSize(margin-bottom, 0);
+			} //last-child
+		} //div
+	} //#devSkills
 
-	}
-}
+	.lengthFix{
+		display:none;
+		color:$white;
+		list-style-type:none;
+		 
+		 @include breakpoint($x-large){
+		 	display: block;
+		 } //breakpoint
+	} //.lengthFix
+
+	#languages {
+		@include breakpoint($sma_med) {
+			@include span(5);
+		} //breakpoint at sma_med
+
+		@include breakpoint($x-large){
+			 @include span(3);
+		} //breakpoint at x-large
+	} //#languages
+
+	#techniques{
+		@include breakpoint($sma_med) {
+			@include span(7 at 6);
+		} //breakpoint at sma_med
+
+		@include breakpoint($x-large){
+			@include span(5 at 4);
+		} //breakpoint at x-large
+	} //#techniques
+
+	#tools{
+		
+		@include breakpoint($sma_med) {
+			@include span(5);
+		} //breakpoint at sma_med
+
+		@include breakpoint($x-large){
+			@include span(4 at 9);
+		} //breakpoint at x-large
+	} //#tools
+
+	#frameworks{
+		@include breakpoint($sma_med) {
+			@include span(7 at 6);
+		}//breakpoint at sma_med
+
+		@include breakpoint($x-large){
+			@include span(3);
+		} //breakpoint at x-large
+	} //#frameworks
+
+	#software{
+		@include breakpoint($sma_med) {
+			@include span(5);
+		} //breakpoint at sma_med
+		@include breakpoint($x-large){
+			@include span(5 at 4);
+		} //breakpoint at x-large
+	} //#software
+
+	#cms{
+		@include breakpoint($sma_med) {
+			@include span(7 at 6);
+		} //breakpoint at sma_med
+		@include breakpoint($x-large){
+			@include span(4 at 9);
+		} //breakpoint at x-large
+	} //#cms
+} //sction#about
 
 
 

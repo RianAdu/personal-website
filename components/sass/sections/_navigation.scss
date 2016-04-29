@@ -10,7 +10,7 @@ header nav {
 		height:62px;
 
 		@include breakpoint($medium) {
-			@include container(85%);
+			@include container(80%);
 			height: 80px;
 		} //breakpoint
 

@@ -19,11 +19,11 @@ body {
 	font-family: $mainFont;
 	font-weight: $light;
 	font-style: normal;
+	text-rendering: optimizeLegibility;
 }
 
 #{headings()} {
 	font-style: normal;
-	text-rendering: optimizeLegibility;
 }
 
 h1 {

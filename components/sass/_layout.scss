@@ -7,7 +7,7 @@ body {
 
 section {
 	position:relative;
-	padding:20px 0;
+	@include remFontSize(padding, 1.266, 0);
 }
 
 section.light {
