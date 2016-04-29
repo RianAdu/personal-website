@@ -1,17 +1,17 @@
 header nav {
 	@include clearfix;
 	width:100%;
-	background-color: transparent;
+	background-color: $black;
 	position: relative;
 	
 	#navbar{
 		@include container(90%);
-		background-color: $white;
 		text-align: center;
 		height:62px;
 
 		@include breakpoint($medium) {
-			@include container(80%);
+			@include container(85%);
+			height: 80px;
 		} //breakpoint
 
 		#logo{
@@ -24,7 +24,7 @@ header nav {
 				display:inline-block;
 				@include remFontSize(font-size, 2.281);
 				@include remFontSize(padding, 0.493);
-				color:$black;
+				color:$white;
 			} //a
 		} //logo
 
@@ -33,7 +33,7 @@ header nav {
 			@include remFontSize(font-size, 1.802);
 			@include remFontSize(padding, 0.493);
 			@include valignment; 
-			color:$black;
+			color:$white;
 			&:hover { cursor:pointer; }
 
 			@include breakpoint($medium){
@@ -52,7 +52,7 @@ header nav {
 
 				a{
 					font-family: $headerFont;
-					color:$black;
+					color:$white;
 					@include remFontSize(font-size, 1.266);
 				} //a
 			} //li
@@ -78,18 +78,18 @@ header nav {
 		}//breakpoint
 					
 		li {
-			@include remFontSize(height, 3.247);
-			@include remFontSize(line-height, 2.887);
-			background-color:$white;
-			border-bottom: 1px dotted darken($white, 20);
+			@include remFontSize(padding, 0.79, 0);
+			// @include remFontSize(line-height, 2.887);
+			background-color:$black;
+			border-bottom: 1px solid darken($white, 80);
 			text-align: center;
-			&:first-child{ border-top: 1px dotted darken($white, 20); }
+			&:first-child{ border-top: 1px solid darken($white, 80); }
 			&:last-child{ border-bottom:none; } 
 
 			a {
 				@include remFontSize(font-size, 1.602);
 				font-family: $headerFont;
-				color:$black;
+				color:$white;
 				display: block;
 			} //a
 		}//li

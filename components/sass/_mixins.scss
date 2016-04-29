@@ -19,11 +19,11 @@
 	background-size: cover;
 }
 
-@mixin roundedCorners {
-	-moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -khtml-border-radius: 4px;
-    border-radius: 4px;
+@mixin roundedCorners($value) {
+	-moz-border-radius: $value;
+    -webkit-border-radius: $value;
+    -khtml-border-radius: $value;
+    border-radius: $value;
 }
 
 @mixin boxShadows($shadowColor) {

@@ -1,0 +1,67 @@
+section#about {
+	@include clearfix;
+	border-bottom: 1px solid $grayBorder;
+
+	article {
+		@include container(90%);
+
+		@include breakpoint($medium){
+			@include container(85%);
+		}
+	}
+
+	#aboutImage{
+		max-width: 450px;
+		margin: 36.491 auto 32.437px auto;
+		margin: 2.281rem auto 2.027rem auto;
+		img {
+			max-width:85%;	
+			display:block;
+			margin: 0 auto;
+
+			@include roundedCorners(50%);
+
+		}
+	}
+
+	#aboutCopy{
+		
+		#hello{
+			display:block;
+			@include remFontSize(font-size, 3.653);
+			@include remFontSize(line-height, 3.653);
+			@include remFontSize(margin-bottom, 0.79);
+		}
+		.introCopy {
+			@include remFontSize(font-size, 1.602);
+			@include remFontSize(line-height, 2.281);
+		}
+	}
+
+	#devSkills {
+		@include remFontSize(padding-top, 1.802);
+
+		h3{
+			@include remFontSize(margin-bottom, 0.702 );
+		}
+
+		ul{
+			@include remFontSize(padding-left, 1.266);
+			list-style-type: disc;
+		}
+
+		div{
+			@include remFontSize(margin-bottom,1.602);
+
+			&:last-child{
+				margin-bottom:0;
+			}
+		}
+
+	}
+}
+
+
+
+
+
