@@ -97,7 +97,7 @@ section#about {
 		} //breakpoint at sma_med
 
 		@include breakpoint($x-large){
-			 @include span(3);
+			 @include span(4);
 		} //breakpoint at x-large
 	} //#languages
 
@@ -107,7 +107,8 @@ section#about {
 		} //breakpoint at sma_med
 
 		@include breakpoint($x-large){
-			@include span(5 at 4);
+			@include span(4 at 9); //last in colum
+
 		} //breakpoint at x-large
 	} //#techniques
 
@@ -118,7 +119,7 @@ section#about {
 		} //breakpoint at sma_med
 
 		@include breakpoint($x-large){
-			@include span(4 at 9);
+			@include span(3 at 5);
 		} //breakpoint at x-large
 	} //#tools
 
@@ -128,7 +129,7 @@ section#about {
 		}//breakpoint at sma_med
 
 		@include breakpoint($x-large){
-			@include span(3);
+			@include span(4);
 		} //breakpoint at x-large
 	} //#frameworks
 
@@ -137,7 +138,7 @@ section#about {
 			@include span(5);
 		} //breakpoint at sma_med
 		@include breakpoint($x-large){
-			@include span(5 at 4);
+			@include span(3 at 5);
 		} //breakpoint at x-large
 	} //#software
 

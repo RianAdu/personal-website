@@ -3950,7 +3950,7 @@ section#about .lengthFix {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    width: 25%;
+    width: 33.33333%;
     float: left;
     padding-left: 0.83333%;
     padding-right: 0.83333%;
@@ -3971,30 +3971,6 @@ section#about .lengthFix {
 @media (min-width: 1280px) {
   /* line 104, ../../../components/sass/sections/_about.scss */
   section#about #techniques {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 41.66667%;
-    float: left;
-    padding-left: 0.83333%;
-    padding-right: 0.83333%;
-  }
-}
-@media (min-width: 600px) {
-  /* line 114, ../../../components/sass/sections/_about.scss */
-  section#about #tools {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 41.66667%;
-    float: left;
-    padding-left: 0.83333%;
-    padding-right: 0.83333%;
-  }
-}
-@media (min-width: 1280px) {
-  /* line 114, ../../../components/sass/sections/_about.scss */
-  section#about #tools {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -4005,7 +3981,31 @@ section#about .lengthFix {
   }
 }
 @media (min-width: 600px) {
-  /* line 125, ../../../components/sass/sections/_about.scss */
+  /* line 115, ../../../components/sass/sections/_about.scss */
+  section#about #tools {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+@media (min-width: 1280px) {
+  /* line 115, ../../../components/sass/sections/_about.scss */
+  section#about #tools {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+@media (min-width: 600px) {
+  /* line 126, ../../../components/sass/sections/_about.scss */
   section#about #frameworks {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4017,19 +4017,19 @@ section#about .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 125, ../../../components/sass/sections/_about.scss */
+  /* line 126, ../../../components/sass/sections/_about.scss */
   section#about #frameworks {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    width: 25%;
+    width: 33.33333%;
     float: left;
     padding-left: 0.83333%;
     padding-right: 0.83333%;
   }
 }
 @media (min-width: 600px) {
-  /* line 135, ../../../components/sass/sections/_about.scss */
+  /* line 136, ../../../components/sass/sections/_about.scss */
   section#about #software {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4041,19 +4041,19 @@ section#about .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 135, ../../../components/sass/sections/_about.scss */
+  /* line 136, ../../../components/sass/sections/_about.scss */
   section#about #software {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    width: 41.66667%;
+    width: 25%;
     float: left;
     padding-left: 0.83333%;
     padding-right: 0.83333%;
   }
 }
 @media (min-width: 600px) {
-  /* line 144, ../../../components/sass/sections/_about.scss */
+  /* line 145, ../../../components/sass/sections/_about.scss */
   section#about #cms {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4065,7 +4065,7 @@ section#about .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 144, ../../../components/sass/sections/_about.scss */
+  /* line 145, ../../../components/sass/sections/_about.scss */
   section#about #cms {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
