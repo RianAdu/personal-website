@@ -1,5 +1,5 @@
 //google fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron|Exo+2:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron|Exo+2:400,700);
 @include border-box-sizing; // uses border box sizing like the old IE
 
 //color palette
@@ -9,8 +9,10 @@ $grayLight	: #fafafa;
 $grayDark	: #666666;
 $grayBorder	: #dddddd;
 $blue		: #08233e;
+
+//social colors
 $linkedin	: #007bb5;
-$twitter	: #55acee;
+$twitter	: #55acee; 
 $instagram	: #9b6954;
 $github		: $black;
 
@@ -39,6 +41,6 @@ $susy: (
 $small			:480px;
 $small-medium	:600px;
 $medium			:768px;
-$med_lar		:800px;
+$medium-large	:800px;
 $large 			:1024px;
 $x-large		:1280px;

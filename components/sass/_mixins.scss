@@ -6,7 +6,7 @@
 		content: "";
 		display: table;
 	}
-	
+
 	&:after {
 		clear: both;
 	}
@@ -24,6 +24,7 @@
 	-moz-border-radius: $value;
     -webkit-border-radius: $value;
     -khtml-border-radius: $value;
+    -o-border-radius:$value;
     border-radius: $value;
 }
 
@@ -31,10 +32,18 @@
 	-khtml-box-shadow: 0 8px 6px -6px $shadowColor;
 	-webkit-box-shadow: 0 8px 6px -6px $shadowColor;
 	-moz-box-shadow: 0 8px 6px -6px $shadowColor;
+	-o-box-shadow: 0 8px 6px -6px $shadowColor;
 	box-shadow: 0 8px 6px -6px $shadowColor;
 }
 
-//
+@mixin removeWebkitStyle{ //removes input field styling from mobile deveices
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -khtml-appearance:none;
+	-o-appearance:none;
+    appearance: none;
+}
+
 @mixin valignment{
 	position: relative;
 	top: 50%;

@@ -2,30 +2,135 @@ section#contact{
 	@include clearfix;
 
 	article {
+		@include clearfix;
+		
+		&:last-child{
+			@include remFontSize(margin-top, 3.247);
+		}
+		
+		//breakpoint for social icons
+		@include breakpoint($medium-large) {
+
+				ul#socialFirst{
+					@include span(5);
+				} //socialFirst
+
+				ul#socialSecond{
+					@include span(7 at 6);
+				} //socialSecond
+			} //breakpoint
 
 		ul.socialMedia{
-			
+
 			li{
 				display: block;
 				@include remFontSize(margin, 0.625, 0);
 				@include remFontSize(height, 3.125);
 				@include remFontSize(line-height, 3.125);
+				
+				@include breakpoint($medium-large){
+					@include remFontSize(margin-bottom, 2.375);
+				} //breakpoint
+
 				a{
 					&#linkedin{ color:$linkedin; }
 					&#github{ color:$github;}
 					&#twitter{color:$twitter;}
-					&#instagram{color:$instagram;}
-
+					&#instagram{color:darken($instagram, 15);}
 					
-					i{
-						@include remFontSize(font-size, 3.247);
-					}
+					i{ @include remFontSize(font-size, 3.247); }
+					
 					span{
-						display:inline-block;
 						vertical-align: top;
-					}
-				}
-			}
-		}
-	}
-}
+					} //span
+				} //a
+			} //li
+		}// socialMedia
+		
+		form {
+			@include clearfix;
+			max-width: 550px;
+
+			@include breakpoint($medium-large){
+				max-width: 100%;
+			} // breakpoint
+			
+			.contactInfo{
+				@include breakpoint($medium-large){
+					@include span(6);
+				}// breakpoint
+			}//contactInfo
+
+			.messageInfo{
+				@include breakpoint($medium-large){
+					@include span(6 at 7);
+
+					p{
+						margin-bottom:0;
+					} //p
+				} //breakpoint
+			} //messageInfo		
+
+			p{
+				@include remFontSize(margin, 0,0, 1.266,0);	
+				label{ display:block; }
+
+				input, textarea {
+					@include removeWebkitStyle;
+					
+					width:100%;
+					border:1px solid $black;
+					
+					@include roundedCorners(4px);
+			
+					&:focus{
+						outline: none;
+						border-color: $grayBorder;
+					} //focus	
+				} //input & textarea
+
+				input{ @include remFontSize(padding, 0.3125, 0); }
+
+				textarea{
+					@include remFontSize(height, 12.5);
+					
+					@include breakpoint($medium-large){
+						@include remFontSize(height, 7);
+					} //breakpoint
+				} //textarea
+			} //p
+
+			#submitButton{
+				@include breakpoint($medium-large) {
+					@include span(6 at 7);
+				} //breakpoint
+
+				button{
+					width: 100%;
+					background-color: $black;
+					color:$white;
+					border:none;
+					
+					@include remFontSize(height, 2.5);
+					@include roundedCorners(4px);
+
+					@include breakpoint($medium-large){
+						@include remFontSize(width, 10);
+						@include remFontSize(margin, 1.602, 0);
+						float: right;
+					} //breakpoint
+					
+					&:focus{
+						outline: none;
+						border-color: $grayBorder;
+					} //focus
+
+					&:hover{
+						cursor: pointer;
+						background-color: $grayDark;
+					} //hover	
+				}//button
+			} //submitButton
+		} //form
+	}//article
+} //section#contact

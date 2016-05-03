@@ -4,11 +4,11 @@ header {
 	article {
 		
 		@include fullPageBackground('../images/header_bg.jpg');
-		@include remFontSize(padding, 6.583, 0);
+		// @include remFontSize(padding, 6.583, 0);
 		text-align: center;
-		// @include display-flex();
-		// @include align-items(center);
-		// @include justify-content(center);
+		@include display-flex();
+		@include align-items(center);
+		@include justify-content(center);
 		
 	
 		#hgroup {

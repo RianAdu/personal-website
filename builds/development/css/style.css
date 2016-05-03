@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron|Exo+2:400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron|Exo+2:400,700);
 /* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -3433,8 +3433,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   position: absolute;
   width: 100%;
-  height: 100%;
-  min-width: 330px;
+  min-width: 320px;
 }
 /* line 8, ../../../components/sass/_layout.scss */
 body section {
@@ -3494,7 +3493,7 @@ html {
 }
 
 /* line 16, ../../../components/sass/_base.scss */
-body {
+body, input, textarea, label, button {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 32.432px;
@@ -3506,11 +3505,19 @@ body {
 }
 
 /* line 25, ../../../components/sass/_base.scss */
+input, textarea, label, button {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 22.784px;
+  line-height: 1.424rem;
+}
+
+/* line 30, ../../../components/sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 
-/* line 29, ../../../components/sass/_base.scss */
+/* line 34, ../../../components/sass/_base.scss */
 h1 {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -3518,22 +3525,22 @@ h1 {
   font-size: 3.653rem;
   line-height: 58.448px;
   line-height: 3.653rem;
-  margin: 0px 0px 32.432px 0px;
-  margin: 0rem 0rem 2.027rem 0rem;
+  margin: 0px 0px 28.832px 0px;
+  margin: 0rem 0rem 1.802rem 0rem;
 }
 
-/* line 38, ../../../components/sass/_base.scss */
+/* line 43, ../../../components/sass/_base.scss */
 h2 {
-  font-size: 22.784px;
-  font-size: 1.424rem;
-  line-height: 25.632px;
-  line-height: 1.602rem;
+  font-size: 25.632px;
+  font-size: 1.602rem;
+  line-height: 32.432px;
+  line-height: 2.027rem;
   margin-bottom: 25.632px;
   margin-bottom: 1.602rem;
   font-weight: 400;
 }
 
-/* line 46, ../../../components/sass/_base.scss */
+/* line 51, ../../../components/sass/_base.scss */
 h3 {
   font-size: 20.256px;
   font-size: 1.266rem;
@@ -3542,28 +3549,28 @@ h3 {
   font-weight: 400;
 }
 
-/* line 52, ../../../components/sass/_base.scss */
+/* line 57, ../../../components/sass/_base.scss */
 h4 {
   font-weight: 400;
 }
 
-/* line 57, ../../../components/sass/_base.scss */
+/* line 62, ../../../components/sass/_base.scss */
 article h1 {
   letter-spacing: -3px;
   letter-spacing: -0.1875rem;
 }
 
-/* line 62, ../../../components/sass/_base.scss */
+/* line 67, ../../../components/sass/_base.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 67, ../../../components/sass/_base.scss */
+/* line 72, ../../../components/sass/_base.scss */
 p {
   margin: 20.256px 0px;
   margin: 1.266rem 0rem;
 }
-/* line 70, ../../../components/sass/_base.scss */
+/* line 75, ../../../components/sass/_base.scss */
 p.intro {
   font-size: 25.632px;
   font-size: 1.602rem;
@@ -3571,7 +3578,7 @@ p.intro {
   line-height: 2.281rem;
 }
 
-/* line 77, ../../../components/sass/_base.scss */
+/* line 82, ../../../components/sass/_base.scss */
 a {
   text-decoration: none;
 }
@@ -3587,9 +3594,13 @@ header article {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 105.328px 0px;
-  padding: 6.583rem 0rem;
   text-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 /* line 14, ../../../components/sass/sections/_header.scss */
 header article #hgroup {
@@ -3848,6 +3859,7 @@ section#about article #aboutImage img {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   -khtml-border-radius: 50%;
+  -o-border-radius: 50%;
   border-radius: 50%;
 }
 @media (min-width: 600px) {
@@ -4074,7 +4086,47 @@ section#contact:before, section#contact:after {
 section#contact:after {
   clear: both;
 }
-/* line 8, ../../../components/sass/sections/_contact.scss */
+/* line 4, ../../../components/sass/sections/_contact.scss */
+section#contact article {
+  zoom: 1;
+}
+/* line 4, ../../../components/sass/_mixins.scss */
+section#contact article:before, section#contact article:after {
+  content: "";
+  display: table;
+}
+/* line 10, ../../../components/sass/_mixins.scss */
+section#contact article:after {
+  clear: both;
+}
+/* line 7, ../../../components/sass/sections/_contact.scss */
+section#contact article:last-child {
+  margin-top: 51.952px;
+  margin-top: 3.247rem;
+}
+@media (min-width: 800px) {
+  /* line 14, ../../../components/sass/sections/_contact.scss */
+  section#contact article ul#socialFirst {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+  /* line 18, ../../../components/sass/sections/_contact.scss */
+  section#contact article ul#socialSecond {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 58.33333%;
+    float: right;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+/* line 25, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li {
   display: block;
   margin: 10px 0px;
@@ -4084,29 +4136,175 @@ section#contact article ul.socialMedia li {
   line-height: 50px;
   line-height: 3.125rem;
 }
-/* line 14, ../../../components/sass/sections/_contact.scss */
+@media (min-width: 800px) {
+  /* line 25, ../../../components/sass/sections/_contact.scss */
+  section#contact article ul.socialMedia li {
+    margin-bottom: 38px;
+    margin-bottom: 2.375rem;
+  }
+}
+/* line 36, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#linkedin {
   color: #007bb5;
 }
-/* line 15, ../../../components/sass/sections/_contact.scss */
+/* line 37, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#github {
   color: #111111;
 }
-/* line 16, ../../../components/sass/sections/_contact.scss */
+/* line 38, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#twitter {
   color: #55acee;
 }
-/* line 17, ../../../components/sass/sections/_contact.scss */
+/* line 39, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#instagram {
-  color: #9b6954;
+  color: #694739;
 }
-/* line 20, ../../../components/sass/sections/_contact.scss */
+/* line 41, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a i {
   font-size: 51.952px;
   font-size: 3.247rem;
 }
-/* line 23, ../../../components/sass/sections/_contact.scss */
+/* line 43, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a span {
-  display: inline-block;
   vertical-align: top;
+}
+/* line 50, ../../../components/sass/sections/_contact.scss */
+section#contact article form {
+  zoom: 1;
+  max-width: 550px;
+}
+/* line 4, ../../../components/sass/_mixins.scss */
+section#contact article form:before, section#contact article form:after {
+  content: "";
+  display: table;
+}
+/* line 10, ../../../components/sass/_mixins.scss */
+section#contact article form:after {
+  clear: both;
+}
+@media (min-width: 800px) {
+  /* line 50, ../../../components/sass/sections/_contact.scss */
+  section#contact article form {
+    max-width: 100%;
+  }
+}
+@media (min-width: 800px) {
+  /* line 58, ../../../components/sass/sections/_contact.scss */
+  section#contact article form .contactInfo {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+@media (min-width: 800px) {
+  /* line 64, ../../../components/sass/sections/_contact.scss */
+  section#contact article form .messageInfo {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: right;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+  /* line 68, ../../../components/sass/sections/_contact.scss */
+  section#contact article form .messageInfo p {
+    margin-bottom: 0;
+  }
+}
+/* line 74, ../../../components/sass/sections/_contact.scss */
+section#contact article form p {
+  margin: 0px 0px 20.256px 0px;
+  margin: 0rem 0rem 1.266rem 0rem;
+}
+/* line 76, ../../../components/sass/sections/_contact.scss */
+section#contact article form p label {
+  display: block;
+}
+/* line 78, ../../../components/sass/sections/_contact.scss */
+section#contact article form p input, section#contact article form p textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -khtml-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: 1px solid #111111;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 86, ../../../components/sass/sections/_contact.scss */
+section#contact article form p input:focus, section#contact article form p textarea:focus {
+  outline: none;
+  border-color: #dddddd;
+}
+/* line 92, ../../../components/sass/sections/_contact.scss */
+section#contact article form p input {
+  padding: 5px 0px;
+  padding: 0.3125rem 0rem;
+}
+/* line 94, ../../../components/sass/sections/_contact.scss */
+section#contact article form p textarea {
+  height: 200px;
+  height: 12.5rem;
+}
+@media (min-width: 800px) {
+  /* line 94, ../../../components/sass/sections/_contact.scss */
+  section#contact article form p textarea {
+    height: 112px;
+    height: 7rem;
+  }
+}
+@media (min-width: 800px) {
+  /* line 103, ../../../components/sass/sections/_contact.scss */
+  section#contact article form #submitButton {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: right;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+/* line 108, ../../../components/sass/sections/_contact.scss */
+section#contact article form #submitButton button {
+  width: 100%;
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+  height: 40px;
+  height: 2.5rem;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+@media (min-width: 800px) {
+  /* line 108, ../../../components/sass/sections/_contact.scss */
+  section#contact article form #submitButton button {
+    width: 160px;
+    width: 10rem;
+    margin: 25.632px 0px;
+    margin: 1.602rem 0rem;
+    float: right;
+  }
+}
+/* line 123, ../../../components/sass/sections/_contact.scss */
+section#contact article form #submitButton button:focus {
+  outline: none;
+  border-color: #dddddd;
+}
+/* line 128, ../../../components/sass/sections/_contact.scss */
+section#contact article form #submitButton button:hover {
+  cursor: pointer;
+  background-color: #666666;
 }

@@ -138,8 +138,8 @@
 			<section class="light" id="contact">
 				<article>
 					<h1>contact me</h1>
-					<p class="intro">Let's get in touch about projects, collaborations, new technologies or just for fun.</p>
-					<ul class="socialMedia">
+					<p class="intro">Get in touch about projects, collaborations, new technologies or just for fun.</p>
+					<ul id="socialFirst" class="socialMedia">
 						<li>
 							<a id="linkedin" href="http://www.linkedin.com/in/florianadugyamfi" title="Florian Adu-Gyamfi - LinkedIn" alt="Florian Adu-Gyamfi - LinkedIn" target="_blank">
 								<i class="fa fa-linkedin-square" aria-hidden="true"></i>
@@ -152,6 +152,8 @@
 								<span>&nbsp; Follow me on Twitter</span>
 							</a>
 						</li>
+					</ul>
+					<ul id="socialSecond" class="socialMedia">
 						<li> 
 							<a id="github" href="https://github.com/RianAdu" title="Florian Adu-Gyamfi - GitHub" alt="Florian Adu-Gyamfi - GitHub" target="_blank">
 								<i class="fa fa-github-square" aria-hidden="true"></i>
@@ -166,7 +168,31 @@
 						</li>
 					</ul>
 				</article>
-				
+				<article>
+					<h2>Send me an email</h2>
+					
+					<form id="contactForm" action="">
+						<div class="contactInfo">
+							<p>
+								<label>Your name:</label>
+								<input type="text" name="your_name" minlength="2" required />
+							</p>
+							<p>
+								<label>Your email:</label>
+								<input type="email" name="your_email"required />
+							</p>
+						</div>
+						<div class="messageInfo">
+							<p>
+								<label>Your message:</label>
+								<textarea name="message" form="contactForm"></textarea>
+							</p>
+						</div>
+						<div id="submitButton">
+							<button type="submit" name="submit">Send message</button>
+						</div>
+					</form>
+				</article>
 			</section>
 		</main>
 	<script src="js/script.js"></script>

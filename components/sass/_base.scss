@@ -13,13 +13,18 @@ html {
 	font-size: 100%;	
 }
 
-body {
+body,input, textarea, label, button {
 	@include remFontSize(font-size, 1.125);
 	@include remFontSize(line-height, 2.027);
 	font-family: $mainFont;
 	font-weight: $light;
 	font-style: normal;
 	text-rendering: optimizeLegibility;
+}
+
+input, textarea, label, button {
+	@include remFontSize(font-size, 1);
+	@include remFontSize(line-height, 1.424);
 }
 
 #{headings()} {
@@ -31,13 +36,13 @@ h1 {
 	font-weight: $bold;
 	@include remFontSize(font-size, 3.653);
 	@include remFontSize(line-height, 3.653);
-	@include remFontSize(margin, 0, 0, 2.027, 0);
+	@include remFontSize(margin, 0, 0, 1.802, 0);
 
 } //End of h1
 
 h2 {
-	@include remFontSize(font-size, 1.424);
-	@include remFontSize(line-height, 1.602);
+	@include remFontSize(font-size, 1.602);
+	@include remFontSize(line-height, 2.027);
 	@include remFontSize(margin-bottom, 1.602);
 	font-weight: $normal;
 }//End of h2
