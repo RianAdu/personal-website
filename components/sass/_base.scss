@@ -7,7 +7,7 @@
 	font-weight: $semiBold;
 	z-index: 1000;
 }
-//Base scss
+//content main layout settings
 //=========
 html {
 	font-size: 100%;	
@@ -28,10 +28,10 @@ body {
 
 h1 {
 	font-family: $headerFont;
-	font-weight: $semiBold;
-	@include remFontSize(font-size, 2.566);
-	@include remFontSize(line-height, 2.566);
-	@include remFontSize(margin, 0, 0, 1.266, 0);
+	font-weight: $bold;
+	@include remFontSize(font-size, 3.653);
+	@include remFontSize(line-height, 3.653);
+	@include remFontSize(margin, 0, 0, 2.027, 0);
 
 } //End of h1
 
@@ -53,6 +53,11 @@ h4{
 	font-weight: $normal;
 }
 
+article {
+	h1 {
+		@include remFontSize(letter-spacing, -0.1875);
+	} //end of h1
+} //end of article
 
 strong {
 	font-weight: $semiBold;
@@ -61,6 +66,11 @@ strong {
 
 p {
 	@include remFontSize(margin, 1.266, 0);
+
+	&.intro {
+		@include remFontSize(font-size, 1.602);
+		@include remFontSize(line-height, 2.281);
+	} //introCopy
 } //End of p
 
 

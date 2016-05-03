@@ -1,0 +1,31 @@
+section#contact{
+	@include clearfix;
+
+	article {
+
+		ul.socialMedia{
+			
+			li{
+				display: block;
+				@include remFontSize(margin, 0.625, 0);
+				@include remFontSize(height, 3.125);
+				@include remFontSize(line-height, 3.125);
+				a{
+					&#linkedin{ color:$linkedin; }
+					&#github{ color:$github;}
+					&#twitter{color:$twitter;}
+					&#instagram{color:$instagram;}
+
+					
+					i{
+						@include remFontSize(font-size, 3.247);
+					}
+					span{
+						display:inline-block;
+						vertical-align: top;
+					}
+				}
+			}
+		}
+	}
+}

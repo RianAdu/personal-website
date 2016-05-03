@@ -50,6 +50,10 @@ header nav {
 				display: inline-block;
 				@include remFontSize(padding, 0 , 0.624);
 
+				&:hover{
+					// text-decoration: underline;
+				}
+
 				a{
 					font-family: $headerFont;
 					color:$white;

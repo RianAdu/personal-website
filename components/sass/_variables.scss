@@ -9,6 +9,10 @@ $grayLight	: #fafafa;
 $grayDark	: #666666;
 $grayBorder	: #dddddd;
 $blue		: #08233e;
+$linkedin	: #007bb5;
+$twitter	: #55acee;
+$instagram	: #9b6954;
+$github		: $black;
 
 //font stacks
 $mainFont	: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -32,9 +36,9 @@ $susy: (
 );
 
 //breakpoints
-$small		:480px;
-$sma_med	:600px;
-$medium		:768px;
-$med_lar	:800px;
-$large 		:1024px;
-$x-large	:1280px;
+$small			:480px;
+$small-medium	:600px;
+$medium			:768px;
+$med_lar		:800px;
+$large 			:1024px;
+$x-large		:1280px;
