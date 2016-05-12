@@ -3615,7 +3615,9 @@ header {
 }
 /* line 4, ../../../components/sass/sections/_header.scss */
 header article {
-  background: url("../images/header_bg.jpg") no-repeat center center fixed;
+  background: url("../images/header_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -3628,20 +3630,20 @@ header article {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 14, ../../../components/sass/sections/_header.scss */
+/* line 13, ../../../components/sass/sections/_header.scss */
 header article #hgroup {
   padding: 105.328px 0px 46.192px 0px;
   padding: 6.583rem 0rem 2.887rem 0rem;
   text-shadow: 1px 1.732px 2px rgba(0, 0, 0, 0.5);
 }
-/* line 18, ../../../components/sass/sections/_header.scss */
+/* line 17, ../../../components/sass/sections/_header.scss */
 header article #hgroup h1 {
   font-size: 105.328px;
   font-size: 6.583rem;
   font-weight: 300;
   font-family: "Orbitron";
 }
-/* line 24, ../../../components/sass/sections/_header.scss */
+/* line 23, ../../../components/sass/sections/_header.scss */
 header article #hgroup h2 {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   font-size: 22.784px;
@@ -3652,13 +3654,13 @@ header article #hgroup h2 {
   letter-spacing: 1px;
 }
 @media (min-width: 768px) {
-  /* line 24, ../../../components/sass/sections/_header.scss */
+  /* line 23, ../../../components/sass/sections/_header.scss */
   header article #hgroup h2 {
     font-size: 25.632px;
     font-size: 1.602rem;
   }
 }
-/* line 36, ../../../components/sass/sections/_header.scss */
+/* line 35, ../../../components/sass/sections/_header.scss */
 header article #hgroup h3 {
   font-weight: 300;
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
@@ -3666,30 +3668,30 @@ header article #hgroup h3 {
   font-size: 1.125rem;
 }
 @media (min-width: 768px) {
-  /* line 36, ../../../components/sass/sections/_header.scss */
+  /* line 35, ../../../components/sass/sections/_header.scss */
   header article #hgroup h3 {
     font-size: 20.256px;
     font-size: 1.266rem;
   }
 }
-/* line 44, ../../../components/sass/sections/_header.scss */
+/* line 43, ../../../components/sass/sections/_header.scss */
 header article #hgroup h3 span {
   display: block;
 }
 @media (min-width: 480px) {
-  /* line 44, ../../../components/sass/sections/_header.scss */
+  /* line 43, ../../../components/sass/sections/_header.scss */
   header article #hgroup h3 span {
     display: inline-block;
   }
 }
-/* line 52, ../../../components/sass/sections/_header.scss */
+/* line 51, ../../../components/sass/sections/_header.scss */
 header article #hgroup p {
   font-size: 73.984px;
   font-size: 4.624rem;
   margin: 0px;
   margin: 0rem;
 }
-/* line 57, ../../../components/sass/sections/_header.scss */
+/* line 56, ../../../components/sass/sections/_header.scss */
 header article #hgroup p a {
   display: inline-block;
   margin: 22.784px 0px;
@@ -3714,6 +3716,12 @@ header nav:after {
   clear: both;
 }
 /* line 7, ../../../components/sass/sections/_navigation.scss */
+header nav.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+/* line 13, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar {
   max-width: 90%;
   margin-left: auto;
@@ -3728,7 +3736,7 @@ header nav #navbar:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 7, ../../../components/sass/sections/_navigation.scss */
+  /* line 13, ../../../components/sass/sections/_navigation.scss */
   header nav #navbar {
     max-width: 80%;
     margin-left: auto;
@@ -3742,7 +3750,7 @@ header nav #navbar:after {
     clear: both;
   }
 }
-/* line 17, ../../../components/sass/sections/_navigation.scss */
+/* line 23, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #logo {
   float: left;
   font-family: "Orbitron";
@@ -3751,7 +3759,7 @@ header nav #navbar #logo {
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 23, ../../../components/sass/sections/_navigation.scss */
+/* line 29, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #logo a {
   display: inline-block;
   font-size: 36.496px;
@@ -3760,7 +3768,7 @@ header nav #navbar #logo a {
   padding: 0.493rem;
   color: #ffffff;
 }
-/* line 31, ../../../components/sass/sections/_navigation.scss */
+/* line 37, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #mobileMenuIcon {
   float: right;
   font-size: 28.832px;
@@ -3772,17 +3780,17 @@ header nav #navbar #mobileMenuIcon {
   transform: translateY(-50%);
   color: #ffffff;
 }
-/* line 37, ../../../components/sass/sections/_navigation.scss */
+/* line 43, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #mobileMenuIcon:hover {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  /* line 31, ../../../components/sass/sections/_navigation.scss */
+  /* line 37, ../../../components/sass/sections/_navigation.scss */
   header nav #navbar #mobileMenuIcon {
     display: none;
   }
 }
-/* line 44, ../../../components/sass/sections/_navigation.scss */
+/* line 50, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #desktopMenu {
   position: relative;
   top: 50%;
@@ -3790,13 +3798,13 @@ header nav #navbar #desktopMenu {
   display: none;
   float: right;
 }
-/* line 49, ../../../components/sass/sections/_navigation.scss */
+/* line 55, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #desktopMenu li {
   display: inline-block;
   padding: 0px 9.984px;
   padding: 0rem 0.624rem;
 }
-/* line 57, ../../../components/sass/sections/_navigation.scss */
+/* line 63, ../../../components/sass/sections/_navigation.scss */
 header nav #navbar #desktopMenu li a {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   color: #ffffff;
@@ -3804,12 +3812,12 @@ header nav #navbar #desktopMenu li a {
   font-size: 1.266rem;
 }
 @media (min-width: 768px) {
-  /* line 44, ../../../components/sass/sections/_navigation.scss */
+  /* line 50, ../../../components/sass/sections/_navigation.scss */
   header nav #navbar #desktopMenu {
     display: block;
   }
 }
-/* line 71, ../../../components/sass/sections/_navigation.scss */
+/* line 77, ../../../components/sass/sections/_navigation.scss */
 header nav #mobileDropDown {
   position: absolute;
   top: 62px;
@@ -3820,12 +3828,12 @@ header nav #mobileDropDown {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 71, ../../../components/sass/sections/_navigation.scss */
+  /* line 77, ../../../components/sass/sections/_navigation.scss */
   header nav #mobileDropDown {
     display: none !important;
   }
 }
-/* line 84, ../../../components/sass/sections/_navigation.scss */
+/* line 90, ../../../components/sass/sections/_navigation.scss */
 header nav #mobileDropDown li {
   padding: 12.64px 0px;
   padding: 0.79rem 0rem;
@@ -3833,15 +3841,15 @@ header nav #mobileDropDown li {
   border-bottom: 1px solid #333333;
   text-align: center;
 }
-/* line 90, ../../../components/sass/sections/_navigation.scss */
+/* line 96, ../../../components/sass/sections/_navigation.scss */
 header nav #mobileDropDown li:first-child {
   border-top: 1px solid #333333;
 }
-/* line 91, ../../../components/sass/sections/_navigation.scss */
+/* line 97, ../../../components/sass/sections/_navigation.scss */
 header nav #mobileDropDown li:last-child {
   border-bottom: none;
 }
-/* line 93, ../../../components/sass/sections/_navigation.scss */
+/* line 99, ../../../components/sass/sections/_navigation.scss */
 header nav #mobileDropDown li a {
   font-size: 25.632px;
   font-size: 1.602rem;
@@ -4273,31 +4281,32 @@ section#contact article form p input, section#contact article form p textarea {
   appearance: none;
   width: 100%;
   border: 1px solid #111111;
+  border-radius: 0;
 }
-/* line 103, ../../../components/sass/sections/_contact.scss */
+/* line 104, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input:focus, section#contact article form p textarea:focus {
   outline: none;
   border-color: #dddddd;
 }
-/* line 109, ../../../components/sass/sections/_contact.scss */
+/* line 110, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input {
   padding: 5px 0px;
   padding: 0.3125rem 0rem;
 }
-/* line 111, ../../../components/sass/sections/_contact.scss */
+/* line 112, ../../../components/sass/sections/_contact.scss */
 section#contact article form p textarea {
   height: 200px;
   height: 12.5rem;
 }
 @media (min-width: 800px) {
-  /* line 111, ../../../components/sass/sections/_contact.scss */
+  /* line 112, ../../../components/sass/sections/_contact.scss */
   section#contact article form p textarea {
     height: 112px;
     height: 7rem;
   }
 }
 @media (min-width: 800px) {
-  /* line 120, ../../../components/sass/sections/_contact.scss */
+  /* line 121, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4308,7 +4317,7 @@ section#contact article form p textarea {
     padding-right: 0.83333%;
   }
 }
-/* line 125, ../../../components/sass/sections/_contact.scss */
+/* line 126, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button {
   width: 100%;
   background-color: #111111;
@@ -4326,7 +4335,7 @@ section#contact article form #submitButton button {
   height: 2.5rem;
 }
 @media (min-width: 800px) {
-  /* line 125, ../../../components/sass/sections/_contact.scss */
+  /* line 126, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton button {
     width: 160px;
     width: 10rem;
@@ -4335,12 +4344,12 @@ section#contact article form #submitButton button {
     float: right;
   }
 }
-/* line 141, ../../../components/sass/sections/_contact.scss */
+/* line 142, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button:focus {
   outline: none;
   border-color: #dddddd;
 }
-/* line 146, ../../../components/sass/sections/_contact.scss */
+/* line 147, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button:hover {
   cursor: pointer;
   background-color: #666666;

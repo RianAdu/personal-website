@@ -3,7 +3,13 @@ header nav {
 	width:100%;
 	background-color: $black;
 	position: relative;
-	
+
+	&.fixed{
+		position:fixed;
+		top:0;
+		z-index:10;
+	}
+
 	#navbar{
 		@include container(90%);
 		text-align: center;

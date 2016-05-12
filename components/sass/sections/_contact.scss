@@ -53,7 +53,7 @@ section#contact{
 
 			input{
 				&.alert{
-					border-color: $alert;
+					border-color: $red;
 				}
 			}
 
@@ -83,7 +83,7 @@ section#contact{
 					@include remFontSize(font-size, 0.9);
 					display: inline-block;
 				    margin-left: 10px;
-				    color: $alert;
+				    color: $red;
 				    font-style: italic;
 				}
 			}
@@ -97,6 +97,7 @@ section#contact{
 					
 					width:100%;
 					border:1px solid $black;
+					border-radius: 0;
 					
 					
 			
