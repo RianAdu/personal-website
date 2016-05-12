@@ -51,6 +51,12 @@ section#contact{
 			@include clearfix;
 			max-width: 550px;
 
+			input{
+				&.alert{
+					border-color: $alert;
+				}
+			}
+
 			@include breakpoint($medium-large){
 				max-width: 100%;
 			} // breakpoint
@@ -70,8 +76,17 @@ section#contact{
 					} //p
 				} //breakpoint
 			} //messageInfo
-
 			
+			//styling for error Messages
+			.alertMessage{
+				label{
+					@include remFontSize(font-size, 0.9);
+					display: inline-block;
+				    margin-left: 10px;
+				    color: $alert;
+				    font-style: italic;
+				}
+			}
 
 			p{
 				@include remFontSize(margin, 0,0, 1.266,0);	
@@ -113,9 +128,10 @@ section#contact{
 					color:$white;
 					border:none;
 					
+					@include transition-property(background-color);
+					@include transition-duration(0.6s);
 					@include remFontSize(height, 2.5);
 					
-
 					@include breakpoint($medium-large){
 						@include remFontSize(width, 10);
 						@include remFontSize(margin, 1.602, 0);

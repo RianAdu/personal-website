@@ -2,12 +2,17 @@ var $ = require('jquery'); //get jQuery
 var picturefill = require('picturefill'); //get responsive image polyfill
 
 //rian adu script
-$(function(){
-
+$(document).ready(function(){
 	//show mobile Menu function
 	$('#mobileMenuIcon').on('click', function(){
 		$('#mobileDropDown').slideToggle();
 	});
+	
+	var setCopyYear = function(){
+		var date = new Date();
+		var thisYear = date.getFullYear();
+		$('#thisYear').text(thisYear);
+	};
 
 	//headerImage size
 	var headerwHeight = function(){
@@ -22,13 +27,26 @@ $(function(){
 		headerwHeight();
 	});
 
-	/*var formValidation = function(){
-		var name 	= $('#yourName').val();
-		var email	= $('#yourEmail');
-		var message = $('#yourMessage');
-
-	};*/
+	//form validation
+	var formValidation = function(){
+		$("#contactForm").validate({
+			errorPlacement: function(error, element){
+				if(element.attr('name') == 'yourName'){
+					error.appendTo('#yourNameAlert');
+				}
+				else if(element.attr('name') == 'yourEmail'){
+					error.appendTo('#yourEmailAlert');
+				}
+				else if(element.attr('name') == 'yourMessage'){
+					error.appendTo('#yourMessageAlert');
+				}
+			}
+		});
+	};
 
 	headerwHeight();
-	// formValidation();
+	setCopyYear();
+	formValidation();
 });
+
+	

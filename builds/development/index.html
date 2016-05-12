@@ -171,21 +171,21 @@
 				<article>
 					<h2>Send me an email</h2>
 					
-					<form id="contactForm" action="">
+					<form id="contactForm" action="post">
 						<div class="contactInfo">
 							<p>
-								<label>Your name:</label>
+								<label for="yourName">Your name<sup>*</sup> <span id="yourNameAlert" class="alertMessage"></span></label>
 								<input id="yourName" type="text" name="yourName" minlength="2" required />
 							</p>
 							<p>
-								<label>Your email:</label>
+								<label for="yourEmail">Your email<sup>*</sup><span id="yourEmailAlert" class="alertMessage"></span> </label>
 								<input id="yourEmail" type="email" name="yourEmail"required />
 							</p>
 						</div>
 						<div class="messageInfo">
 							<p>
-								<label>Your message:</label>
-								<textarea id="yourMessage" name="yourMessage" form="contactForm"></textarea>
+								<label for="yourMessage">Your message<sup>*</sup><span id="yourMessageAlert" class="alertMessage"></span> </label>
+								<textarea id="yourMessage" name="yourMessage" form="contactForm" minlength="20" required ></textarea>
 							</p>
 						</div>
 						<div id="submitButton">
@@ -197,7 +197,7 @@
 		</main>
 		<footer>
 			<article>
-				<p>&copy;Florian Adu-Gyamfi &nbsp; All rights reserved</p>
+				<p>&copy;<span id="thisYear"></span> Florian Adu-Gyamfi. &nbsp; All rights reserved.</p>
 			</article>	
 		</footer>
 	<script src="js/script.js"></script>

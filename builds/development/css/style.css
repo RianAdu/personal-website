@@ -4208,6 +4208,10 @@ section#contact article form:before, section#contact article form:after {
 section#contact article form:after {
   clear: both;
 }
+/* line 55, ../../../components/sass/sections/_contact.scss */
+section#contact article form input.alert {
+  border-color: #ff0000;
+}
 @media (min-width: 800px) {
   /* line 50, ../../../components/sass/sections/_contact.scss */
   section#contact article form {
@@ -4215,7 +4219,7 @@ section#contact article form:after {
   }
 }
 @media (min-width: 800px) {
-  /* line 58, ../../../components/sass/sections/_contact.scss */
+  /* line 64, ../../../components/sass/sections/_contact.scss */
   section#contact article form .contactInfo {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4227,7 +4231,7 @@ section#contact article form:after {
   }
 }
 @media (min-width: 800px) {
-  /* line 64, ../../../components/sass/sections/_contact.scss */
+  /* line 70, ../../../components/sass/sections/_contact.scss */
   section#contact article form .messageInfo {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4237,21 +4241,30 @@ section#contact article form:after {
     padding-left: 0.83333%;
     padding-right: 0.83333%;
   }
-  /* line 68, ../../../components/sass/sections/_contact.scss */
+  /* line 74, ../../../components/sass/sections/_contact.scss */
   section#contact article form .messageInfo p {
     margin-bottom: 0;
   }
 }
-/* line 76, ../../../components/sass/sections/_contact.scss */
+/* line 82, ../../../components/sass/sections/_contact.scss */
+section#contact article form .alertMessage label {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-left: 10px;
+  color: #ff0000;
+  font-style: italic;
+}
+/* line 91, ../../../components/sass/sections/_contact.scss */
 section#contact article form p {
   margin: 0px 0px 20.256px 0px;
   margin: 0rem 0rem 1.266rem 0rem;
 }
-/* line 78, ../../../components/sass/sections/_contact.scss */
+/* line 93, ../../../components/sass/sections/_contact.scss */
 section#contact article form p label {
   display: block;
 }
-/* line 80, ../../../components/sass/sections/_contact.scss */
+/* line 95, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input, section#contact article form p textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -4261,30 +4274,30 @@ section#contact article form p input, section#contact article form p textarea {
   width: 100%;
   border: 1px solid #111111;
 }
-/* line 88, ../../../components/sass/sections/_contact.scss */
+/* line 103, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input:focus, section#contact article form p textarea:focus {
   outline: none;
   border-color: #dddddd;
 }
-/* line 94, ../../../components/sass/sections/_contact.scss */
+/* line 109, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input {
   padding: 5px 0px;
   padding: 0.3125rem 0rem;
 }
-/* line 96, ../../../components/sass/sections/_contact.scss */
+/* line 111, ../../../components/sass/sections/_contact.scss */
 section#contact article form p textarea {
   height: 200px;
   height: 12.5rem;
 }
 @media (min-width: 800px) {
-  /* line 96, ../../../components/sass/sections/_contact.scss */
+  /* line 111, ../../../components/sass/sections/_contact.scss */
   section#contact article form p textarea {
     height: 112px;
     height: 7rem;
   }
 }
 @media (min-width: 800px) {
-  /* line 105, ../../../components/sass/sections/_contact.scss */
+  /* line 120, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4295,17 +4308,25 @@ section#contact article form p textarea {
     padding-right: 0.83333%;
   }
 }
-/* line 110, ../../../components/sass/sections/_contact.scss */
+/* line 125, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button {
   width: 100%;
   background-color: #111111;
   color: #ffffff;
   border: none;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
   height: 40px;
   height: 2.5rem;
 }
 @media (min-width: 800px) {
-  /* line 110, ../../../components/sass/sections/_contact.scss */
+  /* line 125, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton button {
     width: 160px;
     width: 10rem;
@@ -4314,12 +4335,12 @@ section#contact article form #submitButton button {
     float: right;
   }
 }
-/* line 125, ../../../components/sass/sections/_contact.scss */
+/* line 141, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button:focus {
   outline: none;
   border-color: #dddddd;
 }
-/* line 130, ../../../components/sass/sections/_contact.scss */
+/* line 146, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button:hover {
   cursor: pointer;
   background-color: #666666;
