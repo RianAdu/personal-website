@@ -26,4 +26,14 @@ body {
 			}//breakpoint
 		} //article
 	} //section
+	
+	footer {
+		article{
+			@include container(90%);
+
+			@include breakpoint($medium){
+				@include container(80%);
+			}//breakpoint
+		} //article
+	}
 } //body

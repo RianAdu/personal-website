@@ -15,8 +15,6 @@ $(function(){
 		var height = $(window).height();
 		$('header article').css('height', height);
 	};
-	
-	headerwHeight();
 
 	//show window width
 	$(window).on('resize', function(){
@@ -24,6 +22,16 @@ $(function(){
 		$('.showSize').text(width);
 		headerwHeight();
 	});
+
+	/*var formValidation = function(){
+		var name 	= $('#yourName').val();
+		var email	= $('#yourEmail');
+		var message = $('#yourMessage');
+
+	};*/
+
+	headerwHeight();
+	// formValidation();
 });
 
 },{"jquery":2,"picturefill":3}],2:[function(require,module,exports){
