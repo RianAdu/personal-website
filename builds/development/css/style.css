@@ -73,8 +73,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url(../../../fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0&1460473332);
-  src: url(../../../fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0&1460473332#iefix) format("embedded-opentype"), url(../../../fonts/font-awesome/fontawesome-webfont.woff2?v=4.5.0&1460473332) format("woff2"), url(../../../fonts/font-awesome/fontawesome-webfont.woff?v=4.5.0&1460473332) format("woff"), url(../../../fonts/font-awesome/fontawesome-webfont.ttf?v=4.5.0&1460473332) format("truetype"), url(../../../fonts/font-awesome/fontawesome-webfont.svg?v=4.5.0&1460473332#fontawesomeregular) format("svg");
+  src: url(../../../fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0&1463132666);
+  src: url(../../../fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0&1463132666#iefix) format("embedded-opentype"), url(../../../fonts/font-awesome/fontawesome-webfont.woff2?v=4.5.0&1463132666) format("woff2"), url(../../../fonts/font-awesome/fontawesome-webfont.woff?v=4.5.0&1463132666) format("woff"), url(../../../fonts/font-awesome/fontawesome-webfont.ttf?v=4.5.0&1463132666) format("truetype"), url(../../../fonts/font-awesome/fontawesome-webfont.svg?v=4.5.0&1463132666#fontawesomeregular) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -3435,22 +3435,22 @@ body {
   width: 100%;
   min-width: 320px;
 }
-/* line 8, ../../../components/sass/_layout.scss */
+/* line 7, ../../../components/sass/_layout.scss */
 body section {
   position: relative;
   padding: 20.256px 0px;
   padding: 1.266rem 0rem;
   border-bottom: 1px solid #dddddd;
 }
-/* line 13, ../../../components/sass/_layout.scss */
+/* line 12, ../../../components/sass/_layout.scss */
 body section.light {
   background-color: #ffffff;
 }
-/* line 17, ../../../components/sass/_layout.scss */
+/* line 16, ../../../components/sass/_layout.scss */
 body section.dark {
   background-color: #fafafa;
 }
-/* line 21, ../../../components/sass/_layout.scss */
+/* line 20, ../../../components/sass/_layout.scss */
 body section article {
   max-width: 90%;
   margin-left: auto;
@@ -3463,7 +3463,7 @@ body section article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 21, ../../../components/sass/_layout.scss */
+  /* line 20, ../../../components/sass/_layout.scss */
   body section article {
     max-width: 80%;
     margin-left: auto;
@@ -3476,7 +3476,7 @@ body section article:after {
     clear: both;
   }
 }
-/* line 31, ../../../components/sass/_layout.scss */
+/* line 30, ../../../components/sass/_layout.scss */
 body footer article {
   max-width: 90%;
   margin-left: auto;
@@ -3489,7 +3489,7 @@ body footer article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 31, ../../../components/sass/_layout.scss */
+  /* line 30, ../../../components/sass/_layout.scss */
   body footer article {
     max-width: 80%;
     margin-left: auto;
@@ -3699,30 +3699,36 @@ header article #hgroup p a {
   color: #ffffff;
 }
 
-/* line 1, ../../../components/sass/sections/_navigation.scss */
-header nav {
+/* line 3, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav {
   zoom: 1;
   width: 100%;
   background-color: #111111;
   position: relative;
 }
 /* line 4, ../../../components/sass/_mixins.scss */
-header nav:before, header nav:after {
+.navPlaceholder nav:before, .navPlaceholder nav:after {
   content: "";
   display: table;
 }
 /* line 10, ../../../components/sass/_mixins.scss */
-header nav:after {
+.navPlaceholder nav:after {
   clear: both;
 }
-/* line 7, ../../../components/sass/sections/_navigation.scss */
-header nav.fixed {
+/* line 9, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav.fixed {
   position: fixed;
   top: 0;
   z-index: 10;
+  transform: translateZ(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
-/* line 13, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar {
+/* line 21, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -3730,28 +3736,28 @@ header nav #navbar {
   height: 62px;
 }
 /* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-header nav #navbar:after {
+.navPlaceholder nav #navbar:after {
   content: " ";
   display: block;
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 13, ../../../components/sass/sections/_navigation.scss */
-  header nav #navbar {
+  /* line 21, ../../../components/sass/sections/_navigation.scss */
+  .navPlaceholder nav #navbar {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     height: 80px;
   }
   /* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-  header nav #navbar:after {
+  .navPlaceholder nav #navbar:after {
     content: " ";
     display: block;
     clear: both;
   }
 }
-/* line 23, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #logo {
+/* line 31, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar #logo {
   float: left;
   font-family: "Orbitron";
   background-color: transparent;
@@ -3759,8 +3765,8 @@ header nav #navbar #logo {
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 29, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #logo a {
+/* line 37, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar #logo a {
   display: inline-block;
   font-size: 36.496px;
   font-size: 2.281rem;
@@ -3768,8 +3774,8 @@ header nav #navbar #logo a {
   padding: 0.493rem;
   color: #ffffff;
 }
-/* line 37, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #mobileMenuIcon {
+/* line 45, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar #mobileMenuIcon {
   float: right;
   font-size: 28.832px;
   font-size: 1.802rem;
@@ -3780,45 +3786,45 @@ header nav #navbar #mobileMenuIcon {
   transform: translateY(-50%);
   color: #ffffff;
 }
-/* line 43, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #mobileMenuIcon:hover {
+/* line 51, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar #mobileMenuIcon:hover {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  /* line 37, ../../../components/sass/sections/_navigation.scss */
-  header nav #navbar #mobileMenuIcon {
+  /* line 45, ../../../components/sass/sections/_navigation.scss */
+  .navPlaceholder nav #navbar #mobileMenuIcon {
     display: none;
   }
 }
-/* line 50, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #desktopMenu {
+/* line 58, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar #desktopMenu {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   display: none;
   float: right;
 }
-/* line 55, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #desktopMenu li {
+/* line 63, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar #desktopMenu li {
   display: inline-block;
   padding: 0px 9.984px;
   padding: 0rem 0.624rem;
 }
-/* line 63, ../../../components/sass/sections/_navigation.scss */
-header nav #navbar #desktopMenu li a {
+/* line 71, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #navbar #desktopMenu li a {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   color: #ffffff;
   font-size: 20.256px;
   font-size: 1.266rem;
 }
 @media (min-width: 768px) {
-  /* line 50, ../../../components/sass/sections/_navigation.scss */
-  header nav #navbar #desktopMenu {
+  /* line 58, ../../../components/sass/sections/_navigation.scss */
+  .navPlaceholder nav #navbar #desktopMenu {
     display: block;
   }
 }
-/* line 77, ../../../components/sass/sections/_navigation.scss */
-header nav #mobileDropDown {
+/* line 85, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #mobileDropDown {
   position: absolute;
   top: 62px;
   right: 0;
@@ -3828,29 +3834,29 @@ header nav #mobileDropDown {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 77, ../../../components/sass/sections/_navigation.scss */
-  header nav #mobileDropDown {
+  /* line 85, ../../../components/sass/sections/_navigation.scss */
+  .navPlaceholder nav #mobileDropDown {
     display: none !important;
   }
 }
-/* line 90, ../../../components/sass/sections/_navigation.scss */
-header nav #mobileDropDown li {
+/* line 98, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #mobileDropDown li {
   padding: 12.64px 0px;
   padding: 0.79rem 0rem;
   background-color: #111111;
   border-bottom: 1px solid #333333;
   text-align: center;
 }
-/* line 96, ../../../components/sass/sections/_navigation.scss */
-header nav #mobileDropDown li:first-child {
+/* line 104, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #mobileDropDown li:first-child {
   border-top: 1px solid #333333;
 }
-/* line 97, ../../../components/sass/sections/_navigation.scss */
-header nav #mobileDropDown li:last-child {
+/* line 105, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #mobileDropDown li:last-child {
   border-bottom: none;
 }
-/* line 99, ../../../components/sass/sections/_navigation.scss */
-header nav #mobileDropDown li a {
+/* line 107, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #mobileDropDown li a {
   font-size: 25.632px;
   font-size: 1.602rem;
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
@@ -4191,7 +4197,7 @@ section#contact article ul.socialMedia li a#twitter {
 }
 /* line 39, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#instagram {
-  color: #694739;
+  color: #8f246b;
 }
 /* line 41, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a i {

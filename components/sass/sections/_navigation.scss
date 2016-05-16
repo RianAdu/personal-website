@@ -1,107 +1,116 @@
-header nav {
-	@include clearfix;
-	width:100%;
-	background-color: $black;
-	position: relative;
+.navPlaceholder{
 
-	&.fixed{
-		position:fixed;
-		top:0;
-		z-index:10;
-	}
-
-	#navbar{
-		@include container(90%);
-		text-align: center;
-		height:62px;
-
-		@include breakpoint($medium) {
-			@include container(80%);
-			height: 80px;
-		} //breakpoint
-
-		#logo{
-			float:left;
-			font-family: $logoFont;
-			background-color: transparent;
-			@include valignment;
-			
-			a {
-				display:inline-block;
-				@include remFontSize(font-size, 2.281);
-				@include remFontSize(padding, 0.493);
-				color:$white;
-			} //a
-		} //logo
-
-		#mobileMenuIcon{
-			float:right;
-			@include remFontSize(font-size, 1.802);
-			@include remFontSize(padding, 0.493);
-			@include valignment; 
-			color:$white;
-			&:hover { cursor:pointer; }
-
-			@include breakpoint($medium){
-				display:none;
-			} //breakpoint
-		} //menuIcon
+	nav {
+		@include clearfix;
+		width:100%;
+		background-color: $black;
+		position: relative;
 		
-		#desktopMenu{
-			@include valignment;
-			display: none;
-			float:right;
-
-			li {
-				display: inline-block;
-				@include remFontSize(padding, 0 , 0.624);
-
-				&:hover{
-					// text-decoration: underline;
-				}
-
-				a{
-					font-family: $headerFont;
-					color:$white;
-					@include remFontSize(font-size, 1.266);
-				} //a
-			} //li
-
-			@include breakpoint($medium){
-				display:block;
-			} //breakpoint
+		&.fixed{			 
+			position:fixed;
+			top:0;
+			z-index:10;
+			transform: translateZ(0);
+		    -moz-transform: translatez(0);
+		    -ms-transform: translatez(0);
+		    -o-transform: translatez(0);
+		    -webkit-transform: translateZ(0);
+		    -webkit-font-smoothing: antialiased; 
 		}
 
-	} //navbar
-
-	#mobileDropDown {
-		position:absolute;
-		top:62px; //height of navbar
-		right: 0;
-		width:100%;
-		z-index:10000;
-		vertical-align: bottom;
-		display:none;
-
-		@include breakpoint($medium){
-			display:none!important;
-		}//breakpoint
-					
-		li {
-			@include remFontSize(padding, 0.79, 0);
-			// @include remFontSize(line-height, 2.887);
-			background-color:$black;
-			border-bottom: 1px solid darken($white, 80);
+		#navbar{
+			@include container(90%);
 			text-align: center;
-			&:first-child{ border-top: 1px solid darken($white, 80); }
-			&:last-child{ border-bottom:none; } 
+			height:62px;
 
-			a {
-				@include remFontSize(font-size, 1.602);
-				font-family: $headerFont;
+			@include breakpoint($medium) {
+				@include container(80%);
+				height: 80px;
+			} //breakpoint
+
+			#logo{
+				float:left;
+				font-family: $logoFont;
+				background-color: transparent;
+				@include valignment;
+				
+				a {
+					display:inline-block;
+					@include remFontSize(font-size, 2.281);
+					@include remFontSize(padding, 0.493);
+					color:$white;
+				} //a
+			} //logo
+
+			#mobileMenuIcon{
+				float:right;
+				@include remFontSize(font-size, 1.802);
+				@include remFontSize(padding, 0.493);
+				@include valignment; 
 				color:$white;
-				display: block;
-			} //a
-		}//li
-	} //ul	
-} //header nav
+				&:hover { cursor:pointer; }
+
+				@include breakpoint($medium){
+					display:none;
+				} //breakpoint
+			} //menuIcon
+			
+			#desktopMenu{
+				@include valignment;
+				display: none;
+				float:right;
+
+				li {
+					display: inline-block;
+					@include remFontSize(padding, 0 , 0.624);
+
+					&:hover{
+						// text-decoration: underline;
+					}
+
+					a{
+						font-family: $headerFont;
+						color:$white;
+						@include remFontSize(font-size, 1.266);
+					} //a
+				} //li
+
+				@include breakpoint($medium){
+					display:block;
+				} //breakpoint
+			}
+
+		} //navbar
+
+		#mobileDropDown {
+			position:absolute;
+			top:62px; //height of navbar
+			right: 0;
+			width:100%;
+			z-index:10000;
+			vertical-align: bottom;
+			display:none;
+
+			@include breakpoint($medium){
+				display:none!important;
+			}//breakpoint
+						
+			li {
+				@include remFontSize(padding, 0.79, 0);
+				// @include remFontSize(line-height, 2.887);
+				background-color:$black;
+				border-bottom: 1px solid darken($white, 80);
+				text-align: center;
+				&:first-child{ border-top: 1px solid darken($white, 80); }
+				&:last-child{ border-bottom:none; } 
+
+				a {
+					@include remFontSize(font-size, 1.602);
+					font-family: $headerFont;
+					color:$white;
+					display: block;
+				} //a
+			}//li
+		} //ul	
+	} //header nav
+}

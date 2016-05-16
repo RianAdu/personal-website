@@ -49,6 +49,7 @@ $(function(){
 
 	var animatedScrolling = function(duration){
 		var navbarHeight = $('#navbar').height();
+		
 		$('a[href^="#"]:not(#enterButton)').on('click', function(e){
 			$('#mobileDropDown').slideUp(); //close the menu
 			var target = $( $(this).attr('href') );
@@ -63,11 +64,8 @@ $(function(){
 	};
 
 	var stickyNav = function(){
-
 		var navbar = $('nav');
 		var navPos = navbar.offset().top;
-
-		navbar.wrap('<div class="navPlaceholder"></div>"');
 		$('.navPlaceholder').height($('#navbar').outerHeight());
 
 		$(window).scroll(function(){
@@ -84,7 +82,6 @@ $(function(){
 		$(window).resize(function(){
 			$('.navPlaceholder').height($('#navbar').outerHeight());
 		});
-
 	};
 	
 	headerwHeight();
