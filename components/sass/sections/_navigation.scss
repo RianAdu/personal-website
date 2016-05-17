@@ -1,23 +1,27 @@
 .navPlaceholder{
 
+	position:fixed;
+	top:0;
+	z-index:10;
+	width: 100%;
+
 	nav {
 		@include clearfix;
 		width:100%;
-		background-color: $black;
+		background-color: transparent;
 		position: relative;
-		
-		&.fixed{			 
-			position:fixed;
-			top:0;
-			z-index:10;
-			transform: translateZ(0);
-		    -moz-transform: translatez(0);
-		    -ms-transform: translatez(0);
-		    -o-transform: translatez(0);
-		    -webkit-transform: translateZ(0);
-		    -webkit-font-smoothing: antialiased; 
-		}
 
+		@include transition-property(background-color);
+		@include transition-duration(.4s);
+
+		&.darkNav{
+			background-color: $black;
+		}
+		//helper class for turning nav dark if user is still on top of page
+		&.transToDark{
+			background-color: $black;
+		}
+		
 		#navbar{
 			@include container(90%);
 			text-align: center;
@@ -63,10 +67,6 @@
 				li {
 					display: inline-block;
 					@include remFontSize(padding, 0 , 0.624);
-
-					&:hover{
-						// text-decoration: underline;
-					}
 
 					a{
 						font-family: $headerFont;

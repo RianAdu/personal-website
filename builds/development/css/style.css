@@ -3699,12 +3699,27 @@ header article #hgroup p a {
   color: #ffffff;
 }
 
-/* line 3, ../../../components/sass/sections/_navigation.scss */
+/* line 1, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+/* line 8, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav {
   zoom: 1;
   width: 100%;
-  background-color: #111111;
+  background-color: transparent;
   position: relative;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 /* line 4, ../../../components/sass/_mixins.scss */
 .navPlaceholder nav:before, .navPlaceholder nav:after {
@@ -3715,19 +3730,15 @@ header article #hgroup p a {
 .navPlaceholder nav:after {
   clear: both;
 }
-/* line 9, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav.fixed {
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  transform: translateZ(0);
-  -moz-transform: translatez(0);
-  -ms-transform: translatez(0);
-  -o-transform: translatez(0);
-  -webkit-transform: translateZ(0);
-  -webkit-font-smoothing: antialiased;
+/* line 17, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav.darkNav {
+  background-color: #111111;
 }
 /* line 21, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav.transToDark {
+  background-color: #111111;
+}
+/* line 25, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #navbar {
   max-width: 90%;
   margin-left: auto;
@@ -3742,7 +3753,7 @@ header article #hgroup p a {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 21, ../../../components/sass/sections/_navigation.scss */
+  /* line 25, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav #navbar {
     max-width: 80%;
     margin-left: auto;
@@ -3756,7 +3767,7 @@ header article #hgroup p a {
     clear: both;
   }
 }
-/* line 31, ../../../components/sass/sections/_navigation.scss */
+/* line 35, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #navbar #logo {
   float: left;
   font-family: "Orbitron";
@@ -3765,7 +3776,7 @@ header article #hgroup p a {
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 37, ../../../components/sass/sections/_navigation.scss */
+/* line 41, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #navbar #logo a {
   display: inline-block;
   font-size: 36.496px;
@@ -3774,7 +3785,7 @@ header article #hgroup p a {
   padding: 0.493rem;
   color: #ffffff;
 }
-/* line 45, ../../../components/sass/sections/_navigation.scss */
+/* line 49, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #navbar #mobileMenuIcon {
   float: right;
   font-size: 28.832px;
@@ -3786,17 +3797,17 @@ header article #hgroup p a {
   transform: translateY(-50%);
   color: #ffffff;
 }
-/* line 51, ../../../components/sass/sections/_navigation.scss */
+/* line 55, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #navbar #mobileMenuIcon:hover {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  /* line 45, ../../../components/sass/sections/_navigation.scss */
+  /* line 49, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav #navbar #mobileMenuIcon {
     display: none;
   }
 }
-/* line 58, ../../../components/sass/sections/_navigation.scss */
+/* line 62, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #navbar #desktopMenu {
   position: relative;
   top: 50%;
@@ -3804,7 +3815,7 @@ header article #hgroup p a {
   display: none;
   float: right;
 }
-/* line 63, ../../../components/sass/sections/_navigation.scss */
+/* line 67, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #navbar #desktopMenu li {
   display: inline-block;
   padding: 0px 9.984px;
@@ -3818,7 +3829,7 @@ header article #hgroup p a {
   font-size: 1.266rem;
 }
 @media (min-width: 768px) {
-  /* line 58, ../../../components/sass/sections/_navigation.scss */
+  /* line 62, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav #navbar #desktopMenu {
     display: block;
   }
