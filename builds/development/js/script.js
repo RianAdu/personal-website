@@ -21,13 +21,15 @@ $(function(){
 			$('.showSize').text(width);
 			introHeight();
 		});
-	}; // end of showWidth
+	};
+	// end of showWidth
 
 
 	var introHeight = function(){
 		var height = $(window).height();
 		$('header article').css('height', height);
-	}; // end of introHeight
+	};
+	// end of introHeight
 
 
 	var mobileMenu = function(){
@@ -42,28 +44,44 @@ $(function(){
 				$('#mobileDropDown').slideToggle();
 			}
 		});
-	}; //end of mobileMenu
+	};
+	//end of mobileMenu
 
 	var smoothScrolling = function(duration){
 		var navbarHeight = $('#navbar').height();
+
+		$(window).on('resize', function(){
+			var navbarHeight = $('#navbar').height();
+		});
 		
 		$('a[href^="#"]:not(#enterButton)').on('click', function(e){
 			$('#mobileDropDown').slideUp(); //close the menu
 			$('.navButton').removeClass('active');
 
 			var target = $( $(this).attr('href') );
+			var hashTag = target.selector;
+			
 					
 			if(target.length){
 				e.preventDefault();
 
 				$('html, body').animate({
-					scrollTop: target.offset().top-navbarHeight
+					scrollTop: target.offset().top - navbarHeight
 				}, duration);
 
 				$(this).addClass('active');
 			}
+			
+			//setting the history in case the user hits the back button
+			if(history.pushState) {
+				history.pushState(null, null, hashTag);
+			}
+			else {
+				location.hash = hashTag;
+			}
 		});
-	}; // end of  smoothScrolling
+	};
+	// end of  smoothScrolling
 
 	var setDarkNav = function(){
 		var intro = $('#hgroup');
@@ -80,14 +98,21 @@ $(function(){
 				navbar.removeClass('darkNav transToDark');
 			}
 		});
-	}; // end of setDarkNav
+
+		$(window).on('orientationchange', function(){
+			introPos = intro.offset().top;
+			console.log(introPos);
+		});
+	};
+	// end of setDarkNav
 	
+
 	var setCopyYear = function(){
 		var date = new Date();
 		var thisYear = date.getFullYear();
 		$('#thisYear').text(thisYear);
-	}; // end of setCopyYear
-
+	};
+	// end of setCopyYear
 
 	var formValidation = function(){
 		$("#contactForm").validate({
@@ -103,8 +128,9 @@ $(function(){
 				}
 			}
 		});
-	}; // end of form validation
-	
+	};
+	// end of form validation
+
 	init();
 });
 	
