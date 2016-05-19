@@ -125,18 +125,13 @@ section#contact{
 
 				button{
 					width: 100%;
-					
+
 					@include breakpoint($medium-large){
 						@include remFontSize(width, 10);
 						@include remFontSize(margin, 1.602, 0);
 						float: right;
 					} //breakpoint
 					
-					&:focus{
-						outline: none;
-						border-color: $grayBorder;
-					} //focus
-
 					&:hover{
 						background-color: $grayDark;
 					} //hover	

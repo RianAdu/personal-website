@@ -95,5 +95,11 @@ button{
 	&:hover{
 		cursor: pointer;
 	}
+
+	&:focus{
+		outline: none;
+		border-color: $grayBorder;
+	} //focus
+
 }
 

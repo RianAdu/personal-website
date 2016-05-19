@@ -6,23 +6,37 @@ section#portfolio{
 		@include clearfix;
 		@include remFontSize(padding, 3.125, 0);
 		border-bottom: 1px solid $grayBorder;
+
+		@include breakpoint($medium-large) {
+			@include remFontSize(padding, 7.1875, 0, 3.125, 0);
+		}
 		
-		&:first-child{
-			//@include remFontSize(padding-top, 1.875);
-			color:red;
+		&:first-of-type{
+			@include remFontSize(padding-top, 1.875);
 		}
 
 		&:last-child{
 			border-bottom:none;
+			padding-bottom:0;
 		}
-		
+
 		.projectImage{
-		max-width: 600px;
-		@include remFontSize(margin-bottom, 1.875);
+			max-width: 600px;
+			@include remFontSize(margin-bottom, 1.875);
+			margin-left:auto;
+			margin-right: auto;
 
 			img{
 				width:100%;
 				display:block;
+			}
+
+			@include breakpoint($medium-large){
+				@include span (8);
+
+				&.even{
+					@include span (8 last);
+				}
 			}
 		}
 
@@ -37,7 +51,20 @@ section#portfolio{
 			}
 
 			button{
-				width: 160px;
+				@include remFontSize(width, 10);
+				@include remFontSize(margin-top, 1.25);
+
+				@include breakpoint($large){
+					@include remFontSize(margin-top, 1.875);
+				}
+
+				@include breakpoint($x-large){
+					@include remFontSize(margin-top, 3.125);
+				}
+			}
+
+			@include breakpoint($medium-large){
+				@include span (4 at 9);
 			}
 		}
 	}

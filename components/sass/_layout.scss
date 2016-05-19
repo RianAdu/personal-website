@@ -6,7 +6,7 @@ body {
 
 	section {
 		position:relative;
-		@include remFontSize(padding, 1.266, 0);
+		@include remFontSize(padding, 1.266, 0, 6.25, 0);
 		border-bottom: 1px solid $grayBorder;
 		
 		&.light {

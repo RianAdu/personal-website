@@ -6,13 +6,14 @@ $(function(){
 
 	var init = function(){
 		showWidth();
-		mobileMenu();
 		introHeight();
 		setCopyYear();
 		formValidation();
 		animatedScroll(1100);
 		parallaxScroll();
 		setDarkNav();
+		$('.showMore').on('click', showProjectDetails);
+		$('#mobileMenuIcon').on('click',mobileMenu);
 	}; // end of init
 
 	var showWidth = function(){
@@ -33,19 +34,40 @@ $(function(){
 
 
 	var mobileMenu = function(){
-		$('#mobileMenuIcon').on('click', function(){
 			
-			//only add class transtoDark if user is still on top of the page
-			if($('nav').hasClass('darkNav')){
-				$('#mobileDropDown').slideToggle();
-			}
-			else {
-				$('nav').toggleClass('transToDark');
-				$('#mobileDropDown').slideToggle();
-			}
-		});
+		//only add class transtoDark if user is still on top of the page
+		if($('nav').hasClass('darkNav')){
+			$('#mobileDropDown').slideToggle();
+		}
+		else {
+			$('nav').toggleClass('transToDark');
+			$('#mobileDropDown').slideToggle();
+		}
 	};
 	//end of mobileMenu
+
+	var setDarkNav = function(){
+		var intro = $('#hgroup');
+		var navbar = $('nav');
+		var introPos = intro.offset().top;
+
+		$(window).scroll(function(){
+			var wScroll = $(window).scrollTop();
+			
+			if(wScroll >= introPos){
+				navbar.addClass('darkNav');
+			}
+			else{
+				navbar.removeClass('darkNav transToDark');
+			}
+		});
+
+		$(window).on('orientationchange', function(){
+			introPos = intro.offset().top;
+		});
+	};
+	// end of setDarkNav
+
 
 	var animatedScroll = function(duration){
 		
@@ -63,7 +85,7 @@ $(function(){
 				e.preventDefault();
 
 				$('html, body').animate({
-					scrollTop: target.offset().top - navbarHeight
+					scrollTop: target.offset().top - (navbarHeight - 5)
 				}, duration);
 
 				$(this).addClass('active');
@@ -99,28 +121,10 @@ $(function(){
 		});
 	};
 
-	var setDarkNav = function(){
-		var intro = $('#hgroup');
-		var navbar = $('nav');
-		var introPos = intro.offset().top;
-
-		$(window).scroll(function(){
-			var wScroll = $(window).scrollTop();
-			
-			if(wScroll >= introPos){
-				navbar.addClass('darkNav');
-			}
-			else{
-				navbar.removeClass('darkNav transToDark');
-			}
-		});
-
-		$(window).on('orientationchange', function(){
-			introPos = intro.offset().top;
-			console.log(introPos);
-		});
+	var showProjectDetails = function(){
+		var project = $(this).parent().parent().attr('id');
+		alert('project-id: '+project);
 	};
-	// end of setDarkNav
 	
 
 	var setCopyYear = function(){

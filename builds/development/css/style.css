@@ -3438,8 +3438,8 @@ body {
 /* line 7, ../../../components/sass/_layout.scss */
 body section {
   position: relative;
-  padding: 20.256px 0px;
-  padding: 1.266rem 0rem;
+  padding: 20.256px 0px 100px 0px;
+  padding: 1.266rem 0rem 6.25rem 0rem;
   border-bottom: 1px solid #dddddd;
 }
 /* line 12, ../../../components/sass/_layout.scss */
@@ -3628,6 +3628,11 @@ button {
 /* line 95, ../../../components/sass/_base.scss */
 button:hover {
   cursor: pointer;
+}
+/* line 99, ../../../components/sass/_base.scss */
+button:focus {
+  outline: none;
+  border-color: #dddddd;
 }
 
 /* line 1, ../../../components/sass/sections/_header.scss */
@@ -4178,39 +4183,101 @@ section#portfolio .projects:before, section#portfolio .projects:after {
 section#portfolio .projects:after {
   clear: both;
 }
-/* line 10, ../../../components/sass/sections/_portfolio.scss */
-section#portfolio .projects:first-child {
-  color: red;
+@media (min-width: 800px) {
+  /* line 5, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects {
+    padding: 115px 0px 50px 0px;
+    padding: 7.1875rem 0rem 3.125rem 0rem;
+  }
 }
-/* line 15, ../../../components/sass/sections/_portfolio.scss */
+/* line 14, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects:first-of-type {
+  padding-top: 30px;
+  padding-top: 1.875rem;
+}
+/* line 18, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
-/* line 19, ../../../components/sass/sections/_portfolio.scss */
+/* line 23, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .projectImage {
   max-width: 600px;
   margin-bottom: 30px;
   margin-bottom: 1.875rem;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* line 23, ../../../components/sass/sections/_portfolio.scss */
+/* line 29, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .projectImage img {
   width: 100%;
   display: block;
 }
-/* line 30, ../../../components/sass/sections/_portfolio.scss */
+@media (min-width: 800px) {
+  /* line 23, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .projectImage {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+  /* line 37, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .projectImage.even {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: right;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+/* line 44, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .copyPreview h3 {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 600;
 }
-/* line 35, ../../../components/sass/sections/_portfolio.scss */
+/* line 49, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .copyPreview p {
   margin: 10px 0px 20.256px 0px;
   margin: 0.625rem 0rem 1.266rem 0rem;
 }
-/* line 39, ../../../components/sass/sections/_portfolio.scss */
+/* line 53, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .copyPreview button {
   width: 160px;
+  width: 10rem;
+  margin-top: 20px;
+  margin-top: 1.25rem;
+}
+@media (min-width: 1024px) {
+  /* line 53, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .copyPreview button {
+    margin-top: 30px;
+    margin-top: 1.875rem;
+  }
+}
+@media (min-width: 1280px) {
+  /* line 53, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .copyPreview button {
+    margin-top: 50px;
+    margin-top: 3.125rem;
+  }
+}
+@media (min-width: 800px) {
+  /* line 43, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .copyPreview {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: right;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
 }
 
 /* line 1, ../../../components/sass/sections/_contact.scss */
@@ -4438,11 +4505,6 @@ section#contact article form #submitButton button {
   }
 }
 /* line 135, ../../../components/sass/sections/_contact.scss */
-section#contact article form #submitButton button:focus {
-  outline: none;
-  border-color: #dddddd;
-}
-/* line 140, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button:hover {
   background-color: #666666;
 }
