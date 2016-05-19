@@ -125,13 +125,6 @@ section#contact{
 
 				button{
 					width: 100%;
-					background-color: $black;
-					color:$white;
-					border:none;
-					
-					@include transition-property(background-color);
-					@include transition-duration(0.6s);
-					@include remFontSize(height, 2.5);
 					
 					@include breakpoint($medium-large){
 						@include remFontSize(width, 10);
@@ -145,7 +138,6 @@ section#contact{
 					} //focus
 
 					&:hover{
-						cursor: pointer;
 						background-color: $grayDark;
 					} //hover	
 				}//button

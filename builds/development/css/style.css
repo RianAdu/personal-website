@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400|Orbitron|Exo+2:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron|Exo+2:400,700);
 /* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -3505,9 +3505,9 @@ body footer article:after {
 
 /* line 2, ../../../components/sass/_base.scss */
 .showSize {
-  position: absolute;
-  top: 0;
-  left: 15px;
+  position: fixed;
+  top: 15px;
+  left: 50%;
   color: #ffffff;
   font-weight: 600;
   z-index: 1000;
@@ -3609,6 +3609,27 @@ a {
   text-decoration: none;
 }
 
+/* line 86, ../../../components/sass/_base.scss */
+button {
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+  height: 40px;
+  height: 2.5rem;
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
+}
+/* line 95, ../../../components/sass/_base.scss */
+button:hover {
+  cursor: pointer;
+}
+
 /* line 1, ../../../components/sass/sections/_header.scss */
 header {
   color: #ffffff;
@@ -3630,20 +3651,24 @@ header article {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 13, ../../../components/sass/sections/_header.scss */
+/* line 12, ../../../components/sass/sections/_header.scss */
+header article.parallax {
+  background-attachment: fixed;
+}
+/* line 17, ../../../components/sass/sections/_header.scss */
 header article #hgroup {
   padding: 105.328px 0px 46.192px 0px;
   padding: 6.583rem 0rem 2.887rem 0rem;
   text-shadow: 1px 1.732px 2px rgba(0, 0, 0, 0.5);
 }
-/* line 17, ../../../components/sass/sections/_header.scss */
+/* line 21, ../../../components/sass/sections/_header.scss */
 header article #hgroup h1 {
   font-size: 105.328px;
   font-size: 6.583rem;
   font-weight: 300;
   font-family: "Orbitron";
 }
-/* line 23, ../../../components/sass/sections/_header.scss */
+/* line 27, ../../../components/sass/sections/_header.scss */
 header article #hgroup h2 {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   font-size: 22.784px;
@@ -3654,13 +3679,13 @@ header article #hgroup h2 {
   letter-spacing: 1px;
 }
 @media (min-width: 768px) {
-  /* line 23, ../../../components/sass/sections/_header.scss */
+  /* line 27, ../../../components/sass/sections/_header.scss */
   header article #hgroup h2 {
     font-size: 25.632px;
     font-size: 1.602rem;
   }
 }
-/* line 35, ../../../components/sass/sections/_header.scss */
+/* line 39, ../../../components/sass/sections/_header.scss */
 header article #hgroup h3 {
   font-weight: 300;
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
@@ -3668,30 +3693,30 @@ header article #hgroup h3 {
   font-size: 1.125rem;
 }
 @media (min-width: 768px) {
-  /* line 35, ../../../components/sass/sections/_header.scss */
+  /* line 39, ../../../components/sass/sections/_header.scss */
   header article #hgroup h3 {
     font-size: 20.256px;
     font-size: 1.266rem;
   }
 }
-/* line 43, ../../../components/sass/sections/_header.scss */
+/* line 47, ../../../components/sass/sections/_header.scss */
 header article #hgroup h3 span {
   display: block;
 }
 @media (min-width: 480px) {
-  /* line 43, ../../../components/sass/sections/_header.scss */
+  /* line 47, ../../../components/sass/sections/_header.scss */
   header article #hgroup h3 span {
     display: inline-block;
   }
 }
-/* line 51, ../../../components/sass/sections/_header.scss */
+/* line 55, ../../../components/sass/sections/_header.scss */
 header article #hgroup p {
   font-size: 73.984px;
   font-size: 4.624rem;
   margin: 0px;
   margin: 0rem;
 }
-/* line 56, ../../../components/sass/sections/_header.scss */
+/* line 60, ../../../components/sass/sections/_header.scss */
 header article #hgroup p a {
   display: inline-block;
   margin: 22.784px 0px;
@@ -4124,6 +4149,70 @@ section#about article .lengthFix {
   }
 }
 
+/* line 1, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio {
+  zoom: 1;
+}
+/* line 4, ../../../components/sass/_mixins.scss */
+section#portfolio:before, section#portfolio:after {
+  content: "";
+  display: table;
+}
+/* line 10, ../../../components/sass/_mixins.scss */
+section#portfolio:after {
+  clear: both;
+}
+/* line 5, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects {
+  zoom: 1;
+  padding: 50px 0px;
+  padding: 3.125rem 0rem;
+  border-bottom: 1px solid #dddddd;
+}
+/* line 4, ../../../components/sass/_mixins.scss */
+section#portfolio .projects:before, section#portfolio .projects:after {
+  content: "";
+  display: table;
+}
+/* line 10, ../../../components/sass/_mixins.scss */
+section#portfolio .projects:after {
+  clear: both;
+}
+/* line 10, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects:first-child {
+  color: red;
+}
+/* line 15, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects:last-child {
+  border-bottom: none;
+}
+/* line 19, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .projectImage {
+  max-width: 600px;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
+}
+/* line 23, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .projectImage img {
+  width: 100%;
+  display: block;
+}
+/* line 30, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .copyPreview h3 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+/* line 35, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .copyPreview p {
+  margin: 10px 0px 20.256px 0px;
+  margin: 0.625rem 0rem 1.266rem 0rem;
+}
+/* line 39, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .copyPreview button {
+  width: 160px;
+}
+
 /* line 1, ../../../components/sass/sections/_contact.scss */
 section#contact {
   zoom: 1;
@@ -4337,19 +4426,6 @@ section#contact article form p textarea {
 /* line 126, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button {
   width: 100%;
-  background-color: #111111;
-  color: #ffffff;
-  border: none;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
-  -moz-transition-duration: 0.6s;
-  -o-transition-duration: 0.6s;
-  -webkit-transition-duration: 0.6s;
-  transition-duration: 0.6s;
-  height: 40px;
-  height: 2.5rem;
 }
 @media (min-width: 800px) {
   /* line 126, ../../../components/sass/sections/_contact.scss */
@@ -4361,14 +4437,13 @@ section#contact article form #submitButton button {
     float: right;
   }
 }
-/* line 142, ../../../components/sass/sections/_contact.scss */
+/* line 135, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button:focus {
   outline: none;
   border-color: #dddddd;
 }
-/* line 147, ../../../components/sass/sections/_contact.scss */
+/* line 140, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button:hover {
-  cursor: pointer;
   background-color: #666666;
 }
 

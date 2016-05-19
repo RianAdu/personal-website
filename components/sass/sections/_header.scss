@@ -8,6 +8,10 @@ header {
 		@include display-flex();
 		@include align-items(center);
 		@include justify-content(center);
+
+		&.parallax{
+			background-attachment: fixed;
+		}
 		
 	
 		#hgroup {

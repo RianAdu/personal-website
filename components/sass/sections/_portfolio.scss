@@ -1,0 +1,44 @@
+section#portfolio{
+	
+	@include clearfix;
+	
+	.projects{
+		@include clearfix;
+		@include remFontSize(padding, 3.125, 0);
+		border-bottom: 1px solid $grayBorder;
+		
+		&:first-child{
+			//@include remFontSize(padding-top, 1.875);
+			color:red;
+		}
+
+		&:last-child{
+			border-bottom:none;
+		}
+		
+		.projectImage{
+		max-width: 600px;
+		@include remFontSize(margin-bottom, 1.875);
+
+			img{
+				width:100%;
+				display:block;
+			}
+		}
+
+		.copyPreview{
+			h3{
+				@include remFontSize(font-size, 1.125);
+				font-weight: $semiBold;
+			}
+
+			p{ 
+				@include remFontSize(margin, 0.625, 0, 1.266,0) 
+			}
+
+			button{
+				width: 160px;
+			}
+		}
+	}
+}

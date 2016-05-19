@@ -22,13 +22,13 @@
 			        	<i id="mobileMenuIcon" class="fa fa-bars" aria-hidden="true"></i>
 			        	<ul id="desktopMenu">
 				        	<li><a class="navButton" href="#about"><span>about</span></a></li>
-				          	<li><a class="navButton" href="#work"><span>work</span></a></li>
+				          	<li><a class="navButton" href="#portfolio"><span>portfolio</span></a></li>
 				          	<li><a class="navButton" href="#contact"><span>contact</span></a></li>
 		        		</ul>
 			      	</div>
 			      	<ul id="mobileDropDown">
 			        	<li><a class="navButton" href="#about"><span>about</span></a></li>
-			          	<li><a class="navButton" href="#work"><span>work</span></a></li>
+			          	<li><a class="navButton" href="#portfolio"><span>portfolio</span></a></li>
 			          	<li><a class="navButton" href="#contact"><span>contact</span></a></li>
 		        	</ul>
 			    </nav>
@@ -136,7 +136,39 @@
 					<h4>I'm currently learning AngularJS</h4>
 				</article>
 			</section>
-			<section class="dark" id="work"></section>
+			
+			<section class="dark" id="portfolio">
+				<article>
+					<h1>portfolio</h1>
+					<div id="medicare" class="projects">
+						<div class="projectImage">
+							<picture>
+							  <source srcset="images/medicare_mobile.png 1x, images/medicare_mobile_retina.png 2x" media="(min-width: 200px)">
+							  <img class="projectImage" srcset="images/medicare_mobile_retina.png, images/medicare_mobile_retina.png 2x" alt="Engel Völkers IT-Admin">
+							</picture>
+						</div>
+						<div class="copyPreview">
+							<h3>Medicare Hamburg</h3>
+							<p>Medicare is a mobile nursing service, located in Hamburg, Germany who takes care of elderly, sick and disabled people.</p>
+							<button>show more</button>
+						</div>
+					</div>
+					<div id="euv" class="projects">
+						<div class="projectImage">
+							<picture>
+							  <source srcset="images/EuV_mobile.png 1x, images/EuV_mobile_retina.png 2x" media="(min-width: 200px)">
+							  <img class="projectImage" srcset="images/EuV_mobile_retina.png, images/EuV_mobile_retina.png 2x" alt="Engel Völkers IT-Admin">
+							</picture>
+						</div>
+						<div class="copyPreview">
+							<h3>Engel &amp; V&ouml;lkers - IT-Admin </h3>
+							<p>The Engel &amp; V&ouml;lkers IT-Admin is an internal company tool, which is used by the company’s management and accounting department in order to create invoices and get information on users, license shops and products.</p>
+							<button>show more</button>
+						</div>
+					</div>
+				</article>
+			</section>
+
 			<section class="light" id="contact">
 				<article>
 					<h1>contact me</h1>
@@ -176,17 +208,17 @@
 					<form id="contactForm" action="post">
 						<div class="contactInfo">
 							<p>
-								<label for="yourName">Your name<sup>*</sup> <span id="yourNameAlert" class="alertMessage"></span></label>
+								<label for="yourName">Your name<span id="yourNameAlert" class="alertMessage"></span></label>
 								<input id="yourName" type="text" name="yourName" minlength="2" required />
 							</p>
 							<p>
-								<label for="yourEmail">Your email<sup>*</sup><span id="yourEmailAlert" class="alertMessage"></span> </label>
+								<label for="yourEmail">Your email<span id="yourEmailAlert" class="alertMessage"></span> </label>
 								<input id="yourEmail" type="email" name="yourEmail"required />
 							</p>
 						</div>
 						<div class="messageInfo">
 							<p>
-								<label for="yourMessage">Your message<sup>*</sup><span id="yourMessageAlert" class="alertMessage"></span> </label>
+								<label for="yourMessage">Your message<span id="yourMessageAlert" class="alertMessage"></span> </label>
 								<textarea id="yourMessage" name="yourMessage" form="contactForm" minlength="20" required ></textarea>
 							</p>
 						</div>
