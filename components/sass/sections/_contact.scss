@@ -113,7 +113,7 @@ section#contact{
 					@include remFontSize(height, 12.5);
 					
 					@include breakpoint($medium-large){
-						@include remFontSize(height, 7);
+						@include remFontSize(height, 7.0625);
 					} //breakpoint
 				} //textarea
 			} //p

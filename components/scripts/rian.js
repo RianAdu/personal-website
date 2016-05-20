@@ -10,7 +10,7 @@ $(function(){
 		setCopyYear();
 		formValidation();
 		animatedScroll(1100);
-		parallaxScroll();
+		// parallaxScroll();
 		setDarkNav();
 		$('.showMore').on('click', showProjectDetails);
 		$('#mobileMenuIcon').on('click',mobileMenu);

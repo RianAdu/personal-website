@@ -3507,7 +3507,7 @@ body footer article:after {
 .showSize {
   position: fixed;
   top: 15px;
-  left: 50%;
+  left: 30%;
   color: #ffffff;
   font-weight: 600;
   z-index: 1000;
@@ -3644,10 +3644,10 @@ header article {
   background: url("../images/header_bg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
   text-align: center;
   display: -webkit-flex;
   display: flex;
@@ -3658,7 +3658,7 @@ header article {
 }
 /* line 12, ../../../components/sass/sections/_header.scss */
 header article.parallax {
-  background-attachment: fixed;
+  background-attachment: fixed !important;
 }
 /* line 17, ../../../components/sass/sections/_header.scss */
 header article #hgroup {
@@ -4474,8 +4474,8 @@ section#contact article form p textarea {
 @media (min-width: 800px) {
   /* line 112, ../../../components/sass/sections/_contact.scss */
   section#contact article form p textarea {
-    height: 112px;
-    height: 7rem;
+    height: 113px;
+    height: 7.0625rem;
   }
 }
 @media (min-width: 800px) {
