@@ -11,7 +11,7 @@ section#about {
 			@include breakpoint($small-medium) {
 				float:right;
 				@include remFontSize(margin, 0, 0, 1.125, 0);
-			} //breakpoint
+			} //end of breakpoint
 
 			img {
 				max-width:85%;	
@@ -22,9 +22,14 @@ section#about {
 				@include breakpoint($small-medium) {
 					float: right;
 					@include remFontSize(margin, 0);
-				} //breakpoint
-			} // img
-		} //#aboutImage
+				} // end of breakpoint
+			} // end of img
+		} // end of #aboutImage
+
+		.intro {
+			@include remFontSize(font-size, 1.602);
+			@include remFontSize(line-height, 2.281);
+		} //end of intro
 
 		&#devSkills {
 			@include remFontSize(padding-top, 1.802);
@@ -32,30 +37,30 @@ section#about {
 
 			h2 {
 				@include remFontSize(margin-bottom, 2.027);
-			} //h2
+			} // end of h2
 
 			h3{
 				@include remFontSize(margin-bottom, 0.702 );
-			}//h3
+			}// end of h3
 
 			h4 {
 				clear:both;
 				font-style: italic;
-			} //h4
+			} // end of h4
 
 			ul{
 				@include remFontSize(padding-left, 1.266);
 				list-style-type: disc;
-			} //ul
+			} // end of ul
 
 			div{
 				@include remFontSize(margin-bottom,1.602);
 
 				&:last-child{
 					@include remFontSize(margin-bottom, 0);
-				} //last-child
-			} //div
-		} //#devSkills
+				} // end of last-child
+			} // end of div
+		} // end of #devSkills
 
 		.lengthFix{
 			display:none;
@@ -64,18 +69,18 @@ section#about {
 			 
 			 @include breakpoint($x-large){
 			 	display: block;
-			 } //breakpoint
-		} //.lengthFix
+			 } // end of breakpoint
+		} // end of .lengthFix
 
 		#languages {
 			@include breakpoint($small-medium) {
 				@include span(5);
-			} //breakpoint at small-medium
+			} // end of breakpoint at small-medium
 
 			@include breakpoint($x-large){
 				 @include span(4);
-			} //breakpoint at x-large
-		} //#languages
+			} // end of breakpoint at x-large
+		} // end of #languages
 
 		#techniques{
 			@include breakpoint($small-medium) {
@@ -92,42 +97,43 @@ section#about {
 			
 			@include breakpoint($small-medium) {
 				@include span(5);
-			} //breakpoint at small-medium
+			} // end of breakpoint at small-medium
 
 			@include breakpoint($x-large){
 				@include span(3 at 5);
-			} //breakpoint at x-large
-		} //#tools
+			} // end of breakpoint at x-large
+		} // end of #tools
 
 		#frameworks{
 			@include breakpoint($small-medium) {
 				@include span(7 at 6);
-			}//breakpoint at small-medium
+			}// end of breakpoint at small-medium
 
 			@include breakpoint($x-large){
 				@include span(4);
-			} //breakpoint at x-large
-		} //#frameworks
+			} // end of breakpoint at x-large
+		} // end of #frameworks
 
 		#software{
 			@include breakpoint($small-medium) {
 				@include span(5);
-			} //breakpoint at small-medium
+			} // end breakpoint at small-medium
+			
 			@include breakpoint($x-large){
 				@include span(3 at 5);
-			} //breakpoint at x-large
-		} //#software
+			} // end of breakpoint at x-large
+		} // end of #software
 
 		#cms{
 			@include breakpoint($small-medium) {
 				@include span(7 at 6);
-			} //breakpoint at small-medium
+			} // end of breakpoint at small-medium
 			@include breakpoint($x-large){
 				@include span(4 at 9);
-			} //breakpoint at x-large
-		} //#cms
-	}//article
-} //section#about
+			} // end of breakpoint at x-large
+		} // end of #cms
+	}// end of article
+} // end of section#about
 
 
 

@@ -72,10 +72,6 @@ strong {
 p {
 	@include remFontSize(margin, 1.266, 0);
 
-	&.intro {
-		@include remFontSize(font-size, 1.602);
-		@include remFontSize(line-height, 2.281);
-	} //introCopy
 } //End of p
 
 

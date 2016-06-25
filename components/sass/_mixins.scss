@@ -15,7 +15,7 @@
 @mixin fullPageBackground($image){
 	background: url($image); 
   background-repeat: no-repeat;
-  background-position:center center;
+  background-position:center center fixed;
 	-webkit-background-size: cover!important;
 	-moz-background-size: cover!important;
 	-o-background-size: cover!important;
