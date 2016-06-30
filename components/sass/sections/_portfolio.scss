@@ -22,9 +22,9 @@ section#portfolio{
 
 		.projectImage{
 			max-width: 600px;
-			@include remFontSize(margin-bottom, 1.875);
 			margin-left:auto;
 			margin-right: auto;
+			@include remFontSize(margin-bottom, 1.875);
 
 			img{
 				width:100%;
@@ -51,7 +51,6 @@ section#portfolio{
 			}
 
 			button{
-				@include remFontSize(width, 10);
 				@include remFontSize(margin-top, 1.25);
 
 				@include breakpoint($large){

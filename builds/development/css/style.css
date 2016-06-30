@@ -3434,23 +3434,24 @@ body {
   position: absolute;
   width: 100%;
   min-width: 320px;
+  z-index: 1;
 }
-/* line 7, ../../../components/sass/_layout.scss */
+/* line 8, ../../../components/sass/_layout.scss */
 body section {
   position: relative;
   padding: 20.256px 0px 100px 0px;
   padding: 1.266rem 0rem 6.25rem 0rem;
   border-bottom: 1px solid #dddddd;
 }
-/* line 12, ../../../components/sass/_layout.scss */
+/* line 13, ../../../components/sass/_layout.scss */
 body section.light {
   background-color: #ffffff;
 }
-/* line 16, ../../../components/sass/_layout.scss */
+/* line 17, ../../../components/sass/_layout.scss */
 body section.dark {
   background-color: #fafafa;
 }
-/* line 20, ../../../components/sass/_layout.scss */
+/* line 21, ../../../components/sass/_layout.scss */
 body section article {
   max-width: 90%;
   margin-left: auto;
@@ -3463,7 +3464,7 @@ body section article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 20, ../../../components/sass/_layout.scss */
+  /* line 21, ../../../components/sass/_layout.scss */
   body section article {
     max-width: 80%;
     margin-left: auto;
@@ -3476,7 +3477,7 @@ body section article:after {
     clear: both;
   }
 }
-/* line 30, ../../../components/sass/_layout.scss */
+/* line 31, ../../../components/sass/_layout.scss */
 body footer article {
   max-width: 90%;
   margin-left: auto;
@@ -3489,7 +3490,7 @@ body footer article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 30, ../../../components/sass/_layout.scss */
+  /* line 31, ../../../components/sass/_layout.scss */
   body footer article {
     max-width: 80%;
     margin-left: auto;
@@ -3530,7 +3531,7 @@ body, input, textarea, label, button {
   text-rendering: optimizeLegibility;
 }
 
-/* line 25, ../../../components/sass/_base.scss */
+/* line 26, ../../../components/sass/_base.scss */
 input, textarea, label, button {
   font-size: 16px;
   font-size: 1rem;
@@ -3538,12 +3539,12 @@ input, textarea, label, button {
   line-height: 1.424rem;
 }
 
-/* line 30, ../../../components/sass/_base.scss */
+/* line 31, ../../../components/sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 
-/* line 34, ../../../components/sass/_base.scss */
+/* line 35, ../../../components/sass/_base.scss */
 h1 {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -3555,7 +3556,7 @@ h1 {
   margin: 0rem 0rem 1.802rem 0rem;
 }
 
-/* line 43, ../../../components/sass/_base.scss */
+/* line 44, ../../../components/sass/_base.scss */
 h2 {
   font-size: 25.632px;
   font-size: 1.602rem;
@@ -3566,7 +3567,7 @@ h2 {
   font-weight: 400;
 }
 
-/* line 51, ../../../components/sass/_base.scss */
+/* line 52, ../../../components/sass/_base.scss */
 h3 {
   font-size: 20.256px;
   font-size: 1.266rem;
@@ -3575,35 +3576,38 @@ h3 {
   font-weight: 400;
 }
 
-/* line 57, ../../../components/sass/_base.scss */
+/* line 58, ../../../components/sass/_base.scss */
 h4 {
   font-weight: 400;
 }
 
-/* line 62, ../../../components/sass/_base.scss */
+/* line 63, ../../../components/sass/_base.scss */
 article h1 {
   letter-spacing: -3px;
   letter-spacing: -0.1875rem;
 }
 
-/* line 67, ../../../components/sass/_base.scss */
+/* line 68, ../../../components/sass/_base.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 72, ../../../components/sass/_base.scss */
+/* line 73, ../../../components/sass/_base.scss */
 p {
   margin: 20.256px 0px;
   margin: 1.266rem 0rem;
 }
 
-/* line 78, ../../../components/sass/_base.scss */
+/* line 79, ../../../components/sass/_base.scss */
 a {
   text-decoration: none;
 }
 
-/* line 82, ../../../components/sass/_base.scss */
+/* line 83, ../../../components/sass/_base.scss */
 button {
+  background-color: #111111;
+  color: #ffffff;
+  border: none;
   -moz-transition-property: background-color;
   -o-transition-property: background-color;
   -webkit-transition-property: background-color;
@@ -3614,18 +3618,27 @@ button {
   transition-duration: 0.6s;
   height: 40px;
   height: 2.5rem;
-  background-color: #111111;
-  color: #ffffff;
-  border: none;
+  width: 160px;
+  width: 10rem;
 }
-/* line 91, ../../../components/sass/_base.scss */
+/* line 94, ../../../components/sass/_base.scss */
 button:hover {
   cursor: pointer;
 }
-/* line 95, ../../../components/sass/_base.scss */
+/* line 98, ../../../components/sass/_base.scss */
 button:focus {
   outline: none;
   border-color: #dddddd;
+}
+/* line 103, ../../../components/sass/_base.scss */
+button a {
+  display: block;
+  color: #ffffff;
+}
+
+/* line 109, ../../../components/sass/_base.scss */
+.hide {
+  display: none;
 }
 
 /* line 1, ../../../components/sass/sections/_header.scss */
@@ -3634,9 +3647,9 @@ header {
 }
 /* line 4, ../../../components/sass/sections/_header.scss */
 header article {
-  background: url("../images/header_bg.jpg");
+  background: url("../images/main/header_bg.jpg");
   background-repeat: no-repeat;
-  background-position: center center fixed;
+  background-position: center center;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
@@ -3762,7 +3775,7 @@ header article #hgroup p a {
   background-color: #111111;
 }
 /* line 25, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar {
+.navPlaceholder nav .navbar {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -3770,28 +3783,28 @@ header article #hgroup p a {
   height: 62px;
 }
 /* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.navPlaceholder nav #navbar:after {
+.navPlaceholder nav .navbar:after {
   content: " ";
   display: block;
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 25, ../../../components/sass/sections/_navigation.scss */
-  .navPlaceholder nav #navbar {
+  .navPlaceholder nav .navbar {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     height: 80px;
   }
   /* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-  .navPlaceholder nav #navbar:after {
+  .navPlaceholder nav .navbar:after {
     content: " ";
     display: block;
     clear: both;
   }
 }
 /* line 35, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar #logo {
+.navPlaceholder nav .navbar .logo {
   float: left;
   font-family: "Orbitron";
   background-color: transparent;
@@ -3800,7 +3813,7 @@ header article #hgroup p a {
   transform: translateY(-50%);
 }
 /* line 41, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar #logo a {
+.navPlaceholder nav .navbar .logo a {
   display: inline-block;
   font-size: 36.496px;
   font-size: 2.281rem;
@@ -3809,7 +3822,7 @@ header article #hgroup p a {
   color: #ffffff;
 }
 /* line 49, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar #mobileMenuIcon {
+.navPlaceholder nav .navbar #mobileMenuIcon {
   float: right;
   font-size: 28.832px;
   font-size: 1.802rem;
@@ -3821,17 +3834,17 @@ header article #hgroup p a {
   color: #ffffff;
 }
 /* line 55, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar #mobileMenuIcon:hover {
+.navPlaceholder nav .navbar #mobileMenuIcon:hover {
   cursor: pointer;
 }
 @media (min-width: 768px) {
   /* line 49, ../../../components/sass/sections/_navigation.scss */
-  .navPlaceholder nav #navbar #mobileMenuIcon {
+  .navPlaceholder nav .navbar #mobileMenuIcon {
     display: none;
   }
 }
 /* line 62, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar #desktopMenu {
+.navPlaceholder nav .navbar #desktopMenu {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -3839,13 +3852,13 @@ header article #hgroup p a {
   float: right;
 }
 /* line 67, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar #desktopMenu li {
+.navPlaceholder nav .navbar #desktopMenu li {
   display: inline-block;
   padding: 0px 9.984px;
   padding: 0rem 0.624rem;
 }
 /* line 71, ../../../components/sass/sections/_navigation.scss */
-.navPlaceholder nav #navbar #desktopMenu li a {
+.navPlaceholder nav .navbar #desktopMenu li a {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   color: #ffffff;
   font-size: 20.256px;
@@ -3853,7 +3866,7 @@ header article #hgroup p a {
 }
 @media (min-width: 768px) {
   /* line 62, ../../../components/sass/sections/_navigation.scss */
-  .navPlaceholder nav #navbar #desktopMenu {
+  .navPlaceholder nav .navbar #desktopMenu {
     display: block;
   }
 }
@@ -3863,7 +3876,7 @@ header article #hgroup p a {
   top: 62px;
   right: 0;
   width: 100%;
-  z-index: 10000;
+  z-index: 100;
   vertical-align: bottom;
   display: none;
 }
@@ -4203,10 +4216,10 @@ section#portfolio .projects:last-child {
 /* line 23, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .projectImage {
   max-width: 600px;
-  margin-bottom: 30px;
-  margin-bottom: 1.875rem;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 /* line 29, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .projectImage img {
@@ -4248,8 +4261,6 @@ section#portfolio .projects .copyPreview p {
 }
 /* line 53, ../../../components/sass/sections/_portfolio.scss */
 section#portfolio .projects .copyPreview button {
-  width: 160px;
-  width: 10rem;
   margin-top: 20px;
   margin-top: 1.25rem;
 }
@@ -4277,6 +4288,124 @@ section#portfolio .projects .copyPreview button {
     float: right;
     padding-left: 0.83333%;
     padding-right: 0.83333%;
+  }
+}
+
+/* line 1, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay {
+  display: none;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  padding-top: 62px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 11;
+  overflow: auto;
+}
+@media (min-width: 768px) {
+  /* line 1, ../../../components/sass/sections/_portfolio_details.scss */
+  #detailOverlay {
+    padding-top: 80px;
+  }
+}
+/* line 20, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay .navPlaceholder nav {
+  background-color: #111111;
+}
+/* line 24, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay .navPlaceholder nav .navbar #portfolioBack {
+  float: right;
+  color: #ffffff;
+  font-size: 36.496px;
+  font-size: 2.281rem;
+  padding: 7.888px;
+  padding: 0.493rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  /* line 24, ../../../components/sass/sections/_portfolio_details.scss */
+  #detailOverlay .navPlaceholder nav .navbar #portfolioBack {
+    font-size: 40px;
+    font-size: 2.5rem;
+  }
+}
+/* line 34, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay .navPlaceholder nav .navbar #portfolioBack:hover {
+  cursor: pointer;
+}
+/* line 37, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay .navPlaceholder nav .navbar .logo {
+  float: left;
+  font-family: "Orbitron";
+  background-color: transparent;
+  display: inline-block;
+  color: #ffffff;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 36.496px;
+  font-size: 2.281rem;
+  padding: 7.888px;
+  padding: 0.493rem;
+}
+/* line 51, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay section {
+  text-align: center;
+  border-bottom: none;
+  padding: 40px 0px;
+  padding: 2.5rem 0rem;
+}
+@media (min-width: 800px) {
+  /* line 59, ../../../components/sass/sections/_portfolio_details.scss */
+  #detailOverlay section.detailCopy article {
+    max-width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 12, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+  #detailOverlay section.detailCopy article:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+/* line 64, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay section.detailCopy article h2 {
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 30.4px;
+  font-size: 1.9rem;
+  line-height: 36.8px;
+  line-height: 2.3rem;
+}
+/* line 73, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay section.detailImage {
+  text-align: center;
+  padding: 20.256px 5px 80px 10px;
+  padding: 1.266rem 0.3125rem 5rem 0.625rem;
+}
+/* line 77, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay section.detailImage img {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto 30px auto;
+}
+@media (min-width: 800px) {
+  /* line 84, ../../../components/sass/sections/_portfolio_details.scss */
+  #detailOverlay section.detailImage button {
+    font-size: 18px;
+    font-size: 1.125rem;
+    width: 240px;
+    width: 15rem;
+    height: 40px;
+    height: 2.5rem;
   }
 }
 

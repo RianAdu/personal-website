@@ -35,7 +35,6 @@ $(function(){
 
 
 	var mobileMenu = function(){
-			
 		//only add class transtoDark if user is still on top of the page
 		if($('nav').hasClass('darkNav')){
 			$('#mobileDropDown').slideToggle();
@@ -88,7 +87,7 @@ $(function(){
 				$('html, body').animate({
 					scrollTop: target.offset().top - (navbarHeight - 5)
 				}, duration);
-
+				
 				$(this).addClass('active');
 			}
 			
@@ -103,29 +102,29 @@ $(function(){
 	};
 	// end of  animatedScroll
 
-	var parallaxScroll = function(){
+	// var parallaxScroll = function(){
 
-		$(window).scroll(function(){
-			var wScroll = $(this).scrollTop();
-			var wWidth = $(window).width();
+	// 	$(window).scroll(function(){
+	// 		var wScroll = $(this).scrollTop();
+	// 		var wWidth = $(window).width();
 			
-			$('header > article').removeClass('parallax');
-			$('#hgroup').css({'transform':'translate(0px,0px)'});
+	// 		$('header > article').removeClass('parallax');
+	// 		$('#hgroup').css({'transform':'translate(0px,0px)'});
 
-			if(wWidth > 768) {
-				$('header > article').addClass('parallax');
+	// 		if(wWidth > 768) {
+	// 			$('header > article').addClass('parallax');
 
-				$('#hgroup').css({
-					'transform':'translate(0px,'+wScroll /12+'%)'
-				});
-			}
-		});
-	};
+	// 			$('#hgroup').css({
+	// 				'transform':'translate(0px,'+wScroll /12+'%)'
+	// 			});
+	// 		}
+	// 	});
+	// };
 
 	var showProjectDetails = function(){
 		var project = $(this).parent().parent().attr('id');
 		alert('project-id: '+project);
-	};
+	}; //end of setCopyYear
 	
 
 	var setCopyYear = function(){

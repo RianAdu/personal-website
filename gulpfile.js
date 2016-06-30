@@ -19,6 +19,7 @@ var enviroment,
 	outputDir;
 
 //distinguishing between development and production enviroment
+//to change to production enter (NODE_ENV=production gulp) in terminal
 enviroment	= process.env.NODE_ENV || 'development';
 
 if(enviroment === 'development'){

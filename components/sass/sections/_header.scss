@@ -3,7 +3,7 @@ header {
 	
 	article {
 		
-		@include fullPageBackground('../images/header_bg.jpg');
+		@include fullPageBackground('../images/main/header_bg.jpg');
 		text-align: center;
 		@include display-flex();
 		@include align-items(center);

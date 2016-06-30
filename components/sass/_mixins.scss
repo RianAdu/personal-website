@@ -15,19 +15,30 @@
 @mixin fullPageBackground($image){
 	background: url($image); 
   background-repeat: no-repeat;
-  background-position:center center fixed;
+  background-position:center center;
+  // background-attachment: fixed;
 	-webkit-background-size: cover!important;
 	-moz-background-size: cover!important;
 	-o-background-size: cover!important;
 	background-size: cover!important;
 }
 
+
 @mixin roundedCorners($value) {
 	-moz-border-radius: $value;
-    -webkit-border-radius: $value;
-    -khtml-border-radius: $value;
-    -o-border-radius:$value;
-    border-radius: $value;
+  -webkit-border-radius: $value;
+  -khtml-border-radius: $value;
+  -o-border-radius:$value;
+  border-radius: $value;
+}
+
+//creating just one rounded corner
+@mixin roundOneCorner($corner, $value){
+  -moz-border-#{$corner}-radius: $value;
+  -webkit-border-#{$corner}-radius: $value;
+  -khtml-border-#{$corner}-radius: $value;
+  -o-border-#{$corner}-radius:$value;
+  border-#{$corner}-radius: $value;
 }
 
 @mixin boxShadows($shadowColor) {
@@ -38,7 +49,8 @@
 	box-shadow: 0 8px 6px -6px $shadowColor;
 }
 
-@mixin removeWebkitStyle{ //removes input field styling from mobile deveices
+//removes input field styling from mobile devices
+@mixin removeWebkitStyle{ 
 	-webkit-appearance: none;
     -moz-appearance: none;
     -khtml-appearance:none;

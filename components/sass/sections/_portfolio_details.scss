@@ -1,0 +1,94 @@
+#detailOverlay {
+	display:none;
+	width: 100%;
+	min-width: 320px;
+	height:100%;
+	background-color: $white;
+	position: fixed;
+	padding-top: 62px; //height of navbar
+	top: 0;
+	bottom: 0;
+	left:0;
+	z-index:11;	 
+	overflow: auto;
+
+	@include breakpoint($medium){
+		padding-top: 80px; 
+	} // end of breakpoint
+
+	.navPlaceholder{
+		nav{
+			background-color: $black;
+
+			.navbar{
+				#portfolioBack{
+					float:right;
+					color:$white;
+					@include remFontSize(font-size, 2.281);
+					@include remFontSize(padding, 0.493);
+					@include valignment; 
+					
+					@include breakpoint($medium){
+						@include remFontSize(font-size, 2.5);
+					} // end of breakpoint
+					&:hover { cursor:pointer; } 
+				} //portfolioBack
+
+				.logo{
+					float:left;
+					font-family: $logoFont;
+					background-color: transparent;
+					display:inline-block;
+					color:$white;
+					@include valignment;
+					@include remFontSize(font-size, 2.281);
+					@include remFontSize(padding, 0.493);			
+				} //logo
+			} // end of navbar
+		} // end of nav
+	} // end of navPlaceholder
+
+	section{
+		
+		text-align: center;
+		border-bottom: none;
+		@include remFontSize(padding, 2.5, 0);
+
+		&.detailCopy{
+
+			article{
+				@include breakpoint($medium-large){
+					@include container(65%);
+				} //end of breakpoint
+
+				h2{
+					font-weight: $semiBold;
+					margin-bottom:0;
+					@include remFontSize(font-size, 1.9);
+					@include remFontSize(line-height, 2.3);
+				} // end of h2
+			}// of article	
+		} // end of detailCopy
+		
+		&.detailImage{
+			text-align: center;	
+			@include remFontSize(padding, 1.266, 0.3125, 5, 0.625);
+
+			img{
+				display:block;
+				width:100%;
+				max-width:$large;
+				margin: 0 auto 30px auto;
+			} // end of img
+
+			button{
+				
+				@include breakpoint($medium-large){
+					@include remFontSize(font-size, 1.125);
+					@include remFontSize(width, 15);
+					@include remFontSize(height, 2.5);
+				} // end of breakpoint
+			} // end of button
+		} //end of detailImage
+	} // end of section	
+} // end of overlay
