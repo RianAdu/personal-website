@@ -4,9 +4,19 @@ section#about {
 	article {
 		
 		#aboutImage{
+			opacity: 0;
 			max-width: 400px;
 			margin: 36.491px auto 32.437px auto;
 			margin: 2.281rem auto 2.027rem auto;
+			
+			@include transform(scale(0,0));
+			@include transition(all 1s ease-in-out);
+
+			&.isVisible{
+				opacity: 1;
+				@include transform(scale(1,1));
+				
+			}
 
 			@include breakpoint($small-medium) {
 				float:right;

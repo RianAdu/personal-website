@@ -11,6 +11,7 @@ $(function(){
 		setCopyYear();
 		formValidation();
 		animatedScroll(1100);
+		landingElement();
 		// parallaxScroll();
 		setDarkNav();
 		$('.showMore').on('click', showProjectDetails);
@@ -72,7 +73,7 @@ $(function(){
 	var animatedScroll = function(duration){
 		
 		$('a[href^="#"]:not(#enterButton)').on('click', function(e){
-			var navbarHeight = $('#navbar').height();
+			var navbarHeight = $('#mainNavbar').height();
 
 			$('#mobileDropDown').slideUp(); //close the menu
 			$('.navButton').removeClass('active');
@@ -100,6 +101,44 @@ $(function(){
 			}
 		});
 	};
+
+	var landingElement = function(){ // else condition has to be removed when finishing the project
+		$(window).scroll(function(){
+			var wScroll = $(window).scrollTop();
+
+			//about Image animation
+			if(wScroll > $('#hgroup h2').offset().top){
+				$('#aboutImage').addClass('isVisible');
+			}
+			else{
+				$('#aboutImage').removeClass('isVisible');
+			}
+
+			//medicare project image animation	
+			if (wScroll > $('#portfolio').offset().top - ($(window).height() / 1.5)) {
+				$('#medicareImg.projectImage').addClass('isVisible');
+			}
+			else{
+				$('#medicareImg.projectImage').removeClass('isVisible');
+			} 
+
+			//euv project image animation
+			if (wScroll > $('#euv.projects').offset().top - ($(window).height() / 1.3)) {
+				$('#euvImg.projectImage').addClass('isVisible');
+			}
+			else{
+				$('#euvImg.projectImage').removeClass('isVisible');
+			}
+
+			//emails project image animation
+			if (wScroll > $('#emails.projects').offset().top - ($(window).height() / 1.3)) {
+				$('#emailsImg.projectImage').addClass('isVisible');
+			}
+			else{
+				$('#emailsImg.projectImage').removeClass('isVisible');
+			}	
+		});
+	};
 	// end of  animatedScroll
 
 	// var parallaxScroll = function(){
@@ -120,6 +159,8 @@ $(function(){
 	// 		}
 	// 	});
 	// };
+
+
 
 	var showProjectDetails = function(){
 		var project = $(this).parent().parent().attr('id');
