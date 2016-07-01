@@ -5,6 +5,10 @@ body {
 	min-width: 320px;
 	z-index:1;
 
+	&.noScroll{
+		overflow: hidden;
+	}
+
 	section {
 		position:relative;
 		@include remFontSize(padding, 1.266, 0, 6.25, 0);

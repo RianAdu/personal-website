@@ -14,9 +14,8 @@ section#about {
 
 			&.isVisible{
 				opacity: 1;
-				@include transform(scale(1,1));
-				
-			}
+				@include transform(scale(1,1));			
+			} // end of isVisible
 
 			@include breakpoint($small-medium) {
 				float:right;

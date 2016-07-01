@@ -17,6 +17,11 @@
 	} // end of breakpoint
 
 	.navPlaceholder{
+		position:fixed;
+		top:0;
+		z-index:10;
+		width: 100%;
+
 		nav{
 			background-color: $black;
 
@@ -67,6 +72,10 @@
 					@include remFontSize(font-size, 1.9);
 					@include remFontSize(line-height, 2.3);
 				} // end of h2
+
+				span{
+					display: inline-block;
+				}
 			}// of article	
 		} // end of detailCopy
 		

@@ -52,8 +52,8 @@
 //removes input field styling from mobile devices
 @mixin removeWebkitStyle{ 
 	-webkit-appearance: none;
-    -moz-appearance: none;
-    -khtml-appearance:none;
+  -moz-appearance: none;
+  -khtml-appearance:none;
 	-o-appearance:none;
     appearance: none;
 }

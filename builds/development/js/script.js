@@ -5,8 +5,11 @@ var picturefill = require('picturefill'); //get responsive image polyfill
 //RianAdu functions
 $(function(){
 
+	var projectJSON;
+
 	var init = function(){
 		showWidth();
+		getProjects();
 		introHeight();
 		setCopyYear();
 		formValidation();
@@ -26,6 +29,18 @@ $(function(){
 		});
 	};
 	// end of showWidth
+
+	//calling function to get project data
+	var getProjects = function(){
+		$.ajax({
+			type:'GET',
+			url:'../inc/projects.json',
+			dataType:'json',
+			success:function(data){
+				projectJSON = data;
+			}// end of success		
+		}); //end of ajax
+	}; // end of getProjects
 
 
 	var introHeight = function(){
@@ -80,7 +95,6 @@ $(function(){
 
 			var target = $( $(this).attr('href') );
 			var hashTag = target.selector;
-			
 					
 			if(target.length){
 				e.preventDefault();
@@ -163,10 +177,60 @@ $(function(){
 
 
 	var showProjectDetails = function(){
-		var project = $(this).parent().parent().attr('id');
-		alert('project-id: '+project);
-	}; //end of setCopyYear
-	
+		$('#detailsOverlay').remove();
+		var detailsMarkup;
+		var clickedProject = $(this).parent().parent().attr('id');
+
+		//iterating through data object
+		for(var i in projectJSON){
+			var projects = projectJSON[i];
+			
+			for(var x in projects){
+				var project = projects[x];
+
+				if(x == clickedProject){
+					detailsMarkup = createProjectDetails(project);
+				}// end of if-clause
+			} // end of 2nd for-loop
+		} // end of 1st for-loop
+		finalizeDetails(detailsMarkup);	
+	}; //end of showProjectDetails
+
+	var createProjectDetails = function(project){
+		var html = '<div id="detailOverlay"><div class="navPlaceholder"><nav><div class="navbar">'+
+		'<div class="logo">.ra</div><i id="portfolioBack" class="fa fa-arrow-circle-left" aria-hidden="true"></i>'+
+		'</div></nav></div><section class="detailCopy"><article>'+
+		'<h2>'+project.title+'</h2>'+project.copy+'<h3>Technologies</h3>';
+
+		//adding the technologies
+		for(var i in project.technologies){
+			var technologie = project.technologies[i];
+			html +='<span>'+technologie+'</span>'; 
+		}
+		//adding image markup
+		html += '</article></section><section class="dark detailImage">'+
+		'<img src="images/pf_details/'+project.id+'_details.jpg" alt="'+project.title+'">';
+
+		//creating button to link to external page 
+		if(project.url){
+			html +='<button><a href="'+project.url+'" target="_blank">visit website</a></button>';
+		}
+		html +='</section></div>';
+
+		return html;
+	}// end of createProjectDetails
+
+	var finalizeDetails = function(detailView){
+		$('section#portfolio').append(detailView);
+		$('#detailOverlay').fadeIn('slow');
+		$('body').addClass('noScroll');
+		$('#portfolioBack').on('click', function(){
+			$('#detailOverlay').fadeOut('slow', function(){
+				$('body').removeClass('noScroll');
+				$(this).remove();
+			});
+		});
+	};
 
 	var setCopyYear = function(){
 		var date = new Date();
