@@ -1,103 +1,152 @@
 #detailOverlay {
 	display:none;
-	width: 100%;
-	min-width: 320px;
-	height:100%;
-	background-color: $white;
 	position: fixed;
-	padding-top: 62px; //height of navbar
-	top: 0;
-	bottom: 0;
 	left:0;
-	z-index:11;	 
-	overflow: auto;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:11;	
+	min-width: 320px;	
+	background-color: $white;
+	overflow: scroll;	
+	-webkit-overflow-scrolling: touch;
+	@include remFontSize(padding-top, 3.125);
+	
+	
+	.detailsContainer{
 
-	@include breakpoint($medium){
-		padding-top: 80px; 
-	} // end of breakpoint
+		.navPlaceholder{
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:12;
+			width: 100%;
 
-	.navPlaceholder{
-		position:fixed;
-		top:0;
-		z-index:10;
-		width: 100%;
+			nav{
+				background-color: transparent;
 
-		nav{
-			background-color: $black;
+				.navbar{
+					#portfolioBack{
+						float:right;
+						color:$black;
+						@include remFontSize(font-size, 2.281);
+						@include remFontSize(padding, 0.493);
+						@include valignment; 
+						
+						@include breakpoint($medium){
+							@include remFontSize(font-size, 3.5);
+						} // end of breakpoint
+						&:hover { cursor:pointer; } 
+					} //portfolioBack
 
-			.navbar{
-				#portfolioBack{
-					float:right;
-					color:$white;
-					@include remFontSize(font-size, 2.281);
-					@include remFontSize(padding, 0.493);
-					@include valignment; 
-					
+					.logo{
+						float:left;
+						font-family: $logoFont;
+						background-color: transparent;
+						display:inline-block;
+						color:$white;
+						@include valignment;
+						@include remFontSize(font-size, 2.281);
+						@include remFontSize(padding, 0.493);			
+					} //logo
+				} // end of navbar
+			} // end of nav
+		} // end of navPlaceholder
+
+		section{
+			
+			text-align: center;
+			border-bottom: none;
+			@include remFontSize(padding, 1, 0, 2.5, 0);
+
+			&.detailCopy{
+
+				article{
+					@include container(90%);
+
 					@include breakpoint($medium){
-						@include remFontSize(font-size, 2.5);
-					} // end of breakpoint
-					&:hover { cursor:pointer; } 
-				} //portfolioBack
+					@include container(80%);
+				}// end breakpoint
 
-				.logo{
-					float:left;
-					font-family: $logoFont;
-					background-color: transparent;
-					display:inline-block;
-					color:$white;
-					@include valignment;
-					@include remFontSize(font-size, 2.281);
-					@include remFontSize(padding, 0.493);			
-				} //logo
-			} // end of navbar
-		} // end of nav
-	} // end of navPlaceholder
+					@include breakpoint($medium-large){
+						@include container(65%);
+					} //end of breakpoint
 
-	section{
-		
-		text-align: center;
-		border-bottom: none;
-		@include remFontSize(padding, 2.5, 0);
+					h2{
+						font-weight: $semiBold;
+						margin-bottom:0;
+						@include remFontSize(font-size, 1.6);
+						@include remFontSize(line-height, 2.3);
 
-		&.detailCopy{
+						@include breakpoint($medium-large){
+							@include remFontSize(font-size, 1.9);
+						}
+						
+						span{
+							display: block;
 
-			article{
-				@include breakpoint($medium-large){
-					@include container(65%);
-				} //end of breakpoint
+							@include breakpoint($small){
+								display: inline-block;
+							}
+						}
+					} // end of h2
 
-				h2{
-					font-weight: $semiBold;
-					margin-bottom:0;
-					@include remFontSize(font-size, 1.9);
-					@include remFontSize(line-height, 2.3);
-				} // end of h2
+					h3{
+						@include remFontSize(margin-top,1.875);
+					}
 
-				span{
-					display: inline-block;
-				}
-			}// of article	
-		} // end of detailCopy
-		
-		&.detailImage{
-			text-align: center;	
-			@include remFontSize(padding, 1.266, 0.3125, 5, 0.625);
+					span{
+						@include remFontSize(padding, 0 , 0.375);
+						display: inline-block;
+					}
+				}// of article	
+			} // end of detailCopy
+			
+			&.detailImage{
+				text-align: center;	
+				@include remFontSize(padding, 1.266, 0.3125, 3.75, 0.625);
 
-			img{
-				display:block;
-				width:100%;
-				max-width:$large;
-				margin: 0 auto 30px auto;
-			} // end of img
-
-			button{
+				img{
+					display:block;
+					width:100%;
+					max-width:$large;
+					margin: 0 auto 30px auto;
+				} // end of img
 				
-				@include breakpoint($medium-large){
-					@include remFontSize(font-size, 1.125);
-					@include remFontSize(width, 15);
-					@include remFontSize(height, 2.5);
-				} // end of breakpoint
-			} // end of button
-		} //end of detailImage
-	} // end of section	
+				.backContainer{
+
+				@include container(90%);
+
+				@include breakpoint($medium){
+					@include container(80%);
+				} // end of Breakpoint
+					button{
+						display: inline-block;
+					
+						@include breakpoint($medium-large){
+							@include remFontSize(font-size, 1.125);
+							@include remFontSize(width, 15);
+							@include remFontSize(height, 2.5);
+						} // end of breakpoint
+					} // end of button
+			
+					.goBack {
+						float: right;
+						@include remFontSize(font-size, 2.281);
+
+						@include breakpoint($medium){
+								@include remFontSize(font-size, 3.5);
+						} // end of breakpoint
+
+						&:hover { cursor:pointer; }
+					} // end of goBack
+				}
+				
+			} //end of detailImage
+
+			&.dark {
+				background-color: $grayLight;
+			} //.dark
+		} // end of section	
+	}	// detailsContainer
 } // end of overlay

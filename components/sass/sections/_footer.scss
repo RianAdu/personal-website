@@ -18,6 +18,13 @@ footer {
 				float: left;
 			}
 
+			#rightsReserved{
+				display: block;
+
+				@include breakpoint($small){
+					display: inline-block;
+				}
+			}
 		}
 	}
 }

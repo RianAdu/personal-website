@@ -2,42 +2,51 @@
 body {
 	position:absolute;
 	width:100%;
+	height:100%;
 	min-width: 320px;
-	z-index:1;
 
 	&.noScroll{
 		overflow: hidden;
 	}
 
-	section {
-		position:relative;
-		@include remFontSize(padding, 1.266, 0, 6.25, 0);
-		border-bottom: 1px solid $grayBorder;
+	#pageContainer{
 		
-		&.light {
-			background-color: $white;
-		} //.light
+		//noscroll is for avoiding double scrollbars when overlay has been generated.
+		&.noScroll{
+			overflow: scroll;
+			-webkit-overflow-scrolling: touch;
+		}
 
-		&.dark {
-			background-color: $grayLight;
-		} //.dark
+		section {
+			position:relative;
+			@include remFontSize(padding, 1.266, 0, 6.25, 0);
+			border-bottom: 1px solid $grayBorder;
+			
+			&.light {
+				background-color: $white;
+			} //.light
+
+			&.dark {
+				background-color: $grayLight;
+			} //.dark
+			
+			article{
+				@include container(90%);
+
+				@include breakpoint($medium){
+					@include container(80%);
+				}//breakpoint
+			} //article
+		} //section
 		
-		article{
-			@include container(90%);
+		footer {
+			article{
+				@include container(90%);
 
-			@include breakpoint($medium){
-				@include container(80%);
-			}//breakpoint
-		} //article
-	} //section
-	
-	footer {
-		article{
-			@include container(90%);
-
-			@include breakpoint($medium){
-				@include container(80%);
-			}//breakpoint
-		} //article
+				@include breakpoint($medium){
+					@include container(80%);
+				}//breakpoint
+			} //article
+		}
 	}
 } //body

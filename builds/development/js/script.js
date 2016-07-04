@@ -19,6 +19,7 @@ $(function(){
 		setDarkNav();
 		$('.showMore').on('click', showProjectDetails);
 		$('#mobileMenuIcon').on('click',mobileMenu);
+
 	}; // end of init
 
 	var showWidth = function(){
@@ -46,6 +47,7 @@ $(function(){
 	var introHeight = function(){
 		var height = $(window).height();
 		$('header article').css('height', height);
+
 	};
 	// end of introHeight
 
@@ -174,6 +176,15 @@ $(function(){
 	// 	});
 	// };
 
+	var preventScroll = function(){
+		$(window).scroll(function(e){
+			var overlayActive = $('#pageContainer.noScroll');
+
+			if(overlayActive.length > 0){
+				e.preventDefault();
+			}
+		});
+	};
 
 
 	var showProjectDetails = function(){
@@ -193,12 +204,12 @@ $(function(){
 				}// end of if-clause
 			} // end of 2nd for-loop
 		} // end of 1st for-loop
-		finalizeDetails(detailsMarkup);	
+		finalizeDetails(detailsMarkup, clickedProject);	
 	}; //end of showProjectDetails
 
 	var createProjectDetails = function(project){
-		var html = '<div id="detailOverlay"><div class="navPlaceholder"><nav><div class="navbar">'+
-		'<div class="logo">.ra</div><i id="portfolioBack" class="fa fa-arrow-circle-left" aria-hidden="true"></i>'+
+		var html = '<div id="detailOverlay"><div class="detailsContainer"> <div class="navPlaceholder"><nav><div class="navbar">'+
+		'<div class="logo">.ra</div><i id="portfolioBack" class="fa fa-arrow-circle-left goBack" aria-hidden="true"></i>'+
 		'</div></nav></div><section class="detailCopy"><article>'+
 		'<h2>'+project.title+'</h2>'+project.copy+'<h3>Technologies</h3>';
 
@@ -213,24 +224,42 @@ $(function(){
 
 		//creating button to link to external page 
 		if(project.url){
-			html +='<button><a href="'+project.url+'" target="_blank">visit website</a></button>';
+			html +='<div class="backContainer"><button><a href="'+project.url+'" target="_blank">visit website</a></button>'+
+			'<i class="fa fa-arrow-circle-left goBack" aria-hidden="true"></i></div>';
 		}
-		html +='</section></div>';
+		else {
+			html += '<div class="backContainer"><i class="fa fa-arrow-circle-left goBack" aria-hidden="true"></i></div>';
+		}
+		html +='</section></div></div>';
 
 		return html;
 	}// end of createProjectDetails
 
-	var finalizeDetails = function(detailView){
-		$('section#portfolio').append(detailView);
-		$('#detailOverlay').fadeIn('slow');
-		$('body').addClass('noScroll');
-		$('#portfolioBack').on('click', function(){
-			$('#detailOverlay').fadeOut('slow', function(){
-				$('body').removeClass('noScroll');
+	var finalizeDetails = function(detailView, id){
+		$('#pageContainer').before(detailView);
+		$('#pageContainer, body').addClass('noScroll');
+		$('#detailOverlay').fadeIn();
+		
+		$('.goBack').on('click', function(){
+			$('#pageContainer, body').removeClass('noScroll');
+
+			goBackToProject(id);
+
+			$('#detailOverlay').fadeOut('slow', function(){	
 				$(this).remove();
 			});
 		});
 	};
+
+	// this function scrools the body back to the last clicked Project,after the overlay has been
+	var goBackToProject = function(viewedProject){
+		console.log('back to project called');
+		console.log(viewedProject);
+
+		var navbarHeight = $('#mainNavbar').height();
+		$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (navbarHeight - 5));
+	}; // end of goBackToProject fix
+		
 
 	var setCopyYear = function(){
 		var date = new Date();
