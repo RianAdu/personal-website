@@ -10,8 +10,8 @@
 	background-color: $white;
 	overflow: scroll;	
 	-webkit-overflow-scrolling: touch;
-	@include remFontSize(padding-top, 3.125);
 	
+	@include remFontSize(padding-top, 3.125);
 	
 	.detailsContainer{
 

@@ -65,14 +65,15 @@ $(function(){
 	//end of mobileMenu
 
 	var setDarkNav = function(){
-		var intro = $('#hgroup');
+		var intro = $('#hgroup h1');
 		var navbar = $('nav');
+		var navHeight= $('.navbar').height()+20;
 		var introPos = intro.offset().top;
 
 		$(window).scroll(function(){
 			var wScroll = $(window).scrollTop();
 			
-			if(wScroll >= introPos){
+			if(wScroll >= introPos - navHeight){
 				navbar.addClass('darkNav');
 			}
 			else{
@@ -123,36 +124,36 @@ $(function(){
 			var wScroll = $(window).scrollTop();
 
 			//about Image animation
-			if(wScroll > $('#hgroup h2').offset().top){
+			if(wScroll > $('#hgroup h1').offset().top){
 				$('#aboutImage').addClass('isVisible');
 			}
-			else{
-				$('#aboutImage').removeClass('isVisible');
-			}
+			// else{
+			// 	$('#aboutImage').removeClass('isVisible');
+			// }
 
 			//medicare project image animation	
 			if (wScroll > $('#portfolio').offset().top - ($(window).height() / 1.5)) {
 				$('#medicareImg.projectImage').addClass('isVisible');
 			}
-			else{
-				$('#medicareImg.projectImage').removeClass('isVisible');
-			} 
+			// else{
+			// 	$('#medicareImg.projectImage').removeClass('isVisible');
+			// } 
 
 			//euv project image animation
 			if (wScroll > $('#euv.projects').offset().top - ($(window).height() / 1.3)) {
 				$('#euvImg.projectImage').addClass('isVisible');
 			}
-			else{
-				$('#euvImg.projectImage').removeClass('isVisible');
-			}
+			// else{
+			// 	$('#euvImg.projectImage').removeClass('isVisible');
+			// }
 
 			//emails project image animation
 			if (wScroll > $('#emails.projects').offset().top - ($(window).height() / 1.3)) {
 				$('#emailsImg.projectImage').addClass('isVisible');
 			}
-			else{
-				$('#emailsImg.projectImage').removeClass('isVisible');
-			}	
+			// else{
+			// 	$('#emailsImg.projectImage').removeClass('isVisible');
+			// }	
 		});
 	};
 	// end of  animatedScroll
@@ -220,7 +221,7 @@ $(function(){
 		}
 		//adding image markup
 		html += '</article></section><section class="dark detailImage">'+
-		'<img src="images/pf_details/'+project.id+'_details.jpg" alt="'+project.title+'">';
+		'<img src="images/pf_details/'+project.id+'_details_.jpg" alt="'+project.title+'">';
 
 		//creating button to link to external page 
 		if(project.url){
@@ -237,11 +238,11 @@ $(function(){
 
 	var finalizeDetails = function(detailView, id){
 		$('#pageContainer').before(detailView);
-		$('#pageContainer, body').addClass('noScroll');
+		$('body').addClass('noScroll');
 		$('#detailOverlay').fadeIn();
 		
 		$('.goBack').on('click', function(){
-			$('#pageContainer, body').removeClass('noScroll');
+			$('body').removeClass('noScroll');
 
 			goBackToProject(id);
 

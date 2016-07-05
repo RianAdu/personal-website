@@ -15,33 +15,39 @@ header {
 		
 	
 		#hgroup {
-			@include remFontSize(padding, 6.583, 0, 2.887, 0);
-			@include text-shadow(1px 1.732px 2px rgba(0, 0, 0, 0.5));
+			@include remFontSize(padding, 9, 0, 2.887, 0);
+
+			@include breakpoint($small + 1){
+				padding: 0;
+			}
 			
 			h1{
-				@include remFontSize(font-size, 6.583);
-				font-weight: $light;
+				@include remFontSize(font-size, 2.1);
+				@include remFontSize(line-height, 2.5);
+				@include remFontSize(letter-spacing, 0.3125);
+				@include remFontSize(padding, 0.625, 0, 0.4, 0);
+				@include remFontSize(margin, 0, 0, 1, 0);
+
+				font-weight: $bold;
 				font-family: $logoFont;
+				text-transform: uppercase;
+				border-top: 1px solid $white;
+				border-bottom: 1px solid $white;
+
+				@include breakpoint($medium){
+					@include remFontSize(font-size, 2.7);
+					@include remFontSize(padding, 1.5, 0, 1, 0);
+				}
 			}//h1
 
 			h2{
-				font-family:$headerFont;
-				@include remFontSize(font-size, 1.424);
-				@include remFontSize(margin, 1.266, 0, 0.702, 0);
-				text-transform: uppercase;
-				letter-spacing: 1px;
-
-				@include breakpoint($medium){
-					@include remFontSize(font-size, 1.602);
-				}
-			} //h2
-
-			h3{
 				font-weight: $light;
 				font-family:$headerFont;
-				@include remFontSize(font-size, 1.125);
+				margin-bottom: 0;
+				@include remFontSize(font-size, 1.25);
+				
 				@include breakpoint($medium){
-					@include remFontSize(font-size, 1.266);
+					@include remFontSize(font-size, 1.375);
 				} //breakpoint
 
 				span{
@@ -51,9 +57,9 @@ header {
 						display:inline-block;
 					} //breakpoint
 				}//span
-			}//h3
+			}//h2
 			p{
-				@include remFontSize(font-size, 4.624);
+				@include remFontSize(font-size, 4);
 				@include remFontSize(margin, 0);
 				
 

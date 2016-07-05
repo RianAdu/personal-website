@@ -35,6 +35,7 @@
 			.logo{
 				float:left;
 				font-family: $logoFont;
+				font-weight: $normal;
 				background-color: transparent;
 				@include valignment;
 				
@@ -71,7 +72,7 @@
 					a{
 						font-family: $headerFont;
 						color:$white;
-						@include remFontSize(font-size, 1.266);
+						@include remFontSize(font-size, 1.375);
 					} //a
 				} //li
 

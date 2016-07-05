@@ -1,5 +1,5 @@
 //google fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron|Exo+2:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron:400,700|Exo+2:300,400,700);
 @include border-box-sizing; // uses border box sizing like the old IE
 
 //color palette
@@ -12,7 +12,7 @@ $grayDark	: #666666;
 $grayBorder	: #dddddd;
 
 //social colors
-$linkedin	: #007bb5;
+$linkedin	: #007bb5; 
 $twitter	: #55acee; 
 $instagram	: #cc3399;
 $github		: $black;
@@ -20,11 +20,12 @@ $github		: $black;
 //font stacks
 $mainFont	: 'Open Sans', Helvetica, Arial, sans-serif;
 $headerFont	: 'Exo 2', Helvetica, Arial, sans-serif;
-$logoFont	: 'Orbitron'; //look for alternative Fonts to complete font stack!!!
+$logoFont	: 'Orbitron', Helvetica, Arial, sans-serif;; //look for alternative Fonts to complete font stack!!!
 
 //font-weights
 $light		: 300;
 $normal		: 400;
+$thick		: 500;
 $semiBold	: 600;
 $bold		: 700;
 $heavy		: 800;

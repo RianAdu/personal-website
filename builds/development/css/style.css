@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron|Exo+2:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron:400,700|Exo+2:300,400,700);
 /* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -3440,27 +3440,27 @@ body {
 body.noScroll {
   overflow: hidden;
 }
-/* line 15, ../../../components/sass/_layout.scss */
-body #pageContainer.noScroll {
+/* line 12, ../../../components/sass/_layout.scss */
+body #pageContainer {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
-/* line 20, ../../../components/sass/_layout.scss */
+/* line 16, ../../../components/sass/_layout.scss */
 body #pageContainer section {
   position: relative;
   padding: 20.256px 0px 100px 0px;
   padding: 1.266rem 0rem 6.25rem 0rem;
   border-bottom: 1px solid #dddddd;
 }
-/* line 25, ../../../components/sass/_layout.scss */
+/* line 21, ../../../components/sass/_layout.scss */
 body #pageContainer section.light {
   background-color: #ffffff;
 }
-/* line 29, ../../../components/sass/_layout.scss */
+/* line 25, ../../../components/sass/_layout.scss */
 body #pageContainer section.dark {
   background-color: #fafafa;
 }
-/* line 33, ../../../components/sass/_layout.scss */
+/* line 29, ../../../components/sass/_layout.scss */
 body #pageContainer section article {
   max-width: 90%;
   margin-left: auto;
@@ -3473,7 +3473,7 @@ body #pageContainer section article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 33, ../../../components/sass/_layout.scss */
+  /* line 29, ../../../components/sass/_layout.scss */
   body #pageContainer section article {
     max-width: 80%;
     margin-left: auto;
@@ -3486,7 +3486,7 @@ body #pageContainer section article:after {
     clear: both;
   }
 }
-/* line 43, ../../../components/sass/_layout.scss */
+/* line 39, ../../../components/sass/_layout.scss */
 body #pageContainer footer article {
   max-width: 90%;
   margin-left: auto;
@@ -3499,7 +3499,7 @@ body #pageContainer footer article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 43, ../../../components/sass/_layout.scss */
+  /* line 39, ../../../components/sass/_layout.scss */
   body #pageContainer footer article {
     max-width: 80%;
     margin-left: auto;
@@ -3526,10 +3526,11 @@ body #pageContainer footer article:after {
 /* line 12, ../../../components/sass/_base.scss */
 html {
   font-size: 100%;
+  -webkit-text-size-adjust: 100%;
   height: 100%;
 }
 
-/* line 17, ../../../components/sass/_base.scss */
+/* line 18, ../../../components/sass/_base.scss */
 body, input, textarea, label, button {
   font-size: 18px;
   font-size: 1.125rem;
@@ -3541,7 +3542,7 @@ body, input, textarea, label, button {
   text-rendering: optimizeLegibility;
 }
 
-/* line 26, ../../../components/sass/_base.scss */
+/* line 27, ../../../components/sass/_base.scss */
 input, textarea, label, button {
   font-size: 16px;
   font-size: 1rem;
@@ -3549,12 +3550,12 @@ input, textarea, label, button {
   line-height: 1.424rem;
 }
 
-/* line 31, ../../../components/sass/_base.scss */
+/* line 32, ../../../components/sass/_base.scss */
 h1, h2, h3, h4, h5, h6 {
   font-style: normal;
 }
 
-/* line 35, ../../../components/sass/_base.scss */
+/* line 36, ../../../components/sass/_base.scss */
 h1 {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -3566,7 +3567,7 @@ h1 {
   margin: 0rem 0rem 1.802rem 0rem;
 }
 
-/* line 44, ../../../components/sass/_base.scss */
+/* line 45, ../../../components/sass/_base.scss */
 h2 {
   font-size: 25.632px;
   font-size: 1.602rem;
@@ -3577,7 +3578,7 @@ h2 {
   font-weight: 400;
 }
 
-/* line 52, ../../../components/sass/_base.scss */
+/* line 53, ../../../components/sass/_base.scss */
 h3 {
   font-size: 20.256px;
   font-size: 1.266rem;
@@ -3586,34 +3587,34 @@ h3 {
   font-weight: 400;
 }
 
-/* line 58, ../../../components/sass/_base.scss */
+/* line 59, ../../../components/sass/_base.scss */
 h4 {
   font-weight: 400;
 }
 
-/* line 63, ../../../components/sass/_base.scss */
+/* line 64, ../../../components/sass/_base.scss */
 article h1 {
   letter-spacing: -3px;
   letter-spacing: -0.1875rem;
 }
 
-/* line 68, ../../../components/sass/_base.scss */
+/* line 69, ../../../components/sass/_base.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 73, ../../../components/sass/_base.scss */
+/* line 74, ../../../components/sass/_base.scss */
 p {
   margin: 20.256px 0px;
   margin: 1.266rem 0rem;
 }
 
-/* line 79, ../../../components/sass/_base.scss */
+/* line 80, ../../../components/sass/_base.scss */
 a {
   text-decoration: none;
 }
 
-/* line 83, ../../../components/sass/_base.scss */
+/* line 84, ../../../components/sass/_base.scss */
 button {
   background-color: #111111;
   color: #ffffff;
@@ -3631,22 +3632,22 @@ button {
   width: 160px;
   width: 10rem;
 }
-/* line 94, ../../../components/sass/_base.scss */
+/* line 95, ../../../components/sass/_base.scss */
 button:hover {
   cursor: pointer;
 }
-/* line 98, ../../../components/sass/_base.scss */
+/* line 99, ../../../components/sass/_base.scss */
 button:focus {
   outline: none;
   border-color: #dddddd;
 }
-/* line 103, ../../../components/sass/_base.scss */
+/* line 104, ../../../components/sass/_base.scss */
 button a {
   display: block;
   color: #ffffff;
 }
 
-/* line 109, ../../../components/sass/_base.scss */
+/* line 110, ../../../components/sass/_base.scss */
 .hide {
   display: none;
 }
@@ -3678,66 +3679,75 @@ header article.parallax {
 }
 /* line 17, ../../../components/sass/sections/_header.scss */
 header article #hgroup {
-  padding: 105.328px 0px 46.192px 0px;
-  padding: 6.583rem 0rem 2.887rem 0rem;
-  text-shadow: 1px 1.732px 2px rgba(0, 0, 0, 0.5);
+  padding: 144px 0px 46.192px 0px;
+  padding: 9rem 0rem 2.887rem 0rem;
 }
-/* line 21, ../../../components/sass/sections/_header.scss */
+@media (min-width: 481px) {
+  /* line 17, ../../../components/sass/sections/_header.scss */
+  header article #hgroup {
+    padding: 0;
+  }
+}
+/* line 24, ../../../components/sass/sections/_header.scss */
 header article #hgroup h1 {
-  font-size: 105.328px;
-  font-size: 6.583rem;
-  font-weight: 300;
-  font-family: "Orbitron";
-}
-/* line 27, ../../../components/sass/sections/_header.scss */
-header article #hgroup h2 {
-  font-family: "Exo 2", Helvetica, Arial, sans-serif;
-  font-size: 22.784px;
-  font-size: 1.424rem;
-  margin: 20.256px 0px 11.232px 0px;
-  margin: 1.266rem 0rem 0.702rem 0rem;
+  font-size: 33.6px;
+  font-size: 2.1rem;
+  line-height: 40px;
+  line-height: 2.5rem;
+  letter-spacing: 5px;
+  letter-spacing: 0.3125rem;
+  padding: 10px 0px 6.4px 0px;
+  padding: 0.625rem 0rem 0.4rem 0rem;
+  margin: 0px 0px 16px 0px;
+  margin: 0rem 0rem 1rem 0rem;
+  font-weight: 700;
+  font-family: "Orbitron", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 @media (min-width: 768px) {
-  /* line 27, ../../../components/sass/sections/_header.scss */
-  header article #hgroup h2 {
-    font-size: 25.632px;
-    font-size: 1.602rem;
+  /* line 24, ../../../components/sass/sections/_header.scss */
+  header article #hgroup h1 {
+    font-size: 43.2px;
+    font-size: 2.7rem;
+    padding: 24px 0px 16px 0px;
+    padding: 1.5rem 0rem 1rem 0rem;
   }
 }
-/* line 39, ../../../components/sass/sections/_header.scss */
-header article #hgroup h3 {
+/* line 43, ../../../components/sass/sections/_header.scss */
+header article #hgroup h2 {
   font-weight: 300;
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  font-size: 1.125rem;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-size: 1.25rem;
 }
 @media (min-width: 768px) {
-  /* line 39, ../../../components/sass/sections/_header.scss */
-  header article #hgroup h3 {
-    font-size: 20.256px;
-    font-size: 1.266rem;
+  /* line 43, ../../../components/sass/sections/_header.scss */
+  header article #hgroup h2 {
+    font-size: 22px;
+    font-size: 1.375rem;
   }
 }
-/* line 47, ../../../components/sass/sections/_header.scss */
-header article #hgroup h3 span {
+/* line 53, ../../../components/sass/sections/_header.scss */
+header article #hgroup h2 span {
   display: block;
 }
 @media (min-width: 480px) {
-  /* line 47, ../../../components/sass/sections/_header.scss */
-  header article #hgroup h3 span {
+  /* line 53, ../../../components/sass/sections/_header.scss */
+  header article #hgroup h2 span {
     display: inline-block;
   }
 }
-/* line 55, ../../../components/sass/sections/_header.scss */
+/* line 61, ../../../components/sass/sections/_header.scss */
 header article #hgroup p {
-  font-size: 73.984px;
-  font-size: 4.624rem;
+  font-size: 64px;
+  font-size: 4rem;
   margin: 0px;
   margin: 0rem;
 }
-/* line 60, ../../../components/sass/sections/_header.scss */
+/* line 66, ../../../components/sass/sections/_header.scss */
 header article #hgroup p a {
   display: inline-block;
   margin: 22.784px 0px;
@@ -3816,13 +3826,14 @@ header article #hgroup p a {
 /* line 35, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar .logo {
   float: left;
-  font-family: "Orbitron";
+  font-family: "Orbitron", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   background-color: transparent;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
-/* line 41, ../../../components/sass/sections/_navigation.scss */
+/* line 42, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar .logo a {
   display: inline-block;
   font-size: 36.496px;
@@ -3831,7 +3842,7 @@ header article #hgroup p a {
   padding: 0.493rem;
   color: #ffffff;
 }
-/* line 49, ../../../components/sass/sections/_navigation.scss */
+/* line 50, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar #mobileMenuIcon {
   float: right;
   font-size: 28.832px;
@@ -3843,17 +3854,17 @@ header article #hgroup p a {
   transform: translateY(-50%);
   color: #ffffff;
 }
-/* line 55, ../../../components/sass/sections/_navigation.scss */
+/* line 56, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar #mobileMenuIcon:hover {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  /* line 49, ../../../components/sass/sections/_navigation.scss */
+  /* line 50, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav .navbar #mobileMenuIcon {
     display: none;
   }
 }
-/* line 62, ../../../components/sass/sections/_navigation.scss */
+/* line 63, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar #desktopMenu {
   position: relative;
   top: 50%;
@@ -3861,26 +3872,26 @@ header article #hgroup p a {
   display: none;
   float: right;
 }
-/* line 67, ../../../components/sass/sections/_navigation.scss */
+/* line 68, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar #desktopMenu li {
   display: inline-block;
   padding: 0px 9.984px;
   padding: 0rem 0.624rem;
 }
-/* line 71, ../../../components/sass/sections/_navigation.scss */
+/* line 72, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar #desktopMenu li a {
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   color: #ffffff;
-  font-size: 20.256px;
-  font-size: 1.266rem;
+  font-size: 22px;
+  font-size: 1.375rem;
 }
 @media (min-width: 768px) {
-  /* line 62, ../../../components/sass/sections/_navigation.scss */
+  /* line 63, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav .navbar #desktopMenu {
     display: block;
   }
 }
-/* line 85, ../../../components/sass/sections/_navigation.scss */
+/* line 86, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown {
   position: absolute;
   top: 62px;
@@ -3891,12 +3902,12 @@ header article #hgroup p a {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 85, ../../../components/sass/sections/_navigation.scss */
+  /* line 86, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav #mobileDropDown {
     display: none !important;
   }
 }
-/* line 98, ../../../components/sass/sections/_navigation.scss */
+/* line 99, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li {
   padding: 12.64px 0px;
   padding: 0.79rem 0rem;
@@ -3904,15 +3915,15 @@ header article #hgroup p a {
   border-bottom: 1px solid #333333;
   text-align: center;
 }
-/* line 104, ../../../components/sass/sections/_navigation.scss */
+/* line 105, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li:first-child {
   border-top: 1px solid #333333;
 }
-/* line 105, ../../../components/sass/sections/_navigation.scss */
+/* line 106, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li:last-child {
   border-bottom: none;
 }
-/* line 107, ../../../components/sass/sections/_navigation.scss */
+/* line 108, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li a {
   font-size: 25.632px;
   font-size: 1.602rem;
@@ -4391,7 +4402,7 @@ section#portfolio .projects .copyPreview button {
 /* line 42, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer .navPlaceholder nav .navbar .logo {
   float: left;
-  font-family: "Orbitron";
+  font-family: "Orbitron", Helvetica, Arial, sans-serif;
   background-color: transparent;
   display: inline-block;
   color: #ffffff;
