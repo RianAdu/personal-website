@@ -44,6 +44,10 @@
 					@include remFontSize(font-size, 2.281);
 					@include remFontSize(padding, 0.493);
 					color:$white;
+
+					@include breakpoint($medium){
+						@include remFontSize(font-size, 2.887);
+					}//end of breakpoint
 				} //a
 			} //logo
 
