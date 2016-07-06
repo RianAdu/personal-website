@@ -3,16 +3,13 @@ header {
 	
 	article {
 		
-		@include fullPageBackground('../images/main/header_bg.jpg');
 		text-align: center;
 		@include display-flex();
 		@include align-items(center);
 		@include justify-content(center);
-
-		&.parallax{
-			background-attachment: fixed!important;
-		}
 		
+		&.desktop{ @include fullPageBackgroundFixed('../images/main/header_bg.jpg'); }
+		&.iOS { @include fullPageBackground('../images/main/header_bg.jpg'); }
 	
 		#hgroup {
 			@include remFontSize(padding, 9, 0, 2.887, 0);
@@ -28,11 +25,11 @@ header {
 				@include remFontSize(padding, 0.625, 0, 0.3125, 0);
 				@include remFontSize(margin, 0, 0, 1, 0);
 
-				font-weight: $bold;
+				font-weight: $normal;
 				font-family: $logoFont;
 				text-transform: uppercase;
-				border-top: 1px solid $white;
-				border-bottom: 1px solid $white;
+				border-top: 2px solid $white;
+				border-bottom: 2px solid $white;
 
 				@include breakpoint($small){
 					@include remFontSize(padding, 1.5, 0, 1, 0);
@@ -40,10 +37,6 @@ header {
 
 				@include breakpoint($medium){
 					@include remFontSize(font-size, 2.4);
-				}
-
-				.highlight{
-					font-weight:$normal;
 				}
 			}//h1
 

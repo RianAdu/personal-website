@@ -8,7 +8,8 @@ $(function(){
 	var projectJSON;
 
 	var init = function(){
-		showWidth();
+
+		chooseBackground();
 		getProjects();
 		introHeight();
 		setCopyYear();
@@ -19,17 +20,19 @@ $(function(){
 		setDarkNav();
 		$('.showMore').on('click', showProjectDetails);
 		$('#mobileMenuIcon').on('click',mobileMenu);
-
 	}; // end of init
 
-	var showWidth = function(){
-		$(window).on('resize', function(){
-			var width = $(window).width();
-			$('.showSize').text(width+' px');
-			introHeight();
-		});
+	//function for checking if device is iOS and to not set the background fixed if it is
+	var chooseBackground = function(){
+		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+		if(iOS){
+			$('header article').addClass('iOS');
+		}
+		else {
+			$('header article').addClass('desktop');
+		}
 	};
-	// end of showWidth
 
 	//calling function to get project data
 	var getProjects = function(){
@@ -285,8 +288,10 @@ $(function(){
 		});
 	};
 	// end of form validation
-
-	init();
+	
+	$(document).ready(function(){
+		init();
+	});	
 });
 	
 /*!

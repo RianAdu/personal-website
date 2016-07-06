@@ -15,7 +15,7 @@
 		<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />	 -->
 	</head>
 	<body>
-		<div id="pageContainer">
+		<div class="pageContainer">
 			<!-- <div class="showSize"></div> -->
 			<div class="navPlaceholder">
 				<nav>
@@ -38,9 +38,9 @@
 			<header id="intro">
 				<article>
 					<div id="hgroup">
-					<h1><span class="highlight">flo</span>rian adu&#8209;<span class="highlight">gyamfi<span></h1>
+					<h1>florian adu&#8209;gyamfi</h1>
 					<h2>
-						<span>#frontenddeveloper</span> <span>#technerd</span> <span>#thinker</span><span>#rian_adu</span>
+						<span>#frontenddeveloper</span> <span>#technerd</span> <span>#thinker</span>
 					</h2>
 					
 					<p>
@@ -155,7 +155,7 @@
 							<div class="copyPreview">
 								<h3>Medicare Hamburg</h3>
 								<p>Medicare is a mobile nursing service, located in Hamburg, Germany, which takes care of elderly, sick and disabled people.</p>
-								<button class="showMore">show more</button>
+								<button class="showMore">Show more</button>
 							</div>
 						</div>
 						<div id="euv" class="projects">
@@ -166,9 +166,9 @@
 								</picture>
 							</div>
 							<div class="copyPreview">
-								<h3>Engel &amp; V&ouml;lkers - IT-Admin </h3>
+								<h3>Engel &amp; V&ouml;lkers IT-Admin </h3>
 								<p>The Engel &amp;V&ouml;lkers IT-Admin is a tool, which is used by the company’s management and accounting department in order to create invoices and get information on users, license shops and products.</p>
-								<button class="showMore">show more</button>
+								<button class="showMore">Show more</button>
 							</div>
 						</div>
 						<div id="emails" class="projects">
@@ -181,7 +181,7 @@
 							<div class="copyPreview">
 								<h3>Responsive HTML E-mails</h3>
 								<p>In one of my previous jobs, my main responsibility was to code and test responsive e-mail newsletters. </p>
-								<button class="showMore">show more</button>
+								<button class="showMore">Show more</button>
 							</div>
 						</div>
 					</article>
@@ -224,33 +224,36 @@
 					<article>
 						<h2>Send me an e-mail</h2>
 						
-						<form id="contactForm" action="post">
+						<form id="contactForm" action="https://formspree.io/rian_adu@icloud.com" method="post">
 							<div class="contactInfo">
 								<p>
-									<label for="yourName">your name<span id="yourNameAlert" class="alertMessage"></span></label>
+									<label for="yourName">Your name<span id="yourNameAlert" class="alertMessage"></span></label>
 									<input id="yourName" type="text" name="yourName" minlength="2" required />
 								</p>
 								<p>
-									<label for="yourEmail">your e-mail<span id="yourEmailAlert" class="alertMessage"></span> </label>
+									<label for="yourEmail">Your e-mail<span id="yourEmailAlert" class="alertMessage"></span> </label>
 									<input id="yourEmail" type="email" name="yourEmail"required />
 								</p>
 							</div>
 							<div class="messageInfo">
 								<p>
-									<label for="yourMessage">your message<span id="yourMessageAlert" class="alertMessage"></span> </label>
+									<label for="yourMessage">Your message<span id="yourMessageAlert" class="alertMessage"></span> </label>
 									<textarea id="yourMessage" name="yourMessage" form="contactForm" minlength="20" required ></textarea>
 								</p>
 							</div>
 							<div id="submitButton">
-								<button type="submit" name="submit">send message</button>
+								<button type="submit" name="submit">Send message</button>
 							</div>
+							<input type="text" name="_gotcha" style="display:none" /> <!-- spam filter input field-->
+							<input type="hidden" name="_subject" value="Message from your Portfolio Website" />
+							<input type="hidden" name="_next" value="thankyou.html" /> <!--setting the page after submission-->
 						</form>
 					</article>
 				</section>
 			</main>
 			<footer>
 				<article>
-					<p>&copy;<span id="thisYear"></span>&nbsp; Florian Adu-Gyamfi | Rian Adu &nbsp; <span id="rightsReserved">All rights reserved.</span></p>
+					<p>&copy;<span id="thisYear"></span>&nbsp; Florian Adu-Gyamfi &nbsp; <span id="rightsReserved">All rights reserved.</span></p>
 				</article>	
 			</footer>
 		</div>	

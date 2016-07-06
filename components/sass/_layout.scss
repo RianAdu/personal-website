@@ -9,7 +9,11 @@ body {
 		overflow: hidden;
 	}
 
-	#pageContainer{
+	&.dark {
+		background-color: $grayLight;
+	} //.dark
+
+	.pageContainer{
 		overflow: scroll;
 		-webkit-overflow-scrolling: touch;
 
