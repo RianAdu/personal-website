@@ -8,7 +8,6 @@ $(function(){
 	var historyFlag; //using this flag in order to set browser history when overlay is visible
 
 	var init = function(){
-
 		chooseBackground();
 		getProjects();
 		landingPageHeight();
@@ -18,14 +17,18 @@ $(function(){
 		landingElement();
 		setDarkNav();
 		$('.showMore').on('click', showProjectDetails);
+		
 		$('#mobileMenuIcon').on('click',mobileMenu);
 
 		$(window).on('orientationchange, resize', function(){
 			landingPageHeight();
 		});
 
+		//user can hit the back button when project details are visible
 		$(window).on('popstate', function(){
-			fixOverlayHistory(historyFlag);
+			if(historyFlag !== undefined){
+				closeDetails(historyFlag);
+			}
 		});
 	}; // end of init
 
@@ -228,14 +231,10 @@ $(function(){
 		$('#detailOverlay').fadeOut('slow', function(){	
 			$(this).remove();
 		});
+
+		historyFlag = undefined; //setting the flag undefined so that popstate only calls this function when neccessary
 	 }// end of closeDetails 
 
-
-	var fixOverlayHistory = function(){
-		if($('#detailOverlay')) {
-			closeDetails(historyFlag);
-		}
-	}; // end of fixOverlayHistory
 
 	// this function scrools the body back to the last clicked Project,after the overlay has been closed
 	var goBackToProject = function(viewedProject){
