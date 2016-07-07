@@ -197,7 +197,12 @@ $(function(){
 
 		//adding image markup
 		html += '</article></section><section class="dark detailImage">'+
-		'<img src="images/pf_details/'+project.id+'_details_.jpg" alt="'+project.title+'">';
+		'<picture><!--[if IE 9]><video style="display: none;"><![endif]-->'+
+		'<source srcset="images/pf_details/'+project.id+'_details_large.jpg" media="(min-width: 768px)">'+
+		'<source srcset="images/pf_details/'+project.id+'_details_small.jpg" media="(min-width: 200px)">'+
+		'<!--[if IE 9]></video><![endif]-->'+
+		'<img srcset="images/pf_details/'+project.id+'_details_large.jpg" alt="'+project.title+'"></picture>';
+
 
 		//creating button to link to external page 
 		if(project.url){

@@ -4764,30 +4764,30 @@ section#contact article form p input, section#contact article form p textarea {
   border: 1px solid #111111;
   border-radius: 0;
 }
-/* line 104, ../../../components/sass/sections/_contact.scss */
+/* line 103, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input:focus, section#contact article form p textarea:focus {
   outline: none;
   border-color: #dddddd;
 }
-/* line 110, ../../../components/sass/sections/_contact.scss */
+/* line 109, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input {
   padding: 5px 0px;
   padding: 0.3125rem 0rem;
 }
-/* line 112, ../../../components/sass/sections/_contact.scss */
+/* line 111, ../../../components/sass/sections/_contact.scss */
 section#contact article form p textarea {
   height: 200px;
   height: 12.5rem;
 }
 @media (min-width: 800px) {
-  /* line 112, ../../../components/sass/sections/_contact.scss */
+  /* line 111, ../../../components/sass/sections/_contact.scss */
   section#contact article form p textarea {
     height: 113px;
     height: 7.0625rem;
   }
 }
 @media (min-width: 800px) {
-  /* line 121, ../../../components/sass/sections/_contact.scss */
+  /* line 120, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4798,12 +4798,12 @@ section#contact article form p textarea {
     padding-right: 0.83333%;
   }
 }
-/* line 126, ../../../components/sass/sections/_contact.scss */
+/* line 125, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button {
   width: 100%;
 }
 @media (min-width: 800px) {
-  /* line 126, ../../../components/sass/sections/_contact.scss */
+  /* line 125, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton button {
     width: 160px;
     width: 10rem;
