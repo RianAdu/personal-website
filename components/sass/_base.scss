@@ -1,12 +1,3 @@
-//showWindowSize
-.showSize{
-	position:fixed;
-	top:15px;
-	left:30%;
-	color:$white;
-	font-weight: $semiBold;
-	z-index: 1000;
-}
 //content main layout settings
 //=========
 html {
@@ -86,11 +77,9 @@ button{
 	background-color: $black;
 	color:$white;
 	border:none;
-
 	@include remFontSize(height, 2.5);
 	@include remFontSize(width, 10);
 	
-
 	&:hover{
 		cursor: pointer;
 	}

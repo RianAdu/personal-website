@@ -28,16 +28,15 @@
 
 				.navbar{
 					#portfolioBack{
-						float:right;
+						float: right;
 						color:$black;
-						@include remFontSize(font-size, 2.281);
+						@include valignment;
 						@include remFontSize(padding, 0.493);
-						@include valignment; 
-						
-						@include breakpoint($medium){
-							@include remFontSize(font-size, 3.5);
-						} // end of breakpoint
-						&:hover { cursor:pointer; } 
+						@include remFontSize(font-size, 2.281);
+
+						&:hover { 
+							cursor:pointer; 
+						} 
 					} //portfolioBack
 
 					.logo{
@@ -122,27 +121,33 @@
 					@include container(80%);
 				} // end of Breakpoint
 					button{
-						display: inline-block;
+						display:block;
+						margin-right: auto;
+						margin-left: auto;
+
+						@include breakpoint($small){
+							display: inline-block;
+							margin-left: 0;
+							margin-right: 0;
+						}
 					
 						@include breakpoint($medium-large){
 							@include remFontSize(font-size, 1.125);
 							@include remFontSize(width, 15);
 							@include remFontSize(height, 2.5);
 						} // end of breakpoint
+
+						&.secondButton {
+							@include remFontSize(margin-top, 1.25);
+
+							@include breakpoint($small){
+							@include remFontSize(margin-left, 1.25);
+							margin-top:0;
+						}
+
+						} // end of goBack
 					} // end of button
-			
-					.goBack {
-						float: right;
-						@include remFontSize(font-size, 2.281);
-
-						@include breakpoint($medium){
-								@include remFontSize(font-size, 3.5);
-						} // end of breakpoint
-
-						&:hover { cursor:pointer; }
-					} // end of goBack
-				}
-				
+				}	
 			} //end of detailImage
 
 			&.dark {

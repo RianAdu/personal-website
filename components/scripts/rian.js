@@ -184,7 +184,7 @@ $(function(){
 
 	var createProjectDetails = function(project){
 		var html = '<div id="detailOverlay"><div class="detailsContainer"> <div class="navPlaceholder"><nav><div class="navbar">'+
-		'<div class="logo">.ra</div><i id="portfolioBack" class="fa fa-arrow-circle-left goBack" aria-hidden="true"></i>'+
+		'<div class="logo">.ra</div><i id="portfolioBack" class="fa fa-times closeProjectButton" aria-hidden="true"></i>'+
 		'</div></nav></div><section class="detailCopy"><article>'+
 		'<h2>'+project.title+'</h2>'+project.copy+'<h3>Technologies</h3>';
 
@@ -206,10 +206,10 @@ $(function(){
 		//creating button to link to external page 
 		if(project.url){
 			html +='<div class="backContainer"><button><a href="'+project.url+'" target="_blank">visit website</a></button>'+
-			'<i class="fa fa-arrow-circle-left goBack" aria-hidden="true"></i></div>';
+			'<button class="closeProjectButton secondButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp; close project</button></div>';
 		}
 		else {
-			html += '<div class="backContainer"><i class="fa fa-arrow-circle-left goBack" aria-hidden="true"></i></div>';
+			html += '<div class="backContainer"><button class="closeProjectButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp; close project</button></div>';
 		}
 		html +='</section></div></div>';
 
@@ -223,7 +223,7 @@ $(function(){
 		$('#detailOverlay').fadeIn();
 		setBrowserHistory(tag);
 		
-		$('.goBack').on('click', function(){	
+		$('.closeProjectButton').on('click', function(){	
 			return closeDetails(id); //use return to prevent function to be called right away
 		});
 	}; // end of finalizeDetails
