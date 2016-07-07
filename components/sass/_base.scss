@@ -87,9 +87,9 @@ button{
 	color:$white;
 	border:none;
 
-	@include transition-duration(0.6s);
 	@include remFontSize(height, 2.5);
 	@include remFontSize(width, 10);
+	
 
 	&:hover{
 		cursor: pointer;

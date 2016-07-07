@@ -20,7 +20,7 @@
 			<div class="navPlaceholder">
 				<nav>
 			    	<div id="mainNavbar" class="navbar">
-			      		<div class="logo"><a href="#intro">.ra</a></div>
+			      		<div class="logo"><a href="index.html">.ra</a></div>
 			        	<i id="mobileMenuIcon" class="fa fa-bars" aria-hidden="true"></i>
 			        	<ul id="desktopMenu">
 				        	<li><a class="navButton" href="#about"><span>about</span></a></li>
@@ -35,7 +35,7 @@
 		        	</ul>
 			    </nav>
 			</div>
-			<header id="intro">
+			<header id="landinPage">
 				<article>
 					<div id="hgroup">
 					<h1>florian adu&#8209;gyamfi</h1>
@@ -62,9 +62,9 @@
 							  <img srcset="images/main/Florian_Adu_Gyamfi_mobile_retina.jpg, images/main/Florian_Adu_Gyamfi_mobile_retina.jpg 2x" alt="Florian Adu-Gyamfi, Front End Developer, Rian Adu">
 							</picture>
 						</div>
-							<p id="greeting" class="intro">Hi there,</p>
+							
 							<p class="intro">
-								I’m Florian Adu&#8209;Gyamfi, a passionate Front End Developer from Hamburg, Germany who is currently based in Toronto, Canada.
+								<span id="greeting">Hi there,</span><br/ >I’m Florian Adu&#8209;Gyamfi, a passionate Front End Developer from Hamburg, Germany who is currently based in Toronto, Canada.
 							</p>
 							<p>
 								During my vocational training as a certified Screen Designer I met the World Wide Web for the first time and instantly fell in love with the Internet and its endless possibilities. At that time I also learned the fundamentals of Web Design.
@@ -227,18 +227,18 @@
 						<form id="contactForm" action="https://formspree.io/rian_adu@icloud.com" method="post">
 							<div class="contactInfo">
 								<p>
-									<label for="yourName">Your name<span id="yourNameAlert" class="alertMessage"></span></label>
-									<input id="yourName" type="text" name="yourName" minlength="2" required />
+									<label for="name">Your name<span id="nameAlert" class="alertMessage"></span></label>
+									<input id="name" type="text" name="name" minlength="2" required />
 								</p>
 								<p>
-									<label for="yourEmail">Your e-mail<span id="yourEmailAlert" class="alertMessage"></span> </label>
-									<input id="yourEmail" type="email" name="yourEmail"required />
+									<label for="email">Your e-mail<span id="emailAlert" class="alertMessage"></span> </label>
+									<input id="email" type="email" name="email"required />
 								</p>
 							</div>
 							<div class="messageInfo">
 								<p>
-									<label for="yourMessage">Your message<span id="yourMessageAlert" class="alertMessage"></span> </label>
-									<textarea id="yourMessage" name="yourMessage" form="contactForm" minlength="20" required ></textarea>
+									<label for="message">Your message<span id="messageAlert" class="alertMessage"></span> </label>
+									<textarea id="message" name="message" form="contactForm" minlength="20" required ></textarea>
 								</p>
 							</div>
 							<div id="submitButton">
