@@ -15,7 +15,7 @@
 	@include remFontSize(padding-top, 3.125);
 	
 	.detailsContainer{
-
+		min-height: 101%; //fixes the iOS overlay scrolling issue of body still scrolling when overlay is visible		
 		.navPlaceholder{
 			position:absolute;
 			top:0;
@@ -59,6 +59,10 @@
 			border-bottom: none;
 			@include remFontSize(padding, 1, 0, 2.5, 0);
 
+			&.dark {
+				background-color: $grayLight;
+			} //.dark
+
 			&.detailCopy{
 
 				article{
@@ -80,20 +84,20 @@
 
 						@include breakpoint($medium-large){
 							@include remFontSize(font-size, 1.9);
-						}
+						} // end breakpoint
 						
 						span{
 							display: block;
 
 							@include breakpoint($small){
 								display: inline-block;
-							}
-						}
+							} // end breakpoint
+						} // end span
 					} // end of h2
 
 					h3{
 						@include remFontSize(margin-top,1.875);
-					}
+					} // end of H3
 
 					span{
 						@include remFontSize(padding, 0 , 0.1875);
@@ -115,21 +119,22 @@
 				
 				.backContainer{
 
-				@include container(90%);
+					@include container(90%);
 
-				@include breakpoint($medium){
-					@include container(80%);
-				} // end of Breakpoint
+					@include breakpoint($medium){
+						@include container(80%);
+					} // end of Breakpoint
+					
 					button{
 						display:block;
 						margin-right: auto;
 						margin-left: auto;
 
-						@include breakpoint($small){
+						@include breakpoint($small){ // change values for two button next to each other
 							display: inline-block;
 							margin-left: 0;
 							margin-right: 0;
-						}
+						} // end of breakpoint
 					
 						@include breakpoint($medium-large){
 							@include remFontSize(font-size, 1.125);
@@ -137,22 +142,17 @@
 							@include remFontSize(height, 2.5);
 						} // end of breakpoint
 
-						&.secondButton {
+						&.secondButton { // specific css for second button
 							@include remFontSize(margin-top, 1.25);
 
 							@include breakpoint($small){
-							@include remFontSize(margin-left, 1.25);
-							margin-top:0;
-						}
-
+								@include remFontSize(margin-left, 1.25);
+								margin-top:0;
+							} //end of breakpoint
 						} // end of goBack
 					} // end of button
 				}	
 			} //end of detailImage
-
-			&.dark {
-				background-color: $grayLight;
-			} //.dark
 		} // end of section	
 	}	// detailsContainer
 } // end of overlay

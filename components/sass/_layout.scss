@@ -7,6 +7,8 @@ body {
 	
 	&.noScroll{
 		overflow: hidden;
+		-webkit-overflow-scrolling: touch;
+		z-index: 1;
 	}
 
 	&.dark {
@@ -14,8 +16,6 @@ body {
 	} //.dark
 
 	.pageContainer{
-		// overflow: scroll;
-		// -webkit-overflow-scrolling: touch;
 
 		section {
 			position:relative;

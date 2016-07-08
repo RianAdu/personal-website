@@ -205,11 +205,11 @@ $(function(){
 
 		//creating button to link to external page 
 		if(project.url){
-			html +='<div class="backContainer"><button><a href="'+project.url+'" target="_blank">visit website</a></button>'+
-			'<button class="closeProjectButton secondButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp; close project</button></div>';
+			html +='<div class="backContainer"><button><a href="'+project.url+'" target="_blank">Visit website</a></button>'+
+			'<button class="closeProjectButton secondButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project</button></div>';
 		}
 		else {
-			html += '<div class="backContainer"><button class="closeProjectButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp; close project</button></div>';
+			html += '<div class="backContainer"><button class="closeProjectButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project</button></div>';
 		}
 		html +='</section></div></div>';
 

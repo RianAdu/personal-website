@@ -3439,8 +3439,10 @@ body {
 /* line 8, ../../../components/sass/_layout.scss */
 body.noScroll {
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
 }
-/* line 12, ../../../components/sass/_layout.scss */
+/* line 14, ../../../components/sass/_layout.scss */
 body.dark {
   background-color: #fafafa;
 }
@@ -4368,6 +4370,10 @@ section#portfolio .projects .copyPreview button {
   padding-top: 50px;
   padding-top: 3.125rem;
 }
+/* line 17, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay .detailsContainer {
+  min-height: 101%;
+}
 /* line 19, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer .navPlaceholder {
   position: absolute;
@@ -4418,7 +4424,11 @@ section#portfolio .projects .copyPreview button {
   padding: 16px 0px 40px 0px;
   padding: 1rem 0rem 2.5rem 0rem;
 }
-/* line 64, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 62, ../../../components/sass/sections/_portfolio_details.scss */
+#detailOverlay .detailsContainer section.dark {
+  background-color: #fafafa;
+}
+/* line 68, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailCopy article {
   max-width: 90%;
   margin-left: auto;
@@ -4431,7 +4441,7 @@ section#portfolio .projects .copyPreview button {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 64, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 68, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailCopy article {
     max-width: 80%;
     margin-left: auto;
@@ -4445,7 +4455,7 @@ section#portfolio .projects .copyPreview button {
   }
 }
 @media (min-width: 800px) {
-  /* line 64, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 68, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailCopy article {
     max-width: 65%;
     margin-left: auto;
@@ -4458,7 +4468,7 @@ section#portfolio .projects .copyPreview button {
     clear: both;
   }
 }
-/* line 75, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 79, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailCopy article h2 {
   font-weight: 600;
   margin-bottom: 0;
@@ -4468,47 +4478,47 @@ section#portfolio .projects .copyPreview button {
   line-height: 2.3rem;
 }
 @media (min-width: 800px) {
-  /* line 75, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 79, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailCopy article h2 {
     font-size: 30.4px;
     font-size: 1.9rem;
   }
 }
-/* line 85, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 89, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailCopy article h2 span {
   display: block;
 }
 @media (min-width: 480px) {
-  /* line 85, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 89, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailCopy article h2 span {
     display: inline-block;
   }
 }
-/* line 94, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 98, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailCopy article h3 {
   margin-top: 30px;
   margin-top: 1.875rem;
 }
-/* line 98, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 102, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailCopy article span {
   padding: 0px 3px;
   padding: 0rem 0.1875rem;
   display: inline-block;
 }
-/* line 105, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 109, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailImage {
   text-align: center;
   padding: 20.256px 5px 60px 10px;
   padding: 1.266rem 0.3125rem 3.75rem 0.625rem;
 }
-/* line 109, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 113, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailImage img {
   display: block;
   width: 100%;
   max-width: 1024px;
   margin: 0 auto 30px auto;
 }
-/* line 116, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 120, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailImage .backContainer {
   max-width: 90%;
   margin-left: auto;
@@ -4521,7 +4531,7 @@ section#portfolio .projects .copyPreview button {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 116, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 120, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailImage .backContainer {
     max-width: 80%;
     margin-left: auto;
@@ -4534,14 +4544,14 @@ section#portfolio .projects .copyPreview button {
     clear: both;
   }
 }
-/* line 123, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 128, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailImage .backContainer button {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 480px) {
-  /* line 123, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 128, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailImage .backContainer button {
     display: inline-block;
     margin-left: 0;
@@ -4549,7 +4559,7 @@ section#portfolio .projects .copyPreview button {
   }
 }
 @media (min-width: 800px) {
-  /* line 123, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 128, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailImage .backContainer button {
     font-size: 18px;
     font-size: 1.125rem;
@@ -4559,22 +4569,18 @@ section#portfolio .projects .copyPreview button {
     height: 2.5rem;
   }
 }
-/* line 140, ../../../components/sass/sections/_portfolio_details.scss */
+/* line 145, ../../../components/sass/sections/_portfolio_details.scss */
 #detailOverlay .detailsContainer section.detailImage .backContainer button.secondButton {
   margin-top: 20px;
   margin-top: 1.25rem;
 }
 @media (min-width: 480px) {
-  /* line 140, ../../../components/sass/sections/_portfolio_details.scss */
+  /* line 145, ../../../components/sass/sections/_portfolio_details.scss */
   #detailOverlay .detailsContainer section.detailImage .backContainer button.secondButton {
     margin-left: 20px;
     margin-left: 1.25rem;
     margin-top: 0;
   }
-}
-/* line 153, ../../../components/sass/sections/_portfolio_details.scss */
-#detailOverlay .detailsContainer section.dark {
-  background-color: #fafafa;
 }
 
 /* line 1, ../../../components/sass/sections/_contact.scss */
