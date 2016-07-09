@@ -180,7 +180,7 @@ $(function(){
 		} // end of 1st for-loop
 		finalizeDetails(detailsMarkup, clickedProject);	
 	}; //end of showProjectDetails
-
+	
 
 	var createProjectDetails = function(project){
 		var html = '<div id="detailOverlay"><div class="detailsContainer"> <div class="navPlaceholder"><nav><div class="navbar">'+
@@ -196,11 +196,11 @@ $(function(){
 
 		//adding image markup
 		html += '</article></section><section class="dark detailImage">'+
-		'<picture><!--[if IE 9]><video style="display: none;"><![endif]-->'+
+		'<picture><!--[if gte IE 9]><video style="display: none;"><![endif]-->'+
 		'<source srcset="images/pf_details/'+project.id+'_details_large.jpg" media="(min-width: 768px)">'+
 		'<source srcset="images/pf_details/'+project.id+'_details_small.jpg" media="(min-width: 200px)">'+
-		'<!--[if IE 9]></video><![endif]-->'+
-		'<img srcset="images/pf_details/'+project.id+'_details_large.jpg" alt="'+project.title+'"></picture>';
+		'<!--[if gte IE 9]></video><![endif]-->'+
+		'<img src="images/pf_details/'+project.id+'_details_large.jpg" srcset="images/pf_details/'+project.id+'_details_large.jpg" alt="'+project.alt+'"></picture>';
 
 
 		//creating button to link to external page 

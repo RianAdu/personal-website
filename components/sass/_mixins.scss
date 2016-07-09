@@ -19,6 +19,7 @@
   // background-attachment: fixed;
 	-webkit-background-size: cover!important;
 	-moz-background-size: cover!important;
+  -ms-background-size: cover!important;
 	-o-background-size: cover!important;
 	background-size: cover!important;
 }
@@ -30,6 +31,7 @@
   background-attachment: fixed;
   -webkit-background-size: cover!important;
   -moz-background-size: cover!important;
+  -ms-background-size: cover!important;
   -o-background-size: cover!important;
   background-size: cover!important;
 }
@@ -38,7 +40,7 @@
 @mixin roundedCorners($value) {
 	-moz-border-radius: $value;
   -webkit-border-radius: $value;
-  -khtml-border-radius: $value;
+  -ms-border-radius: $value;
   -o-border-radius:$value;
   border-radius: $value;
 }
@@ -47,15 +49,15 @@
 @mixin roundOneCorner($corner, $value){
   -moz-border-#{$corner}-radius: $value;
   -webkit-border-#{$corner}-radius: $value;
-  -khtml-border-#{$corner}-radius: $value;
+  -ms-border-#{$corner}-radius: $value;
   -o-border-#{$corner}-radius:$value;
   border-#{$corner}-radius: $value;
 }
 
 @mixin boxShadows($shadowColor) {
-	-khtml-box-shadow: 0 8px 6px -6px $shadowColor;
 	-webkit-box-shadow: 0 8px 6px -6px $shadowColor;
 	-moz-box-shadow: 0 8px 6px -6px $shadowColor;
+  -ms-box-shadow: 0 8px 6px -6px $shadowColor;
 	-o-box-shadow: 0 8px 6px -6px $shadowColor;
 	box-shadow: 0 8px 6px -6px $shadowColor;
 }
@@ -64,7 +66,7 @@
 @mixin removeWebkitStyle{ 
 	-webkit-appearance: none;
   -moz-appearance: none;
-  -khtml-appearance:none;
+  -ms-appearance:none;
 	-o-appearance:none;
     appearance: none;
 }
@@ -72,7 +74,11 @@
 @mixin valignment{
 	position: relative;
 	top: 50%;
-	transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%); 
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 //rem to pixel fallback mixin

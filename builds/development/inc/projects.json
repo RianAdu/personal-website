@@ -3,17 +3,20 @@
 		"medicare": {
 			"id": "medicare", "title": "Medicare Hamburg", "copy": "I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.",
 			"technologies": ["HTML5,", "CSS3,", "JavaScript,", "WordPress"],
-			"url": "http://www.medicare-hamburg.de"
+			"url": "http://www.medicare-hamburg.de",
+			"alt": "Medicare hompage responsive design"
 		},
 
 		"euv": {
 			"id": "euv", "title": "<span>Engel&nbsp;&amp;&nbsp;V&ouml;lkers</span> <span>IT-Admin</span>", "copy": "<p>The task for this project was to completely redesign the previous version of the tool, to implement an Easy&#8209;to&#8209;Use modern design and to create an efficient representation of data. Additionally, many features were combined and simplified to increase the overall user experience.</p> <p>I worked on that project from start to finish with a Back End Developer. I created the complete front end and fetched the JSON-formatted data using AJAX.</p> ",
-			"technologies": ["HTML5,", "CSS3,", "JavaScript,", "jQuery,", "jQuery UI,", "Bootstrap"]
+			"technologies": ["HTML5,", "CSS3,", "JavaScript,", "jQuery,", "jQuery UI,", "Bootstrap"],
+			"alt": "Engel & Völkers IT-Admin Design"
 		},
 
 		"emails": {
 			"id": "emails", "title": "<span>Responsive</span> <span>HTML E-mails</span>", "copy": "<p>The most challenging part of building respsonive e-mails was to create a fluent transition from the desktop to the mobile design while only using plain HTML and CSS. Additionally, the e-mail had to be rendered correctly in multiple e-mail clients.</p> <p>I managed to create templates that could be easily reused and modified without using any framework.</p>",
-			"technologies": ["HTML,", "CSS,","Litmus"]
+			"technologies": ["HTML,", "CSS,","Litmus"],
+			"alt": "Ontario Travel responsive e-mail design"
 		}
 	}
 ]

@@ -3657,6 +3657,7 @@ header article.desktop {
   background-attachment: fixed;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
+  -ms-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
 }
@@ -3667,6 +3668,7 @@ header article.iOS {
   background-position: center center;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
+  -ms-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
 }
@@ -3829,6 +3831,10 @@ header article #hgroup p a {
   background-color: transparent;
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 /* line 42, ../../../components/sass/sections/_navigation.scss */
@@ -3856,6 +3862,10 @@ header article #hgroup p a {
   padding: 0.493rem;
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   color: #ffffff;
 }
@@ -3873,6 +3883,10 @@ header article #hgroup p a {
 .navPlaceholder nav .navbar #desktopMenu {
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   display: none;
   float: right;
@@ -3988,7 +4002,7 @@ section#about article #aboutImage img {
   margin: 0 auto;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  -khtml-border-radius: 50%;
+  -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
 }
@@ -4392,6 +4406,10 @@ section#portfolio .projects .copyPreview button {
   color: #111111;
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   padding: 7.888px;
   padding: 0.493rem;
@@ -4411,6 +4429,10 @@ section#portfolio .projects .copyPreview button {
   color: #ffffff;
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   font-size: 36.496px;
   font-size: 2.281rem;
@@ -4752,7 +4774,7 @@ section#contact article form p label {
 section#contact article form p input, section#contact article form p textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
-  -khtml-appearance: none;
+  -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
   width: 100%;
@@ -4885,7 +4907,7 @@ footer article p #rightsReserved {
   flex-direction: column;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
-  -khtml-border-radius: 4px;
+  -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
 }
