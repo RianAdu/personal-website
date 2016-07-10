@@ -17,6 +17,10 @@ header {
 			@include breakpoint($small + 1){
 				padding: 0;
 			}
+
+			&.landscapeMode{
+				@include remFontSize(padding, 9.375, 0, 2.887, 0);
+			}
 			
 			h1{
 				@include remFontSize(font-size, 1.9);

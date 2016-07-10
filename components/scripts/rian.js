@@ -8,6 +8,7 @@ $(function(){
 	var historyFlag; //using this flag in order to set browser history when overlay is visible
 
 	var init = function(){
+		
 		chooseBackground();
 		getProjects();
 		landingPageHeight();
@@ -30,7 +31,14 @@ $(function(){
 				closeDetails(historyFlag);
 			}
 		});
+
+		fadePageIn();
 	}; // end of init
+
+
+	var fadePageIn = function(){
+		$('#mainPage').addClass('visible');	
+	};
 
 	//if device does not run iOS, set headerimage fixed for simple paralax effect 
 	var chooseBackground = function(){
@@ -59,7 +67,15 @@ $(function(){
 
 	var landingPageHeight = function(){
 		var height = $(window).height();
-		$('header article').css('height', height);
+		$('header article').css('height', height+'px');
+
+		//in order to fit landingpage layout when deveice is held in landscape
+		if(height < 450){
+			$('#hgroup').addClass('landscapeMode');
+		}
+		else{
+			$('#hgroup').removeClass('landscapeMode');
+		}
 	};
 	// end of landingPageHeight
 
@@ -205,7 +221,7 @@ $(function(){
 
 		//creating button to link to external page 
 		if(project.url){
-			html +='<div class="backContainer"><button><a href="'+project.url+'" target="_blank">Visit website</a></button>'+
+			html +='<div class="backContainer"><a href="'+project.url+'" target="_blank alt="'+project.alt+'" ><button>Visit website</button></a>'+
 			'<button class="closeProjectButton secondButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project</button></div>';
 		}
 		else {

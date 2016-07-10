@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron:400|Exo+2:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron:400|Exo+2:300,700);
 /* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -3436,32 +3436,45 @@ body {
   height: 100%;
   min-width: 320px;
 }
-/* line 8, ../../../components/sass/_layout.scss */
+/* line 9, ../../../components/sass/_layout.scss */
 body.noScroll {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   z-index: 1;
 }
-/* line 14, ../../../components/sass/_layout.scss */
+/* line 15, ../../../components/sass/_layout.scss */
 body.dark {
   background-color: #fafafa;
 }
 /* line 20, ../../../components/sass/_layout.scss */
+body #mainPage {
+  opacity: 0;
+  -ms-tranition: opacity 0.8s ease-in-out;
+  -moz-transition: opacity 0.8s ease-in-out;
+  -o-transition: opacity 0.8s ease-in-out;
+  -webkit-transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
+}
+/* line 25, ../../../components/sass/_layout.scss */
+body #mainPage.visible {
+  opacity: 1;
+}
+/* line 32, ../../../components/sass/_layout.scss */
 body .pageContainer section {
   position: relative;
   padding: 20.256px 0px 100px 0px;
   padding: 1.266rem 0rem 6.25rem 0rem;
   border-bottom: 1px solid #dddddd;
 }
-/* line 25, ../../../components/sass/_layout.scss */
+/* line 37, ../../../components/sass/_layout.scss */
 body .pageContainer section.light {
   background-color: #ffffff;
 }
-/* line 29, ../../../components/sass/_layout.scss */
+/* line 41, ../../../components/sass/_layout.scss */
 body .pageContainer section.dark {
   background-color: #fafafa;
 }
-/* line 33, ../../../components/sass/_layout.scss */
+/* line 45, ../../../components/sass/_layout.scss */
 body .pageContainer section article {
   max-width: 90%;
   margin-left: auto;
@@ -3474,7 +3487,7 @@ body .pageContainer section article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 33, ../../../components/sass/_layout.scss */
+  /* line 45, ../../../components/sass/_layout.scss */
   body .pageContainer section article {
     max-width: 80%;
     margin-left: auto;
@@ -3487,7 +3500,7 @@ body .pageContainer section article:after {
     clear: both;
   }
 }
-/* line 43, ../../../components/sass/_layout.scss */
+/* line 55, ../../../components/sass/_layout.scss */
 body .pageContainer footer article {
   max-width: 90%;
   margin-left: auto;
@@ -3500,7 +3513,7 @@ body .pageContainer footer article:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 43, ../../../components/sass/_layout.scss */
+  /* line 55, ../../../components/sass/_layout.scss */
   body .pageContainer footer article {
     max-width: 80%;
     margin-left: auto;
@@ -3684,6 +3697,11 @@ header article #hgroup {
   }
 }
 /* line 21, ../../../components/sass/sections/_header.scss */
+header article #hgroup.landscapeMode {
+  padding: 150px 0px 46.192px 0px;
+  padding: 9.375rem 0rem 2.887rem 0rem;
+}
+/* line 25, ../../../components/sass/sections/_header.scss */
 header article #hgroup h1 {
   font-size: 30.4px;
   font-size: 1.9rem;
@@ -3702,20 +3720,20 @@ header article #hgroup h1 {
   border-bottom: 2px solid #ffffff;
 }
 @media (min-width: 480px) {
-  /* line 21, ../../../components/sass/sections/_header.scss */
+  /* line 25, ../../../components/sass/sections/_header.scss */
   header article #hgroup h1 {
     padding: 24px 0px 16px 0px;
     padding: 1.5rem 0rem 1rem 0rem;
   }
 }
 @media (min-width: 768px) {
-  /* line 21, ../../../components/sass/sections/_header.scss */
+  /* line 25, ../../../components/sass/sections/_header.scss */
   header article #hgroup h1 {
     font-size: 38.4px;
     font-size: 2.4rem;
   }
 }
-/* line 43, ../../../components/sass/sections/_header.scss */
+/* line 47, ../../../components/sass/sections/_header.scss */
 header article #hgroup h2 {
   font-weight: 300;
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
@@ -3724,30 +3742,30 @@ header article #hgroup h2 {
   font-size: 1.25rem;
 }
 @media (min-width: 768px) {
-  /* line 43, ../../../components/sass/sections/_header.scss */
+  /* line 47, ../../../components/sass/sections/_header.scss */
   header article #hgroup h2 {
     font-size: 22px;
     font-size: 1.375rem;
   }
 }
-/* line 53, ../../../components/sass/sections/_header.scss */
+/* line 57, ../../../components/sass/sections/_header.scss */
 header article #hgroup h2 span {
   display: block;
 }
 @media (min-width: 480px) {
-  /* line 53, ../../../components/sass/sections/_header.scss */
+  /* line 57, ../../../components/sass/sections/_header.scss */
   header article #hgroup h2 span {
     display: inline-block;
   }
 }
-/* line 61, ../../../components/sass/sections/_header.scss */
+/* line 65, ../../../components/sass/sections/_header.scss */
 header article #hgroup p {
   font-size: 64px;
   font-size: 4rem;
   margin: 0px;
   margin: 0rem;
 }
-/* line 66, ../../../components/sass/sections/_header.scss */
+/* line 70, ../../../components/sass/sections/_header.scss */
 header article #hgroup p a {
   display: inline-block;
   margin: 22.784px 0px;

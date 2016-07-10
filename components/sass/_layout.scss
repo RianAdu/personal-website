@@ -5,6 +5,7 @@ body {
 	height:100%;
 	min-width: 320px;
 	
+	
 	&.noScroll{
 		overflow: hidden;
 		-webkit-overflow-scrolling: touch;
@@ -14,6 +15,17 @@ body {
 	&.dark {
 		background-color: $grayLight;
 	} //.dark
+
+	//page fadeIn CSS
+	#mainPage {
+		opacity: 0;
+		-ms-tranition: opacity 0.8s ease-in-out;
+		@include transition(opacity 0.8s ease-in-out);
+
+		&.visible{
+			opacity: 1;
+		}
+	}
 
 	.pageContainer{
 
