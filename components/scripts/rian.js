@@ -5,7 +5,7 @@ var picturefill = require('picturefill'); //get responsive image polyfill
 $(function(){
 
 	var projectJSON; //caching the content
-	var historyFlag; //using this flag in order to set browser history when overlay is visible
+	var historyFlag;//using this flag in order to set browser history when overlay is visible
 
 	var init = function(){
 		
@@ -36,8 +36,10 @@ $(function(){
 	}; // end of init
 
 
-	var fadePageIn = function(){
-		$('#mainPage').addClass('visible');	
+	var fadePageIn = function(){	
+		setTimeout(function(){
+			$('#mainPage').addClass('visible');	
+		}, 300);
 	};
 
 	//if device does not run iOS, set headerimage fixed for simple paralax effect 
@@ -140,12 +142,16 @@ $(function(){
 	};
 
 	var setBrowserHistory = function(hashID){
+		
+		var tmp = hashID.split('#');
+		var section = tmp[1];
+
 		//setting the history in case the user hits the back button
 		if(history.pushState) {
-			history.pushState(null, null, hashID);
+			history.pushState(null, null, section);
 		}
 		else {
-			location.hash = hashID;
+			location.hash = section;
 		}
 	};
 

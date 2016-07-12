@@ -7,7 +7,7 @@ var gulp		= require('gulp'),
 	connect		= require('gulp-connect'),
 	gulpif		= require('gulp-if'),
 	minifyHTML	= require('gulp-minify-html'),
-	minifyCSS	= require('gulp-minify-css'),
+	cleanCSS	= require('gulp-clean-css'),
 	uglify		= require('gulp-uglify');
 
 // declarating enviroment and component sources
@@ -62,15 +62,15 @@ gulp.task('styles', function(){
 			require: ['susy', 'breakpoint','font-awesome-sass']
 		})
 		.on('error', gutil.log))
-		.pipe(gulpif(enviroment === 'production', minifyCSS()))
+		.pipe(gulpif(enviroment === 'production', cleanCSS()))
 		.pipe(connect.reload());
 }); //END OF style task
 
 
 gulp.task('markup', function(){
 	gulp.src('builds/development/*.html')
-		.pipe(gulpif(enviroment == 'production', minifyHTML()))
-		.pipe(gulpif(enviroment == 'production', gulp.dest(outputDir)))
+		.pipe(gulpif(enviroment === 'production', minifyHTML()))
+		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir)))
 		.pipe(connect.reload());
 }); //END OF markup task
 
