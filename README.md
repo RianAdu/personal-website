@@ -3,14 +3,14 @@ This website has been developed from ground up without using any templates or co
 It is optimized for speed, browser compatibility and usability.
 
 ## Technolgies used for this project
--HTML
--CSS written in Sass
--JavaScript
--Compass
--Susy 
--jQuery
--Picturefill
--Fontawesome
+- HTML
+- CSS written in Sass
+- JavaScript
+- Compass
+- Susy 
+- jQuery
+- Picturefill
+- Fontawesome
 
 ## Design
 The website has a fluid responsive single page design and was built using a **mobile first approach**. 
