@@ -1,3 +1,2 @@
-# Portfolio Website Project
-
-content will soon be added.
+# Personal Portfolio Website Project
+This is V1 of my personal portfolio website.

@@ -159,7 +159,6 @@ $(function(){
 		//setting the history in case the user hits the back button
 		if(history.pushState) {
 			history.pushState(null, null, null);
-			console.log(window.history);
 		}
 		else {
 			location.hash = section;
@@ -267,7 +266,6 @@ $(function(){
 	var closeDetails = function(id){
 		$('body').removeClass('noScroll');
 		goBackToProject(id);
-		console.log(id);
 
 		$('#detailOverlay').fadeOut('slow', function(){	
 			$(this).remove();
