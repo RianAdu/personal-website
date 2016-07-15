@@ -56,13 +56,14 @@ gulp.task('styles', function(){
 		.pipe(compass({
 			sass: 'components/sass',
 			image: outputDir + 'images',
-			css:outputDir + 'css',
+			css: outputDir + 'css',
 			style: 'expanded',
 			comments: sassComments,
 			require: ['susy', 'breakpoint','font-awesome-sass']
 		})
 		.on('error', gutil.log))
 		.pipe(gulpif(enviroment === 'production', cleanCSS()))
+		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir + 'css')))
 		.pipe(connect.reload());
 }); //END OF style task
 

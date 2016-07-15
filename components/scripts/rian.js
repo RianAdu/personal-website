@@ -18,7 +18,6 @@ $(function(){
 		landingElement();
 		setDarkNav();
 		$('.showMore').on('click', showProjectDetails);
-		
 		$('#mobileMenuIcon').on('click',mobileMenu);
 
 		$(window).on('orientationchange, resize', function(){
@@ -31,12 +30,11 @@ $(function(){
 				closeDetails(historyFlag);
 			}
 		});
-
-		fadePageIn();
+		pageFadeIn();
 	}; // end of init
 
 
-	var fadePageIn = function(){	
+	var pageFadeIn = function(){	
 		setTimeout(function(){
 			$('#mainPage').addClass('visible');	
 		}, 300);
@@ -51,8 +49,19 @@ $(function(){
 		}
 		else {
 			$('header article').addClass('desktop');
+			// paralaxHeader();
 		}
 	}; // end of chooseBackground
+
+	// var paralaxHeader = function(){
+	// 	var topHeader = $('.desktop');
+	// 	topHeader.css({"background-position":"center 0px"});
+		
+	// 	$(window).scroll(function () {
+	// 	  var wScroll = $(window).scrollTop();
+	// 	  topHeader.css({'background-position':"center "+(-(wScroll*.3))+"px"});
+	// 	});
+	// };
 
 
 	var getProjects = function(){
@@ -148,11 +157,13 @@ $(function(){
 
 		//setting the history in case the user hits the back button
 		if(history.pushState) {
-			history.pushState(null, null, section);
+			history.pushState(null, null, null);
 		}
 		else {
 			location.hash = section;
+
 		}
+
 	};
 
 	var landingElement = function(){ 
@@ -263,7 +274,7 @@ $(function(){
 	 }// end of closeDetails 
 
 
-	// this function scrools the body back to the last clicked Project,after the overlay has been closed
+	// this function scrolls the body back to the last clicked Project, after the overlay has been closed
 	var goBackToProject = function(viewedProject){
 		var navbarHeight = $('#mainNavbar').height();
 		$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (navbarHeight - 5));
