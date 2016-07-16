@@ -10,7 +10,6 @@ It is optimized for speed, browser compatibility and usability.
 - Susy 
 - jQuery
 - Picturefill
-- Fontawesome
 
 ## Design
 The website has a fluid responsive single page design and was built using a **mobile first approach**. 
