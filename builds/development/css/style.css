@@ -4953,22 +4953,3 @@ footer article p #copyWrapper {
   font-size: 80px;
   font-size: 5rem;
 }
-
-/* line 1, ../../../components/sass/sections/_paralax.scss */
-#paralax {
-  height: 300px;
-  width: 100%;
-  background: url("../images/main/p_2.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover !important;
-  -ms-background-size: cover !important;
-  -o-background-size: cover !important;
-  background-size: cover !important;
-}
-/* line 6, ../../../components/sass/sections/_paralax.scss */
-#paralax h2 {
-  color: #ffffff;
-}
