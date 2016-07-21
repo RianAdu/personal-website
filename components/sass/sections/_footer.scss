@@ -25,6 +25,14 @@ footer {
 					display: inline-block;
 				}
 			}
+
+			#copyWrapper{
+				display: block;
+
+				@include breakpoint($small){
+					display: inline-block;
+				}
+			}
 		}
 	}
 }

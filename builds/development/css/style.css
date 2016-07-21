@@ -4894,6 +4894,16 @@ footer article p #rightsReserved {
     display: inline-block;
   }
 }
+/* line 29, ../../../components/sass/sections/_footer.scss */
+footer article p #copyWrapper {
+  display: block;
+}
+@media (min-width: 480px) {
+  /* line 29, ../../../components/sass/sections/_footer.scss */
+  footer article p #copyWrapper {
+    display: inline-block;
+  }
+}
 
 /* line 2, ../../../components/sass/sections/thank_you.scss */
 #thankYou section {
@@ -4942,4 +4952,23 @@ footer article p #rightsReserved {
   color: #666666;
   font-size: 80px;
   font-size: 5rem;
+}
+
+/* line 1, ../../../components/sass/sections/_paralax.scss */
+#paralax {
+  height: 300px;
+  width: 100%;
+  background: url("../images/main/p_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -ms-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
+/* line 6, ../../../components/sass/sections/_paralax.scss */
+#paralax h2 {
+  color: #ffffff;
 }

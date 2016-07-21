@@ -85,6 +85,7 @@ gulp.task('watch', function(){
 
 // Copy images and font-awesome files to production
 gulp.task('move', function() {
+	
   gulp.src('builds/development/images/**/*.*')
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'images')));
 
