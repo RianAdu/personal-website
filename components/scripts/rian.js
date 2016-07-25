@@ -1,7 +1,8 @@
-var $ = require('jquery'); //get jQuery
-var picturefill = require('picturefill'); //get responsive image polyfill
+var $ = require('jquery'); // get jQuery
+var picturefill = require('picturefill'); // get polyfill for loading of responsive images
+var Mustache = require('mustache'); // get mustache.js for templating the project detail views
 
-//RianAdu functions
+
 $(function(){
 
 	var projectJSON; //caching the content
@@ -17,6 +18,7 @@ $(function(){
 		animatedScroll(1100);
 		landingElement();
 		setDarkNav();
+
 		$('.showMore').on('click', showProjectDetails);
 		$('#mobileMenuIcon').on('click',mobileMenu);
 
@@ -30,8 +32,10 @@ $(function(){
 				closeDetails(historyFlag);
 			}
 		});
+
 		pageFadeIn();
-	}; // end of init
+	}; 
+	// end of init
 
 
 	var pageFadeIn = function(){	
@@ -48,20 +52,9 @@ $(function(){
 			$('header article').addClass('iOS');
 		}
 		else {
-			$('header article').addClass('desktop');
-			// paralaxHeader();
+			$('header article').addClass('desktop'); 
 		}
 	}; // end of chooseBackground
-
-	// var paralaxHeader = function(){
-	// 	var topHeader = $('.desktop');
-	// 	topHeader.css({"background-position":"center 0px"});
-		
-	// 	$(window).scroll(function () {
-	// 	  var wScroll = $(window).scrollTop();
-	// 	  topHeader.css({'background-position':"center "+(-(wScroll*.3))+"px"});
-	// 	});
-	// };
 
 
 	var getProjects = function(){
@@ -161,9 +154,7 @@ $(function(){
 		}
 		else {
 			location.hash = section;
-
 		}
-
 	};
 
 	var landingElement = function(){ 
@@ -207,47 +198,13 @@ $(function(){
 				var project = projects[x];
 
 				if(x == clickedProject){
-					detailsMarkup = createProjectDetails(project);
+					var template = $('#porfolioDetailsTemplate').html();
+					detailsMarkup = Mustache.render(template, project);
 				}// end of if-clause
 			} // end of 2nd for-loop
 		} // end of 1st for-loop
 		finalizeDetails(detailsMarkup, clickedProject);	
 	}; //end of showProjectDetails
-	
-
-	var createProjectDetails = function(project){
-		var html = '<div id="detailOverlay"><div class="detailsContainer"> <div class="navPlaceholder"><nav><div class="navbar">'+
-		'<div class="logo">.ra</div><i id="portfolioBack" class="fa fa-times closeProjectButton" aria-hidden="true"></i>'+
-		'</div></nav></div><section class="detailCopy"><article>'+
-		'<h2>'+project.title+'</h2>'+project.copy+'<h3>Technologies</h3>';
-
-		//adding the technologies
-		for(var i in project.technologies){
-			var technologie = project.technologies[i];
-			html +='<span>'+technologie+'</span>'; 
-		}
-
-		//adding image markup
-		html += '</article></section><section class="dark detailImage">'+
-		'<picture><!--[if gte IE 9]><video style="display: none;"><![endif]-->'+
-		'<source srcset="images/pf_details/'+project.id+'_details_large.jpg" media="(min-width: 768px)">'+
-		'<source srcset="images/pf_details/'+project.id+'_details_small.jpg" media="(min-width: 200px)">'+
-		'<!--[if gte IE 9]></video><![endif]-->'+
-		'<img src="images/pf_details/'+project.id+'_details_large.jpg" srcset="images/pf_details/'+project.id+'_details_large.jpg" alt="'+project.alt+'"></picture>';
-
-
-		//creating button to link to external page 
-		if(project.url){
-			html +='<div class="backContainer"><a href="'+project.url+'" target="_blank alt="'+project.alt+'" ><button>Visit website</button></a>'+
-			'<button class="closeProjectButton secondButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project</button></div>';
-		}
-		else {
-			html += '<div class="backContainer"><button class="closeProjectButton"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project</button></div>';
-		}
-		html +='</section></div></div>';
-
-		return html;
-	}// end of createProjectDetails
 
 	var finalizeDetails = function(detailView, id){
 		var tag = '#'+id;
