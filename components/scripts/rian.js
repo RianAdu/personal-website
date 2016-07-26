@@ -58,14 +58,9 @@ $(function(){
 
 
 	var getProjects = function(){
-		$.ajax({
-			type:'GET',
-			url:'../inc/projects.json',
-			dataType:'json',
-			success:function(data){
-				projectJSON = data;
-			}// end of success		
-		}); //end of ajax
+		$.getJSON('../inc/projects.json', function(data){
+			projectJSON = data;
+		});
 	}; // end of getProjects
 
 
@@ -198,7 +193,7 @@ $(function(){
 				var project = projects[x];
 
 				if(x == clickedProject){
-					var template = $('#porfolioDetailsTemplate').html();
+					var template = $('#overlayTmpl').html();
 					detailsMarkup = Mustache.render(template, project);
 				}// end of if-clause
 			} // end of 2nd for-loop
