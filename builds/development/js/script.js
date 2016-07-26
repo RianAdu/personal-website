@@ -194,8 +194,10 @@ $(function(){
 				var project = projects[x];
 
 				if(x == clickedProject){
+					
 					var template = $('#overlayTmpl').html();
 					detailsMarkup = Mustache.render(template, project);
+
 				}// end of if-clause
 			} // end of 2nd for-loop
 		} // end of 1st for-loop

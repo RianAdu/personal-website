@@ -10,6 +10,7 @@ It is optimized for speed, browser compatibility and usability.
 - Susy 
 - jQuery
 - Picturefill
+- Mustache.js
 
 ## Design
 The website has a fluid responsive single page design and was built using a **mobile first approach**. 
