@@ -7,12 +7,14 @@ var Mustache = require('mustache'); // get mustache.js for templating the projec
 $(function(){
 
 	var projectJSON; //caching the content
+	var overlayTemplate; // caching the overlay tmpl
 	var historyFlag;//using this flag in order to set browser history when overlay is visible
 
 	var init = function(){
 		
 		chooseBackground();
 		getProjects();
+		getDetailsOverlayTmpl();
 		landingPageHeight();
 		setCopyYear();
 		formValidation();
@@ -63,6 +65,12 @@ $(function(){
 			projectJSON = data;
 		});
 	}; // end of getProjects
+
+	var getDetailsOverlayTmpl = function(){
+		$.get('../templates/pf_details_overlay.html', function(template){
+			overlayTemplate = template;
+		}); // end of get
+	}; // end of getDetailsOverlayTmpl
 
 
 	var landingPageHeight = function(){
@@ -134,7 +142,7 @@ $(function(){
 				}, duration);
 				
 				$(this).addClass('active');
-			}			
+			}	
 			setBrowserHistory(hashTag);
 		});
 	};
@@ -153,7 +161,7 @@ $(function(){
 		}
 	};
 
-	var landingElement = function(){ 
+	var landingElement = function(){
 		$(window).scroll(function(){
 			var wScroll = $(window).scrollTop();
 
@@ -175,7 +183,7 @@ $(function(){
 			//emails project image animation
 			if (wScroll > $('#emails.projects').offset().top - ($(window).height() / 1.3)) {
 				$('#emailsImg.projectImage').addClass('isVisible');
-			}	
+			}
 		});
 	};// end of landingElement
 
@@ -193,10 +201,9 @@ $(function(){
 			for(var x in projects){
 				var project = projects[x];
 
-				if(x == clickedProject){
+				if(x == clickedProject){	
 					
-					var template = $('#overlayTmpl').html();
-					detailsMarkup = Mustache.render(template, project);
+					detailsMarkup = Mustache.render(overlayTemplate, project);
 
 				}// end of if-clause
 			} // end of 2nd for-loop

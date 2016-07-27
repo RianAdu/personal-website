@@ -95,6 +95,9 @@ gulp.task('move', function() {
   gulp.src('builds/development/inc/*.*')
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
 
+  gulp.src('builds/development/templates/*.*')
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'templates')));
+
 }); //END OF move task
 
 

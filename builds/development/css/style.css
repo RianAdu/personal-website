@@ -4342,36 +4342,6 @@ section#portfolio .projects #medicareImg.isVisible, section#portfolio .projects 
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-/* line 55, ../../../components/sass/sections/_portfolio.scss */
-section#portfolio .projects .copyPreview h3 {
-  font-size: 18px;
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-/* line 60, ../../../components/sass/sections/_portfolio.scss */
-section#portfolio .projects .copyPreview p {
-  margin: 10px 0px 20.256px 0px;
-  margin: 0.625rem 0rem 1.266rem 0rem;
-}
-/* line 64, ../../../components/sass/sections/_portfolio.scss */
-section#portfolio .projects .copyPreview button {
-  margin-top: 20px;
-  margin-top: 1.25rem;
-}
-@media (min-width: 1024px) {
-  /* line 64, ../../../components/sass/sections/_portfolio.scss */
-  section#portfolio .projects .copyPreview button {
-    margin-top: 30px;
-    margin-top: 1.875rem;
-  }
-}
-@media (min-width: 1280px) {
-  /* line 64, ../../../components/sass/sections/_portfolio.scss */
-  section#portfolio .projects .copyPreview button {
-    margin-top: 50px;
-    margin-top: 3.125rem;
-  }
-}
 @media (min-width: 800px) {
   /* line 54, ../../../components/sass/sections/_portfolio.scss */
   section#portfolio .projects .copyPreview {
@@ -4382,6 +4352,47 @@ section#portfolio .projects .copyPreview button {
     float: right;
     padding-left: 0.83333%;
     padding-right: 0.83333%;
+  }
+  /* line 59, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .copyPreview.even {
+    text-align: right;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+/* line 66, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .copyPreview h3 {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+/* line 71, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .copyPreview p {
+  margin: 10px 0px 20.256px 0px;
+  margin: 0.625rem 0rem 1.266rem 0rem;
+}
+/* line 75, ../../../components/sass/sections/_portfolio.scss */
+section#portfolio .projects .copyPreview button {
+  margin-top: 20px;
+  margin-top: 1.25rem;
+}
+@media (min-width: 1024px) {
+  /* line 75, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .copyPreview button {
+    margin-top: 30px;
+    margin-top: 1.875rem;
+  }
+}
+@media (min-width: 1280px) {
+  /* line 75, ../../../components/sass/sections/_portfolio.scss */
+  section#portfolio .projects .copyPreview button {
+    margin-top: 50px;
+    margin-top: 3.125rem;
   }
 }
 

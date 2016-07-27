@@ -52,6 +52,17 @@ section#portfolio{
 		} // end of project images
 
 		.copyPreview{
+			
+			@include breakpoint($medium-large){
+				@include span (4 at 9);
+
+				&.even{
+					//set copytext float left and aligned right
+					text-align: right; 
+					@include span(4);
+				}
+			} // end of breakpoint
+
 			h3{
 				@include remFontSize(font-size, 1.125);
 				font-weight: $semiBold;
@@ -72,10 +83,6 @@ section#portfolio{
 					@include remFontSize(margin-top, 3.125);
 				} // end of breakpoint
 			} // end of button
-
-			@include breakpoint($medium-large){
-				@include span (4 at 9);
-			} // end of breakpoint
 		} // end of copyPreview
 	} // end of projects
 } // end of section #portfolio

@@ -177,7 +177,7 @@
 								  <img class="projectImage" srcset="images/euv/euv_mobile_retina.png, images/euv/euv_mobile_retina.png 2x" alt="Engel Völkers IT-Admin">
 								</picture>
 							</div>
-							<div class="copyPreview">
+							<div class="copyPreview even">
 								<h3>Engel &amp; V&ouml;lkers IT-Admin </h3>
 								<p>The Engel &amp;V&ouml;lkers IT-Admin is a tool, which is used by the company’s management and accounting department in order to create invoices and get information on users, license shops and products.</p>
 								<button type="button" class="showMore">Show more</button>
@@ -201,58 +201,7 @@
 					</article>
 				</section>
 
-				<!-- ******* PROJECT DETAILS TEMPLATE*******-->
-				<script type="text/template" id="overlayTmpl">
-					<div id="detailOverlay">
-						<div class="detailsContainer"> 
-							<div class="navPlaceholder">
-								<nav>
-									<div class="navbar">
-										<div class="logo">.ra</div>
-										<i id="portfolioBack" class="fa fa-times closeProjectButton" aria-hidden="true"></i>
-									</div>
-								</nav>
-							</div>
-							<section class="detailCopy"> {{! using three braces when content contains html tags }}
-								<article>
-									<h2>{{{title}}}</h2>
-									{{{copy}}}
-									<h3>Technologies</h3>
-									{{#technologies}}
-									{{.}}
-									{{/technologies}}
-								</article>
-							</section>
-							<section class="dark detailImage">
-								<picture>
-									<!--[if gte IE 9]><video style="display: none;"><![endif]-->
-									<source srcset="images/pf_details/{{id}}_details_large.jpg" media="(min-width: 768px)">
-									<source srcset="images/pf_details/{{id}}_details_small.jpg" media="(min-width: 200px)">
-									<!--[if gte IE 9]></video><![endif]-->
-									<img src="images/pf_details/{{id}}_details_large.jpg" srcset="images/pf_details/{{id}}_details_large.jpg" alt="{{alt}}">
-								</picture>
-								
-								{{#url}}
-									<div class="backContainer">
-										<a href="{{{url}}}" target="_blank" alt="{{alt}}">
-											<button>Visit website</button>
-										</a>
-										<button class="closeProjectButton secondButton">
-											<i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project
-										</button>
-									</div>
-								{{/url}}
-								{{^url}}
-									<div class="backContainer">
-										<button class="closeProjectButton">
-											<i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project
-										</button>
-									</div>
-								{{/url}}
-							</section>
-						</div>
-					</div>	
-				</script>
+
 
 				<!-- CONTACT -->
 				<section class="light" id="contact">
