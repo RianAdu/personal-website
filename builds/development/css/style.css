@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Orbitron:400|Exo+2:300,700);
 /* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -3669,6 +3668,7 @@ header article.desktop {
   background-position: center center;
   background-attachment: fixed;
   -webkit-background-size: cover !important;
+  -khtml-background-size: cover !important;
   -moz-background-size: cover !important;
   -ms-background-size: cover !important;
   -o-background-size: cover !important;
@@ -3680,6 +3680,7 @@ header article.iOS {
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover !important;
+  -khtml-background-size: cover !important;
   -moz-background-size: cover !important;
   -ms-background-size: cover !important;
   -o-background-size: cover !important;
@@ -3851,6 +3852,7 @@ header article #hgroup p a {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -3882,6 +3884,7 @@ header article #hgroup p a {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -3903,6 +3906,7 @@ header article #hgroup p a {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -4020,6 +4024,7 @@ section#about article #aboutImage img {
   margin: 0 auto;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
+  -khtml-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
@@ -4437,6 +4442,7 @@ section#portfolio .projects .copyPreview button {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -4460,6 +4466,7 @@ section#portfolio .projects .copyPreview button {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
+  -khtml-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -4802,6 +4809,7 @@ section#contact article form p label {
 /* line 95, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input, section#contact article form p textarea {
   -webkit-appearance: none;
+  -khtml-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
@@ -4946,6 +4954,7 @@ footer article p #copyWrapper {
   flex-direction: column;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;

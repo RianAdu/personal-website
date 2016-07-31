@@ -1,6 +1,8 @@
 var $ = require('jquery'); // get jQuery
 var picturefill = require('picturefill'); // get polyfill for loading of responsive images
 var Mustache = require('mustache'); // get mustache.js for templating the project detail views
+var WebFont = require('webfontloader');
+
 
 
 $(function(){
@@ -10,10 +12,11 @@ $(function(){
 	var historyFlag;//using this flag in order to set browser history when overlay is visible
 
 	var init = function(){
-		
+
 		chooseBackground();
 		getProjects();
 		getDetailsOverlayTmpl();
+		loadingWebFonts();
 		landingPageHeight();
 		setCopyYear();
 		formValidation();
@@ -70,6 +73,14 @@ $(function(){
 			overlayTemplate = template;
 		}); // end of get
 	}; // end of getDetailsOverlayTmpl
+
+	var loadingWebFonts = function(){
+		WebFont.load({
+			google: {
+				families: ['Open+Sans:300,400,600', 'Orbitron:400', 'Exo+2:300,700']
+			}
+		}); // end of load function
+	}; // end of loadingWebFonts
 
 
 	var landingPageHeight = function(){
