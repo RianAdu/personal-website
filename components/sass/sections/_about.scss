@@ -78,7 +78,18 @@ section#about {
 			 
 			 @include breakpoint($x-large){
 			 	display: block;
-			 } // end of breakpoint
+			} // end of breakpoint one
+
+			&.mobileFix{
+				
+				@include breakpoint($small-medium){
+				 	display: block;
+				} // end of breakpoint two
+
+				 @include breakpoint($x-large){
+				 	display: none;
+				} // end of breakpoint three
+			} // end of mobileFix
 		} // end of .lengthFix
 
 		#languages {

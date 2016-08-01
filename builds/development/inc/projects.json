@@ -14,7 +14,7 @@
 		},
 
 		"emails": {
-			"id": "emails", "title": "<span>Responsive</span> <span>HTML E-mails</span>", "copy": "<p>The most challenging part of building respsonive e-mails was to create a fluent transition from the desktop to the mobile design while only using plain HTML and CSS. Additionally, the e-mail had to be rendered correctly in multiple e-mail clients.</p> <p>I managed to create templates that could be easily reused and modified without using any framework.</p>",
+			"id": "emails", "title": "Responsive E-mails", "copy": "<p>The most challenging part of building responsive e-mails was to create a fluent transition from the desktop to the mobile design while only using plain HTML and CSS. Additionally, the e-mail had to be rendered correctly in multiple e-mail clients.</p> <p>I managed to create templates that could be easily reused and modified without using any framework.</p>",
 			"technologies": ["HTML,", "CSS,","Litmus"],
 			"alt": "Ontario Travel responsive e-mail"
 		}

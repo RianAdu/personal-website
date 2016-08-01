@@ -4103,7 +4103,19 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 600px) {
-  /* line 84, ../../../components/sass/sections/_about.scss */
+  /* line 83, ../../../components/sass/sections/_about.scss */
+  section#about article .lengthFix.mobileFix {
+    display: block;
+  }
+}
+@media (min-width: 1280px) {
+  /* line 83, ../../../components/sass/sections/_about.scss */
+  section#about article .lengthFix.mobileFix {
+    display: none;
+  }
+}
+@media (min-width: 600px) {
+  /* line 95, ../../../components/sass/sections/_about.scss */
   section#about article #languages {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4115,7 +4127,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 84, ../../../components/sass/sections/_about.scss */
+  /* line 95, ../../../components/sass/sections/_about.scss */
   section#about article #languages {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4127,7 +4139,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 600px) {
-  /* line 94, ../../../components/sass/sections/_about.scss */
+  /* line 105, ../../../components/sass/sections/_about.scss */
   section#about article #techniques {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4139,7 +4151,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 94, ../../../components/sass/sections/_about.scss */
+  /* line 105, ../../../components/sass/sections/_about.scss */
   section#about article #techniques {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4151,7 +4163,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 600px) {
-  /* line 105, ../../../components/sass/sections/_about.scss */
+  /* line 116, ../../../components/sass/sections/_about.scss */
   section#about article #tools {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4163,7 +4175,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 105, ../../../components/sass/sections/_about.scss */
+  /* line 116, ../../../components/sass/sections/_about.scss */
   section#about article #tools {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4175,7 +4187,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 600px) {
-  /* line 116, ../../../components/sass/sections/_about.scss */
+  /* line 127, ../../../components/sass/sections/_about.scss */
   section#about article #frameworks {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4187,7 +4199,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 116, ../../../components/sass/sections/_about.scss */
+  /* line 127, ../../../components/sass/sections/_about.scss */
   section#about article #frameworks {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4199,7 +4211,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 600px) {
-  /* line 126, ../../../components/sass/sections/_about.scss */
+  /* line 137, ../../../components/sass/sections/_about.scss */
   section#about article #software {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4211,7 +4223,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 126, ../../../components/sass/sections/_about.scss */
+  /* line 137, ../../../components/sass/sections/_about.scss */
   section#about article #software {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4223,7 +4235,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 600px) {
-  /* line 136, ../../../components/sass/sections/_about.scss */
+  /* line 147, ../../../components/sass/sections/_about.scss */
   section#about article #cms {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4235,7 +4247,7 @@ section#about article .lengthFix {
   }
 }
 @media (min-width: 1280px) {
-  /* line 136, ../../../components/sass/sections/_about.scss */
+  /* line 147, ../../../components/sass/sections/_about.scss */
   section#about article #cms {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
