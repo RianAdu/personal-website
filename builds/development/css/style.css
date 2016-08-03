@@ -3926,13 +3926,17 @@ header article #hgroup p a {
   font-size: 22px;
   font-size: 1.375rem;
 }
+/* line 81, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav .navbar #desktopMenu li a.active {
+  color: rgba(255, 255, 255, 0.75);
+}
 @media (min-width: 768px) {
   /* line 67, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav .navbar #desktopMenu {
     display: block;
   }
 }
-/* line 90, ../../../components/sass/sections/_navigation.scss */
+/* line 94, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown {
   position: absolute;
   top: 62px;
@@ -3943,12 +3947,12 @@ header article #hgroup p a {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 90, ../../../components/sass/sections/_navigation.scss */
+  /* line 94, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav #mobileDropDown {
     display: none !important;
   }
 }
-/* line 103, ../../../components/sass/sections/_navigation.scss */
+/* line 107, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li {
   padding: 12.64px 0px;
   padding: 0.79rem 0rem;
@@ -3956,21 +3960,25 @@ header article #hgroup p a {
   border-bottom: 1px solid #333333;
   text-align: center;
 }
-/* line 109, ../../../components/sass/sections/_navigation.scss */
+/* line 113, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li:first-child {
   border-top: 1px solid #333333;
 }
-/* line 110, ../../../components/sass/sections/_navigation.scss */
+/* line 114, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li:last-child {
   border-bottom: none;
 }
-/* line 112, ../../../components/sass/sections/_navigation.scss */
+/* line 116, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li a {
   font-size: 25.632px;
   font-size: 1.602rem;
   font-family: "Exo 2", Helvetica, Arial, sans-serif;
   color: #ffffff;
   display: block;
+}
+/* line 122, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav #mobileDropDown li a.active {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* line 1, ../../../components/sass/sections/_about.scss */

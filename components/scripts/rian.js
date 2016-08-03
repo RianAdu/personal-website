@@ -21,6 +21,7 @@ $(function(){
 		setCopyYear();
 		formValidation();
 		animatedScroll(1100);
+		sectionHighlighting();
 		landingElement();
 		setDarkNav();
 
@@ -124,6 +125,7 @@ $(function(){
 			}
 			else{
 				navbar.removeClass('darkNav transToDark');
+				
 			}
 		}); // end of window scroll
 
@@ -139,7 +141,6 @@ $(function(){
 			var navbarHeight = $('#mainNavbar').height();
 
 			$('#mobileDropDown').slideUp(); //close the menu
-			$('.navButton').removeClass('active');
 
 			var target = $( $(this).attr('href') );
 			var hashTag = target.selector;
@@ -150,10 +151,33 @@ $(function(){
 				$('html, body').animate({
 					scrollTop: target.offset().top - (navbarHeight - 5)
 				}, duration);
-				
-				$(this).addClass('active');
 			}	
 			setBrowserHistory(hashTag);
+		});
+	};
+
+	var sectionHighlighting = function(){
+		var navbarHeight	= $('#mainNavbar').height();
+		
+		$(window).scroll(function(){	
+			var wScroll = $(window).scrollTop() + navbarHeight;
+			$('nav li a').removeClass('active');
+		
+			//about page
+			if(wScroll > $('#about').offset().top){
+				$('nav li a').removeClass('active');
+				$('a[href$="#about"]').addClass('active');
+			}
+
+			if(wScroll > $('#portfolio').offset().top){
+				$('nav li a').removeClass('active');
+				$('a[href$="#portfolio"]').addClass('active');
+			}
+
+			if(wScroll > $('#contact').offset().top){
+				$('nav li a').removeClass('active');
+				$('a[href$="#contact"]').addClass('active');
+			}
 		});
 	};
 

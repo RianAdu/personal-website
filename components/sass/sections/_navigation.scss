@@ -77,6 +77,10 @@
 						font-family: $headerFont;
 						color:$white;
 						@include remFontSize(font-size, 1.375);
+
+						&.active{
+							color: rgba(255,255,255,.75);
+						}
 					} //a
 				} //li
 
@@ -114,6 +118,10 @@
 					font-family: $headerFont;
 					color:$white;
 					display: block;
+
+					&.active{
+						color: rgba(255,255,255,.75);
+					}
 				} //a
 			}//li
 		} //ul	
