@@ -79,7 +79,7 @@
 						@include remFontSize(font-size, 1.375);
 
 						&.active{
-							color: rgba(255,255,255,.75);
+							color: rgba(255,255,255,.55);
 						}
 					} //a
 				} //li
@@ -120,7 +120,7 @@
 					display: block;
 
 					&.active{
-						color: rgba(255,255,255,.75);
+						color: rgba(255,255,255,.55);
 					}
 				} //a
 			}//li

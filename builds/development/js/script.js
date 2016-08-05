@@ -125,8 +125,7 @@ $(function(){
 				navbar.addClass('darkNav');
 			}
 			else{
-				navbar.removeClass('darkNav transToDark');
-				
+				navbar.removeClass('darkNav transToDark');			
 			}
 		}); // end of window scroll
 

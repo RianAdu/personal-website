@@ -3928,7 +3928,7 @@ header article #hgroup p a {
 }
 /* line 81, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar #desktopMenu li a.active {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.55);
 }
 @media (min-width: 768px) {
   /* line 67, ../../../components/sass/sections/_navigation.scss */
@@ -3978,7 +3978,7 @@ header article #hgroup p a {
 }
 /* line 122, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li a.active {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* line 1, ../../../components/sass/sections/_about.scss */
