@@ -14,18 +14,19 @@ $(function(){
 	var init = function(){
 
 		chooseBackground();
-		getProjects();
+		getProjectsData();
+
+		getPortfolioTmpl();
 		getDetailsOverlayTmpl();
+
 		loadingWebFonts();
 		landingPageHeight();
 		setCopyYear();
 		formValidation();
 		animatedScroll(1100);
 		sectionHighlighting();
-		landingElement();
 		setDarkNav();
 
-		$('.showMore').on('click', showProjectDetails);
 		$('#mobileMenuIcon').on('click',mobileMenu);
 
 		$(window).on('orientationchange, resize', function(){
@@ -48,7 +49,7 @@ $(function(){
 		setTimeout(function(){
 			$('#mainPage').addClass('visible');	
 		}, 300);
-	};
+	}; // end of pageFadeIn
 
 	//if device does not run iOS, set headerimage fixed for simple paralax effect 
 	var chooseBackground = function(){
@@ -63,14 +64,22 @@ $(function(){
 	}; // end of chooseBackground
 
 
-	var getProjects = function(){
+	var getProjectsData = function(){
 		$.getJSON('../inc/projects.json', function(data){
 			projectJSON = data;
 		});
-	}; // end of getProjects
+	}; // end of getProjectsData
+
+	var getPortfolioTmpl = function(){
+		$.get('../templates/projects.html', function(template){
+			var portfolioTmpl = template;
+			
+			generatePortfolio(portfolioTmpl);
+		}); // end of get
+	}; // end of getPortfolioTmpl
 
 	var getDetailsOverlayTmpl = function(){
-		$.get('../templates/pf_details_overlay.html', function(template){
+		$.get('../templates/project_details_overlay.html', function(template){
 			overlayTemplate = template;
 		}); // end of get
 	}; // end of getDetailsOverlayTmpl
@@ -83,6 +92,22 @@ $(function(){
 		}); // end of load function
 	}; // end of loadingWebFonts
 
+	var generatePortfolio = function(tmpl){	
+		for(var i in projectJSON){
+			var projects = projectJSON[i];
+			
+			for(var x in projects){
+				var project = projects[x];
+
+				var markup = Mustache.render(tmpl, project);
+				$('#portfolio article').append(markup);
+			} // end of 2nd for-loop
+		} // end of 1st for-lool	
+
+		$('.projects:odd').find('div.projectImage, div.copyPreview').addClass('even'); //add click listener to show more buttons
+		$('.showMore').on('click', showProjectDetails);
+		landingElement(); //calling function for animating		
+	};
 
 	var landingPageHeight = function(){
 		var height = $(window).height();
@@ -153,7 +178,7 @@ $(function(){
 			}	
 			setBrowserHistory(hashTag);
 		});
-	};
+	}; // end of animatedScroll
 
 	var sectionHighlighting = function(){
 		var navbarHeight	= $('#mainNavbar').height();
@@ -177,8 +202,8 @@ $(function(){
 				$('nav li a').removeClass('active');
 				$('a[href$="#contact"]').addClass('active');
 			}
-		});
-	};
+		}); // end of scroll event
+	}; // end of sectionHighlighting
 
 	var setBrowserHistory = function(hashID){
 		
@@ -220,7 +245,6 @@ $(function(){
 		});
 	};// end of landingElement
 
-
 	var showProjectDetails = function(){
 		var clickedProject = $(this).parent().parent().attr('id');
 		historyFlag = clickedProject; //assigning id to flag for history behaviour
@@ -237,7 +261,6 @@ $(function(){
 				if(x == clickedProject){	
 					
 					detailsMarkup = Mustache.render(overlayTemplate, project);
-
 				}// end of if-clause
 			} // end of 2nd for-loop
 		} // end of 1st for-loop

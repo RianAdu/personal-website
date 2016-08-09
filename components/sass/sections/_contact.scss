@@ -94,15 +94,14 @@ section#contact{
 
 				input, textarea {
 					@include removeWebkitStyle;
+					@include roundedCorners(2px);
 					
 					width:100%;
-					border:1px solid $black;
-					border-radius: 0;
-					
+					border:1px solid $grayBorder;
 						
 					&:focus{
 						outline: none;
-						border-color: $grayBorder;
+						border-color: $black;
 					} //focus	
 				} //input & textarea
 

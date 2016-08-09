@@ -79,6 +79,7 @@ button{
 	border:none;
 	@include remFontSize(height, 2.5);
 	@include remFontSize(width, 10);
+	@include roundedCorners(2px);
 	
 	&:hover{
 		cursor: pointer;
