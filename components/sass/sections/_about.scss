@@ -35,6 +35,11 @@ section#about {
 			} // end of img
 		} // end of #aboutImage
 
+		.intro {
+			@include remFontSize(font-size, 1.602);
+			@include remFontSize(line-height, 2.281);
+		} //end of intro
+
 		&#devSkills {
 			@include remFontSize(padding-top, 1.802);
 			@include clearfix;

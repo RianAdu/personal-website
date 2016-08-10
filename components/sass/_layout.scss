@@ -27,11 +27,6 @@ body {
 		}
 	}
 
-	.intro {
-		@include remFontSize(font-size, 1.602);
-		@include remFontSize(line-height, 2.281);
-	} //end of intro
-
 	.pageContainer{
 
 		section {
