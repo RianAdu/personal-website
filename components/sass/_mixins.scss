@@ -87,6 +87,15 @@
   transform: translateY(-50%);
 }
 
+@mixin hoverTransition($property, $time, $animation){
+  -webkit-transition: $property $time $animation;
+  -moz-transition: $property $time $animation;
+  -khtml-transition: $property $time $animation;
+  -o-transition: $property $time $animation;
+  -ms-transition: $property $time $animation;
+  transition: $property $time $animation;
+}
+
 //rem to pixel fallback mixin
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);

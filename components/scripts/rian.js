@@ -1,7 +1,7 @@
-var $ 			= require('jquery'); // get jQuery
+var $ = require('jquery'); // get jQuery
 var picturefill = require('picturefill'); // get polyfill for loading of responsive images
-var Mustache 	= require('mustache'); // get mustache.js for templating the project detail views
-var WebFont 	= require('webfontloader');
+var Mustache = require('mustache'); // get mustache.js for templating the project detail views
+var WebFont = require('webfontloader');
 
 
 

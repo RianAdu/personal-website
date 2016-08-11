@@ -8,7 +8,8 @@ var gulp		= require('gulp'),
 	gulpif		= require('gulp-if'),
 	minifyHTML	= require('gulp-minify-html'),
 	cleanCSS	= require('gulp-clean-css'),
-	uglify		= require('gulp-uglify');
+	uglify		= require('gulp-uglify'),
+	jsonminify 	= require('gulp-jsonminify');
 
 // declarating enviroment and component sources
 var enviroment,
@@ -92,7 +93,11 @@ gulp.task('move', function() {
    gulp.src('builds/development/fonts/**/*.*')
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'fonts')));
 
-  gulp.src('builds/development/inc/*.*')
+  gulp.src('builds/development/inc/*.js')
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
+
+  gulp.src('builds/development/inc/*.json')
+  .pipe(gulpif(enviroment === 'production', jsonminify()))
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
 
   gulp.src('builds/development/templates/*.*')

@@ -37,11 +37,18 @@ section#contact{
 					&#github{ color:$github;}
 					&#twitter{color:$twitter;}
 					&#instagram{color:darken($instagram, 15);}
+
+					@include hoverTransition(all, 0.6s, ease);
+
+					&:hover{
+						font-size:104%;
+					}
 					
 					i{ @include remFontSize(font-size, 3.247); }
 					
 					span{
 						vertical-align: top;
+						
 					} //span
 				} //a
 			} //li
