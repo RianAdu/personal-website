@@ -69,8 +69,14 @@ header {
 
 				a{
 					display: inline-block;
-					@include remFontSize(margin, 1.424, 0);
 					color:$white;
+					@include remFontSize(margin, 1.424, 0);
+					@include transform(scale(1,1));
+					@include hoverTransition(all, 0.4s, ease-out);
+						
+					&:hover{ 
+						@include transform(scale(1.2,1.2));
+					}
 				} //a
 			} //p
 		}//hgroup	

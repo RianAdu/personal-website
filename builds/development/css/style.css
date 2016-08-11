@@ -3775,9 +3775,26 @@ header article #hgroup p {
 /* line 70, ../../../components/sass/sections/_header.scss */
 header article #hgroup p a {
   display: inline-block;
+  color: #ffffff;
   margin: 22.784px 0px;
   margin: 1.424rem 0rem;
-  color: #ffffff;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -khtml-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+/* line 77, ../../../components/sass/sections/_header.scss */
+header article #hgroup p a:hover {
+  -moz-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
 }
 
 /* line 1, ../../../components/sass/sections/_navigation.scss */
