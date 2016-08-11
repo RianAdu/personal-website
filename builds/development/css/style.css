@@ -3931,10 +3931,20 @@ header article #hgroup p a {
   color: #ffffff;
   font-size: 22px;
   font-size: 1.375rem;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -khtml-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-/* line 81, ../../../components/sass/sections/_navigation.scss */
+/* line 82, ../../../components/sass/sections/_navigation.scss */
+.navPlaceholder nav .navbar #desktopMenu li a:hover {
+  color: #cccccc;
+}
+/* line 86, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav .navbar #desktopMenu li a.active {
-  color: rgba(255, 255, 255, 0.55);
+  color: #8c8c8c;
 }
 @media (min-width: 768px) {
   /* line 67, ../../../components/sass/sections/_navigation.scss */
@@ -3942,7 +3952,7 @@ header article #hgroup p a {
     display: block;
   }
 }
-/* line 94, ../../../components/sass/sections/_navigation.scss */
+/* line 99, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown {
   position: absolute;
   top: 62px;
@@ -3953,12 +3963,12 @@ header article #hgroup p a {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 94, ../../../components/sass/sections/_navigation.scss */
+  /* line 99, ../../../components/sass/sections/_navigation.scss */
   .navPlaceholder nav #mobileDropDown {
     display: none !important;
   }
 }
-/* line 107, ../../../components/sass/sections/_navigation.scss */
+/* line 112, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li {
   padding: 12.64px 0px;
   padding: 0.79rem 0rem;
@@ -3966,15 +3976,15 @@ header article #hgroup p a {
   border-bottom: 1px solid #333333;
   text-align: center;
 }
-/* line 113, ../../../components/sass/sections/_navigation.scss */
+/* line 118, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li:first-child {
   border-top: 1px solid #333333;
 }
-/* line 114, ../../../components/sass/sections/_navigation.scss */
+/* line 119, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li:last-child {
   border-bottom: none;
 }
-/* line 116, ../../../components/sass/sections/_navigation.scss */
+/* line 121, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li a {
   font-size: 25.632px;
   font-size: 1.602rem;
@@ -3982,7 +3992,7 @@ header article #hgroup p a {
   color: #ffffff;
   display: block;
 }
-/* line 122, ../../../components/sass/sections/_navigation.scss */
+/* line 127, ../../../components/sass/sections/_navigation.scss */
 .navPlaceholder nav #mobileDropDown li a.active {
   color: rgba(255, 255, 255, 0.55);
 }
@@ -4741,28 +4751,46 @@ section#contact article ul.socialMedia li {
 section#contact article ul.socialMedia li a#linkedin {
   color: #007bb5;
 }
-/* line 37, ../../../components/sass/sections/_contact.scss */
+/* line 39, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#github {
   color: #111111;
 }
-/* line 38, ../../../components/sass/sections/_contact.scss */
+/* line 42, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#twitter {
   color: #55acee;
 }
-/* line 39, ../../../components/sass/sections/_contact.scss */
+/* line 45, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a#instagram {
   color: #8f246b;
 }
-/* line 41, ../../../components/sass/sections/_contact.scss */
+/* line 49, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a i {
   font-size: 51.952px;
   font-size: 3.247rem;
 }
-/* line 43, ../../../components/sass/sections/_contact.scss */
+/* line 53, ../../../components/sass/sections/_contact.scss */
 section#contact article ul.socialMedia li a span {
   vertical-align: top;
+  display: inline-block;
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -khtml-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
-/* line 50, ../../../components/sass/sections/_contact.scss */
+/* line 60, ../../../components/sass/sections/_contact.scss */
+section#contact article ul.socialMedia li a span:hover {
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+/* line 69, ../../../components/sass/sections/_contact.scss */
 section#contact article form {
   zoom: 1;
   max-width: 550px;
@@ -4776,18 +4804,18 @@ section#contact article form:before, section#contact article form:after {
 section#contact article form:after {
   clear: both;
 }
-/* line 55, ../../../components/sass/sections/_contact.scss */
+/* line 74, ../../../components/sass/sections/_contact.scss */
 section#contact article form input.alert {
   border-color: #ff0000;
 }
 @media (min-width: 800px) {
-  /* line 50, ../../../components/sass/sections/_contact.scss */
+  /* line 69, ../../../components/sass/sections/_contact.scss */
   section#contact article form {
     max-width: 100%;
   }
 }
 @media (min-width: 800px) {
-  /* line 64, ../../../components/sass/sections/_contact.scss */
+  /* line 83, ../../../components/sass/sections/_contact.scss */
   section#contact article form .contactInfo {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4799,7 +4827,7 @@ section#contact article form input.alert {
   }
 }
 @media (min-width: 800px) {
-  /* line 70, ../../../components/sass/sections/_contact.scss */
+  /* line 89, ../../../components/sass/sections/_contact.scss */
   section#contact article form .messageInfo {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4809,12 +4837,12 @@ section#contact article form input.alert {
     padding-left: 0.83333%;
     padding-right: 0.83333%;
   }
-  /* line 74, ../../../components/sass/sections/_contact.scss */
+  /* line 93, ../../../components/sass/sections/_contact.scss */
   section#contact article form .messageInfo p {
     margin-bottom: 0;
   }
 }
-/* line 82, ../../../components/sass/sections/_contact.scss */
+/* line 101, ../../../components/sass/sections/_contact.scss */
 section#contact article form .alertMessage label {
   font-size: 14.4px;
   font-size: 0.9rem;
@@ -4823,16 +4851,16 @@ section#contact article form .alertMessage label {
   color: #ff0000;
   font-style: italic;
 }
-/* line 91, ../../../components/sass/sections/_contact.scss */
+/* line 110, ../../../components/sass/sections/_contact.scss */
 section#contact article form p {
   margin: 0px 0px 20.256px 0px;
   margin: 0rem 0rem 1.266rem 0rem;
 }
-/* line 93, ../../../components/sass/sections/_contact.scss */
+/* line 112, ../../../components/sass/sections/_contact.scss */
 section#contact article form p label {
   display: block;
 }
-/* line 95, ../../../components/sass/sections/_contact.scss */
+/* line 114, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input, section#contact article form p textarea {
   -webkit-appearance: none;
   -khtml-appearance: none;
@@ -4849,30 +4877,30 @@ section#contact article form p input, section#contact article form p textarea {
   width: 100%;
   border: 1px solid #dddddd;
 }
-/* line 102, ../../../components/sass/sections/_contact.scss */
+/* line 121, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input:focus, section#contact article form p textarea:focus {
   outline: none;
   border-color: #111111;
 }
-/* line 108, ../../../components/sass/sections/_contact.scss */
+/* line 127, ../../../components/sass/sections/_contact.scss */
 section#contact article form p input {
   padding: 5px 0px;
   padding: 0.3125rem 0rem;
 }
-/* line 110, ../../../components/sass/sections/_contact.scss */
+/* line 129, ../../../components/sass/sections/_contact.scss */
 section#contact article form p textarea {
   height: 200px;
   height: 12.5rem;
 }
 @media (min-width: 800px) {
-  /* line 110, ../../../components/sass/sections/_contact.scss */
+  /* line 129, ../../../components/sass/sections/_contact.scss */
   section#contact article form p textarea {
     height: 113px;
     height: 7.0625rem;
   }
 }
 @media (min-width: 800px) {
-  /* line 119, ../../../components/sass/sections/_contact.scss */
+  /* line 138, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4883,12 +4911,12 @@ section#contact article form p textarea {
     padding-right: 0.83333%;
   }
 }
-/* line 124, ../../../components/sass/sections/_contact.scss */
+/* line 143, ../../../components/sass/sections/_contact.scss */
 section#contact article form #submitButton button {
   width: 100%;
 }
 @media (min-width: 800px) {
-  /* line 124, ../../../components/sass/sections/_contact.scss */
+  /* line 143, ../../../components/sass/sections/_contact.scss */
   section#contact article form #submitButton button {
     width: 160px;
     width: 10rem;

@@ -77,9 +77,14 @@
 						font-family: $headerFont;
 						color:$white;
 						@include remFontSize(font-size, 1.375);
+						@include hoverTransition(all, 0.3s, ease);
+
+						&:hover{
+							color:darken($white, 20%);
+						}
 
 						&.active{
-							color: rgba(255,255,255,.55);
+							color:darken($white, 45%);
 						}
 					} //a
 				} //li
