@@ -4,20 +4,32 @@ var Mustache = require('mustache'); // get mustache.js for templating the projec
 var WebFont = require('webfontloader');
 
 $(function(){
-	
 	var Rian = {
-		
+
 		vars: {
-			projectJSON:null, //caching the content
-			portfolioDetailsTmpl:null, // caching the overlay tmpl
-			historyFlag:null //using this flag in order to set browser history when overlay is visible
+			projectJSON:null,				//caching the content
+			portfolioDetailsTmpl:null,		// caching the overlay tmpl
+			historyFlag:null				//using this flag in order to set browser history when overlay is visible
 		},
-		
+
+		dom:{
+			heroImage:null,
+			mobileNav:null,
+			mainNav:null,
+			pageHeadline:null,
+			aboutSection:null,
+			portfolioSection:null,
+			contactSection:null,
+			euvProject:null,
+			emailProject:null
+		},
+
 		init:function(){
-			Rian.setParalaxBackground();
+			Rian.cacheDom();
 			Rian.getRequiredData('jsonData');
 			Rian.getRequiredData('template');
 			Rian.loadingWebFonts();
+			Rian.setParalaxBackground();
 			Rian.landingPageHeight();
 			Rian.setCopyYear();
 			Rian.formValidation();
@@ -26,25 +38,38 @@ $(function(){
 			Rian.landingElement();
 			Rian.setDarkNav();
 			Rian.bindEvents();
+			Rian.finalizeDom();
 			Rian.pageFadeIn();
-		},		
+		},
+
+		cacheDom: function(){
+			Rian.dom.heroImage			= $('header article');
+			Rian.dom.mobileNav			= $('#mobileDropDown');
+			Rian.dom.mainNav			= $('#mainNavbar');
+			Rian.dom.pageHeadline		= $('#hgroup h1');
+			Rian.dom.aboutSection		= $('#about');
+			Rian.dom.portfolioSection	= $('#portfolio');
+			Rian.dom.contactSection		= $('#contact');
+			Rian.dom.euvProject			= $('#euv.projects');
+			Rian.dom.emailProject		= $('#emails.projects');
+		},
 
 		setParalaxBackground: function(){
 			//if device does not run iOS, set headerimage fixed for simple paralax effect
 			var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 			if(iOS){
-				$('header article').addClass('iOS');
+				Rian.dom.heroImage.addClass('iOS');
 			}
 			else {
-				$('header article').addClass('desktop'); 
+				Rian.dom.heroImage.addClass('desktop');
 			}
 		},
 
 		getRequiredData: function(asset){
 			if(asset == 'jsonData'){
 				$.getJSON('../inc/projects.json', function(data){
-					Rian.vars.projectJSON = data;					
+					Rian.vars.projectJSON = data;
 				});
 			}
 			else if(asset == 'template'){
@@ -64,7 +89,6 @@ $(function(){
 
 		bindEvents:function(){
 			$('.showMore').on('click', Rian.showProjectDetails);
-			$('.projects:odd').find('div.projectImage, div.copyPreview').addClass('even');
 			$('#mobileMenuIcon').on('click',Rian.mobileMenu);
 
 			$(window).on('orientationchange, resize', Rian.landingPageHeight);
@@ -77,9 +101,13 @@ $(function(){
 			});
 		},
 
+		finalizeDom:function(){
+			$('.projects:odd').find('div.projectImage, div.copyPreview').addClass('even');
+		},
+
 		landingPageHeight: function(){
 			var height = $(window).height();
-			$('header article').css('height', height+'px');
+			Rian.dom.heroImage.css('height', height+'px');
 
 			//in order to fit landingpage layout when deveice is held in landscape
 			if(height < 450){
@@ -92,9 +120,9 @@ $(function(){
 
 		animatedScroll: function(duration){
 			$('a[href^="#"]:not(#enterButton)').on('click', function(e){
-				var navbarHeight = $('#mainNavbar').height();
+				var navbarHeight = Rian.dom.mainNav.height();
 
-				$('#mobileDropDown').slideUp(); //close the menu
+				Rian.dom.mobileNav.slideUp(); //close the menu
 
 				var target = $( $(this).attr('href') );
 				var hashTag = target.selector;
@@ -105,7 +133,7 @@ $(function(){
 					$('html, body').animate({
 						scrollTop: target.offset().top - (navbarHeight - 5)
 					}, duration);
-				}	
+				}
 				Rian.setBrowserHistory(hashTag);
 			});
 		},
@@ -124,24 +152,24 @@ $(function(){
 		},
 
 		showActiveSection: function(){
-			var navbarHeight = $('#mainNavbar').height();
+			var navbarHeight = Rian.dom.mainNav.height();
 			
-			$(window).scroll(function(){	
+			$(window).scroll(function(){
 				var wScroll = $(window).scrollTop() + navbarHeight;
 				$('nav li a').removeClass('active');
 			
 				//about page
-				if(wScroll > $('#about').offset().top){
+				if(wScroll > Rian.dom.aboutSection.offset().top){
 					$('nav li a').removeClass('active');
 					$('a[href$="#about"]').addClass('active');
 				}
 
-				if(wScroll > $('#portfolio').offset().top){
+				if(wScroll > Rian.dom.portfolioSection.offset().top){
 					$('nav li a').removeClass('active');
 					$('a[href$="#portfolio"]').addClass('active');
 				}
 
-				if(wScroll > $('#contact').offset().top){
+				if(wScroll > Rian.dom.contactSection.offset().top){
 					$('nav li a').removeClass('active');
 					$('a[href$="#contact"]').addClass('active');
 				}
@@ -153,29 +181,29 @@ $(function(){
 				var wScroll = $(window).scrollTop();
 
 				//about Image animation
-				if(wScroll > $('#hgroup h1').offset().top){
+				if(wScroll > Rian.dom.pageHeadline.offset().top){
 					$('#aboutImage').addClass('isVisible');
 				}
 
 				//medicare project image animation	
-				if (wScroll > $('#portfolio').offset().top - ($(window).height() / 1.5)) {
+				if (wScroll > Rian.dom.portfolioSection.offset().top - ($(window).height() / 1.5)) {
 					$('#medicareImg.projectImage').addClass('isVisible');
 				}
 
 				//euv project image animation
-				if (wScroll > $('#euv.projects').offset().top - ($(window).height() / 1.3)) {
+				if (wScroll > Rian.dom.euvProject.offset().top - ($(window).height() / 1.3)) {
 					$('#euvImg.projectImage').addClass('isVisible');
 				}
 
 				//emails project image animation
-				if (wScroll > $('#emails.projects').offset().top - ($(window).height() / 1.3)) {
+				if (wScroll > Rian.dom.emailProject.offset().top - ($(window).height() / 1.3)) {
 					$('#emailsImg.projectImage').addClass('isVisible');
 				}
 			});
 		},
 
 		setDarkNav:function(){
-			var intro = $('#hgroup h1');
+			var intro = Rian.dom.pageHeadline;
 			var navbar = $('nav');
 			var navHeight= $('.navbar').height()+20;
 			var introPos = intro.offset().top;
@@ -187,7 +215,7 @@ $(function(){
 					navbar.addClass('darkNav');
 				}
 				else{
-					navbar.removeClass('darkNav transToDark');			
+					navbar.removeClass('darkNav transToDark');
 				}
 			}); // end of window scroll
 
@@ -199,11 +227,11 @@ $(function(){
 		mobileMenu: function(){
 			//only add class transtoDark if user is still on top of the page
 			if($('nav').hasClass('darkNav')){
-				$('#mobileDropDown').slideToggle();
+				Rian.dom.mobileNav.slideToggle();
 			}
 			else {
 				$('nav').toggleClass('transToDark');
-				$('#mobileDropDown').slideToggle();
+				Rian.dom.mobileNav.slideToggle();
 			}
 		},
 
@@ -221,13 +249,12 @@ $(function(){
 				for(var x in projects){
 					var project = projects[x];
 
-					if(x == clickedProject){	
-						
+					if(x == clickedProject){
 						detailsMarkup = Mustache.render(Rian.vars.portfolioDetailsTmpl, project);
 					}// end of if-clause
 				} // end of 2nd for-loop
 			} // end of 1st for-loop
-			Rian.finalizeDetails(detailsMarkup, clickedProject);	
+			Rian.finalizeDetails(detailsMarkup, clickedProject);
 		},
 
 		finalizeDetails: function(detailView, id){
@@ -237,32 +264,31 @@ $(function(){
 			$('#detailOverlay').fadeIn();
 			Rian.setBrowserHistory(tag);
 			
-			$('.closeProjectButton').on('click', function(){	
+			$('.closeProjectButton').on('click', function(){
 				return Rian.closeDetails(id); //use return to prevent function to be called right away
 			});
 		},
-
 
 		closeDetails:function(id){
 			$('body').removeClass('noScroll');
 			Rian.goBackToProject(id);
 
-			$('#detailOverlay').fadeOut('slow', function(){	
+			$('#detailOverlay').fadeOut('slow', function(){
 				$(this).remove();
 			});
 			//setting the flag undefined so that popstate only calls this function when neccessary
-			Rian.vars.historyFlag = undefined; 
+			Rian.vars.historyFlag = undefined;
 		},
 
 		goBackToProject: function(viewedProject){
 			// this function scrolls the body back to the last clicked Project, after the overlay has been closed
-			var navbarHeight = $('#mainNavbar').height();
+			var navbarHeight = Rian.dom.mainNav.height();
 			$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (navbarHeight - 5));
 		},
 
-		pageFadeIn: function(){	
+		pageFadeIn: function(){
 			setTimeout(function(){
-				$('#mainPage').addClass('visible');	
+				$('#mainPage').addClass('visible');
 			}, 300);
 		},
 
@@ -270,7 +296,7 @@ $(function(){
 			var date = new Date();
 			var thisYear = date.getFullYear();
 			$('#thisYear').text(thisYear);
-		}, 
+		},
 
 		formValidation: function(){
 			$("#contactForm").validate({
@@ -287,9 +313,9 @@ $(function(){
 				}
 			});
 		}
-	};
+	}; // END OF Rian object
 
 	$(document).ready(function(){
 		Rian.init();
-	});	
-});	
+	});
+});
