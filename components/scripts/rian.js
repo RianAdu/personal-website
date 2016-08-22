@@ -7,9 +7,9 @@ $(function(){
 	var Rian = {
 
 		vars: {
-			projectJSON:null,				//caching the content
-			portfolioDetailsTmpl:null,		// caching the overlay tmpl
-			historyFlag:null				//using this flag in order to set browser history when overlay is visible
+			projectJSON:null,
+			portfolioDetailsTmpl:null,
+			historyFlag:null,
 		},
 
 		dom:{
@@ -43,15 +43,28 @@ $(function(){
 		},
 
 		cacheDom: function(){
-			Rian.dom.heroImage			= $('header article');
-			Rian.dom.mobileNav			= $('#mobileDropDown');
-			Rian.dom.mainNav			= $('#mainNavbar');
-			Rian.dom.pageHeadline		= $('#hgroup h1');
-			Rian.dom.aboutSection		= $('#about');
-			Rian.dom.portfolioSection	= $('#portfolio');
-			Rian.dom.contactSection		= $('#contact');
-			Rian.dom.euvProject			= $('#euv.projects');
-			Rian.dom.emailProject		= $('#emails.projects');
+			Rian.dom.heroImage = $('header article');
+			Rian.dom.mobileNav = $('#mobileDropDown');
+			Rian.dom.mainNav = $('#mainNavbar');
+			Rian.dom.pageHeadline = $('#hgroup h1');
+			Rian.dom.aboutSection = $('#about');
+			Rian.dom.portfolioSection = $('#portfolio');
+			Rian.dom.contactSection	= $('#contact');
+			Rian.dom.euvProject	= $('#euv.projects');
+			Rian.dom.emailProject = $('#emails.projects');
+		},
+
+		bindEvents:function(){
+			$('.showMore').on('click', Rian.showProjectDetails);
+			$('#mobileMenuIcon').on('click',Rian.mobileMenu);
+			$(window).on('orientationchange, resize', Rian.landingPageHeight);
+
+			//user can hit the back button when project details are visible
+			$(window).on('popstate', function(){
+				if(Rian.vars.historyFlag !== undefined){
+					Rian.closeDetails(Rian.vars.historyFlag);
+				}
+			});
 		},
 
 		setParalaxBackground: function(){
@@ -83,20 +96,6 @@ $(function(){
 			WebFont.load({
 				google: {
 					families: ['Open+Sans:300,400,600', 'Orbitron:400', 'Exo+2:300,700']
-				}
-			});
-		},
-
-		bindEvents:function(){
-			$('.showMore').on('click', Rian.showProjectDetails);
-			$('#mobileMenuIcon').on('click',Rian.mobileMenu);
-
-			$(window).on('orientationchange, resize', Rian.landingPageHeight);
-
-			//user can hit the back button when project details are visible
-			$(window).on('popstate', function(){
-				if(Rian.vars.historyFlag !== undefined){
-					Rian.closeDetails(Rian.vars.historyFlag);
 				}
 			});
 		},
@@ -180,22 +179,18 @@ $(function(){
 			$(window).scroll(function(){
 				var wScroll = $(window).scrollTop();
 
-				//about Image animation
 				if(wScroll > Rian.dom.pageHeadline.offset().top){
 					$('#aboutImage').addClass('isVisible');
 				}
 
-				//medicare project image animation	
 				if (wScroll > Rian.dom.portfolioSection.offset().top - ($(window).height() / 1.5)) {
 					$('#medicareImg.projectImage').addClass('isVisible');
 				}
 
-				//euv project image animation
 				if (wScroll > Rian.dom.euvProject.offset().top - ($(window).height() / 1.3)) {
 					$('#euvImg.projectImage').addClass('isVisible');
 				}
 
-				//emails project image animation
 				if (wScroll > Rian.dom.emailProject.offset().top - ($(window).height() / 1.3)) {
 					$('#emailsImg.projectImage').addClass('isVisible');
 				}
@@ -238,7 +233,6 @@ $(function(){
 		showProjectDetails: function(){
 			var clickedProject = $(this).parent().parent().attr('id');
 			var detailsMarkup;
-			
 			Rian.vars.historyFlag = clickedProject; //assigning id to flag for history behaviour
 			
 			$('#detailsOverlay').remove();
@@ -265,7 +259,7 @@ $(function(){
 			Rian.setBrowserHistory(tag);
 			
 			$('.closeProjectButton').on('click', function(){
-				return Rian.closeDetails(id); //use return to prevent function to be called right away
+				return Rian.closeDetails(id);
 			});
 		},
 
@@ -273,9 +267,12 @@ $(function(){
 			$('body').removeClass('noScroll');
 			Rian.goBackToProject(id);
 
+			$('.closeProjectButton').off('click');
+			
 			$('#detailOverlay').fadeOut('slow', function(){
 				$(this).remove();
 			});
+
 			//setting the flag undefined so that popstate only calls this function when neccessary
 			Rian.vars.historyFlag = undefined;
 		},
@@ -314,7 +311,6 @@ $(function(){
 			});
 		}
 	}; // END OF Rian object
-
 	$(document).ready(function(){
 		Rian.init();
 	});
