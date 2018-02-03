@@ -20,7 +20,7 @@
     "gulp-mustache": "^2.2.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
-    "jquery": "^2.2.1",
+    "jquery": "^3.0.0",
     "gulp-jsonminify": "^1.0.0"
   }
 }
