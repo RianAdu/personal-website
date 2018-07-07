@@ -1,22 +1,24 @@
-//gulp require plug-ins
-var gulp		= require('gulp'),
-	gutil		= require('gulp-util'),
-	browserify	= require('gulp-browserify'),
-	compass		= require('gulp-compass'),
-	concat		= require('gulp-concat'),
-	connect		= require('gulp-connect'),
-	gulpif		= require('gulp-if'),
-	minifyHTML	= require('gulp-minify-html'),
-	cleanCSS	= require('gulp-clean-css'),
-	uglify		= require('gulp-uglify'),
-	jsonminify 	= require('gulp-jsonminify');
+/**** 
+Gulp file for automation
+****/
+
+var gulp			= require('gulp'),
+	concat			= require('gulp-concat'),
+	gulpif			= require('gulp-if'),
+	cleanCSS		= require('gulp-clean-css'),
+	uglify			= require('gulp-uglify'),
+	htmlmin			= require('gulp-htmlmin'),
+	jsonminify	= require('gulp-jsonminify'),
+	sass 				= require('gulp-sass'),
+	autoprefix	= require('gulp-autoprefixer'),
+	browserSync	= require('browser-sync').create(),
+	sassGlob 		= require('gulp-sass-glob');
 
 // declarating enviroment and component sources
 var enviroment,
 	jsSources,
 	sassSources,
 	htmlSources,
-	sassComments,
 	outputDir;
 
 //distinguishing between development and production enviroment
@@ -25,92 +27,91 @@ enviroment	= process.env.NODE_ENV || 'development';
 
 if(enviroment === 'development'){
 	outputDir = 'builds/development/';
-	sassComments = true;
 }
 else {
 	outputDir = 'builds/production/';
-	sassComments = false;
 }
 
 //setting the files 
-sassSources = ['components/sass/style.scss'];
+sassSources = ['components/sass/app.scss'];
 htmlSources = [outputDir + '*.html'];
-jsSources	= [ 
-	'components/scripts/rian.js',
-	'components/scripts/jquery.validate.js'
+jsSources		= [
+	'components/scripts/jquery.js',
+	'components/scripts/bootstrap/*.js',
+	'components/scripts/mustache.js',
+	'components/scripts/tooltip.js',
+	'components/scripts/popover.js'
 ];
-
-
-gulp.task('scripts', function(){
-	gulp.src(jsSources)
-		.pipe(concat('script.js'))
-		.pipe(browserify())
-		.on('error', gutil.log)
-		.pipe(gulpif(enviroment === 'production', uglify()))
-		.pipe(gulp.dest(outputDir + '/js'))
-		.pipe(connect.reload());
-}); //END OF script task
-
-
-gulp.task('styles', function(){
-	gulp.src(sassSources)
-		.pipe(compass({
-			sass: 'components/sass',
-			image: outputDir + 'images',
-			css: outputDir + 'css',
-			style: 'expanded',
-			comments: sassComments,
-			require: ['susy', 'breakpoint','font-awesome-sass']
-		})
-		.on('error', gutil.log))
-		.pipe(gulpif(enviroment === 'production', cleanCSS()))
-		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir + 'css')))
-		.pipe(connect.reload());
-}); //END OF style task
 
 
 gulp.task('markup', function(){
 	gulp.src('builds/development/*.html')
-		.pipe(gulpif(enviroment === 'production', minifyHTML()))
-		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir)))
-		.pipe(connect.reload());
+		.pipe(gulpif(enviroment === 'production', htmlmin({collapseWhitespace: true})))
+		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir)));
 }); //END OF markup task
 
 
-gulp.task('watch', function(){
-	gulp.watch('builds/development/*.html', ['markup']);
-	gulp.watch(jsSources, ['scripts']);
+gulp.task('styles', function(){
+	gulp.src(sassSources)
+		.pipe(sassGlob())
+		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefix({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
+		.pipe(gulpif(enviroment === 'production', cleanCSS()))
+		.pipe(gulp.dest(outputDir + 'css'))
+		.pipe(browserSync.stream());
+}); //END OF styles task
+
+
+gulp.task('scripts', function(){
+	gulp.src(jsSources)
+		.pipe(concat('app.js'))
+		.pipe(gulpif(enviroment === 'production', uglify()))
+		.pipe(gulp.dest(outputDir + '/js'));
+}); //END OF script task
+
+
+//server & watch task
+gulp.task('server', ['styles'], function(){
+	browserSync.init({
+		server: outputDir,
+		browser: "google chrome"
+	});
+
+	gulp.watch(htmlSources, ['markup']).on('change', browserSync.reload);
+	gulp.watch(jsSources, ['scripts']).on('change', browserSync.reload);
 	gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['styles']);
-}); //END OF watch task
+}); // END OF server & watch task
 
 
-// Copy images and font-awesome files to production
+// Copy assets to production
 gulp.task('move', function() {
 	
-  gulp.src('builds/development/images/**/*.*')
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'images')));
+	//images
+ 	gulp.src('builds/development/img/**/*.*')
+	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'images')));
 
-   gulp.src('builds/development/fonts/**/*.*')
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'fonts')));
+	//fonts
+  gulp.src('builds/development/fonts/**/*.*')
+	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'fonts')));
 
-  gulp.src('builds/development/inc/*.js')
+	//javascript
+	gulp.src('builds/development/inc/*.js')
+	.pipe(gulpif(enviroment === 'production', uglify()))
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
 
+	//json files
   gulp.src('builds/development/inc/*.json')
   .pipe(gulpif(enviroment === 'production', jsonminify()))
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
 
+	//templates
   gulp.src('builds/development/templates/*.*')
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'templates')));
 
 }); //END OF move task
 
+gulp.task('default', ['markup', 'scripts', 'styles', 'server', 'move']);
 
-gulp.task('connect', function() {
-  connect.server({
-    root: outputDir,
-    livereload: true
-  });
-}); //END of connect task
-
-gulp.task('default', ['markup', 'scripts', 'styles', 'connect', 'move', 'watch']);

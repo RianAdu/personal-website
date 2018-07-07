@@ -1,26 +1,24 @@
 {
-  "name": "FlorianAdu-GyamfiPersonalWebsite",
-  "version": "1.0",
+  "name": "Portfolio2018",
+  "version": "2.0.0",
   "description": "This is my personal portfolio website, which includes a selection of work that I have done",
   "repository": {
     "type": "git",
-    "url": "https://RianAdu@bitbucket.org/RianAdu/personal-website.git"
+    "url": ""
   },
   "author": "Florian Adu-Gyamfi",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.24.5",
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1",
-    "gulp-clean-css": "^2.0.11",
-    "gulp-compass": "^2.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-connect": "^2.2.0",
-    "gulp-if": "^2.0.0",
-    "gulp-minify-html": "^1.0.6",
-    "gulp-mustache": "^2.2.0",
-    "gulp-uglify": "^1.5.3",
-    "gulp-util": "^3.0.7",
-    "jquery": "^3.0.0",
-    "gulp-jsonminify": "^1.0.0"
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-jsonminify": "^1.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-uglify": "^3.0.0"
   }
 }
