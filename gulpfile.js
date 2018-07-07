@@ -10,6 +10,7 @@ var gulp			= require('gulp'),
 	htmlmin			= require('gulp-htmlmin'),
 	jsonminify	= require('gulp-jsonminify'),
 	sass 				= require('gulp-sass'),
+	sourcemaps 	= require('gulp-sourcemaps'),
 	autoprefix	= require('gulp-autoprefixer'),
 	browserSync	= require('browser-sync').create(),
 	sassGlob 		= require('gulp-sass-glob');
@@ -53,12 +54,14 @@ gulp.task('markup', function(){
 
 gulp.task('styles', function(){
 	gulp.src(sassSources)
+		.pipe(gulpif(enviroment === 'development', sourcemaps.init()))
 		.pipe(sassGlob())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefix({
 			browsers: ['last 2 versions'],
 			cascade: false
 		}))
+		.pipe(gulpif(enviroment === 'development', sourcemaps.write()))
 		.pipe(gulpif(enviroment === 'production', cleanCSS()))
 		.pipe(gulp.dest(outputDir + 'css'))
 		.pipe(browserSync.stream());

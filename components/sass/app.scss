@@ -1,4 +1,5 @@
 //custom partials
+@import 'partials/custom-fonts';
 @import 'partials/custom-variables';
 
 //bootstrap 
@@ -10,3 +11,6 @@
 @import 'vendor/font-awesome/fa-brands';
 @import 'vendor/font-awesome/fa-regular';
 @import 'vendor/font-awesome/fa-solid';
+
+
+@import 'partials/custom-navbar';
