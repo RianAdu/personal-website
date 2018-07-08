@@ -1,22 +1,17 @@
-//
-// Navbars
-// --------------------------------------------------
-
-// custom 
-.navbar {
+ .navbar {
   min-width: 320px;
-  padding:5px 0;
+  padding: 5px 0;
   
   &.navbar-inverse {
 
     .navbar-brand {
       font-family: $font-family-logo;
-      font-weight:$normal;
-      font-size:$font-size-h1;
+      font-weight: $normal;
+      font-size: $font-size-h1;
     }
 
     .navbar-toggle {
-      border-color:transparent;
+      border-color: transparent;
     }
   }
 }
