@@ -55,7 +55,7 @@ gulp.task('markup', function(){
 gulp.task('styles', function(){
 	gulp.src(sassSources)
 		.pipe(gulpif(enviroment === 'development', sourcemaps.init()))
-		/* .pipe(sassGlob()) */
+		.pipe(sassGlob())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefix({
 			browsers: ['last 2 versions'],
