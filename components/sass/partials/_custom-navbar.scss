@@ -1,0 +1,36 @@
+/******* Navbar *********/ 
+
+.navbar-brand {
+  font-family: $font-family-logo;
+  font-weight: $normal;
+  @include rem(font-size, 36.5px);
+  @include rem(line-height, 28px);
+}
+
+.navbar-collapse {
+  border-top:0;
+  box-shadow: none;
+}
+
+.navbar-nav{
+  margin-bottom:0;
+}
+
+.nav > li {
+  border-bottom:1px solid #333;
+  text-align:center;
+  @include rem(font-size, 22px);
+  
+  &:first-child {
+    border-top:1px solid #333;
+  }
+
+  &:last-child {
+    border-bottom:0;
+  }
+
+  & > a {
+    padding-top:15px;
+    padding-bottom:15px;
+  }
+}

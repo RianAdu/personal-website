@@ -386,7 +386,9 @@ $container-lg:                 $container-large-desktop !default;
 //##
 
 // Basics of a navbar
-$navbar-height:                    70px !default;
+//$navbar-height:                    50px !default;
+$navbar-height:                    70px;
+ 
 $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             $border-radius-custom-null !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;

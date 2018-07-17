@@ -1,7 +1,7 @@
 //custom core
-@import 'partials/fonts';
-@import 'partials/variables';
-@import 'partials/mixins';
+@import 'partials/custom-fonts';
+@import 'partials/custom-variables';
+@import 'partials/custom-mixins';
  
 //bootstrap 
 @import 'vendor/bootstrap-sass/bootstrap';
@@ -14,6 +14,6 @@
 @import 'vendor/font-awesome/fa-solid';
 
 //custom partials
-@import 'partials/base';
-@import 'partials/layout';
-@import 'partials/navbar';
+@import 'partials/custom-base';
+@import 'partials/custom-layout';
+@import 'partials/custom-navbar';
