@@ -30,7 +30,12 @@
   }
 
   & > a {
+    font-family: $font-family-header;
     padding-top:15px;
     padding-bottom:15px;
   }
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color:transparent;
 }
