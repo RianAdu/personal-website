@@ -132,9 +132,7 @@ $border-radius-base:        2px;
 $border-radius-large:       6px !default;
 $border-radius-small:       3px !default;
 
-//$border-radius-base:
-
-$border-radius-custom-null: 0px !default;
+$border-radius-zero:        0px; // custom variable
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff !default;
@@ -257,7 +255,7 @@ $input-group-addon-border-color: $input-border !default;
 $cursor-disabled:                not-allowed !default;
 
 
-//== Dropdowns
+//========================== Dropdowns ===============================
 //
 //## Dropdown menu container and contents.
 
@@ -308,7 +306,7 @@ $zindex-modal-background:  1040 !default;
 $zindex-modal:             1050 !default;
 
 
-//== Media queries breakpoints
+//==================== Media queries breakpoints ==========================
 //
 //## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
@@ -347,7 +345,7 @@ $screen-sm-max:              ($screen-md-min - 1) !default;
 $screen-md-max:              ($screen-lg-min - 1) !default;
 
 
-//== Grid system
+//=========================== Grid system =============================
 //
 //## Define your custom responsive grid.
 
@@ -362,7 +360,7 @@ $grid-float-breakpoint:     $screen-sm-min !default;
 $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 
 
-//== Container sizes
+//=========================== Container sizes =========================
 //
 //## Define the maximum width of `.container` for different screen sizes.
 
@@ -382,16 +380,19 @@ $container-large-desktop:      (1140px + $grid-gutter-width) !default;
 $container-lg:                 $container-large-desktop !default;
 
 
-//== Navbar
+//======================== NAVBAR ==========================================
 //
 //##
 
 // Basics of a navbar
-//$navbar-height:                    50px !default;
-$navbar-height:                    70px;
+//$navbar-height:                  50px !default;
+$navbar-height:                    65px;
  
 $navbar-margin-bottom:             $line-height-computed !default;
-$navbar-border-radius:             $border-radius-custom-null !default;
+
+//$navbar-border-radius:             $border-radius-base !default;
+$navbar-border-radius:             $border-radius-zero;
+
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
@@ -420,7 +421,7 @@ $navbar-default-toggle-icon-bar-bg:        #888 !default;
 $navbar-default-toggle-border-color:       #ddd !default;
 
 
-//=== Inverted navbar
+//======================== Inverted navbar ===============================
 // Reset inverted navbar basics
 $navbar-inverse-color:                      $white !default;
 $navbar-inverse-bg:                         $black !default;
@@ -446,7 +447,7 @@ $navbar-inverse-toggle-icon-bar-bg:         #fff !default;
 $navbar-inverse-toggle-border-color:        #333 !default;
 
 
-//== Navs
+//=============================  Navs ============================
 //
 //##
 
