@@ -1,0 +1,57 @@
+//***** Header Styles *****
+.hero {
+  height: 100vh;
+  background: url('../img/main/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $white;
+
+  &__title-name {
+    font-family: $font-family-logo;
+    font-weight: $normal;
+    text-transform: uppercase;
+    border-top: 2px solid $white;
+    border-bottom: 2px solid $white;
+
+    @include rem(font-size, 30.4px);
+    @include rem(line-height, 35.2px);
+    @include rem (padding, 10px 0);
+    @include rem(letter-spacing, 5px);
+    @include rem(margin-bottom, 18px);
+  }
+
+  &__subtitle {
+    font-family: $font-family-header;
+    font-weight:light;
+    margin-bottom: 0;
+    @include rem(font-size, 20px);
+  }
+
+  &__enter-icon {
+    color:$white;
+    transition: all .4s ease-out;
+    transform: scale(1, 1);
+    @include rem(font-size, 56px);
+    @include rem (margin, 22.784px 0);
+
+    &:hover {
+      color:$white;
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
+
+@media screen and (min-width: $screen-xs-min) {
+  .hero {
+
+    &__title-name {
+      @include rem(padding, 24px 0 16px 0);
+    }
+  }
+}

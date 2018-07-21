@@ -1,7 +1,12 @@
 /******* Navbar *********/ 
-.navbar-inverse .navbar-toggle {
-  border-color: transparent;
-}
+.navbar-inverse {
+  //background-color: transparent;
+  
+  .navbar-toggle {
+    border-color: transparent;
+  }
+} 
+
 
 .navbar-brand {
   font-family: $font-family-logo;
@@ -51,7 +56,10 @@
   }
 
   .nav > li {
-    border-top: 0;
     border-bottom: 0;
+
+    &:first-child {
+      border-top: 0;
+    }
   }
 } 
