@@ -58,26 +58,32 @@
 
 @media screen and (min-width: $screen-xs-min) {
 
-  .header__wrap {
-    padding: 0;
-  }
-  
-  .header__title-name {
-    @include rem(padding, 24px 0 16px 0);
-  }
+  .header {
 
-  .header__subtitle {
-    display: inline-block;
+    &__wrap {
+      padding: 0;
+    }
+    
+    &__title-name {
+      @include rem(padding, 24px 0 16px 0);
+    }
+
+    &__subtitle {
+      display: inline-block;
+    }
   }
 }
 
 @media screen and (min-width: $screen-sm-min) {
   
-  .header__title-name {
-    @include rem(font-size, 38.4px);
-  }
+  .header {
+    
+    &__title-name {
+      @include rem(font-size, 38.4px);
+    }
 
-  .header__subtitle {
-    @include rem(font-size, 22px);
+    &__subtitle {
+      @include rem(font-size, 22px);
+    }
   }
 }
