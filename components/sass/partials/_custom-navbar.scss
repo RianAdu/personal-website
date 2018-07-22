@@ -7,7 +7,6 @@
   }
 } 
 
-
 .navbar-brand {
   font-family: $font-family-logo;
   font-weight: $normal;
@@ -53,6 +52,10 @@
 @media screen and (min-width: $screen-sm-min) {
   .navbar-fixed-top {
     border-bottom: 0;
+  }
+
+  .navbar-brand {
+    @include rem(font-size, 41.053px);
   }
 
   .nav > li {

@@ -1,9 +1,9 @@
 //***** Header Styles *****
-.hero {
-  height: 100vh;
+.header {
   background: url('../img/main/hero-bg.jpg');
   background-size: cover;
   background-position: center;
+  height: 100vh;
 
   display: flex;
   flex-flow: column;
@@ -11,6 +11,14 @@
   align-items: center;
   text-align: center;
   color: $white;
+
+  &__wrap {
+    @include rem(padding, 144px 0 46.192px);
+
+    &--landscape {
+      @include rem(padding, 150px 0 46.192px);
+    }
+  }
 
   &__title-name {
     font-family: $font-family-logo;
@@ -21,19 +29,20 @@
 
     @include rem(font-size, 30.4px);
     @include rem(line-height, 35.2px);
-    @include rem (padding, 10px 0);
+    @include rem (padding, 10px 15px 5px 15px);
     @include rem(letter-spacing, 5px);
     @include rem(margin-bottom, 18px);
   }
 
   &__subtitle {
     font-family: $font-family-header;
-    font-weight:light;
+    font-weight:$light;
     margin-bottom: 0;
     @include rem(font-size, 20px);
   }
 
   &__enter-icon {
+    display: block;
     color:$white;
     transition: all .4s ease-out;
     transform: scale(1, 1);
@@ -48,10 +57,27 @@
 }
 
 @media screen and (min-width: $screen-xs-min) {
-  .hero {
 
-    &__title-name {
-      @include rem(padding, 24px 0 16px 0);
-    }
+  .header__wrap {
+    padding: 0;
+  }
+  
+  .header__title-name {
+    @include rem(padding, 24px 0 16px 0);
+  }
+
+  .header__subtitle {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  
+  .header__title-name {
+    @include rem(font-size, 38.4px);
+  }
+
+  .header__subtitle {
+    @include rem(font-size, 22px);
   }
 }
