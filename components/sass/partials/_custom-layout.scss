@@ -1,1 +1,5 @@
 /********** Layout **********/
+.page {
+  position: relative;
+  @include rem(padding, 20.25px 0 83.225px);
+}

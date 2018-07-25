@@ -36,28 +36,27 @@
 
   &__subtitle {
     font-family: $font-family-header;
-    font-weight:$light;
+    font-weight: $light;
     margin-bottom: 0;
     @include rem(font-size, 20px);
   }
 
   &__enter-icon {
     display: block;
-    color:$white;
+    color: $white;
     transition: all .4s ease-out;
     transform: scale(1, 1);
     @include rem(font-size, 56px);
     @include rem (margin, 22.784px 0);
 
     &:hover {
-      color:$white;
+      color: $white;
       transform: scale(1.2, 1.2);
     }
   }
 }
 
 @media screen and (min-width: $screen-xs-min) {
-
   .header {
 
     &__wrap {
@@ -75,7 +74,6 @@
 }
 
 @media screen and (min-width: $screen-sm-min) {
-  
   .header {
     
     &__title-name {
