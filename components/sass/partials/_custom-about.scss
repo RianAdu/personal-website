@@ -1,0 +1,26 @@
+/* ************* ABOUT **************** */
+.about {
+
+  &__profile-picture {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    margin: auto;
+  }
+
+  &__intro-paragraph {
+    @include rem(font-size, 25.63px);
+    @include rem(line-height, 36.5px);
+  }
+}
+
+@media screen and (min-width:$screen-md-min) {
+  .about {
+
+    &__profile-picture {
+      max-width: 100%;
+      @include rem(margin-top, 25.63px);
+    }
+  }
+}

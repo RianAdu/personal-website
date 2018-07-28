@@ -1,5 +1,10 @@
 /********** Layout **********/
 .page {
   position: relative;
+  border-bottom: 1px solid $section-border-color;
   @include rem(padding, 20.25px 0 83.225px);
+
+  &:nth-child(2) {
+    background-color:$light-grey;
+  }
 }
