@@ -12,7 +12,7 @@
   text-align: center;
   color: $white;
 
-  &__wrap {
+  &__wrapper {
     @include rem(padding, 144px 0 46.192px);
 
     &--landscape {
@@ -59,7 +59,7 @@
 @media screen and (min-width: $screen-xs-min) {
   .header {
 
-    &__wrap {
+    &__wrapper {
       padding: 0;
     }
     

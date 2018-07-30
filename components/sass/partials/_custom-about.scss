@@ -13,6 +13,24 @@
     @include rem(font-size, 25.63px);
     @include rem(line-height, 36.5px);
   }
+
+  &__skillset{
+    
+    &-wrapper {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 690px;
+    }
+
+    &-icon {
+      width:100%;
+      max-width:75px;
+      height:auto;
+      margin:15px 10px;
+    }
+  }
 }
 
 @media screen and (min-width:$screen-md-min) {
@@ -21,6 +39,17 @@
     &__profile-picture {
       max-width: 100%;
       @include rem(margin-top, 25.63px);
+    }
+
+    &__skillset{
+      
+      &-wrapper {
+        max-width:100%;
+      }
+
+      &-icon {
+        margin: 15px 20px 15px 0;
+      }
     }
   }
 }
