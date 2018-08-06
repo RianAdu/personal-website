@@ -1,10 +1,10 @@
 .services {
 
   &__intro {
-    margin-bottom:40px;
+    @include rem(margin-bottom, 50px);
   }
 
   &__col-icon {
-    
+    @include rem(font-size, 40px);
   }
 }
