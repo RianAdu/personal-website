@@ -1,0 +1,74 @@
+/* ********* CONTACT ******** */
+/* ************************** */
+.contact {
+
+  &__social-media-wrapper {
+    @include rem(margin, 7.892px 0);
+  }
+
+  &__social-media-link {
+    display: inline-block;
+    color: $black;
+
+    &--linkedin {
+      color:$linkedin;
+
+      &:hover {
+        color:$linkedin;
+      }
+    }
+
+    &--twitter {
+      color:$twitter;
+
+      &:hover {
+        color:$twitter;
+      }
+    }
+
+    &--github {
+      color:$github;
+
+      &:hover {
+        color:$github;
+      }
+    }
+
+    &--instagram {
+      color:darken($instagram, 15);
+
+      &:hover {
+        color:darken($instagram, 15);
+      }
+    }
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__social-media-icon {
+    vertical-align: middle;
+    @include rem(font-size, 51.957px);
+    @include rem(margin-right, 9.989px);
+  }
+
+  &__social-media-icon-title {
+    transform: scale(1,1);
+    transition: all .4s ease;
+    
+    &:hover {
+      display:inline-block;
+      transform: scale(1.1,1.1);
+    }
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .contact {
+
+    &__social-media-wrapper {
+      @include rem(margin-bottom, 32.437px);
+    }
+  }
+}
