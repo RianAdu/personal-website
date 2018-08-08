@@ -187,35 +187,61 @@
             <div class="col-xs-12">
               <h1>contact me</h1>
             </div>
-            <div class="col-xs-12 col-md-9">
+            <div class="contact__social-media-container col-xs-12 col-md-9">
               <p>Get in touch about projects, collaborations, new technologies or just for fun.</p>
               <div class="row">
-                <div class="contact__social-media-wrapper col-xs-12 col-sm-6">
-                  <a href="#" class="contact__social-media-link contact__social-media-link--linkedin">
+                <div class="contact__social-media-row col-xs-12 col-sm-6">
+                  <a href="#" class="contact__social-media-channel contact__social-media-channel--linkedin">
                     <i class="contact__social-media-icon fab fa-linkedin" aria-hidden="true"></i>
                     <span class="contact__social-media-icon-title">Connect on LinkedIn</span>
                   </a>
                 </div>
-                <div class="contact__social-media-wrapper col-xs-12 col-sm-6">
-                  <a href="#" class="contact__social-media-link contact__social-media-link--twitter">
-                      <i class="contact__social-media-icon fab fa-twitter-square" aria-hidden="true"></i>
-                      <span class="contact__social-media-icon-title">Follow me on Twitter</span>
+                <div class="contact__social-media-row col-xs-12 col-sm-6">
+                  <a href="#" class="contact__social-media-channel contact__social-media-channel--twitter">
+                    <i class="contact__social-media-icon fab fa-twitter-square" aria-hidden="true"></i>
+                    <span class="contact__social-media-icon-title">Follow me on Twitter</span>
                   </a>
                 </div>
-                <div class="contact__social-media-wrapper col-xs-12 col-sm-6">
-                    <a href="#" class="contact__social-media-link contact__social-media-link--github">
-                        <i class="contact__social-media-icon fab fa-github-square" aria-hidden="true"></i>
-                        <span class="contact__social-media-icon-title">Collaborate on GitHub</span>
+                <div class="contact__social-media-row col-xs-12 col-sm-6">
+                    <a href="#" class="contact__social-media-channel contact__social-media-channel--github">
+                      <i class="contact__social-media-icon fab fa-github-square" aria-hidden="true"></i>
+                      <span class="contact__social-media-icon-title">Collaborate on GitHub</span>
                     </a>
                   </div>
-                <div class="contact__social-media-wrapper col-xs-12 col-sm-6">
-                  <a href="#" class="contact__social-media-link contact__social-media-link--instagram">
-                      <i class="contact__social-media-icon fab fa-instagram" aria-hidden="true"></i>
-                      <span class="contact__social-media-icon-title">Follow me on Instagram</span>
+                <div class="contact__social-media-row col-xs-12 col-sm-6">
+                  <a href="#" class="contact__social-media-channel contact__social-media-channel--instagram">
+                    <i class="contact__social-media-icon fab fa-instagram" aria-hidden="true"></i>
+                    <span class="contact__social-media-icon-title">Follow me on Instagram</span>
                   </a>
                 </div>
               </div> <!-- inner row -->
+            </div> <!-- contact__social-media-container  -->
+            <div class="col-xs-12">
+              <h2>Send me an email</h2>
+           
+              <form class="contact__form row" action="#">
+                <div class="contact__form-row col-xs-12 col-sm-6">
+                <div class="form-group">
+                  <label class="contact__form-label" for="client-name">Your name</label>
+                  <input type="text" id="client-name"  class="contact__form-input form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="contact__form-label" for="client-email">Email address</label>
+                    <input type="email" id="client-email" class=" contact__form-input form-control" required> 
+                  </div>
+                </div>
+                <div class="contact__form-row col-xs-12 col-sm-6">
+                    <div class="form-group">
+                        <label class="contact__form-label" for="client-message">Your message</label>
+                        <textarea id="client-message"  class="contact__form-textarea form-control" minlength="20" row="5" required ></textarea>
+                      </div>
+                      <button type="submit" class="contact__form-btn btn">Send message</button>
+                </div>
+              </form>
+            
+
             </div>
+            
           </div> <!-- contact row -->
         </div> <!-- contact container -->
       </section>

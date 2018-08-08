@@ -1,14 +1,23 @@
 /* ********* CONTACT ******** */
 /* ************************** */
-.contact {
 
-  &__social-media-wrapper {
+.contact {
+  
+  &__social-media-container {
+    @include rem(margin-bottom, 51.957px);
+  }
+
+  &__social-media-row {
     @include rem(margin, 7.892px 0);
   }
 
-  &__social-media-link {
+  &__social-media-channel {
     display: inline-block;
     color: $black;
+
+    &:hover {
+      text-decoration: none;
+    }
 
     &--linkedin {
       color:$linkedin;
@@ -41,10 +50,6 @@
         color:darken($instagram, 15);
       }
     }
-    
-    &:hover {
-      text-decoration: none;
-    }
   }
 
   &__social-media-icon {
@@ -54,11 +59,11 @@
   }
 
   &__social-media-icon-title {
+    display:inline-block;
     transform: scale(1,1);
     transition: all .4s ease;
     
     &:hover {
-      display:inline-block;
       transform: scale(1.1,1.1);
     }
   }
@@ -70,5 +75,28 @@
     &__social-media-wrapper {
       @include rem(margin-bottom, 32.437px);
     }
+  }
+}
+
+/* ******* FORM STYLES ************ */
+.contact {
+
+  &__form {
+
+    &-label {
+      font-weight: $light;
+      margin-bottom: 0;
+      @include rem(font-size, 16px);
+    }
+
+    &-input {
+      border: 1px solid $section-border-color;
+      @include rem(font-size, 16px);
+    }
+
+    &-textarea {
+      @include rem(height, 126px!important);
+    }
+
   }
 }
