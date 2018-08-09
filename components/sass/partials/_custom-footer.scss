@@ -1,0 +1,28 @@
+.footer {
+  text-align: center;
+  background: $black;
+  color: $white;
+  @include rem(padding, 25px 0);
+  @include rem(font-size, 12.642px);
+  @include rem(line-height, 22.781px);
+
+  &__content {
+    display: block;
+  }
+
+  &__divider {
+    @include rem (margin, 0 5px);
+    display: none;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .footer {
+    text-align: left;
+    @include rem(padding, 40px 0);
+
+    &__content, &__divider {
+      display: inline-block;
+    }
+  }
+}
