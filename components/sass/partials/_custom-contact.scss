@@ -23,31 +23,31 @@
       color:$linkedin;
 
       &:hover {
-        color:$linkedin;
+        color: $linkedin;
       }
     }
 
     &--twitter {
-      color:$twitter;
+      color: $twitter;
 
       &:hover {
-        color:$twitter;
+        color: $twitter;
       }
     }
 
     &--github {
-      color:$github;
+      color: $github;
 
       &:hover {
-        color:$github;
+        color: $github;
       }
     }
 
     &--instagram {
-      color:darken($instagram, 15);
+      color: darken($instagram, 15);
 
       &:hover {
-        color:darken($instagram, 15);
+        color: darken($instagram, 15);
       }
     }
   }
@@ -59,7 +59,7 @@
   }
 
   &__social-media-icon-title {
-    display:inline-block;
+    display: inline-block;
     transform: scale(1,1);
     transition: all .4s ease;
     
@@ -98,10 +98,6 @@
     &-textarea {
       @include rem(height, 126px!important);
     }
-
-    &--btn {
-      width: 100%;
-    }
   }
 
   &__form-group--textarea {
@@ -116,7 +112,6 @@
       max-width: 100%;
 
       &--btn {
-        @include rem(width, $custom-btn-width);
         float: right;
       }
     }
