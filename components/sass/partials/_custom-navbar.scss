@@ -41,6 +41,7 @@
 
   & > a {
     font-family: $font-family-header; 
+    transition: all 0.2s ease;
   }
 }
 
