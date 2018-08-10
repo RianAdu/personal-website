@@ -82,6 +82,7 @@
 .contact {
 
   &__form {
+    @include rem (max-width, 540px);
 
     &-label {
       font-weight: $light;
@@ -98,5 +99,26 @@
       @include rem(height, 126px!important);
     }
 
+    &--btn {
+      width: 100%;
+    }
+  }
+
+  &__form-group--textarea {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .contact { 
+
+    &__form {
+      max-width: 100%;
+
+      &--btn {
+        @include rem(width, $custom-btn-width);
+        float: right;
+      }
+    }
   }
 }

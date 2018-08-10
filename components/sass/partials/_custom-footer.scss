@@ -11,8 +11,8 @@
   }
 
   &__divider {
-    @include rem (margin, 0 5px);
     display: none;
+    @include rem (margin, 0 2px);
   }
 }
 
@@ -21,7 +21,8 @@
     text-align: left;
     @include rem(padding, 40px 0);
 
-    &__content, &__divider {
+    &__content, 
+    &__divider {
       display: inline-block;
     }
   }
