@@ -1,7 +1,9 @@
-//custom core
-@import 'partials/custom-fonts';
+//Google Font import
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300,700|Open+Sans:300,400,600|Orbitron');
+
+//custom core variables and mixins
 @import 'partials/custom-variables';
-@import 'partials/custom-mixins';
+@import 'partials/mixins';
  
 //bootstrap 
 @import 'vendor/bootstrap-sass/bootstrap';
@@ -17,12 +19,12 @@
 @import 'vendor/linear-icons/linearicons';
 
 //custom partials
-@import 'partials/custom-base';
-@import 'partials/custom-layout';
-@import 'partials/custom-buttons';
-@import 'partials/custom-navbar';
-@import 'partials/custom-header';
-@import 'partials/custom-about';
-@import 'partials/custom-services';
-@import 'partials/custom-contact';
-@import 'partials/custom-footer';
+@import 'partials/base';
+@import 'partials/layout';
+@import 'partials/buttons';
+@import 'partials/navbar';
+@import 'partials/header';
+@import 'partials/about';
+@import 'partials/services';
+@import 'partials/contact';
+@import 'partials/footer';

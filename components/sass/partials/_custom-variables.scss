@@ -9,7 +9,6 @@ $bootstrap-sass-asset-helper: false !default;
 $black: #000000;
 $black-ish: #333333;
 $white: #ffffff;
-
 $light-grey: #fafafa;
 $dark-grey: #666666;
 $section-border-color: #dddddd;
@@ -20,6 +19,20 @@ $twitter: #55acee;
 $instagram: #cc3399;
 $github: $black;
 
+// font Families
+$font-family-logo: "Orbitron", Helvetica, Arial, sans-serif;
+$font-family-header: 'Exo 2', Helvetica, Arial, sans-serif;
+$font-family-main: "Open Sans", Helvetica, Arial, sans-serif;
+
+//font-weights
+$light		: 300;
+$normal		: 400;
+$thick		: 500;
+$semiBold	: 600;
+$bold		  : 700;
+$heavy		: 800; //might not need that
+
+// custom button
 $custom-btn-width: 160px;
 
 

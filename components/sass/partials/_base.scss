@@ -28,6 +28,7 @@ h2 {
   @include rem(font-size, 25.629px);
   @include rem (line-height, 32.437px);
   @include rem(margin, 0 0 25.629px);
+  font-weight: $normal;
 }
 
 h3{
