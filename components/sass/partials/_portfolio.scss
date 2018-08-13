@@ -1,0 +1,12 @@
+/*********** PORTFOLIO **********/
+/*******************************/
+
+.portfolio {
+
+  &__project {
+    border-bottom: 1px solid $section-border-color;
+    @include rem(padding-top, 30px);
+    @include rem(padding-bottom, 30px);
+
+  }
+}
