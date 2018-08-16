@@ -15,7 +15,7 @@
 
     &-column {
 
-      &--left {
+      &--macbook {
         @include rem(margin-bottom, 30px);
       }
 
@@ -39,7 +39,18 @@
   .portfolio {
     
     &__project {
-      @include rem(padding-bottom, 40px);
+      @include rem(padding-bottom, 60px);
+
+      &-column {
+
+        &--macbook {
+          margin-bottom: 0;
+        }
+        
+        &--text-right {
+          text-align: right;
+        }
+      }
     }
   }
 }
