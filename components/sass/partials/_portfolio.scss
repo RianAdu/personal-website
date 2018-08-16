@@ -5,8 +5,41 @@
 
   &__project {
     border-bottom: 1px solid $section-border-color;
-    @include rem(padding-top, 30px);
+    @include rem(padding-top, 100px);
     @include rem(padding-bottom, 30px);
 
+    &--first {
+      @include rem(padding-top, 30px);
+    }
+
+
+    &-column {
+
+      &--left {
+        @include rem(margin-bottom, 30px);
+      }
+
+      &-image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      &-headline {
+        font-weight: $semi-bold;  
+        margin-top: 0;
+        @include rem (margin-bottom, 10px);
+        @include rem(font-size, 18px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .portfolio {
+    
+    &__project {
+      @include rem(padding-bottom, 40px);
+    }
   }
 }
