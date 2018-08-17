@@ -32,6 +32,10 @@
         @include rem (margin-bottom, 7.892px);
         @include rem(font-size, 18px);
       }
+
+      &-copy {
+        @include rem (line-height, 28.833px);
+      }
     }
   }
 }
