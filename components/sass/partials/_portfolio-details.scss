@@ -27,10 +27,9 @@
   &__description {
       @include rem(padding-bottom, 20.25px);
     
-      &-headline {
+      &-title {
       font-weight: $semi-bold;
       @include rem (margin-bottom, 3px);
-      @include rem(font-size, 28.833px);
     }
 
     &-subheader {
@@ -42,7 +41,51 @@
 
     &-wrapper {
       background-color:$light-grey;
-      @include rem(padding,20.25px 0 0);
+      @include rem(padding,20.25px 0 41.053px);
     }
+  }
+
+  &__button-wrapper {
+    margin-top:40px;
+  }
+
+  &__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--first {
+      @include rem(margin-bottom, 20.25px);
+    }
+  } 
+}
+
+@media screen and (min-width: $screen-xs-min) {
+  .portfolio-details{
+
+    &__button-wrapper {
+      text-align: center;
+    }
+
+    &__button {
+      display: inline-block;
+      @include rem(margin-left, 9.989px);
+      @include rem(margin-right, 9.989px);
+  
+      &--first {
+        margin-bottom: 0;
+      }
+    } 
+  }
+}
+
+
+@media screen and (min-width: $screen-sm-min) {
+  .portfolio-details{
+
+    &__button {
+      width: 240px;
+      @include rem(font-size, 18px);   
+    } 
   }
 }
