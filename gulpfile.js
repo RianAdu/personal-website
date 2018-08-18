@@ -37,11 +37,13 @@ else {
 sassSources = ['components/sass/app.scss'];
 htmlSources = [outputDir + '*.html'];
 jsSources		= [
-	'components/scripts/jquery.js',
+	'components/scripts/vendor/jquery.js',
 	'components/scripts/bootstrap/*.js',
-	'components/scripts/tooltip.js',
-	'components/scripts/popover.js',
-	'components/scripts/mustache.js'
+	'components/scripts/bootstrap_inc/tooltip.js',
+	'components/scripts/bootstrap_inc/popover.js',
+	'components/scripts/vendor/picturefill.js',
+	'components/scripts/vendor/mustache.js',
+	'components/scripts/app.js',
 ];
 
 
