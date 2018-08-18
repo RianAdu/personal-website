@@ -32,6 +32,7 @@ h2 {
 }
 
 h3{
+  @include rem (margin, 0 0 12.5px);
 	@include rem(font-size, 20.25px);
 	@include rem(line-height, 25.629px);
 }

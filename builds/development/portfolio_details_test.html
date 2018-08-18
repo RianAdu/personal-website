@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="Passionate Front End Developer who loves to create intuitiv and responsive web experiences"
+  />
+  <meta property="og:title" content="Florian Adu-Gyamfi" />
+  <meta property="og:description" content="Front End Developer with passion for web technologies and design" />
+  <meta property="og:url" content="http://www.rian-adu.com/" />
+  <meta property="og:image" content="img/icons/og_image.png" />
+  <meta name="keywords" content=" Web Developer, Freelance, Front End, Developer, Front End Developer, Wesbites, web, HTML5, CSS, Sass, JavaScript, jQuery, UX, User Experience, Canada, Toronto, Florian Adu-Gyamfi, RianAdu, Rian Adu, Hamburg, Germany, Florian"
+  />
+  <title>Florian Adu-Gyamfi | Front End Developer | Toronto</title>
+
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="shortcut icon" href="img/icons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/icons/apple_app_icon.png">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="portfolio-details__overlay">
+  <article>
+    <section class="portfolio-details">
+        <span class="portfolio-details__close-button lnr lnr-cross"></span>
+        <div class="container">
+          <div class="row">
+            <div class="portfolio-details__description col-xs-12 text-center">
+              <h2 class="portfolio-details__description-headline">Anything But Sorry</h2>
+              <p class="portfolio-details__description-copy">While working for FCB Canada, I was assigned with the task of building this website from ground up. By working as the only developer in a team of talented individuals, I managed to create an exceptional website for an award-winning digital marketing campaign. The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality generated an estimated 1.23 million views and 41.8 thousand social media shares.</p>
+              <h3 class="portfolio-details__description-subheader">Technologies</h3>
+              <p class="portfolio-details__description-technologies">HTML, CSS3, JavaScript, jQuery</p>
+            </div> <!--  portfolio-details__description  -->
+          </div> <!-- row -->
+        </div><!-- container -->
+          <div class="portfolio-details__images-wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="portfolio-details__images col-xs-12">
+                  <picture>
+                    <!--[if gte IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="img/projects/cdss/CDSS-Anythingbutsorry-Details@3.png" media="(min-width: 768px)">
+                    <source srcset="img/projects/cdss/CDSS-Anythingbutsorry-Details@2.png" media="(min-width: 200px)">
+                    <!--[if gte IE 9]></video><![endif]-->
+                    <img class="img-responsive" src="img/projects/cdss/CDSS-Anythingbutsorry-Details@3.png" srcset="img/projects/cdss/CDSS-Anythingbutsorry-Details@3.png" alt="Canadian Down Syndrome Society - Anything But Sorry">
+                  </picture>
+                  <div class="portfolio-details__button-wrapper">
+                    <a href="#" class="btn-custom btn">visit website</a>
+                    <button class="btn-custom btn"> Close project</button>
+                  </div>
+                </div>
+            </div>
+          </div> <!-- container -->
+        </div>
+    </section> <!-- end of portfolio-details -->
+  </article>
+</div> <!-- end of overlay -->
+
+
+
+
+
+
+
+
+
+
+<div id="detailOverlay">
+	<div class="detailsContainer"> 
+		<div class="navPlaceholder">
+			<nav>
+				<div class="navbar">
+					<div class="logo">.ra</div>
+					<i id="portfolioBack" class="fa fa-times closeProjectButton" aria-hidden="true"></i>
+				</div>
+			</nav>
+		</div>
+		<section class="detailCopy"> {{! using three braces when content contains html tags }}
+			<article>
+				<h2>{{{title}}}</h2>
+				{{{copy}}}
+				<h3>Technologies</h3>
+				{{#technologies}}
+				{{.}}
+				{{/technologies}}
+			</article>
+		</section>
+		<section class="dark detailImage">
+			<picture>
+				<!--[if gte IE 9]><video style="display: none;"><![endif]-->
+				<source srcset="img/projects/cdss/{{id}}_details_large.jpg" media="(min-width: 768px)">
+				<source srcset="img/projects/cdss/{{id}}_details_small.jpg" media="(min-width: 200px)">
+				<!--[if gte IE 9]></video><![endif]-->
+				<img src="img/projects/cdss/{{id}}_details_large.jpg" srcset="img/projects/cdss/{{id}}_details_large.jpg" alt="{{alt}}">
+			</picture>
+			
+			{{#url}}
+				<div class="backContainer">
+					<a href="{{{url}}}" target="_blank" alt="{{alt}}">
+						<button>Visit website</button>
+					</a>
+					<button class="closeProjectButton secondButton">
+						<i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project
+					</button>
+				</div>
+			{{/url}}
+			{{^url}}
+				<div class="backContainer">
+					<button class="closeProjectButton">
+						<i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close project
+					</button>
+				</div>
+			{{/url}}
+		</section>
+	</div>
+</div>	
+<script src="js/app.js"></script>
+</body>
+</html>

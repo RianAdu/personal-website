@@ -1,0 +1,48 @@
+/**** PORTFOLIO DETAILS *****/
+
+.portfolio-details{
+  position: relative;
+
+  &__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 11;
+    min-width: 320px;
+    background-color: $white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    @include rem(padding-top, 65px)
+  }
+
+  &__close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__description {
+      @include rem(padding-bottom, 20.25px);
+    
+      &-headline {
+      font-weight: $semi-bold;
+      @include rem (margin-bottom, 3px);
+      @include rem(font-size, 28.833px);
+    }
+
+    &-subheader {
+      margin-bottom: 0;
+    }
+  }
+
+  &__images {
+
+    &-wrapper {
+      background-color:$light-grey;
+      @include rem(padding,20.25px 0 0);
+    }
+  }
+}
