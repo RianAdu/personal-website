@@ -1,0 +1,27 @@
+var projectObject = [{
+	"medicare": {
+		"id": "medicare",
+		"title": "Medicare Hamburg",
+		"copy": "I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.",
+		"technologies": ["HTML5,", "CSS3,", "JavaScript,", "WordPress"],
+		"url": "http://www.medicare-hamburg.de",
+		"alt": "Medicare Hamburg"
+	},
+
+	"cdss": {
+		"id": "cdss",
+		"title": "Anything But Sorry",
+		"copy": "While working for FCB Canada, I was assigned with the task of building this website from ground up. By working as the only developer in a team of talented individuals, I managed to create an exceptional website for an award-winning digital marketing campaign. The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality generated an estimated 1.23 million views and 41.8 thousand social media shares.",
+		"technologies": ["HTML5,", "CSS3,", "JavaScript,", "jQuery,", "Bootstrap"],
+		"url": "http://anythingbutsorry.com",
+		"alt": "Canadian Down Syndrome Society - Anything But Sorry Campaign"
+	},
+
+	"emails": {
+		"id": "emails",
+		"title": "Email Development",
+		"copy": "By using the fluid hybrid method, the email templates that I develop contain modular elements. This makes it easy to change the content or to modify the design and will assure proper rendering in a variety of email clients. ",
+		"technologies": ["HTML,", "CSS,", "Email on Acid,", "Litmus"],
+		"alt": "Florian Adu-Gyamfi - Email Development"
+	}
+}];

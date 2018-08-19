@@ -14896,3 +14896,78 @@ return jQuery;
 
   return mustache;
 }));
+var projectObject = [{
+	"medicare": {
+		"id": "medicare",
+		"title": "Medicare Hamburg",
+		"copy": "I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.",
+		"technologies": ["HTML5,", "CSS3,", "JavaScript,", "WordPress"],
+		"url": "http://www.medicare-hamburg.de",
+		"alt": "Medicare Hamburg"
+	},
+
+	"cdss": {
+		"id": "cdss",
+		"title": "Anything But Sorry",
+		"copy": "While working for FCB Canada, I was assigned with the task of building this website from ground up. By working as the only developer in a team of talented individuals, I managed to create an exceptional website for an award-winning digital marketing campaign. The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality generated an estimated 1.23 million views and 41.8 thousand social media shares.",
+		"technologies": ["HTML5,", "CSS3,", "JavaScript,", "jQuery,", "Bootstrap"],
+		"url": "http://anythingbutsorry.com",
+		"alt": "Canadian Down Syndrome Society - Anything But Sorry Campaign"
+	},
+
+	"emails": {
+		"id": "emails",
+		"title": "Email Development",
+		"copy": "By using the fluid hybrid method, the email templates that I develop contain modular elements. This makes it easy to change the content or to modify the design and will assure proper rendering in a variety of email clients. ",
+		"technologies": ["HTML,", "CSS,", "Email on Acid,", "Litmus"],
+		"alt": "Florian Adu-Gyamfi - Email Development"
+	}
+}];
+var projectTemplate = '<div class="portfolio-details__overlay"></section><article><section class="portfolio-details"><div class="container">'+
+'<div class="row"><div class="portfolio-details__description col-xs-12 text-center"><span class="portfolio-details__close-button lnr lnr-cross"></span>'+
+'<h2 class="portfolio-details__description-title">{{{title}}}</h2><p class="portfolio-details__description-copy">{{{copy}}}</p>'+
+'<h3 class="portfolio-details__description-subheader">Technologies</h3><p class="portfolio-details__description-technologies">{{#technologies}}'+
+'{{.}}{{/technologies}}</p></div> </div> </div><div class="portfolio-details__images-wrapper"><div class="container"><div class="row">'+
+'<div class="portfolio-details__images col-xs-12"><picture><!--[if gte IE 9]><video style="display: none;"><![endif]-->'+
+'<source srcset="img/projects/{{id}}/{{id}}_details@3.png" media="(min-width: 768px)">'+
+'<source srcset="img/projects/{{id}}/{{id}}_details@2.png" media="(min-width: 200px)">'+
+'<!--[if gte IE 9]></video><![endif]-->'+
+'<img class="img-responsive" src="img/projects/{{id}}/{{id}}_details@3.png" srcset="img/projects/{{id}}/{{id}}_details@3.png" alt="{{alt}}">'+
+'</picture><div class="portfolio-details__button-wrapper">'+
+'<a href="{{{url}}}" target="_blank" class="portfolio-details__button portfolio-details__button--first btn-custom btn">Visit website</a>'+
+'<button class="portfolio-details__button portfolio-details__button--close btn-custom btn"> Close project</button></div></div></div></div></div></section> </article></div>';
+
+function showProjectDetails(){
+  var clickedProject = $(this).parent().parent().parent().attr('id');
+  var detailsMarkup;
+  $('.portfolio-details__overlay').remove();
+  
+  for(var i in projectObject){
+    var projects = projectObject[i];
+    for(var x in projects){
+      var project = projects[x];
+
+      if(x == clickedProject){
+        detailsMarkup = Mustache.render(projectTemplate, project);
+      }// end of if-clause
+    } // end of 2nd for-loop
+  } // end of 1st for-loop
+  finalizeDetails(detailsMarkup);
+}
+
+function finalizeDetails(detailView){
+  $('body').css('overflow','hidden');
+  
+  $('body').prepend(detailView);
+  $('.portfolio-details__overlay').fadeIn('slow');
+  $('.portfolio-details__close-button, .portfolio-details__button--close').on('click', function(){
+    //return Rian.closeDetails(id);
+    $('body').css('overflow','scroll');
+    $('.portfolio-details__close-button, .portfolio-details__button--close').off('click');
+    $('.portfolio-details__overlay').fadeOut('slow', function(){
+      $(this).remove();
+    });  
+  });
+}
+
+$('.show-more').on('click', showProjectDetails);
