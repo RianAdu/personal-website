@@ -17,10 +17,10 @@ function animatedScroll (){
         scrollTop: target.offset().top - (navbar - 1)
       }, 1100);
     }
-    
+
     setBrowserHistory(hashTag);
   });
-}
+} //animatedScroll
 
 function setBrowserHistory(hashID){
   console.log('hashID: '+hashID);
@@ -34,12 +34,9 @@ function setBrowserHistory(hashID){
   else {
     location.hash = section;
   }
-}
-
-animatedScroll();
+} //setBrowserHistory
 
 
-$('.show-more').on('click', showProjectDetails);
 
 function showProjectDetails(){
   var clickedProject = $(this).parent().parent().parent().attr('id');
@@ -57,7 +54,7 @@ function showProjectDetails(){
     } // end of 2nd for-loop
   } // end of 1st for-loop
   finalizeDetails(detailsMarkup);
-}
+} //showProjectDetails
 
 function finalizeDetails(detailView){
   $('body').css('overflow','hidden');
@@ -72,5 +69,9 @@ function finalizeDetails(detailView){
       $(this).remove();
     });  
   });
-}
+} //finalizeDetails
 
+$(document).ready(function(){
+  animatedScroll();
+  $('.show-more').on('click', showProjectDetails);
+});

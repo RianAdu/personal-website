@@ -234,7 +234,7 @@
 
 			// Fix for WebKit background rendering bug
 			if (options && options.firstLoad && /WebKit/.test(navigator.userAgent)) {
-				$(window).load(function() {
+				$(window).on('load', function() {
 					var oldLeft = self._getScrollLeft(),
 						oldTop = self._getScrollTop();
 
