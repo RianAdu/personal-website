@@ -41,6 +41,6 @@ Thumbs.db
 .sass-cache
 node_modules
 builds/**/images/*
-builds/**/img/*
+# builds/**/img/*#
 builds/production/*
 .ico
