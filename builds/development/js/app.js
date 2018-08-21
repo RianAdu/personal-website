@@ -14941,13 +14941,14 @@ function animatedScroll (){
   $('a[href^="#"]').on('click', function(e){
     var navbar = 65;
     var target = $( $(this).attr('href') );
+    
     var hashTag = this.hash;
-      
+    console.log(hashTag);
     if(target.length){
       e.preventDefault();
       
       //close mobile menu
-      if($( window ).width() < 768) {
+      if($( window ).width() < 768 && hashTag !== '#home') {
         $('.navbar-toggle').click();
       }
 
