@@ -45,16 +45,19 @@
 
   &__enter-icon {
     display: block;
+    width: 80px;
     color: $white;
     transition: all .4s ease-out;
     transform: scale(1, 1);
     @include rem(font-size, 56px);
-    @include rem (margin, 22.784px 0);
+    @include rem (margin, 22.784px auto);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $white;
       text-decoration: none;
       transform: scale(1.2, 1.2);
+      outline: 0;
     }
   }
 }

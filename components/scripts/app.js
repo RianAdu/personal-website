@@ -23,7 +23,6 @@ function animatedScroll (){
 } //animatedScroll
 
 function setBrowserHistory(hashID){
-  console.log('hashID: '+hashID);
   var tmp = hashID.split('#');
   var section = tmp[1];
 
@@ -72,9 +71,8 @@ function finalizeDetails(detailView){
 } //finalizeDetails
 
 function parallax() {
-  console.log('parallax');
   var wScroll = $(window).scrollTop();
-  $('.parallax--bg').css('background-position', 'center '+(wScroll * 0.5  )+'px');
+  $('.parallax--bg').css('background-position', 'center '+(wScroll * 0.5 )+'px');
 }
 
 $(document).ready(function(){
