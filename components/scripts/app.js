@@ -2,15 +2,15 @@
 function animatedScroll (){
   $('a[href^="#"]').on('click', function(e){
     var navbar = 65;
-    var target = $( $(this).attr('href') );
-    
+    var target = $($(this).attr('href'));
+    var dataTag = $(this).attr('data-tag');
     var hashTag = this.hash;
-    console.log(hashTag);
+
     if(target.length){
       e.preventDefault();
       
-      //close mobile menu
-      if($( window ).width() < 768 && hashTag !== '#home') {
+      //close mobile menu only when nav menu link was clicked
+      if($(window).width() < 768 && dataTag == undefined) {
         $('.navbar-toggle').click();
       }
 
