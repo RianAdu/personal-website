@@ -14948,7 +14948,8 @@ function animatedScroll (){
       e.preventDefault();
       
       //close mobile menu only when nav menu link was clicked
-      if($(window).width() < 768 && dataTag == undefined) {
+      if($(window).width() < 768 && dataTag == undefined || !$('.navbar-toggle').hasClass('collapsed') && dataTag == 'home') {
+        console.log('navbar-click fired');
         $('.navbar-toggle').click();
       }
 
@@ -14960,6 +14961,36 @@ function animatedScroll (){
     setBrowserHistory(hashTag);
   });
 } //animatedScroll
+
+function scrollNavbarBlack() {
+  var headerTitle = $('.header__title-name');
+  var navbar = $('.navbar');
+  var navbarHeight = navbar.height();
+  var headerTitlePos = headerTitle.offset().top;
+
+  $(window).scroll(function(){
+    var wScroll = $(window).scrollTop();
+    
+    if(wScroll >= headerTitlePos - navbarHeight) {
+      navbar.addClass('navbar-inverse--scroll-to-black');
+    }
+    else {
+      navbar.removeClass('navbar-inverse--scroll-to-black');
+    }
+  });
+
+  $(window).on('orientationchange', function(){
+    headerTitlePos = headerTitle.offset().top;
+  });
+}
+
+function setMobileNavBlack(){
+  $('#mobile-nav').on('show.bs.collapse hide.bs.collapse', function(){
+    if($(window).width() < 768) {
+      $('.navbar').toggleClass('navbar-inverse--mobile-set-black');
+    }
+  });
+}
 
 function setBrowserHistory(hashID){
   var tmp = hashID.split('#');
@@ -15017,5 +15048,7 @@ function parallax() {
 $(document).ready(function(){
   animatedScroll();
   $('.show-more').on('click', showProjectDetails);
-  $(window).scroll(parallax);
+  scrollNavbarBlack();
+  setMobileNavBlack();
+  $(window).scroll(parallax)
 });

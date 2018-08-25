@@ -2,10 +2,51 @@
 /************************************ */
 
 .navbar-inverse {
-  //background-color: transparent;
+  background-color: transparent;
+  transition: background-color ease-in .3s;
+
+  &--scroll-to-black,
+  &--mobile-set-black {
+    background-color: $black;
+  }
   
   .navbar-toggle {
     border-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+
+    .icon-bar {
+      transition: all ease-in 0.2s;
+
+      &--top {
+        transform: rotate(45deg);
+        transform-origin: 10% 10%;
+      }
+
+      &--middle {
+        opacity: 0;
+      }
+
+      &--bottom {
+        transform: rotate(-45deg);
+        transform-origin: 10% 90%;
+      }
+    }
+
+    &.collapsed {
+
+      .icon-bar--top,
+      .icon-bar--bottom {
+        transform: rotate(0);
+      }
+
+      .icon-bar--middle {
+        opacity: 1;
+      }
+    }
   }
 } 
 
