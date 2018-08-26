@@ -20,11 +20,7 @@
     }
   
     &-headline {
-      @include rem (margin-bottom, 9.989px);
-    }
-
-    &-copy {
-      @include rem (line-height, 28.833px);
+      @include rem (margin-bottom, 7.892px);
     }
   }
 }

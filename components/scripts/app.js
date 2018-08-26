@@ -9,9 +9,8 @@ function animatedScroll (){
     if(target.length){
       e.preventDefault();
       
-      //close mobile menu only when nav menu link was clicked
+      //close mobile menu when nav menu link and brand logo was clicked
       if($(window).width() < 768 && dataTag == undefined || !$('.navbar-toggle').hasClass('collapsed') && dataTag == 'home') {
-        console.log('navbar-click fired');
         $('.navbar-toggle').click();
       }
 
@@ -23,6 +22,20 @@ function animatedScroll (){
     setBrowserHistory(hashTag);
   });
 } //animatedScroll
+
+
+function setBrowserHistory(hashID){
+  var tmp = hashID.split('#');
+  var section = tmp[1];
+
+  //setting the history in case the user hits the back button
+  if(history.pushState) {
+    history.pushState(null, null, null);
+  }
+  else {
+    location.hash = section;
+  }
+} //setBrowserHistory
 
 function scrollNavbarBlack() {
   var headerTitle = $('.header__title-name');
@@ -53,19 +66,6 @@ function setMobileNavBlack(){
     }
   });
 }
-
-function setBrowserHistory(hashID){
-  var tmp = hashID.split('#');
-  var section = tmp[1];
-
-  //setting the history in case the user hits the back button
-  if(history.pushState) {
-    history.pushState(null, null, null);
-  }
-  else {
-    location.hash = section;
-  }
-} //setBrowserHistory
 
 
 

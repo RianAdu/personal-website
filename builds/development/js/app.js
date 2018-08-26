@@ -14901,7 +14901,7 @@ var projectObject = [{
 		"id": "medicare",
 		"title": "Medicare Hamburg",
 		"copy": "I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.",
-		"technologies": ["HTML5,", "CSS3,", "JavaScript,", "WordPress"],
+		"technologies": ["HTML5, ", "CSS3, ", "JavaScript, ", "WordPress"],
 		"url": "http://www.medicare-hamburg.de",
 		"alt": "Medicare Hamburg"
 	},
@@ -14910,7 +14910,7 @@ var projectObject = [{
 		"id": "cdss",
 		"title": "Anything But Sorry",
 		"copy": "While working for FCB Canada, I was assigned with the task of building this website from ground up. By working as the only developer in a team of talented individuals, I managed to create an exceptional website for an award-winning digital marketing campaign. The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality generated an estimated 1.23 million views and 41.8 thousand social media shares.",
-		"technologies": ["HTML5,", "CSS3,", "JavaScript,", "jQuery,", "Bootstrap"],
+		"technologies": ["HTML5, ", "CSS3, ", "JavaScript, ", "jQuery, ", "Bootstrap"],
 		"url": "http://anythingbutsorry.com",
 		"alt": "Canadian Down Syndrome Society - Anything But Sorry Campaign"
 	},
@@ -14947,9 +14947,8 @@ function animatedScroll (){
     if(target.length){
       e.preventDefault();
       
-      //close mobile menu only when nav menu link was clicked
+      //close mobile menu when nav menu link and brand logo was clicked
       if($(window).width() < 768 && dataTag == undefined || !$('.navbar-toggle').hasClass('collapsed') && dataTag == 'home') {
-        console.log('navbar-click fired');
         $('.navbar-toggle').click();
       }
 
@@ -14961,6 +14960,20 @@ function animatedScroll (){
     setBrowserHistory(hashTag);
   });
 } //animatedScroll
+
+
+function setBrowserHistory(hashID){
+  var tmp = hashID.split('#');
+  var section = tmp[1];
+
+  //setting the history in case the user hits the back button
+  if(history.pushState) {
+    history.pushState(null, null, null);
+  }
+  else {
+    location.hash = section;
+  }
+} //setBrowserHistory
 
 function scrollNavbarBlack() {
   var headerTitle = $('.header__title-name');
@@ -14991,19 +15004,6 @@ function setMobileNavBlack(){
     }
   });
 }
-
-function setBrowserHistory(hashID){
-  var tmp = hashID.split('#');
-  var section = tmp[1];
-
-  //setting the history in case the user hits the back button
-  if(history.pushState) {
-    history.pushState(null, null, null);
-  }
-  else {
-    location.hash = section;
-  }
-} //setBrowserHistory
 
 
 

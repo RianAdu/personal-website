@@ -6,7 +6,7 @@
   &__profile-picture {
     display: block;
     width: 100%;
-    max-width: 340px;
+    max-width: 85%;
     height: auto;
     margin: auto;
   }
@@ -33,6 +33,12 @@
       height:auto;
       margin:15px 10px;
     }
+  }
+}
+
+@media screen and (min-width: 430px) {
+  .about__profile-picture {
+    max-width: 340px;
   }
 }
 
