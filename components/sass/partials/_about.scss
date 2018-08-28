@@ -17,6 +17,10 @@
     @include rem(margin-top, 20.25px);
   }
 
+  &--no-margin {
+    margin-bottom: 0;
+  }
+
   &__skillset{
     
     &-wrapper {
