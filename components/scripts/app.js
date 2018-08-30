@@ -1,7 +1,7 @@
+const navbarHeight = 65;
 
-function animatedScroll (){
+function smoothScroll (){
   $('a[href^="#"]').on('click', function(e){
-    var navbar = 65;
     var target = $($(this).attr('href'));
     var dataTag = $(this).attr('data-tag');
     var hashTag = this.hash;
@@ -9,48 +9,44 @@ function animatedScroll (){
     if(target.length){
       e.preventDefault();
       
-      //close mobile menu when nav menu link and brand logo was clicked
+      //close mobile menu before scrolling when nav menu link and brand logo was clicked
       if($(window).width() < 768 && dataTag == undefined || !$('.navbar-toggle').hasClass('collapsed') && dataTag == 'home') {
         $('.navbar-toggle').click();
       }
 
       $('html, body').animate({
-        scrollTop: target.offset().top - (navbar - 1)
+        scrollTop: target.offset().top - (navbarHeight - 1)
       }, 1100);
     }
-
     setBrowserHistory(hashTag);
   });
-} //animatedScroll
+} //smoothScroll
 
 
 function setBrowserHistory(hashID){
-  var tmp = hashID.split('#');
-  var section = tmp[1];
-
+  var page = hashID.split('#')[1];
   //setting the history in case the user hits the back button
   if(history.pushState) {
     history.pushState(null, null, null);
   }
   else {
-    location.hash = section;
+    location.hash = page;
   }
 } //setBrowserHistory
 
-function scrollNavbarBlack() {
+function fadeInNav() {
   var headerTitle = $('.header__title-name');
   var navbar = $('.navbar');
-  var navbarHeight = navbar.height();
   var headerTitlePos = headerTitle.offset().top;
 
   $(window).scroll(function(){
     var wScroll = $(window).scrollTop();
     
     if(wScroll >= headerTitlePos - navbarHeight) {
-      navbar.addClass('navbar-inverse--scroll-to-black');
+      navbar.addClass('navbar-inverse--faded-in');
     }
     else {
-      navbar.removeClass('navbar-inverse--scroll-to-black');
+      navbar.removeClass('navbar-inverse--faded-in');
     }
   });
 
@@ -59,10 +55,10 @@ function scrollNavbarBlack() {
   });
 }
 
-function setMobileNavBlack(){
+function fadeInMobileNav(){
   $('#mobile-nav').on('show.bs.collapse hide.bs.collapse', function(){
     if($(window).width() < 768) {
-      $('.navbar').toggleClass('navbar-inverse--mobile-set-black');
+      $('.navbar').toggleClass('navbar-inverse--faded-in-mobile');
     }
   });
 }
@@ -84,6 +80,7 @@ function showProjectDetails(){
       }// end of if-clause
     } // end of 2nd for-loop
   } // end of 1st for-loop
+  console.log(detailsMarkup);
   finalizeDetails(detailsMarkup);
 } //showProjectDetails
 
@@ -108,9 +105,9 @@ function parallax() {
 }
 
 $(document).ready(function(){
-  animatedScroll();
+  smoothScroll();
   $('.show-more').on('click', showProjectDetails);
-  scrollNavbarBlack();
-  setMobileNavBlack();
+  fadeInNav();
+  fadeInMobileNav();
   $(window).scroll(parallax)
 });

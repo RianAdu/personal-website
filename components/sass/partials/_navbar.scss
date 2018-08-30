@@ -5,8 +5,8 @@
   background-color: transparent;
   transition: background-color ease-in .3s;
 
-  &--scroll-to-black,
-  &--mobile-set-black {
+  &--faded-in,
+  &--faded-in-mobile {
     background-color: $black;
   }
   
