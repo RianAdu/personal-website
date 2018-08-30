@@ -1,4 +1,4 @@
-var projectTemplate = '<div class="portfolio-details__overlay"></section><article><section class="portfolio-details"><div class="container">'+
+var projectTemplate = '<div class="portfolio-details__overlay"><article><section class="portfolio-details"><div class="container">'+
 '<div class="row"><div class="portfolio-details__description col-xs-12 text-center"><span class="portfolio-details__close-button lnr lnr-cross"></span>'+
 '<h2 class="portfolio-details__description-title">{{{title}}}</h2><p class="portfolio-details__description-copy">{{{copy}}}</p>'+
 '<h3 class="portfolio-details__description-subheader">Technologies</h3><p class="portfolio-details__description-technologies">{{#technologies}}'+
