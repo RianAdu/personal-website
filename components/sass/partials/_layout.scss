@@ -1,5 +1,17 @@
 /****************** Layout ***************/
 /* ************************************ */
+
+//basic parallax to background
+.el--bg-fixed {
+  background-attachment: fixed;
+}
+
+.el--prevent-scrolling{
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+}
+
 .page {
   position: relative;
   border-bottom: 1px solid $section-border-color;
@@ -9,3 +21,4 @@
     background-color:$light-grey;
   }
 }
+
