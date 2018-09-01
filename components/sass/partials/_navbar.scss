@@ -48,6 +48,10 @@
       }
     }
   }
+
+  .navbar-nav > li > a:focus {
+    color: $white;
+  }
 } 
 
 .navbar-brand {

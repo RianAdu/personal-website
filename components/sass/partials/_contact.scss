@@ -79,10 +79,12 @@
   
     &-textfield {
       border: 1px solid $section-border-color;
+      appearance: none;
       @include rem(font-size, 16px);
     }
   
     &-textarea {
+      appearance: none;
       @include rem(height, 126px!important);
     }
   }
