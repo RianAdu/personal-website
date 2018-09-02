@@ -19,6 +19,10 @@
     @include rem(padding-top, $navbar-height);
   }
 
+  &__wrapper {
+    min-height: 101%;
+  }
+
   &__close-button {
     position: absolute;
     right: 20px;

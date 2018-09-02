@@ -17,11 +17,12 @@ $(function(){
       mobileNav: null,
       showMoreButton: null
     },
-
+ 
     init: function(){
       App.cacheDom();
       //App.setBackgroundType();
-      App.smoothScroll();
+      App.setSmoothScroll(1100);
+      App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
       App.bindEvents();
@@ -40,7 +41,7 @@ $(function(){
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
       App.dom.showMoreButton.on('click', App.showProjectDetails);
       
-     // $(window).scroll(App.parallax);
+     // $(window).scroll(App.setParallax);
       //user can hit the back button when project details are visible
 			$(window).on('popstate', function(){
 				if(App.var.historyFlag !== undefined){
@@ -76,7 +77,12 @@ $(function(){
       }
     },
 
-    smoothScroll: function(){
+    setParallax: function() {
+      var wScroll = $(window).scrollTop();
+      $('.bg--type-parallax').css('background-position', 'center '+(wScroll * 0.5 )+'px');
+    },
+
+    setSmoothScroll: function(duration){
       $('a[href^="#"]').on('click', function(e){
         var target = $($(this).attr('href'));
         var dataTag = $(this).attr('data-tag');
@@ -92,7 +98,7 @@ $(function(){
     
           $('html, body').animate({
             scrollTop: target.offset().top - (App.const.navbarHeight - 1)
-          }, 1100);
+          }, duration);
         }
         App.setBrowserHistory(hashTag);
       });
@@ -112,11 +118,11 @@ $(function(){
 
     setNavbarBgColor: function(wScrollTop){
       var headerTitlePos = App.dom.headerTitle.offset().top;
-      console.log('Title Top: '+headerTitlePos);
+    
       if(wScrollTop == undefined) {
         var wScrollTop = $(window).scrollTop();
       }
-        console.log('scroll Top: '+wScrollTop);
+
       if(wScrollTop >= headerTitlePos - App.const.navbarHeight) {
         App.dom.navbar.addClass('navbar-inverse--faded-in');
       }
@@ -187,12 +193,7 @@ $(function(){
     scrollBackToProject: function(viewedProject){
       // this function scrolls the body back to the last clicked Project, after the overlay has been closed
 			$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (App.const.navbarHeight - 1));
-    },
-    
-    parallax: function() {
-      var wScroll = $(window).scrollTop();
-      $('.bg--type-parallax').css('background-position', 'center '+(wScroll * 0.5 )+'px');
-    }   
+    }
   }; // App
 
   $(document).ready(function(){
