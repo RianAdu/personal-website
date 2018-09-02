@@ -14949,6 +14949,7 @@ $(function(){
 
     dom:{
       hamburgerMenu: null,
+      headerWrapper: null,
       headerTitle: null,
       navbar: null,
       mobileNav: null,
@@ -14957,7 +14958,7 @@ $(function(){
 
     init: function(){
       App.cacheDom();
-      App.setBackgroundEffect();
+      //App.setBackgroundType();
       App.smoothScroll();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
@@ -14966,6 +14967,7 @@ $(function(){
 
     cacheDom: function(){
       App.dom.hamburgerMenu = $('.navbar-toggle');
+      App.dom.headerWrapper = $('.header__wrapper');
       App.dom.headerTitle = $('.header__title-name');
       App.dom.navbar = $('.navbar');
       App.dom.mobileNav = $('#mobile-nav');
@@ -14976,22 +14978,38 @@ $(function(){
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
       App.dom.showMoreButton.on('click', App.showProjectDetails);
       
-      $(window).scroll(App.parallax);
+     // $(window).scroll(App.parallax);
       //user can hit the back button when project details are visible
 			$(window).on('popstate', function(){
 				if(App.var.historyFlag !== undefined){
 					App.closeProjectDetails(App.var.historyFlag);
 				}
-			});
+      });
+  
+      $(window).on('orientationchange, resize', function(){
+        App.setLandscapeHeaderPos();
+        App.setNavbarBgColor();
+      });
     },
 
-    setBackgroundEffect: function(){
-			//if device does run iOS, remove basic parallax from background
+    setLandscapeHeaderPos: function(){
+      var windHeight = $(window).height();
+      
+      if(windHeight < 450){
+				App.dom.headerWrapper.addClass('header__wrapper--landscape');
+			}
+			else{
+				App.dom.headerWrapper.removeClass('header__wrapper--landscape');
+			}
+    },
+
+    setBackgroundType: function(){
+			//if device is not mobile set class for parallax background
 			var isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
 
       if(!isMobile) {
-        $('.el--bg').each(function(){
-          $(this).removeClass('el--bg').addClass('el--bg-parallax');
+        $('.bg').each(function(){
+          $(this).removeClass('bg').addClass('bg--type-parallax');
         });
       }
     },
@@ -15018,7 +15036,7 @@ $(function(){
       });
     }, 
 
-    //setting the history in case the user hits the back button
+    //setting browser history in case user uses back button instead of menu
     setBrowserHistory: function(hashID){
       var section = hashID.split('#')[1];
       
@@ -15032,11 +15050,11 @@ $(function(){
 
     setNavbarBgColor: function(wScrollTop){
       var headerTitlePos = App.dom.headerTitle.offset().top;
-
+      console.log('Title Top: '+headerTitlePos);
       if(wScrollTop == undefined) {
         var wScrollTop = $(window).scrollTop();
       }
-
+        console.log('scroll Top: '+wScrollTop);
       if(wScrollTop >= headerTitlePos - App.const.navbarHeight) {
         App.dom.navbar.addClass('navbar-inverse--faded-in');
       }
@@ -15049,10 +15067,6 @@ $(function(){
       $(window).scroll(function(){
         var wScroll = $(window).scrollTop();
         App.setNavbarBgColor(wScroll);
-      });
-    
-      $(window).on('orientationchange', function(){
-        headerTitlePos = App.dom.headerTitle.offset().top;
       });
     },
 
@@ -15085,7 +15099,7 @@ $(function(){
 
     finalizeProjectDetails: function(projectView, id){
       var tag = '#'+id;
-      $('body').prepend(projectView).addClass('el--prevent-scrolling');
+      $('body').prepend(projectView).addClass('body--prevent-scrolling');
       $('.portfolio-details__overlay').fadeIn('slow');
       App.setBrowserHistory(tag);
       
@@ -15095,7 +15109,7 @@ $(function(){
     },
     
     closeProjectDetails: function(id) {
-      $('body').removeClass('el--prevent-scrolling');
+      $('body').removeClass('body--prevent-scrolling');
       App.scrollBackToProject(id);
 
       $('.portfolio-details__close-button, .portfolio-details__button--close').off('click');
@@ -15115,7 +15129,7 @@ $(function(){
     
     parallax: function() {
       var wScroll = $(window).scrollTop();
-      $('.el--bg-parallax').css('background-position', 'center '+(wScroll * 0.5 )+'px');
+      $('.bg--type-parallax').css('background-position', 'center '+(wScroll * 0.5 )+'px');
     }   
   }; // App
 

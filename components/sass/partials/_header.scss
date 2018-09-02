@@ -17,13 +17,13 @@
     @include rem(padding, 144px 0 46.192px);
 
     &--landscape {
-      @include rem(padding, 150px 0 46.192px);
+      @include rem(padding, 150px 0 46.192px !important);
     }
   }
 
   &__title-name {
     font-family: $font-family-logo;
-    font-weight: $normal;
+    font-weight: $semi-bold;
     text-transform: uppercase;
     border-top: 2px solid $white;
     border-bottom: 2px solid $white;
