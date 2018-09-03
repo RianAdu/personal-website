@@ -20,6 +20,8 @@
 
     .icon-bar {
       transition: all ease-in 0.2s;
+      width:26px;
+      height: 3px;
 
       &--top {
         transform: rotate(45deg);
@@ -57,7 +59,7 @@
 .navbar-brand {
   font-family: $font-family-logo;
   font-weight: $normal;
-  @include rem(font-size, 36.5px);
+  @include rem(font-size, 36.491px);
  line-height: inherit;
 }
  
@@ -74,7 +76,8 @@
 .nav > li {
   border-bottom: 1px solid $black-ish;
   text-align: center;
-  @include rem(font-size, 22px);
+  font-weight: $normal;
+  @include rem(font-size, 25.63px);
   
   &:first-child {
     border-top: 1px solid $black-ish;
@@ -90,7 +93,7 @@
   }
 }
 
-@media screen and(max-width: $screen-sm-min) {
+@media screen and (max-width: $screen-xs-max) {
   .nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -103,11 +106,12 @@
   }
 
   .navbar-brand {
-    @include rem(font-size, 41.053px);
+    @include rem(font-size, 46.184px);
   }
 
   .nav > li {
     border-bottom: 0;
+    @include rem(font-size, 22px);
 
     &:first-child {
       border-top: 0;
