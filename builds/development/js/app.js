@@ -16559,7 +16559,7 @@ $(function(){
  
     init: function(){
       App.cacheDom();
-      //App.setBackgroundType();
+      App.setBackgroundType();
       App.setSmoothScroll(1200);
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
@@ -16581,7 +16581,7 @@ $(function(){
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
       App.dom.showMoreButton.on('click', App.showProjectDetails);
       
-     // $(window).scroll(App.setParallax);
+      //$(window).scroll(App.setParallax);
       //user can hit the back button when project details are visible
 			$(window).on('popstate', function(){
 				if(App.var.historyFlag !== undefined){
@@ -16612,7 +16612,7 @@ $(function(){
 
       if(!isMobile) {
         $('.bg').each(function(){
-          $(this).removeClass('bg').addClass('bg--type-parallax');
+          $(this).removeClass('bg').addClass('bg--type-fixed');
         });
       }
     },

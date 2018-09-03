@@ -7,6 +7,10 @@
   z-index: 1;
 }
 
+.bg--type-fixed {
+  background-attachment: fixed !important;   
+}
+
 .page {
   position: relative;
   border-bottom: 1px solid $section-border-color;
