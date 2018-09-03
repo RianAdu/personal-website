@@ -87,6 +87,10 @@
       appearance: none;
       @include rem(height, 126px!important);
     }
+
+    &--habdich {
+      display: none;
+    }
   }
   
   &__form-group--textarea {
@@ -120,7 +124,6 @@
 .help-block {
   display: inline-block;
   margin: 0;
-  font-size: .9rem;
   font-style: italic;
-  @include rem(font-size, 14.4px);
+  @include rem(font-size, 14.222px);
 }

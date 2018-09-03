@@ -196,10 +196,9 @@ $(function(){
 			$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (App.const.navbarHeight - 1));
     },
 
+    /**** Error messages for validation changed in jquery.validate.js ****/
     formValidation: function(){
-      
       $("#contact-form").validate({
-        
 				errorPlacement: function(error, element){
           // Add the Bootstrap `help-block` class to the error element
           error.addClass( "help-block" );

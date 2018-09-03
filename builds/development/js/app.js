@@ -15258,17 +15258,17 @@ $.extend( $.validator, {
 	},
 
 	messages: {
-		required: "This field is required.",
+		required: "Field is required.",
 		remote: "Please fix this field.",
-		email: "Please enter a valid email address.",
-		url: "Please enter a valid URL.",
-		date: "Please enter a valid date.",
-		dateISO: "Please enter a valid date (ISO).",
-		number: "Please enter a valid number.",
+		email: "Email address is not valid.",
+		url: "URL is not valid.",
+		date: "Date is not valid.",
+		dateISO: "Date (ISO) is not valid.",
+		number: "Number is not valid.",
 		digits: "Please enter only digits.",
 		equalTo: "Please enter the same value again.",
-		maxlength: $.validator.format( "Please enter no more than {0} characters." ),
-		minlength: $.validator.format( "Please enter at least {0} characters." ),
+		maxlength: $.validator.format( "Maximum of {0} characters." ),
+		minlength: $.validator.format( "Minimum of {0} characters." ),
 		rangelength: $.validator.format( "Please enter a value between {0} and {1} characters long." ),
 		range: $.validator.format( "Please enter a value between {0} and {1}." ),
 		max: $.validator.format( "Please enter a value less than or equal to {0}." ),
@@ -16735,10 +16735,9 @@ $(function(){
 			$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (App.const.navbarHeight - 1));
     },
 
+    /**** Error messages for validation changed in jquery.validate.js ****/
     formValidation: function(){
-      
       $("#contact-form").validate({
-        
 				errorPlacement: function(error, element){
           // Add the Bootstrap `help-block` class to the error element
           error.addClass( "help-block" );
