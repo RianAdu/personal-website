@@ -25,6 +25,7 @@ $(function(){
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
+      App.formValidation();
       App.bindEvents();
     },
 
@@ -193,7 +194,34 @@ $(function(){
     scrollBackToProject: function(viewedProject){
       // this function scrolls the body back to the last clicked Project, after the overlay has been closed
 			$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (App.const.navbarHeight - 1));
-    }
+    },
+
+    formValidation: function(){
+      
+      $("#contact-form").validate({
+        
+				errorPlacement: function(error, element){
+          // Add the Bootstrap `help-block` class to the error element
+          error.addClass( "help-block" );
+          error.insertBefore(element);
+
+          // Add the span element, if doesn't exists, and apply the icon classes to it.
+          if ( !element.next( "span" )[ 0 ] ) {
+            $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+          }
+        },
+
+        highlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-error has-feedback" ).removeClass( "has-success" );
+          $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+        },
+
+        unhighlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".form-group" ).addClass( "has-success has-feedback" ).removeClass( "has-error" );
+          $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+        }
+			});
+		}
   }; // App
 
   $(document).ready(function(){

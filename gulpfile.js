@@ -43,6 +43,7 @@ jsSources		= [
 	'components/scripts/bootstrap_inc/popover.js',
 	'components/scripts/vendor/picturefill.js',
 	'components/scripts/vendor/mustache.js',
+	'components/scripts/vendor/jquery.validate.js',
 	'components/scripts/inc/projects.json',
 	'components/scripts/inc/project-template.js',
 	'components/scripts/app.js',

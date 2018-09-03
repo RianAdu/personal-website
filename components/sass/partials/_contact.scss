@@ -94,7 +94,6 @@
   }
 }
 
-
 @media screen and (min-width: $screen-sm-min) {
   .contact {
 
@@ -110,4 +109,18 @@
       }
     }
   }
+}
+
+
+//bootstrap feedback icon position
+.has-feedback label ~ .form-control-feedback {
+  top: 33px;
+}
+
+.help-block {
+  display: inline-block;
+  margin: 0;
+  font-size: .9rem;
+  font-style: italic;
+  @include rem(font-size, 14.4px);
 }

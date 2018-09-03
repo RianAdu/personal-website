@@ -255,21 +255,21 @@
             <div class="col-xs-12">
               <h2>Send me an email</h2>
            
-              <form class="contact__form row" action="#">
+              <form id="contact-form" class="contact__form row" action="#">
                 <div class="contact__form-row col-xs-12 col-sm-6">
                 <div class="form-group">
-                  <label class="contact__form-label" for="client-name">Your name</label>
-                  <input type="text" id="client-name"  class="contact__form-textfield form-control" required>
+                  <label class="contact__form-label" for="client-name">Your name *</label>
+                  <input type="text" id="client-name" name="name" minlength="6" class="contact__form-textfield form-control" required >
                 </div>
                 <div class="form-group">
-                    <label class="contact__form-label" for="client-email">Your e-mail address</label>
-                    <input type="email" id="client-email" class=" contact__form-textfield form-control" required> 
+                    <label class="contact__form-label" for="client-email">Your e-mail address *</label>
+                    <input type="email" id="client-email" name="email" class=" contact__form-textfield form-control" required > 
                   </div>
                 </div>
                 <div class="contact__form-row col-xs-12 col-sm-6">
                     <div class="form-group contact__form-group--textarea">
-                        <label class="contact__form-label" for="client-message">Your message</label>
-                        <textarea id="client-message"  class="contact__form-textarea form-control" minlength="20" row="5" required ></textarea>
+                        <label class="contact__form-label" for="client-message">Your message *</label>
+                        <textarea id="client-message"  name="message" class="contact__form-textarea form-control" minlength="20" row="5" required ></textarea>
                       </div>
                       <button type="submit" class="contact__form--btn btn-custom btn">Send message</button>
                 </div>
