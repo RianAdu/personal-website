@@ -15,7 +15,11 @@ $(function(){
       headerTitle: null,
       navbar: null,
       mobileNav: null,
-      showMoreButton: null
+      showMoreButton: null,
+      contactForm: null,
+      formGroups: null,
+      formInputs: null,
+      hiddenField: null
     },
  
     init: function(){
@@ -36,12 +40,16 @@ $(function(){
       App.dom.navbar = $('.navbar');
       App.dom.mobileNav = $('#mobile-nav');
       App.dom.showMoreButton = $('.show-more');
+      App.dom.contactForm = $('#contact-form');
+      App.dom.formGroups = $('.form-group');
+      App.dom.formInputs = $('.form-control');
+      App.dom.hiddenField = $('.contact__form--custom-field');
     },
 
     bindEvents: function(){
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
       App.dom.showMoreButton.on('click', App.showProjectDetails);
-      
+
       //$(window).scroll(App.setParallax);
       //user can hit the back button when project details are visible
 			$(window).on('popstate', function(){
@@ -49,6 +57,8 @@ $(function(){
 					App.closeProjectDetails(App.var.historyFlag);
 				}
       });
+
+      //App.dom.hiddenField.val('Test');
   
       $(window).on('orientationchange, resize', function(){
         App.setLandscapeHeaderPos();
@@ -196,9 +206,17 @@ $(function(){
 			$('html, body').scrollTop($('#'+viewedProject+'').offset().top - (App.const.navbarHeight - 1));
     },
 
-    /**** Error messages for validation changed in jquery.validate.js ****/
+    //resetting the form input after submit
+    resetContactForm: function(){
+      App.dom.formGroups.each(function(){
+        $(this).removeClass('has-success has-error has-feedback');
+      });
+
+      $('form span.glyphicon').removeClass('glyphicon-remove glyphicon-ok');
+    },
+
     formValidation: function(){
-      $("#contact-form").validate({
+      App.dom.contactForm.validate({
 				errorPlacement: function(error, element){
           // Add the Bootstrap `help-block` class to the error element
           error.addClass( "help-block" );
@@ -215,12 +233,30 @@ $(function(){
           $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
         },
 
-        unhighlight: function ( element, errorClass, validClass ) {
+        unhighlight: function ( element, errorClass, validClass ) { 
           $( element ).parents( ".form-group" ).addClass( "has-success has-feedback" ).removeClass( "has-error" );
           $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+        },
+
+        // added custom pre validation to avoid autobot spam
+        submitHandler: function(form, e) {   
+          if(App.dom.hiddenField.val().length > 0 ) {
+            e.preventDefault();
+            
+            App.dom.formInputs.each(function(){
+              $(this).val('').blur();
+            });
+            return false; 
+          }
+
+          else {
+            form.submit();
+            form.reset();
+            App.resetContactForm();
+          }
         }
 			});
-		}
+    }
   }; // App
 
   $(document).ready(function(){

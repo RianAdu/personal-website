@@ -85,10 +85,10 @@
   
     &-textarea {
       appearance: none;
-      @include rem(height, 126px!important);
+      @include rem(height, 127px!important);
     }
 
-    &--habdich {
+    &--custom-field {
       display: none;
     }
   }

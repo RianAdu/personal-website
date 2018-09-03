@@ -256,27 +256,30 @@
               <h2>Send me an email</h2>
               
               <!-- action="https://formspree.io/contact@rian-adu.com" method="post" -->
-              <form id="contact-form" class="contact__form row" action="" method="">
+              <form target="_blank" id="contact-form" class="contact__form row" action="/thankyou.html" method="get">
                 <div class="contact__form-row col-xs-12 col-sm-6">
                 <div class="form-group">
                   <label class="contact__form-label" for="client-name">Your name<sup>*</sup></label>
                   <input type="text" id="client-name" name="name" minlength="6" class="contact__form-textfield form-control" required />
+                  <span class="glyphicon form-control-feedback"></span>
                 </div>
                 <div class="form-group">
                     <label class="contact__form-label" for="client-email">Your e-mail<sup>*</sup></label>
                     <input type="email" id="client-email" name="email" class=" contact__form-textfield form-control" required /> 
+                    <span class="glyphicon form-control-feedback"></span>
                   </div>
                 </div>
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group contact__form-group--textarea">
                       <label class="contact__form-label" for="client-message">Your message<sup>*</sup></label>
                       <textarea id="client-message"  name="message" class="contact__form-textarea form-control" minlength="20" row="5" required ></textarea>
+                      <span class="glyphicon form-control-feedback"></span>
                     </div>
                     <button type="submit" class="contact__form--btn btn-custom btn">Send message</button>
                 </div>
 
-                <input type="text" name="_gotcha" class="contact__form--habdich" />
-							  <input type="hidden" name="_subject" value="Message from your Portfolio Website" />
+                <input type="text" name="_gotcha" class="contact__form--custom-field" />
+							  <input type="hidden" name="_subject" value="Client Request / Message from Portfolio" />
 							  <input type="hidden" name="_next" value="thankyou.html" />
               </form>
             </div>
