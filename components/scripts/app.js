@@ -21,7 +21,7 @@ $(function(){
     init: function(){
       App.cacheDom();
       //App.setBackgroundType();
-      App.setSmoothScroll(1100);
+      App.setSmoothScroll(1200);
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();

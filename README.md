@@ -1,17 +1,18 @@
-# Personal Portfolio Website Project
-This website has been developed from ground up without using any templates or content managment systems.
-It is optimized for speed, browser compatibility and usability.
+# Portfolio Website 2.0
+This is an update of the 2016 version of my portfolio website. I added new projects and used bootstrap.
 
 ## Technolgies used for this project
 - HTML
-- CSS written in Sass
+- Sass
 - JavaScript
-- Compass
-- Susy 
+- Bootstrap
 - jQuery
 - Picturefill
 - Mustache.js
+- Font Awesome
+- Animate.css
+- Validate.js
 
 ## Design
-The website has a fluid responsive single page design and was built using a **mobile first approach**. 
-In Addition a modular scale was used for a more meaningful responsive typography.
+The website uses the responsive bootstrap grid system. The single page design and was built using a **mobile first approach**. 
+The modular scale for a more meaningful responsive typography was not changed.
