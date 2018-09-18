@@ -17,7 +17,7 @@
     @include rem(margin-top, 20.25px);
   }
 
-  &--no-margin {
+  &--no-margin-bottom {
     margin-bottom: 0;
   }
 
@@ -26,16 +26,39 @@
     &-wrapper {
       display: flex;
       flex-flow: wrap;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 690px;
+      justify-content: space-around;
+      align-items: flex-end;
+      max-width: 700px;
+      padding-left: 0;
+      padding-right: 0; 
+    }
+
+    &-icon-wrap {
+      margin:15px 10px;
+
+      &--ajax {
+        margin: 15px 5px;
+      }
     }
 
     &-icon {
-      width:100%;
+      display: block;
+      margin: auto;
+      width: 100%;
       max-width:70px;
-      height:auto;
-      margin:15px 10px;
+      height: auto;
+
+      &-label {
+        display: block;
+        text-align: center;
+        font-weight: $semi-bold;
+        @include rem (font-size, 14px);
+      }
+
+      &--ajax {
+        max-width: 90px;
+        height:70px;
+      }
     }
   }
 }
@@ -60,14 +83,21 @@
     &__skillset{
       
       &-wrapper {
-        max-width:100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        justify-content: space-between;
       }
 
-      &-icon {
+      &-icon-wrap {
         margin: 15px 20px 15px 0;
 
         &--html {
           margin-left: -4px;
+        }
+
+        &--desktop-last {
+          margin-right: 0;
         }
       }
     }
