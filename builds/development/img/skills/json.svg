@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/SVG/DTD/svg10.dtd">
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -9,8 +10,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    version="1.1"
-   width="160"
-   height="160"
+   viewBox="0 0 160 160"
    id="svg-001">
   <title
      id="title-001">JSON logo</title>
