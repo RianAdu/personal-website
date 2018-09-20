@@ -2,6 +2,7 @@
 /* ************************************ */
 
 .body--prevent-scrolling{
+  position: absolute;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   z-index: 1;

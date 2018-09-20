@@ -6,10 +6,10 @@
   &__overlay {
     position: fixed;
     display: none;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
     z-index: 9999;
     min-width: 320px;
     background-color: $white;
@@ -21,6 +21,7 @@
 
   &__wrapper {
     min-height: 101%;
+    overflow: scroll;
   }
 
   &__close-button {
