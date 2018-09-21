@@ -179,7 +179,7 @@ $(function(){
     finalizeProjectDetails: function(projectView, id){
       var tag = '#'+id;
       $('body').prepend(projectView).addClass('body--prevent-scrolling');
-      $('.portfolio-details__overlay').fadeIn('slow');
+      $('.portfolio-details__overlay').fadeIn();
       App.setBrowserHistory(tag);
       
       $('.portfolio-details__close-button, .portfolio-details__button--close').on('click', function(){
