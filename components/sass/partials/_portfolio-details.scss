@@ -45,6 +45,7 @@
 
     &-link {
       font-weight: $semi-bold;
+      text-decoration: underline;
       color:$black;
 
       &:hover,
@@ -105,6 +106,10 @@
 
     &__description-title {
       @include rem(font-size, 28.833px);
+    }
+
+    &__description-link {
+      text-decoration: none;
     }
 
     &__button {
