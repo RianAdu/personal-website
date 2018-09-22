@@ -4,8 +4,8 @@ var projectTemplate = '<div class="portfolio-details__overlay"><article class="p
 '<h3 class="portfolio-details__description-subheader">Technologies</h3><p class="portfolio-details__description-technologies">{{#technologies}}'+
 '{{.}}{{/technologies}}</p></div> </div> </div><div class="portfolio-details__images-wrapper"><div class="container"><div class="row">'+
 '<div class="portfolio-details__images col-xs-12"><picture><!--[if gte IE 9]><video style="display: none;"><![endif]-->'+
-'<source srcset="img/projects/{{id}}/{{id}}_details@3.png" media="(min-width: 768px)">'+
-'<source srcset="img/projects/{{id}}/{{id}}_details@2.png" media="(min-width: 200px)">'+
+'<source srcset="img/projects/{{id}}/{{id}}_details_1@3.png" media="(min-width: 768px)">'+
+'<source srcset="img/projects/{{id}}/{{id}}_details_1@2.png" media="(min-width: 200px)">'+
 '<!--[if gte IE 9]></video><![endif]-->'+
 '<img class="img-responsive" src="img/projects/{{id}}/{{id}}_details@3.png" srcset="img/projects/{{id}}/{{id}}_details@3.png" alt="{{alt}}">'+
 '</picture><div class="portfolio-details__button-wrapper">'+
