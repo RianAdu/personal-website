@@ -16501,7 +16501,7 @@ var projectObject = [{
 	"medicare": {
 		"id": "medicare",
 		"title": "Medicare Hamburg",
-		"copy": "I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.",
+		"copy": "<p class='portfolio-details__description-copy'>I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.</p>",
 		"technologies": ["HTML5, ", "CSS3, ", "JavaScript, ", "WordPress"],
 		"url": "http://www.medicare-hamburg.de",
 		"alt": "Medicare Hamburg"
@@ -16510,7 +16510,7 @@ var projectObject = [{
 	"cdss": {
 		"id": "cdss",
 		"title": "Anything But Sorry",
-		"copy": "While working for FCB Canada, I was assigned with the task of building this website from ground up. By working as the only developer in a team of talented individuals, I managed to create an exceptional website for an award-winning digital marketing campaign. The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality generated an estimated 1.23 million views and 41.8 thousand social media shares.",
+		"copy": "<p class='portfolio-details__description-copy'>While working for FCB Canada, I was assigned with the task of building this website from ground up. By being the only developer in a team of talented individuals, I managed to create an exceptional website for an <span class='text-nowrap'>award-winning</span> <span class='text-nowrap'>digital marketing campaign.<span></p><p class='portfolio-details__description-copy'>The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality helped to generate an estimated 1.23 million views, 41.8 thousand social media shares.<br /> The campaign was awarded with <a target='_blank' href='https://www.oneclub.org/awards/theoneshow/-award/30993/anything-but-sorry' class='portfolio-details__description-link'>Gold at the \"The One Show awards\"</a> and <a target='_blank' href='https://clios.com/awards/winner/public-relations/down-syndrome-awareness/anything-but-sorry-38068' class='portfolio-details__description-link'>Bronze at the \"Clio Awards\"</a>.</p>",
 		"technologies": ["HTML5, ", "CSS3, ", "JavaScript, ", "jQuery, ", "Bootstrap"],
 		"url": "http://anythingbutsorry.com",
 		"alt": "Canadian Down Syndrome Society - Anything But Sorry Campaign"
@@ -16526,7 +16526,7 @@ var projectObject = [{
 }];
 var projectTemplate = '<div class="portfolio-details__overlay"><article class="portfolio-details__wrapper"><section class="portfolio-details"><div class="container">'+
 '<div class="row"><div class="portfolio-details__description col-xs-12 col-md-10 col-md-offset-1 text-center"><span class="portfolio-details__close-button lnr lnr-cross"></span>'+
-'<h2 class="portfolio-details__description-title">{{{title}}}</h2><p class="portfolio-details__description-copy">{{{copy}}}</p>'+
+'<h2 class="portfolio-details__description-title">{{{title}}}</h2>{{{copy}}}'+
 '<h3 class="portfolio-details__description-subheader">Technologies</h3><p class="portfolio-details__description-technologies">{{#technologies}}'+
 '{{.}}{{/technologies}}</p></div> </div> </div><div class="portfolio-details__images-wrapper"><div class="container"><div class="row">'+
 '<div class="portfolio-details__images col-xs-12"><picture><!--[if gte IE 9]><video style="display: none;"><![endif]-->'+

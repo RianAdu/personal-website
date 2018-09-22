@@ -43,6 +43,16 @@
       @include rem (margin-bottom, 3px);
     }
 
+    &-link {
+      font-weight: $semi-bold;
+      color:$black;
+
+      &:hover,
+      &:focus {
+        color:$black;
+      }
+    }
+
     &-subheader {
       margin-bottom: 0;
     }
