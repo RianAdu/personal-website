@@ -44,7 +44,7 @@
     }
 
     &-link {
-      font-weight: $semi-bold;
+      font-weight: $normal;
       text-decoration: underline;
       color:$black;
 
@@ -60,6 +60,7 @@
   }
 
   &__images {
+    margin-bottom: 40px;
 
     &-wrapper {
       background-color:$light-grey;
