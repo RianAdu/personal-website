@@ -44,9 +44,8 @@
     &-icon {
       display: block;
       margin: auto;
-      width: 100%;
-      max-width:70px;
-      height: auto;
+      width: 70px;
+      height: 70px;
 
       &-label {
         display: block;
@@ -56,7 +55,12 @@
       }
 
       &--ajax {
-        max-width: 90px;
+        width: 90px;
+        height: 43.3px;
+      }
+      
+      &--npm {
+        height: 27.34px;
       }
     }
   }
