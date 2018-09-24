@@ -16529,10 +16529,9 @@ var projectObject = [{
 			var imgCount = 3;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){
-				markup += '<picture><!--[if gte IE 9]><video style=\"display: none;"><![endif]--><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
+				markup += '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
 			}
 			return markup;
-			
 		},
 		"url": "http://anythingbutsorry.com",
 		"alt": "Canadian Down Syndrome Society - Anything But Sorry Campaign"
