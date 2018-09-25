@@ -16,7 +16,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    @include rem(padding-top, $navbar-height);
+    @include rem(padding-top, 35px);
   }
 
   &__wrapper {
@@ -26,7 +26,7 @@
   &__close-button {
     position: absolute;
     right: 20px;
-    top: -45px;
+    top: -20px;
     font-weight: $semi-bold;
     @include rem (font-size, 36.491px);
     
@@ -107,10 +107,6 @@
 
     &__description-title {
       @include rem(font-size, 28.833px);
-    }
-
-    &__description-link {
-      text-decoration: none;
     }
 
     &__button {
