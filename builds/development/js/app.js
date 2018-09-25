@@ -16509,7 +16509,7 @@ var projectObject = [{
 		"copy": "<p class='portfolio-details__description-copy'>I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.</p>",
 		"technologies": ["HTML5, ", "CSS3, ", "JavaScript, ", "WordPress"],
 		"getImages": function(){
-			var imgCount = 1;
+			var imgCount = 3;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){
 				markup += '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
