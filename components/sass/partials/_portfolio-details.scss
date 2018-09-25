@@ -36,11 +36,15 @@
   }
 
   &__description {
-      @include rem(padding-bottom, 20.25px);
+      @include rem(padding-bottom, 18px);
     
       &-title {
       font-weight: $semi-bold;
       @include rem (margin-bottom, 3px);
+    }
+
+    &-subheader {
+      @include rem(margin-bottom, 9.989px); 
     }
 
     &-link {
@@ -53,9 +57,18 @@
         color:$black;
       }
     }
+  }
 
-    &-subheader {
-      margin-bottom: 0;
+  &__technology-icon{
+    
+    display: block;
+    width: 40px;
+    height:40px;
+
+    &-wrap {
+      display: inline-block;
+      margin: 0;
+      margin-right: 15px;
     }
   }
 
