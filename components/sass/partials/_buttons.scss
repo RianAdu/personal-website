@@ -3,7 +3,7 @@
 .btn-custom {
   background: $black;
   color: $white;
-  font-weight: $light;
+  font-weight: $normal;
   transition: all 0.2s ease;
   @include rem(font-size, 16px);
   @include rem(width, $custom-btn-width);
