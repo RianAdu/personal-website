@@ -27,9 +27,9 @@ var projectObject = [{
 		"copy": "<p class='portfolio-details__description-copy'>While working for FCB Canada, I was assigned with the task of building this website from ground up. By being the only developer in a team of talented individuals, I managed to create an exceptional website for an <span class='text-nowrap'>award-winning</span> <span class='text-nowrap'>digital marketing campaign.<span></p><p class='portfolio-details__description-copy'>The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality helped to generate an estimated 1.23 million views, 41.8 thousand social media shares.<br /> The campaign was awarded with <a target='_blank' href='https://www.oneclub.org/awards/theoneshow/-award/30993/anything-but-sorry' class='portfolio-details__description-link'>Gold at the \"The One Show awards\"</a> and <a target='_blank' href='https://clios.com/awards/winner/public-relations/down-syndrome-awareness/anything-but-sorry-38068' class='portfolio-details__description-link'>Bronze at the <span class='text-nowrap'>\"Clio Awards\"</span></a>.</p>",
 		"technologies": ["HTML5, ", "CSS3, ", "JavaScript, ", "jQuery, ", "Bootstrap"],
 		"getImages": function(){
-			var imgCount = 3;
+			var imgCount = 4;
 			var markup = '';	
-			for(var i = 1; i <=imgCount; i++){
+			for(var i = 1; i <=imgCount; i++){ 
 				markup += '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
 			}
 			return markup;
