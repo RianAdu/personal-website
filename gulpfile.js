@@ -17,7 +17,8 @@ var gulp			= require('gulp'),
 
 // declarating enviroment and component sources
 var enviroment,
-	jsSources,
+	jsPlugins,
+	jsScripts,
 	sassSources,
 	htmlSources,
 	outputDir;
@@ -36,17 +37,20 @@ else {
 //setting the files 
 sassSources = ['components/sass/app.scss'];
 htmlSources = [outputDir + '*.html'];
-jsSources		= [
+jsPlugins = [
+	'components/scripts/plugins/picturefill.min.js',
+	'components/scripts/plugins/lazysizes.min.js',
+	'components/scripts/plugins/mustache.min.js'
+];
+jsScripts		= [
 	'components/scripts/vendor/jquery.js',
 	'components/scripts/bootstrap/*.js',
 	'components/scripts/bootstrap_inc/tooltip.js',
 	'components/scripts/bootstrap_inc/popover.js',
-	'components/scripts/vendor/picturefill.js',
-	'components/scripts/vendor/mustache.js',
 	'components/scripts/vendor/jquery.validate.js',
 	'components/scripts/inc/projects.json',
 	'components/scripts/inc/project-template.js',
-	'components/scripts/app.js',
+	'components/scripts/app.js'
 ];
 
 
@@ -74,11 +78,18 @@ gulp.task('styles', function(){
 
 
 gulp.task('scripts', function(){
-	gulp.src(jsSources)
+	gulp.src(jsScripts)
 		.pipe(concat('app.js'))
 		.pipe(gulpif(enviroment === 'production', uglify()))
 		.pipe(gulp.dest(outputDir + '/js'));
 }); //END OF script task
+
+
+gulp.task('plugins', function(){
+	gulp.src(jsPlugins)
+		.pipe(concat('plugins.js'))
+		.pipe(gulp.dest(outputDir + '/js'));
+}); //END OF plugins task
 
 
 //server & watch task
@@ -89,7 +100,7 @@ gulp.task('server', ['styles'], function(){
 	});
 
 	gulp.watch(htmlSources, ['markup']).on('change', browserSync.reload);
-	gulp.watch(jsSources, ['scripts']).on('change', browserSync.reload);
+	gulp.watch(jsScripts, ['scripts']).on('change', browserSync.reload);
 	gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['styles']);
 }); // END OF server & watch task
 
@@ -99,16 +110,16 @@ gulp.task('move', function() {
 	
 	//images
  	gulp.src('builds/development/img/**/*.*')
-	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'images')));
+	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'img')));
 
 	//fonts
   gulp.src('builds/development/fonts/**/*.*')
 	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'fonts')));
 
 	//javascript
-	gulp.src('builds/development/inc/*.js')
+	/* gulp.src('builds/development/inc/*.js')
 	.pipe(gulpif(enviroment === 'production', uglify()))
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc'))); */
 
 	//json files
   gulp.src('builds/development/inc/*.json')
@@ -116,10 +127,10 @@ gulp.task('move', function() {
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
 
 	//templates
-  gulp.src('builds/development/templates/*.*')
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'templates')));
+  g/* ulp.src('builds/development/templates/*.*')
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'templates'))); */
 
 }); //END OF move task
 
-gulp.task('default', ['markup', 'scripts', 'styles', 'server', 'move']);
+gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server', 'move']);
 
