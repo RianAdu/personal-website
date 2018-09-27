@@ -127,7 +127,7 @@ gulp.task('move', function() {
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
 
 	//templates
-  g/* ulp.src('builds/development/templates/*.*')
+  /* gulp.src('builds/development/templates/*.*')
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'templates'))); */
 
 }); //END OF move task
