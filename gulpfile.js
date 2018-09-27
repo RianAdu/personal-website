@@ -44,10 +44,12 @@ jsPlugins = [
 ];
 jsScripts		= [
 	'components/scripts/vendor/jquery.js',
-	'components/scripts/bootstrap/*.js',
-	'components/scripts/bootstrap_inc/tooltip.js',
-	'components/scripts/bootstrap_inc/popover.js',
 	'components/scripts/vendor/jquery.validate.js',
+	'components/scripts/bootstrap/button.js',
+	'components/scripts/bootstrap/collapse.js',
+	'components/scripts/bootstrap/dropdown.js',
+	'components/scripts/bootstrap/scrollspy.js',
+	'components/scripts/bootstrap/transition.js',
 	'components/scripts/inc/projects.json',
 	'components/scripts/inc/project-template.js',
 	'components/scripts/app.js'
