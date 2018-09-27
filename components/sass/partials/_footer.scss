@@ -2,6 +2,7 @@
   text-align: center;
   background: $black;
   color: $white;
+  font-weight: $normal;
   @include rem(padding, 25px 0);
   @include rem(font-size, 12.642px);
   @include rem(line-height, 22.781px);
