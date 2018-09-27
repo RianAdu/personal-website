@@ -12716,14 +12716,14 @@ var projectObject = [{
 			var imgCount = 3;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){
-				markup += '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source data-srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source data-srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images lazyload" data-src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" data-srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
+				markup += '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images " src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
 			}
 			return markup;
 		},
 		"setTechnologies": function(){
 			var technologies = '';
 			for(var i=0; i < this.technologies.length; i++) {
-				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon lazyload" data-src="img/skills/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
+				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon " src="img/skills/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
 			}
 			return technologies;
 		},
@@ -12742,7 +12742,7 @@ var projectObject = [{
 			var imgCount = 4;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){ 
-				markup += '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source data-srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source data-srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images lazyload" data-src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" data-srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
+				markup += '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" media="(min-width: 768px)"><source srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@2.png" media="(min-width: 200px)"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images " src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'@4.png" alt="'+this.alt+'"></picture>';
 			}
 			return markup;
 		},
@@ -12750,7 +12750,7 @@ var projectObject = [{
 		"setTechnologies": function(){
 			var technologies = '';
 			for(var i=0; i < this.technologies.length; i++) {
-				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon lazyload" data-src="img/skills/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
+				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon " src="img/skills/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
 			}
 			return technologies;
 		},
