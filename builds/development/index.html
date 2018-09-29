@@ -81,10 +81,25 @@
             <div class="col-xs-12 col-sm-12 col-md-4 col-md-push-8 col-lg-4 col-lg-push-8">
               <picture>
                 <!--[if gte IE 9]><video style="display: none;"><![endif]-->
-                <source data-srcset="img/main/Florian_Adu_Gyamfi@2x.jpg 1x, img/main/Florian_Adu_Gyamfi@3x.jpg 2x" media="(min-width: 200px)">
+                <source
+                media="(min-width: 1200px)" 
+                data-srcset="img/main/FlorianAduGyamfi-lg@1x.jpg 1x, 
+                img/main/FlorianAduGyamfi-lg@2x.jpg 2x, 
+                img/main/FlorianAduGyamfi-lg@3x.jpg 3x">
+                
+                <source 
+                media="(min-width: 992px)"
+                data-srcset="img/main/FlorianAduGyamfi-md@1x.jpg 1x, 
+                img/main/FlorianAduGyamfi-md@2x.jpg 2x, 
+                img/main/FlorianAduGyamfi-md@3x.jpg 3x">
+
                 <!--[if gte IE 9]></video><![endif]-->
-                <img class="about__profile-picture  img-circle lazyload" data-srcset="img/main/Florian_Adu_Gyamfi@2x.jpg, img/main/Florian_Adu_Gyamfi@3x.jpg 2x"
-                  alt="Florian Adu-Gyamfi, Front End Developer">
+                <img class="about__profile-picture  img-circle lazyload" 
+                data-srcset="img/main/FlorianAduGyamfi-xs_sm@1x.jpg 1x, 
+                img/main/FlorianAduGyamfi-xs_sm@2x.jpg 2x, 
+                img/main/FlorianAduGyamfi-xs_sm@3x.jpg 3x, 
+                img/main/FlorianAduGyamfi-xs_sm@4x.jpg 4x" 
+                alt="Florian Adu-Gyamfi Front End Developer">
               </picture>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8 col-md-pull-4 col-lg-8 col-lg-pull-4">
@@ -255,12 +270,12 @@
               <div class="row">
                 <div class="portfolio__project-column portfolio__project-column--macbook col-xs-12 col-sm-7 ">
                   <picture>
-                    <!--[if gte IE 9]><video style="display: none;"><![endif]-->
-                    <source data-srcset="img/projects/cdss/CDSS-Anythingbutsorry@2.png 1x, img/projects/cdss/CDSS-Anythingbutsorry@4.png 2x"
-                      media="(min-width: 200px)">
-                    <!--[if gte IE 9]></video><![endif]-->
-                    <img class="portfolio__project-column-image lazyload" data-srcset="img/projects/cdss/CDSS-Anythingbutsorry@2.png, img/projects/cdss/CDSS-Anythingbutsorry@2.png 2x"
-                      alt="Canadian Down Syndrome Society">
+                    <img class="portfolio__project-column-image lazyload" 
+                    data-srcset="img/projects/cdss/anything_but_sorry_macbook@1x.png 1x, 
+                    img/projects/cdss/anything_but_sorry_macbook@2x.png 2x, 
+                    img/projects/cdss/anything_but_sorry_macbook@3x.png 3x,
+                    img/projects/cdss/anything_but_sorry_macbook@4x.png 4x" 
+                    alt="Canadian Down Syndrome Society">
                   </picture>
                 </div>
                 <div class="portfolio__project-column col-xs-12 col-sm-5">
@@ -277,13 +292,14 @@
               <div class="row">
                 <div class="portfolio__project-column portfolio__project-column--macbook col-xs-12 col-sm-7 col-sm-push-5">
                   <picture>
-                    <!--[if gte IE 9]><video style="display: none;"><![endif]-->
-                    <source data-srcset="img/projects/medicare/Medicare_Hamburg@2.png 1x, img/projects/medicare/Medicare_Hamburg@4.png 2x"
-                      media="(min-width: 200px)">
-                    <!--[if gte IE 9]></video><![endif]-->
-                    <img class="portfolio__project-column-image lazyload" data-srcset="img/projects/medicare/Medicare_Hamburg@2.png, img/projects/medicare/Medicare_Hamburg@2.png 2x"
-                      alt="Medicare Hamburg">
+                    <img class="portfolio__project-column-image lazyload" 
+                    data-srcset="img/projects/medicare/medicare_hamburg_macbook@1x.png 1x, 
+                    img/projects/medicare/medicare_hamburg_macbook@2x.png 2x, 
+                    img/projects/medicare/medicare_hamburg_macbook@3x.png 3x,
+                    img/projects/medicare/medicare_hamburg_macbook@4x.png 4x" 
+                    alt="Medicare Hamburg">
                   </picture>
+
                 </div>
                 <div class="portfolio__project-column portfolio__project-column--text-right col-xs-12 col-sm-5 col-sm-pull-7">
                   <h3 class="portfolio__project-column-headline">Medicare Hamburg</h3>
