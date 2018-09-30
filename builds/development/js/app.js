@@ -12723,7 +12723,7 @@ var projectObject = [{
 		"setTechnologies": function(){
 			var technologies = '';
 			for(var i=0; i < this.technologies.length; i++) {
-				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon " src="img/skills/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
+				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon " src="img/technology_icons/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
 			}
 			return technologies;
 		},
@@ -12750,7 +12750,7 @@ var projectObject = [{
 		"setTechnologies": function(){
 			var technologies = '';
 			for(var i=0; i < this.technologies.length; i++) {
-				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon " src="img/skills/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
+				technologies += '<div class="portfolio-details__technology-icon-wrap"><img class="portfolio-details__technology-icon " src="img/technology_icons/'+this.technologies[i]+'.svg" alt="'+this.technologies[i]+'"></div>';
 			}
 			return technologies;
 		},
