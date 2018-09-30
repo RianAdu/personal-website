@@ -12727,7 +12727,6 @@ var projectObject = [{
 			}
 			return technologies;
 		},
-
 		"url": "http://www.medicare-hamburg.de",
 		"alt": "Medicare Hamburg"
 	},
@@ -12746,7 +12745,6 @@ var projectObject = [{
 			}
 			return markup;
 		},
-
 		"setTechnologies": function(){
 			var technologies = '';
 			for(var i=0; i < this.technologies.length; i++) {
@@ -12756,14 +12754,6 @@ var projectObject = [{
 		},
 		"url": "http://anythingbutsorry.com",
 		"alt": "Canadian Down Syndrome Society - Anything But Sorry Campaign"
-	},
-
-	"emails": {
-		"id": "emails",
-		"title": "Email Development",
-		"copy": "By using the fluid hybrid method, the email templates that I develop contain modular elements. This makes it easy to change the content or to modify the design and will assure proper rendering in a variety of email clients. ",
-		"technologies": ["HTML,", "CSS,", "Email on Acid,", "Litmus"],
-		"alt": "Florian Adu-Gyamfi - Email Development"
 	}
 }];
 var projectTemplate = '<div class="portfolio-details__overlay"><article class="portfolio-details__wrapper"><section class="portfolio-details"><div class="container">'+

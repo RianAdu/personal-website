@@ -50,7 +50,7 @@ jsScripts		= [
 	'components/scripts/bootstrap/dropdown.js',
 	'components/scripts/bootstrap/scrollspy.js',
 	'components/scripts/bootstrap/transition.js',
-	'components/scripts/inc/projects.json',
+	'components/scripts/inc/projects.js',
 	'components/scripts/inc/project-template.js',
 	'components/scripts/app.js'
 ];
