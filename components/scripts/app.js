@@ -6,7 +6,8 @@ $(function(){
     },
 
     var: {
-      historyFlag: null
+      historyFlag: null,
+      animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd'
     },
 
     dom:{
@@ -51,6 +52,7 @@ $(function(){
       App.dom.showMoreButton.on('click', App.showProjectDetails);
 
       //$(window).scroll(App.setParallax);
+
       //user can hit the back button when project details are visible
 			$(window).on('popstate', function(){
 				if(App.var.historyFlag !== undefined){
@@ -58,8 +60,6 @@ $(function(){
 				}
       });
 
-      //App.dom.hiddenField.val('Test');
-  
       $(window).on('orientationchange, resize', function(){
         App.setLandscapeHeaderPos();
         App.setNavbarBgColor();
@@ -179,7 +179,17 @@ $(function(){
     finalizeProjectDetails: function(projectView, id){
       var tag = '#'+id;
       $('body').prepend(projectView).addClass('body--prevent-scrolling');
-      $('.portfolio-details__overlay').fadeIn();
+
+      //checking window width to decide which animation to use!
+      if($(window).width() < 992) {
+        $('.portfolio-details__overlay').addClass('animated slideInRight').one(App.var.animationEnd, function(){
+          $(this).css('visibility','visible');
+        });
+      }
+      else {
+        $('.portfolio-details__overlay').fadeIn('slow');
+      }
+
       App.setBrowserHistory(tag);
       
       $('.portfolio-details__close-button, .portfolio-details__button--close').on('click', function(){
@@ -190,12 +200,20 @@ $(function(){
     closeProjectDetails: function(id) {
       $('body').removeClass('body--prevent-scrolling');
       App.scrollBackToProject(id);
-
       $('.portfolio-details__close-button, .portfolio-details__button--close').off('click');
       
-      $('.portfolio-details__overlay').fadeOut('slow', function(){
-        $(this).remove();
-      }); 
+      //checking window width to decide which animation to use!
+      if($(window).width() < 992) {
+        $('.portfolio-details__overlay').addClass('animated slideOutRight').one(App.var.animationEnd, function(){
+          $(this).remove();
+        });
+      }
+      else {
+         $('.portfolio-details__overlay').fadeOut('slow', function(){
+          $(this).remove();
+        }); 
+      }
+     
       
       //setting the flag undefined so that popstate only calls this function when neccessary
 			App.var.historyFlag = undefined;
