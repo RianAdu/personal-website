@@ -26,7 +26,7 @@ $(function(){
     init: function(){
       App.cacheDom();
       App.setBackgroundType();
-      App.setSmoothScroll(1200);
+      App.setSmoothScroll(1300);
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
@@ -154,7 +154,7 @@ $(function(){
         App.dom.navbar.toggleClass('navbar-inverse--faded-in-mobile');
       }
     },
-
+    
     showProjectDetails: function(){
       var clickedProject = $(this).parent().parent().parent().attr('id');
       App.var.historyFlag = clickedProject;
@@ -191,7 +191,6 @@ $(function(){
       }
 
       App.setBrowserHistory(tag);
-      
       $('.portfolio-details__close-button, .portfolio-details__button--close').on('click', function(){
         return App.closeProjectDetails(id);
       });
