@@ -185,7 +185,7 @@ $(function(){
         $('.portfolio-details__overlay').addClass('animated slideInRight');
       }
       else {
-        $('.portfolio-details__overlay').fadeIn('slow');
+        $('.portfolio-details__overlay').addClass('animated slideInDown');
       }
 
       App.setBrowserHistory(tag);
@@ -206,12 +206,10 @@ $(function(){
         });
       }
       else {
-         $('.portfolio-details__overlay').fadeOut('slow', function(){
+        $('.portfolio-details__overlay').addClass('animated slideOutUp').one(App.var.animationEnd, function(){
           $(this).remove();
-        }); 
+        });
       }
-     
-      
       //setting the flag undefined so that popstate only calls this function when neccessary
 			App.var.historyFlag = undefined;
     },
