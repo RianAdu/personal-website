@@ -5,7 +5,6 @@
 
   &__overlay {
     position: fixed;
-    visibility: hidden;
     left: 0px;
     right: 0px;
     top: 0px;
@@ -142,7 +141,6 @@
   .portfolio-details{
 
     &__overlay {
-      visibility: visible;
       display: none;
     }
   }

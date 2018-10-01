@@ -182,9 +182,7 @@ $(function(){
 
       //checking window width to decide which animation to use!
       if($(window).width() < 992) {
-        $('.portfolio-details__overlay').addClass('animated slideInRight').one(App.var.animationEnd, function(){
-          $(this).css('visibility','visible');
-        });
+        $('.portfolio-details__overlay').addClass('animated slideInRight');
       }
       else {
         $('.portfolio-details__overlay').fadeIn('slow');

@@ -12716,7 +12716,7 @@ var projectObject = [{
 			var imgCount = 3;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){
-				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'"></picture>';
+				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'" src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg"></picture>';
 			}
 			return markup;
 		},
@@ -12741,7 +12741,7 @@ var projectObject = [{
 			var imgCount = 4;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){ 
-				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'"></picture>';
+				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" srcset="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'" src="img/projects/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg"></picture>';
 			}
 			return markup;
 		},
@@ -12947,9 +12947,7 @@ $(function(){
 
       //checking window width to decide which animation to use!
       if($(window).width() < 992) {
-        $('.portfolio-details__overlay').addClass('animated slideInRight').one(App.var.animationEnd, function(){
-          $(this).css('visibility','visible');
-        });
+        $('.portfolio-details__overlay').addClass('animated slideInRight');
       }
       else {
         $('.portfolio-details__overlay').fadeIn('slow');
