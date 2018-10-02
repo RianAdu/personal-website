@@ -12772,7 +12772,8 @@ $(function(){
 
     var: {
       historyFlag: null,
-      animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd'
+      animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
+      windowWidth: null
     },
 
     dom:{
@@ -12790,6 +12791,7 @@ $(function(){
  
     init: function(){
       App.cacheDom();
+      App.getWindowWidth();
       App.setBackgroundType();
       App.setSmoothScroll(1300);
       App.setLandscapeHeaderPos();
@@ -12828,7 +12830,12 @@ $(function(){
       $(window).on('orientationchange, resize', function(){
         App.setLandscapeHeaderPos();
         App.setNavbarBgColor();
+        App.getWindowWidth();
       });
+    },
+
+    getWindowWidth: function(){
+      App.var.windowWidth = $(window).width();
     },
 
     setLandscapeHeaderPos: function(){
@@ -12868,7 +12875,7 @@ $(function(){
           e.preventDefault();
          
           //close mobile menu before scrolling when nav menu link and brand logo was clicked
-          if($(window).width() < 768 && dataTag == undefined || !App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home') {
+          if(App.var.windowWidth < 768 && dataTag == undefined || !App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home') {
             App.dom.hamburgerMenu.click();
           }
     
@@ -12915,7 +12922,7 @@ $(function(){
     },
 
     setNavbarBgOnMobile: function(){
-      if($(window).width() < 768) {
+      if(App.var.windowWidth < 768) {
         App.dom.navbar.toggleClass('navbar-inverse--faded-in-mobile');
       }
     },
@@ -12946,7 +12953,7 @@ $(function(){
       $('body').prepend(projectView).addClass('body--prevent-scrolling');
 
       //checking window width to decide which animation to use!
-      if($(window).width() < 992) {
+      if(App.var.windowWidth < 992) {
         $('.portfolio-details__overlay').addClass('animated slideInRight');
       }
       else {
@@ -12965,7 +12972,7 @@ $(function(){
       $('.portfolio-details__close-button, .portfolio-details__button--close').off('click');
       
       //checking window width to decide which animation to use!
-      if($(window).width() < 992) {
+      if(App.var.windowWidth < 992) {
         $('.portfolio-details__overlay').addClass('animated slideOutRight').one(App.var.animationEnd, function(){
           $(this).remove();
         });
