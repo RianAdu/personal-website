@@ -21,7 +21,8 @@ $(function(){
       contactForm: null,
       formGroups: null,
       formInputs: null,
-      hiddenField: null
+      hiddenField: null,
+      loadingModal: null
     },
  
     init: function(){
@@ -34,6 +35,7 @@ $(function(){
       App.setNavbarBgOnScroll();
       App.formValidation();
       App.bindEvents();
+      App.removeLoadingModal();
     },
 
     cacheDom: function(){
@@ -47,6 +49,7 @@ $(function(){
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
       App.dom.hiddenField = $('.contact__form--custom-field');
+      App.dom.loadingModal = $('.loading-modal');
     },
 
     bindEvents: function(){
@@ -71,6 +74,12 @@ $(function(){
 
     getWindowWidth: function(){
       App.var.windowWidth = $(window).width();
+    },
+
+    removeLoadingModal: function() {
+      setTimeout(function(){
+        App.dom.loadingModal.fadeOut('slow');
+			}, 300);
     },
 
     setLandscapeHeaderPos: function(){
