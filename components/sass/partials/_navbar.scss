@@ -60,7 +60,7 @@
   padding: 0 15px;
   
   &__logo-image {
-    width: auto;
+    width: $navbar-height;
     height: $navbar-height;
   }
 }
@@ -105,10 +105,6 @@
 @media screen and (min-width: $screen-sm-min) {
   .navbar-fixed-top {
     border-bottom: 0;
-  }
-
-  .navbar-brand {
-    //@include rem(font-size, 46.184px);
   }
 
   .nav > li {
