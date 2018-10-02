@@ -124,9 +124,9 @@ gulp.task('move', function() {
   .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc'))); */
 
 	//json files
-  gulp.src('builds/development/inc/*.json')
+  /* gulp.src('builds/development/inc/*.json')
   .pipe(gulpif(enviroment === 'production', jsonminify()))
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc')));
+  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc'))); */
 
 	//templates
   /* gulp.src('builds/development/templates/*.*')
