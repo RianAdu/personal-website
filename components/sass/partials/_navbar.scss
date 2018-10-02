@@ -55,14 +55,16 @@
     color: $white;
   }
 } 
-
-.navbar-brand {
-  font-family: $font-family-logo;
-  font-weight: $normal;
-  @include rem(font-size, 36.491px);
- line-height: inherit;
-}
  
+.navbar-brand {
+  padding: 0 15px;
+  
+  &__logo {
+    width: auto;
+    height: $navbar-height;
+  }
+}
+
 .navbar-collapse {
   border-top: 0;
   box-shadow: none;
@@ -106,7 +108,7 @@
   }
 
   .navbar-brand {
-    @include rem(font-size, 46.184px);
+    //@include rem(font-size, 46.184px);
   }
 
   .nav > li {
