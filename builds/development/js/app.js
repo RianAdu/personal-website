@@ -12780,6 +12780,8 @@ $(function(){
       hamburgerMenu: null,
       headerWrapper: null,
       headerTitle: null,
+      headerSubtitle: null,
+      headerEnter: null,
       navbar: null,
       mobileNav: null,
       showMoreButton: null,
@@ -12800,13 +12802,15 @@ $(function(){
       App.setNavbarBgOnScroll();
       App.formValidation();
       App.bindEvents();
-      App.removeLoadingModal();
+      App.pageStart();
     },
 
     cacheDom: function(){
       App.dom.hamburgerMenu = $('.navbar-toggle');
       App.dom.headerWrapper = $('.header__wrapper');
       App.dom.headerTitle = $('.header__title-name');
+      App.dom.headerSubtitle = $('.header__subtitle');
+      App.dom.headerEnter = $('.header__enter-icon');
       App.dom.navbar = $('.navbar');
       App.dom.mobileNav = $('#mobile-nav');
       App.dom.showMoreButton = $('.show-more');
@@ -12841,10 +12845,21 @@ $(function(){
       App.var.windowWidth = $(window).width();
     },
 
-    removeLoadingModal: function() {
+    pageStart: function() {
       setTimeout(function(){
-        App.dom.loadingModal.fadeOut('slow');
+        App.dom.loadingModal.fadeOut('slow', function(){
+          App.fadeAnimation(App.dom.headerTitle, 'fadeInUp');
+          App.fadeAnimation(App.dom.headerSubtitle, 'fadeInUp');
+          App.fadeAnimation(App.dom.headerEnter, 'fadeIn');
+        });
 			}, 300);
+    },
+
+    fadeAnimation: function(element, animation){
+      element.addClass('animated '+ animation);
+      /* .one(App.var.animationEnd, function(){
+        element.css('opacity',1).removeClass('animated '+ animation); 
+      });*/
     },
 
     setLandscapeHeaderPos: function(){
