@@ -12,12 +12,8 @@
   text-align: center;
   color: $white;
 
-  &__wrapper {
-    @include rem(padding, 144px 0 46.192px);
-
-    &--landscape {
-      @include rem(padding, 150px 0 46.192px !important);
-    }
+  &__wrapper--landscape {
+    @include rem(padding, 150px 0 46.192px !important);
   }
 
   &__title-name {
@@ -56,7 +52,7 @@
     transition: all .4s ease-out;
     transform: scale(1, 1);
     @include rem(font-size, 52px);
-    @include rem (margin, 9.989px auto 22.784px);
+    @include rem (margin, 9.989px auto 0px);
     
     opacity: 0;
     animation-duration: .7s;
@@ -74,10 +70,6 @@
 
 @media screen and (min-width: $screen-xs-min) {
   .header {
-
-    &__wrapper {
-      padding: 0;
-    }
     
     &__title-name {
       @include rem(padding, 24px 0 16px 0);
