@@ -51,7 +51,7 @@
     color: $white;
     transition: all .4s ease-out;
     transform: scale(1, 1);
-    @include rem(font-size, 52px);
+    @include rem(font-size, 46px);
     @include rem (margin, 9.989px auto 0px);
     
     opacity: 0;
@@ -90,6 +90,10 @@
 
     &__subtitle {
       @include rem(font-size, 22px);
+    }
+
+    &__enter-icon {
+      @include rem(font-size, 52px);
     }
   }
 }
