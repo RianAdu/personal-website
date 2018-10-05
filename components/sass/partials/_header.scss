@@ -16,7 +16,7 @@
     width: 100%;
 
     &--landscape {
-      @include rem(padding, 150px 0 46.192px !important);
+      @include rem(padding, 100px 0 46.192px !important);
     }
   }
 
