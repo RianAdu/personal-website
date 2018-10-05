@@ -118,20 +118,6 @@ gulp.task('move', function() {
   gulp.src('builds/development/fonts/**/*.*')
 	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'fonts')));
 
-	//javascript
-	/* gulp.src('builds/development/inc/*.js')
-	.pipe(gulpif(enviroment === 'production', uglify()))
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc'))); */
-
-	//json files
-  /* gulp.src('builds/development/inc/*.json')
-  .pipe(gulpif(enviroment === 'production', jsonminify()))
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'inc'))); */
-
-	//templates
-  /* gulp.src('builds/development/templates/*.*')
-  .pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'templates'))); */
-
 }); //END OF move task
 
 gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server', 'move']);

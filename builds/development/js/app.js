@@ -12845,6 +12845,10 @@ $(function(){
       App.var.windowWidth = $(window).width();
     },
 
+    fadeAnimation: function(element, animation){
+      element.addClass('animated '+ animation);
+    },
+
     pageStart: function() {
       setTimeout(function(){
         App.dom.loadingModal.fadeOut('slow', function(){
@@ -12853,13 +12857,6 @@ $(function(){
           App.fadeAnimation(App.dom.headerEnter, 'fadeIn');
         });
 			}, 300);
-    },
-
-    fadeAnimation: function(element, animation){
-      element.addClass('animated '+ animation);
-      /* .one(App.var.animationEnd, function(){
-        element.css('opacity',1).removeClass('animated '+ animation); 
-      });*/
     },
 
     setLandscapeHeaderPos: function(){
