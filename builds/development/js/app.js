@@ -12710,7 +12710,7 @@ var projectObject = [{
 	"medicare": {
 		"id": "medicare",
 		"title": "Medicare Hamburg",
-		"copy": "<p class='portfolio-details__description-copy'>I developed this website using WordPress. Not only did it speed up my development process, but it also gave my client the possibility to easily update their websites content on their own.</p>",
+		"copy": "<p class='portfolio-details__description-copy'>I was approached by Medicare to build a modern, responsive website for them. I planned all development stages and discussed specific feature requirements. In addition, I helped to determine visual assets like stock photos that would communicate their core values.</p><p class='portfolio-details__description-copy'>I built the site with WordPress by creating a complete customized child theme and setting up supplemental plugins for SEO and page speed optimization. Not only was this approach cost and time efficient, it also gave my client an easy to use option to update the website’s content on their own.</p>",
 		"technologies": ["html", "css", "javascript", "wordpress", "php"],
 		"getImages": function(){
 			var imgCount = 3;
@@ -12734,7 +12734,7 @@ var projectObject = [{
 	"cdss": {
 		"id": "cdss",
 		"title": "Anything But Sorry",
-		"copy": "<p class='portfolio-details__description-copy'>While working for FCB Canada, I was assigned with the task of building this website from ground up. By being the only developer in a team of talented individuals, I managed to create an exceptional website for an <span class='text-nowrap'>award-winning</span> <span class='text-nowrap'>digital marketing campaign.<span></p><p class='portfolio-details__description-copy'>The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality helped to generate an estimated 1.23 million views, 41.8 thousand social media shares.<br /> The campaign was awarded with <a target='_blank' href='https://www.oneclub.org/awards/theoneshow/-award/30993/anything-but-sorry' class='portfolio-details__description-link'>Gold at the \"The One Show awards\"</a> and <a target='_blank' href='https://clios.com/awards/winner/public-relations/down-syndrome-awareness/anything-but-sorry-38068' class='portfolio-details__description-link'>Bronze at the <span class='text-nowrap'>\"Clio Awards\"</span></a>.</p>",
+		"copy": "<p class='portfolio-details__description-copy'>While working for FCB Canada, I was assigned with the task of building this website from ground up. By being the only developer in a team of talented individuals, I managed to create an exceptional website for an <span class='text-nowrap'>award-winning</span> <span class='text-nowrap'>digital marketing campaign.<span></p><p class='portfolio-details__description-copy'>The combination of intuitive user experience, lightbox video implementation and an easy to use share functionality helped to generate an estimated 1.23 million views and 41.8 thousand social media shares.<br /> The campaign was awarded with <a target='_blank' href='https://www.oneclub.org/awards/theoneshow/-award/30993/anything-but-sorry' class='portfolio-details__description-link'>Gold at the \"The One Show awards\"</a> and <a target='_blank' href='https://clios.com/awards/winner/public-relations/down-syndrome-awareness/anything-but-sorry-38068' class='portfolio-details__description-link'>Bronze at the <span class='text-nowrap'>\"Clio Awards\"</span></a>.</p>",
 		"technologies": ["html", "css", "javascript", "jquery", "bootstrap"],
 		
 		"getImages": function(){
