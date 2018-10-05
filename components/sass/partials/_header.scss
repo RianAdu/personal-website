@@ -62,7 +62,6 @@
     &:focus {
       color: $white;
       text-decoration: none;
-      transform: scale(1.2, 1.2);
       outline: 0;
     }
   }
@@ -94,6 +93,10 @@
 
     &__enter-icon {
       @include rem(font-size, 52px);
+
+      &:hover {
+        transform: scale(1.2, 1.2);
+      }
     }
   }
 }
