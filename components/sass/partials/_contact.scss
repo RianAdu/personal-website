@@ -15,14 +15,14 @@
     display: inline-block;
     color: $black;
 
-    &:hover {
+    &:hover, &:focus {
       text-decoration: none;
     }
 
     &--linkedin {
       color:$linkedin;
 
-      &:hover {
+      &:hover, &:focus {
         color: $linkedin;
       }
     }
@@ -30,7 +30,7 @@
     &--twitter {
       color: $twitter;
 
-      &:hover {
+      &:hover, &:focus {
         color: $twitter;
       }
     }
@@ -38,7 +38,7 @@
     &--github {
       color: $github;
 
-      &:hover {
+      &:hover, &:focus {
         color: $github;
       }
     }
@@ -46,7 +46,7 @@
     &--instagram {
       color: darken($instagram, 15);
 
-      &:hover {
+      &:hover, &:focus {
         color: darken($instagram, 15);
       }
     }
@@ -71,6 +71,10 @@
     transform: scale(1,1);
     transition: all .4s ease;
     
+    &--email {
+      transform: none !important;
+    }
+
     &:hover {
       transform: scale(1.1,1.1);
     }
