@@ -36,7 +36,7 @@ else {
 
 //setting the files 
 sassSources = ['components/sass/app.scss'];
-htmlSources = [outputDir + '*.html'];
+htmlSources = ['builds/development/*.html'];
 jsPlugins = [
 	'components/scripts/plugins/picturefill.min.js',
 	'components/scripts/plugins/lazysizes.min.js',
