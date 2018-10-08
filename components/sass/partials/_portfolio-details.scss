@@ -48,12 +48,15 @@
     }
 
     &-link {
-      text-decoration: underline;
-      color:$black;
 
       &:hover,
       &:focus {
-        color:$black;
+
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: #800080;
       }
     }
   }

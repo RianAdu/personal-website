@@ -2,15 +2,17 @@
 /**********************************************/
 .btn-custom {
   background: $black;
+  border: 1px solid $black;
   color: $white;
   font-weight: $normal;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   @include rem(font-size, 16px);
   @include rem(width, $custom-btn-width);
   @include rem (padding, 8px 12px);
 
   &:hover,
   &:focus {
-    color: $navbar-inverse-link-hover-color;
+    background: $white;
+    color: $black;
   }
 }
