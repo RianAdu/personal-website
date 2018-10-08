@@ -70,14 +70,18 @@
     display: inline-block;
     transform: scale(1,1);
     transition: all .4s ease;
-    
-    &--email {
-      transform: none !important;
-    }
 
     &:hover {
       transform: scale(1.1,1.1);
       text-decoration: underline;
+    }
+
+    &--email {
+      transform: none !important;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   
