@@ -24,7 +24,7 @@ $(function(){
       formGroups: null,
       formInputs: null,
       hiddenField: null,
-      loadingModal: null
+      pageInitOverlay: null
     },
  
     init: function(){
@@ -53,7 +53,7 @@ $(function(){
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
       App.dom.hiddenField = $('.contact__form--custom-field');
-      App.dom.loadingModal = $('.loading-modal');
+      App.dom.pageInitOverlay = $('.page_init_overlay');
     },
 
     bindEvents: function(){
@@ -86,12 +86,12 @@ $(function(){
 
     pageStart: function() {
       setTimeout(function(){
-        App.dom.loadingModal.fadeOut('slow', function(){
+        App.dom.pageInitOverlay.fadeOut('slow', function(){
           App.fadeAnimation(App.dom.headerTitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerSubtitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerEnter, 'fadeIn');
         });
-			}, 300);
+			}, 500);
     },
 
     setLandscapeHeaderPos: function(){
