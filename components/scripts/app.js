@@ -12,6 +12,7 @@ $(function(){
     },
 
     dom:{
+      pageBody: null,
       hamburgerMenu: null,
       headerWrapper: null,
       headerTitle: null,
@@ -41,6 +42,7 @@ $(function(){
     },
 
     cacheDom: function(){
+      App.dom.pageBody = $('body');
       App.dom.hamburgerMenu = $('.navbar-toggle');
       App.dom.headerWrapper = $('.header__wrapper');
       App.dom.headerTitle = $('.header__title-name');
@@ -206,14 +208,18 @@ $(function(){
 
     finalizeProjectDetails: function(projectView, id){
       var tag = '#'+id;
-      $('body').prepend(projectView).addClass('body--prevent-scrolling');
+      App.dom.pageBody.prepend(projectView);
 
       //checking window width to decide which animation to use!
       if(App.var.windowWidth < 992) {
-        $('.portfolio-details__overlay').addClass('animated slideInRight');
+        $('.portfolio-details__overlay').addClass('animated slideInRight').one(App.var.animationEnd, function(){
+          App.dom.pageBody.addClass('body--prevent-scrolling');
+        });
       }
       else {
-        $('.portfolio-details__overlay').addClass('animated slideInDown');
+        $('.portfolio-details__overlay').addClass('animated slideInDown').one(App.var.animationEnd, function(){
+          App.dom.pageBody.addClass('body--prevent-scrolling');
+        });
       }
 
       App.setBrowserHistory(tag);
@@ -223,7 +229,7 @@ $(function(){
     },
     
     closeProjectDetails: function(id) {
-      $('body').removeClass('body--prevent-scrolling');
+      App.dom.pageBody.removeClass('body--prevent-scrolling');
       App.scrollBackToProject(id);
       $('.portfolio-details__close-button, .portfolio-details__button--close').off('click');
       
