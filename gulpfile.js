@@ -58,7 +58,11 @@ jsScripts		= [
 
 gulp.task('markup', function(){
 	gulp.src('builds/development/*.html')
-		.pipe(gulpif(enviroment === 'production', htmlmin({collapseWhitespace: true})))
+		.pipe(gulpif(enviroment === 'production', htmlmin({
+			collapseWhitespace: true, 
+			removeComments: true,
+			minifyCSS: true})
+		))
 		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir)));
 }); //END OF markup task
 
