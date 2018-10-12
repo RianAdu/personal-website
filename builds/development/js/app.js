@@ -12806,7 +12806,9 @@ $(function(){
     var: {
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
-      windowWidth: null
+      windowWidth: null, 
+      emailName: 'contact',
+      emailDomain: 'rian-adu'
     },
 
     dom:{
@@ -12835,7 +12837,7 @@ $(function(){
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
-      //App.implementFormSpree();
+      //App.setFormAction();
       App.formValidation();
       App.bindEvents();
       App.pageStart();
@@ -13070,8 +13072,8 @@ $(function(){
       $('form span.glyphicon').removeClass('glyphicon-remove glyphicon-ok');
     },
 
-    implementFormSpree: function(){
-      App.dom.contactForm.attr('action', 'https://formspree.io/' + 'florian.adugyamfi' + '@' + 'gmail' + '.' + 'com');
+    setFormAction: function(){
+      App.dom.contactForm.attr('action', 'https://formspree.io/' + App.var.emailName + '@' + App.var.emailDomain + '.' + 'com');
     },
 
     formValidation: function(){
