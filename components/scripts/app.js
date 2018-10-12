@@ -30,6 +30,7 @@ $(function(){
  
     init: function(){
       App.cacheDom();
+      App.loadWebFonts(); 
       App.getWindowWidth();
       App.setBackgroundType();
       App.setSmoothScroll(1300);
@@ -85,6 +86,14 @@ $(function(){
     fadeAnimation: function(element, animation){
       element.addClass('animated '+ animation);
     },
+
+    loadWebFonts: function(){
+			WebFont.load({
+				google: {
+          families: ['Open+Sans:300,400,600', 'Orbitron', 'Exo+2:300,400,700']
+				}
+			});
+		},
 
     pageStart: function() {
       setTimeout(function(){

@@ -45,6 +45,7 @@ jsPlugins = [
 jsScripts		= [
 	'components/scripts/vendor/jquery.js',
 	'components/scripts/vendor/jquery.validate.js',
+	'components/scripts/vendor/webfontloader.js',
 	'components/scripts/bootstrap/button.js',
 	'components/scripts/bootstrap/collapse.js',
 	'components/scripts/bootstrap/dropdown.js',
