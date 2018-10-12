@@ -103,10 +103,6 @@
       appearance: none;
       @include rem(height, 127px!important);
     }
-
-    &--custom-field {
-      display: none;
-    }
   }
   
   &__form-group--textarea {
