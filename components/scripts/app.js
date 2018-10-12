@@ -173,7 +173,7 @@ $(function(){
       var headerTitlePos = App.dom.headerTitle.offset().top;
     
       if(wScrollTop == undefined) {
-        var wScrollTop = $(window).scrollTop();
+        wScrollTop = $(window).scrollTop();
       }
 
       if(wScrollTop >= headerTitlePos - App.const.navbarHeight) {
