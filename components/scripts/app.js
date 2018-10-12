@@ -37,6 +37,7 @@ $(function(){
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
+      //App.setFormSpree();
       App.formValidation();
       App.bindEvents();
       App.pageStart();
@@ -269,6 +270,10 @@ $(function(){
       });
 
       $('form span.glyphicon').removeClass('glyphicon-remove glyphicon-ok');
+    },
+
+    setFormSpree: function(){
+      App.dom.contactForm.attr('action', 'https://formspree.io/' + 'florian.adugyamfi' + '@' + 'gmail' + '.' + 'com');
     },
 
     formValidation: function(){
