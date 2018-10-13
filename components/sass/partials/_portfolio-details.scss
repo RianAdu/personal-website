@@ -13,7 +13,7 @@
     min-width: 320px;
     background-color: $white;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     animation-duration: 0.9s;
     -webkit-overflow-scrolling: touch;
     @include rem(padding-top, 35px);

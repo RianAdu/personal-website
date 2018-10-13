@@ -12806,7 +12806,8 @@ $(function(){
     var: {
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
-      windowWidth: null, 
+      windowWidth: null,
+      formspree: 'https://formspree.io/', 
       mailName: 'info',
       mailDomain: 'rian-adu'
     },
@@ -13025,11 +13026,13 @@ $(function(){
       if(App.var.windowWidth < 992) {
         $('.portfolio-details__overlay').addClass('animated slideInRight').one(App.var.animationEnd, function(){
           App.dom.pageBody.addClass('body--prevent-scrolling');
+          $(this).css('overflow-y', 'auto');
         });
       }
       else {
         $('.portfolio-details__overlay').addClass('animated slideInDown').one(App.var.animationEnd, function(){
           App.dom.pageBody.addClass('body--prevent-scrolling');
+          $(this).css('overflow-y', 'auto');
         });
       }
 
@@ -13041,6 +13044,8 @@ $(function(){
     
     closeProjectDetails: function(id) {
       App.dom.pageBody.removeClass('body--prevent-scrolling');
+      $('.portfolio-details__overlay').css('overflow-y', 'hidden');
+      
       App.scrollBackToProject(id);
       $('.portfolio-details__close-button, .portfolio-details__button--close').off('click');
       
@@ -13074,7 +13079,7 @@ $(function(){
     },
 
     setFormAction: function(){
-      App.dom.contactForm.attr('action', 'https://formspree.io/' + App.var.mailName + '@' + App.var.mailDomain + '.' + 'com');
+      App.dom.contactForm.attr('action', + App.var.formspree + App.var.mailName + '@' + App.var.mailDomain + '.' + 'com');
     },
 
     formValidation: function(){
