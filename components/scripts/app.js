@@ -104,6 +104,7 @@ $(function(){
           App.fadeAnimation(App.dom.headerTitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerSubtitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerEnter, 'fadeIn');
+          $(this).remove();
         });
 			}, 500);
     },

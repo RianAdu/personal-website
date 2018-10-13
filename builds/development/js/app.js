@@ -12807,8 +12807,8 @@ $(function(){
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
       windowWidth: null, 
-      emailName: 'contact',
-      emailDomain: 'rian-adu'
+      mailName: 'info',
+      mailDomain: 'rian-adu'
     },
 
     dom:{
@@ -12902,6 +12902,7 @@ $(function(){
           App.fadeAnimation(App.dom.headerTitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerSubtitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerEnter, 'fadeIn');
+          $(this).remove();
         });
 			}, 500);
     },
@@ -13073,7 +13074,7 @@ $(function(){
     },
 
     setFormAction: function(){
-      App.dom.contactForm.attr('action', 'https://formspree.io/' + App.var.emailName + '@' + App.var.emailDomain + '.' + 'com');
+      App.dom.contactForm.attr('action', 'https://formspree.io/' + App.var.mailName + '@' + App.var.mailDomain + '.' + 'com');
     },
 
     formValidation: function(){
