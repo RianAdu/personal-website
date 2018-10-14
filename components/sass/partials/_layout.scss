@@ -3,8 +3,7 @@
 
 .body--prevent-scrolling {
   position: absolute;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   z-index: 1;
 }
