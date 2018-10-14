@@ -73,13 +73,13 @@
     }
   }
 
-  &__images {
-    margin-bottom: 40px;
+  &__images-wrapper {
+    background-color:$light-grey;
+    @include rem(padding,20.25px 0 41.053px);
+  }
 
-    &-wrapper {
-      background-color:$light-grey;
-      @include rem(padding,20.25px 0 41.053px);
-    }
+  &__image {
+    margin-bottom: 20px;
   }
 
   &__button-wrapper {
@@ -129,6 +129,10 @@
 
     &__description-title {
       @include rem(font-size, 28.833px);
+    }
+
+    &__image {
+      margin-bottom: 40px;
     }
 
     &__button {
