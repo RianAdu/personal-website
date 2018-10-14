@@ -12809,7 +12809,8 @@ $(function(){
       windowWidth: null,
       mailService: 'https://formspree.io/', 
       mailName: 'info',
-      mailDomain: 'rian-adu'
+      mailDomain: 'rian-adu',
+      formMethod: 'POST'
     },
 
     dom:{
@@ -12838,7 +12839,7 @@ $(function(){
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
-      //App.setFormAction();
+      App.setFormAction();
       App.formValidation();
       App.bindEvents();
       App.pageStart();
@@ -13080,7 +13081,9 @@ $(function(){
 
     //setting the form action to not have the email address exposed to autobots.
     setFormAction: function(){
-      App.dom.contactForm.attr('action', + App.var.mailService + App.var.mailName + '@' + App.var.mailDomain + '.' + 'com');
+      App.dom.contactForm
+      .attr('action', '' + App.var.mailService + App.var.mailName + '@' + App.var.mailDomain + '.' + 'com')
+      .attr('method', '' + App.var.formMethod);
     },
 
     //Using jQuery validate plugin combined with bootstrap error classes
