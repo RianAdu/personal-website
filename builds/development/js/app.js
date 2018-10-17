@@ -12750,7 +12750,7 @@ var projectObject = [{
 			var imgCount = 4;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){ 
-				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'" src="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg"></picture>';
+				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__image" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'" src="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg"></picture>';
 			}
 			return markup;
 		},
@@ -12774,7 +12774,7 @@ var projectObject = [{
 			var imgCount = 3;
 			var markup = '';	
 			for(var i = 1; i <=imgCount; i++){
-				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__images" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'" src="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg"></picture>';
+				markup +=  '<picture><!--[if gte IE 9]><video style="display: none;"><![endif]--><source media="(min-width: 1200px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_lg_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_lg_3x.jpg 3x"><source media="(min-width: 992px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_md_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_md_3x.jpg 3x"> <source media="(min-width: 481px)" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_sm_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_sm_3x.jpg 3x"><!--[if gte IE 9]></video><![endif]--><img class="img-responsive portfolio-details__image" srcset="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_1x.jpg 1x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg 2x, img/'+this.id+'/'+this.id+'_details_'+i+'_xs_3x.jpg 3x" alt="'+this.alt+'" src="img/'+this.id+'/'+this.id+'_details_'+i+'_xs_2x.jpg"></picture>';
 			}
 			return markup;
 		},
@@ -13084,6 +13084,7 @@ $(function(){
       App.dom.contactForm
       .attr('action', '' + App.var.mailService + App.var.mailName + '@' + App.var.mailDomain + '.' + 'com')
       .attr('method', '' + App.var.formMethod);
+      $(window).off('focus');
     },
 
     //Using jQuery validate plugin combined with bootstrap error classes
@@ -13122,9 +13123,11 @@ $(function(){
           }
 
           else {
-            form.submit();
-            form.reset();
-            App.resetContactForm();
+            form.submit();             
+            $(window).on('focus', function(){
+             form.reset();
+              App.resetContactForm();
+            });
           }
         }
 			});

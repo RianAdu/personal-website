@@ -286,6 +286,7 @@ $(function(){
       App.dom.contactForm
       .attr('action', '' + App.var.mailService + App.var.mailName + '@' + App.var.mailDomain + '.' + 'com')
       .attr('method', '' + App.var.formMethod);
+      $(window).off('focus');
     },
 
     //Using jQuery validate plugin combined with bootstrap error classes
@@ -324,9 +325,11 @@ $(function(){
           }
 
           else {
-            form.submit();
-            form.reset();
-            App.resetContactForm();
+            form.submit();             
+            $(window).on('focus', function(){
+             form.reset();
+              App.resetContactForm();
+            });
           }
         }
 			});
