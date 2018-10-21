@@ -12906,7 +12906,7 @@ $(function(){
           App.fadeAnimation(App.dom.headerEnter, 'fadeIn');
           $(this).remove();
         });
-			}, 1500);
+			}, 500);
     },
 
     setLandscapeHeaderPos: function(){
