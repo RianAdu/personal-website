@@ -22,13 +22,20 @@
       &--macbook {
         @include rem(margin-bottom, 30px);
       }
+      
+      &-ratio-container {
+        margin: auto;
+        max-width: 600px;
+
+        &:after {
+          padding-bottom: 56.9166666667%;
+        }
+      }
 
       &-image {
         display: block;
         width: 100%;
-        max-width: 600px;
         height: auto;
-        margin: auto;
       }
 
       &-headline {
