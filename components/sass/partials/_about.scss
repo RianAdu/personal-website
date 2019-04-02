@@ -3,12 +3,27 @@
 
 .about {
 
+  &__ratio-container_profile-picture {
+    max-width: 85%;
+    margin: auto;
+
+    @media screen and (min-width: 430px) {
+      max-width: 340px;
+    }
+   
+    @media screen and (min-width:$screen-md-min) {
+      max-width: 100%;
+    }
+
+    &:after {
+      padding-bottom: 100%;
+    }
+  }
+
   &__profile-picture {
     display: block;
     width: 100%;
-    max-width: 85%;
     height: auto;
-    margin: auto;
   }
 
   &--intro-paragraph {
@@ -69,21 +84,11 @@
   }
 }
 
-@media screen and (min-width: 430px) {
-  .about__profile-picture {
-    max-width: 340px;
-  }
-}
-
 @media screen and (min-width:$screen-md-min) {
   .about {
 
     &--intro-paragraph {
       margin-top: 0;
-    }
-
-    &__profile-picture {
-      max-width: 100%;
     }
 
     &__skillset{
