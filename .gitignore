@@ -44,3 +44,4 @@ builds/**/images/*
 builds/**/img/*
 builds/production/*
 .ico
+robots.txt
