@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 var enviroment,
 	jsPlugins,
 	jsScripts,
-	es6Script,
+	jsApp,
 	sassSources,
 	htmlSources,
 	outputDir;
@@ -39,6 +39,8 @@ if (enviroment === 'development') {
 //setting the files
 sassSources = ['components/sass/app.scss'];
 htmlSources = ['builds/development/*.html'];
+jsApp = ['components/scripts/app/app.js'];
+
 jsPlugins = [
 	'components/scripts/plugins/picturefill.min.js',
 	'components/scripts/plugins/lazysizes.min.js',
@@ -55,10 +57,8 @@ jsScripts = [
 	'components/scripts/bootstrap/transition.js',
 	'components/scripts/inc/projects.js',
 	'components/scripts/inc/project-template.js',
-	'components/scripts/es5/app.js'
+	'components/scripts/app/babel_output/app.js'
 ];
-
-es6Script = ['components/scripts/es6/app.js'];
 
 
 gulp.task('markup', function() {
@@ -87,14 +87,14 @@ gulp.task('styles', function() {
 		.pipe(browserSync.stream());
 }); //END OF styles task
 
-gulp.task('compile-es5', function() {
-	gulp.src(es6Script)
+gulp.task('babel-compile', function() {
+	gulp.src(jsApp)
 		.pipe(babel())
-		.pipe(gulp.dest('components/scripts/es5/'));
-}); // END of compile-es5
+		.pipe(gulp.dest('components/scripts/app/babel_output/'));
+}); // END of babel-compile
 
 //compile-es6 has to be done before scripts runs that's why it's added as an dependency
-gulp.task('scripts', ['compile-es5'], function() {
+gulp.task('scripts', ['babel-compile'], function() {
 	gulp.src(jsScripts)
 		.pipe(concat('app.js'))
 		.pipe(gulpif(enviroment === 'production', uglify()))
@@ -117,7 +117,7 @@ gulp.task('server', ['styles'], function() {
 	});
 
 	gulp.watch(htmlSources, ['markup']).on('change', browserSync.reload);
-	gulp.watch([jsScripts, es6Script], ['scripts']).on('change', browserSync.reload);
+	gulp.watch([jsScripts, jsApp], ['scripts']).on('change', browserSync.reload);
 	gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['styles']);
 }); // END OF server & watch task
 
