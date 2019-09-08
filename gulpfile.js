@@ -1,40 +1,42 @@
-/**** 
+/****
 Gulp file for automation
 ****/
 
-var gulp			= require('gulp'),
-	concat			= require('gulp-concat'),
-	gulpif			= require('gulp-if'),
-	cleanCSS		= require('gulp-clean-css'),
-	uglify			= require('gulp-uglify'),
-	htmlmin			= require('gulp-htmlmin'),
-	jsonminify	= require('gulp-jsonminify'),
-	sass 				= require('gulp-sass'),
-	sourcemaps 	= require('gulp-sourcemaps'),
-	autoprefix	= require('gulp-autoprefixer'),
-	browserSync	= require('browser-sync').create(),
-	sassGlob 		= require('gulp-sass-glob');
+var gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	gulpif = require('gulp-if'),
+	cleanCSS = require('gulp-clean-css'),
+	uglify = require('gulp-uglify'),
+	htmlmin = require('gulp-htmlmin'),
+	jsonminify = require('gulp-jsonminify'),
+	babel = require('gulp-babel'),
+	sass = require('gulp-sass'),
+	sourcemaps = require('gulp-sourcemaps'),
+	autoprefix = require('gulp-autoprefixer'),
+	browserSync = require('browser-sync').create(),
+	sassGlob = require('gulp-sass-glob');
 
 // declarating enviroment and component sources
 var enviroment,
 	jsPlugins,
 	jsScripts,
+	es6Script,
 	sassSources,
 	htmlSources,
 	outputDir;
 
+
 //distinguishing between development and production enviroment
 //to change to production enter (NODE_ENV=production gulp) in terminal
-enviroment	= process.env.NODE_ENV || 'development';
+enviroment = process.env.NODE_ENV || 'development';
 
-if(enviroment === 'development'){
+if (enviroment === 'development') {
 	outputDir = 'builds/development/';
-}
-else {
+} else {
 	outputDir = 'builds/production/';
 }
 
-//setting the files 
+//setting the files
 sassSources = ['components/sass/app.scss'];
 htmlSources = ['builds/development/*.html'];
 jsPlugins = [
@@ -42,7 +44,7 @@ jsPlugins = [
 	'components/scripts/plugins/lazysizes.min.js',
 	'components/scripts/plugins/mustache.min.js'
 ];
-jsScripts		= [
+jsScripts = [
 	'components/scripts/vendor/jquery.js',
 	'components/scripts/vendor/jquery.validate.js',
 	'components/scripts/vendor/webfontloader.js',
@@ -53,22 +55,24 @@ jsScripts		= [
 	'components/scripts/bootstrap/transition.js',
 	'components/scripts/inc/projects.js',
 	'components/scripts/inc/project-template.js',
-	'components/scripts/app.js'
+	'components/scripts/es5/app.js'
 ];
 
+es6Script = ['components/scripts/es6/app.js'];
 
-gulp.task('markup', function(){
+
+gulp.task('markup', function() {
 	gulp.src('builds/development/*.html')
 		.pipe(gulpif(enviroment === 'production', htmlmin({
-			collapseWhitespace: true, 
+			collapseWhitespace: true,
 			removeComments: true,
-			minifyCSS: true})
-		))
+			minifyCSS: true
+		})))
 		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir)));
 }); //END OF markup task
 
 
-gulp.task('styles', function(){
+gulp.task('styles', function() {
 	gulp.src(sassSources)
 		.pipe(gulpif(enviroment === 'development', sourcemaps.init()))
 		.pipe(sassGlob())
@@ -83,8 +87,14 @@ gulp.task('styles', function(){
 		.pipe(browserSync.stream());
 }); //END OF styles task
 
+gulp.task('compile-es5', function() {
+	gulp.src(es6Script)
+		.pipe(babel())
+		.pipe(gulp.dest('components/scripts/es5/'));
+}); // END of compile-es5
 
-gulp.task('scripts', function(){
+//compile-es6 has to be done before scripts runs that's why it's added as an dependency
+gulp.task('scripts', ['compile-es5'], function() {
 	gulp.src(jsScripts)
 		.pipe(concat('app.js'))
 		.pipe(gulpif(enviroment === 'production', uglify()))
@@ -92,7 +102,7 @@ gulp.task('scripts', function(){
 }); //END OF script task
 
 
-gulp.task('plugins', function(){
+gulp.task('plugins', function() {
 	gulp.src(jsPlugins)
 		.pipe(concat('plugins.js'))
 		.pipe(gulp.dest(outputDir + '/js'));
@@ -100,30 +110,29 @@ gulp.task('plugins', function(){
 
 
 //server & watch task
-gulp.task('server', ['styles'], function(){
+gulp.task('server', ['styles'], function() {
 	browserSync.init({
 		server: outputDir,
 		browser: "google chrome"
 	});
 
 	gulp.watch(htmlSources, ['markup']).on('change', browserSync.reload);
-	gulp.watch(jsScripts, ['scripts']).on('change', browserSync.reload);
+	gulp.watch([jsScripts, es6Script], ['scripts']).on('change', browserSync.reload);
 	gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['styles']);
 }); // END OF server & watch task
 
 
 // Copy assets to production
 gulp.task('move', function() {
-	
+
 	//images
- 	gulp.src('builds/development/img/**/*.*')
-	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'img')));
+	gulp.src('builds/development/img/**/*.*')
+		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir + 'img')));
 
 	//fonts
-  gulp.src('builds/development/fonts/**/*.*')
-	.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir +'fonts')));
+	gulp.src('builds/development/fonts/**/*.*')
+		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir + 'fonts')));
 
 }); //END OF move task
 
 gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server', 'move']);
-
