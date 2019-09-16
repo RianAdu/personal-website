@@ -12798,12 +12798,13 @@ var projectTemplate = '<div class="portfolio-details__overlay"><article class="p
 '<button class="portfolio-details__button portfolio-details__button--close btn-custom btn"> Close project</button></div></div></div></div></div></section> </article></div>';
 "use strict";
 
+/* ========================================================================
+ * Custom JavaScript - App.js
+ * ======================================================================== */
 $(function () {
   var App = {
-    "const": {
-      navbarHeight: 65
-    },
-    "var": {
+    variables: {
+      navbarHeight: 65,
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
       windowWidth: null,
@@ -12864,8 +12865,8 @@ $(function () {
       //user can hit the back button when project details are visible
 
       $(window).on('popstate', function () {
-        if (App["var"].historyFlag !== undefined) {
-          App.closeProjectDetails(App["var"].historyFlag);
+        if (App.variables.historyFlag) {
+          App.closeProjectDetails(App.variables.historyFlag);
         }
       });
       $(window).on('orientationchange, resize', function () {
@@ -12875,7 +12876,7 @@ $(function () {
       });
     },
     getWindowWidth: function getWindowWidth() {
-      App["var"].windowWidth = $(window).width();
+      App.variables.windowWidth = window.innerWidth;
     },
     fadeAnimation: function fadeAnimation(element, animation) {
       element.addClass('animated ' + animation);
@@ -12898,7 +12899,7 @@ $(function () {
       }, 500);
     },
     setLandscapeHeaderPos: function setLandscapeHeaderPos() {
-      var windHeight = $(window).height();
+      var windHeight = window.innerHeight;
 
       if (windHeight < 450) {
         App.dom.headerWrapper.addClass('header__wrapper--landscape');
@@ -12909,10 +12910,12 @@ $(function () {
     setBackgroundType: function setBackgroundType() {
       //if device is not mobile set class for parallax background
       var isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
+      var background = document.querySelectorAll('.bg');
 
       if (!isMobile) {
-        $('.bg').each(function () {
-          $(this).removeClass('bg').addClass('bg--type-fixed');
+        background.forEach(function (el) {
+          el.classList.remove('bg');
+          el.classList.add('bg--type-fixed');
         });
       }
     },
@@ -12929,12 +12932,12 @@ $(function () {
         if (target.length) {
           e.preventDefault(); //close mobile menu before scrolling when nav menu link and brand logo was clicked
 
-          if (App["var"].windowWidth < 768 && dataTag == undefined || !App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home') {
+          if (App.variables.windowWidth < 768 && dataTag == undefined || !App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home') {
             App.dom.hamburgerMenu.click();
           }
 
           $('html, body').animate({
-            scrollTop: target.offset().top - (App["const"].navbarHeight - 1)
+            scrollTop: target.offset().top - (App.variables.navbarHeight - 1)
           }, duration);
         }
 
@@ -12958,7 +12961,7 @@ $(function () {
         wScrollTop = $(window).scrollTop();
       }
 
-      if (wScrollTop >= headerTitlePos - App["const"].navbarHeight) {
+      if (wScrollTop >= headerTitlePos - App.variables.navbarHeight) {
         App.dom.navbar.addClass('navbar-inverse--faded-in');
       } else {
         App.dom.navbar.removeClass('navbar-inverse--faded-in');
@@ -12971,13 +12974,13 @@ $(function () {
       });
     },
     setNavbarBgOnMobile: function setNavbarBgOnMobile() {
-      if (App["var"].windowWidth < 768) {
+      if (App.variables.windowWidth < 768) {
         App.dom.navbar.toggleClass('navbar-inverse--faded-in-mobile');
       }
     },
     showProjectDetails: function showProjectDetails() {
       var clickedProject = $(this).parent().parent().parent().attr('id');
-      App["var"].historyFlag = clickedProject;
+      App.variables.historyFlag = clickedProject;
       var detailsMarkup;
       $('.portfolio-details__overlay').remove();
 
@@ -12999,13 +13002,13 @@ $(function () {
       var tag = '#' + id;
       App.dom.pageBody.prepend(projectView); //checking window width to decide which animation to use!
 
-      if (App["var"].windowWidth < 992) {
-        $('.portfolio-details__overlay').addClass('animated slideInRight').one(App["var"].animationEnd, function () {
+      if (App.variables.windowWidth < 992) {
+        $('.portfolio-details__overlay').addClass('animated slideInRight').one(App.variables.animationEnd, function () {
           App.dom.pageBody.addClass('body--prevent-scrolling');
           $(this).css('overflow-y', 'auto');
         });
       } else {
-        $('.portfolio-details__overlay').addClass('animated slideInDown').one(App["var"].animationEnd, function () {
+        $('.portfolio-details__overlay').addClass('animated slideInDown').one(App.variables.animationEnd, function () {
           App.dom.pageBody.addClass('body--prevent-scrolling');
           $(this).css('overflow-y', 'auto');
         });
@@ -13022,22 +13025,22 @@ $(function () {
       App.scrollBackToProject(id);
       $('.portfolio-details__close-button, .portfolio-details__button--close').off('click'); //checking window width to decide which animation to use!
 
-      if (App["var"].windowWidth < 992) {
-        $('.portfolio-details__overlay').addClass('animated slideOutRight').one(App["var"].animationEnd, function () {
+      if (App.variables.windowWidth < 992) {
+        $('.portfolio-details__overlay').addClass('animated slideOutRight').one(App.variables.animationEnd, function () {
           $(this).remove();
         });
       } else {
-        $('.portfolio-details__overlay').addClass('animated slideOutUp').one(App["var"].animationEnd, function () {
+        $('.portfolio-details__overlay').addClass('animated slideOutUp').one(App.variables.animationEnd, function () {
           $(this).remove();
         });
       } //setting the flag undefined so that popstate only calls this function when neccessary
 
 
-      App["var"].historyFlag = undefined;
+      App.variables.historyFlag = undefined;
     },
     scrollBackToProject: function scrollBackToProject(viewedProject) {
       // this function scrolls the body back to the last clicked Project, after the overlay has been closed
-      $('html, body').scrollTop($('#' + viewedProject + '').offset().top - (App["const"].navbarHeight - 1));
+      $('html, body').scrollTop($('#' + viewedProject + '').offset().top - (App.variables.navbarHeight - 1));
     },
     //resetting the form input after submit
     resetContactForm: function resetContactForm() {
@@ -13048,7 +13051,7 @@ $(function () {
     },
     //setting the form action to not have the email address exposed to autobots.
     setFormAction: function setFormAction() {
-      App.dom.contactForm.attr('action', '' + App["var"].mailService + App["var"].mailName + '@' + App["var"].mailDomain + '.' + 'com').attr('method', '' + App["var"].formMethod);
+      App.dom.contactForm.attr('action', '' + App.variables.mailService + App.variables.mailName + '@' + App.variables.mailDomain + '.' + 'com').attr('method', '' + App.variables.formMethod);
       $(window).off('focus');
     },
     //Using jQuery validate plugin combined with bootstrap error classes
