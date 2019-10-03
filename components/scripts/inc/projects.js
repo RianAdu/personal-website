@@ -54,7 +54,7 @@ var projectObject = [{
 	"s2g": {
 		"id": "s2g",
 		"title": "Solutions 2 GO",
-		"copy": "<p class='portfolio-details__description-copy'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, tenetur autem ratione adipisci culpa libero dolores repellat voluptatum repellendus saepe, voluptate beatae minima optio sunt quaerat corporis, nostrum alias. Tempore.</p><p class='portfolio-details__description-copy'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, tenetur autem ratione adipisci culpa libero dolores repellat voluptatum repellendus saepe, voluptate beatae minima optio sunt quaerat corporis, nostrum alias. Tempore.</p>",
+		"copy": "<p class='portfolio-details__description-copy'>The Solutions 2 GO website had been completely redesigned, optimized and modernized, and the company was in need for a web developer who would not only build the website but could also support them in creating a more intuitive user experience. </p><p class='portfolio-details__description-copy'>The company found me and my services through recommendation. During the development process I worked closely together with the Director of Strategic Initiatives and the Marketing Designer. It was a very collaborative and communicative process which was essential in creating new ideas and setting functional requirements. The end result was a professional, intuitive and visually compelling <span class='text-nowrap'>responsive website.</span></p>",
 		"technologies": ["html", "css", "javascript", "php", "bootstrap", "jquery"],
 		"getImages": function() {
 			var imgCount = 3;
