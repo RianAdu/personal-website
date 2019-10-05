@@ -43,7 +43,7 @@
     font-weight: $normal;
     letter-spacing: 1.1px;
     margin-bottom: 0;
-    @include rem(font-size, 20px);
+    @include rem(font-size, 22px);
 
     opacity: 0;
     animation-duration: 1.3s;
@@ -110,7 +110,7 @@
     }
 
     &__subtitle {
-      @include rem(font-size, 22px);
+      @include rem(font-size, 24px);
     }
 
     &__enter-icon {
