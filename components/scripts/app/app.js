@@ -128,9 +128,8 @@ $(function() {
       const background = document.querySelectorAll('.bg');
 
       if (!isMobile) {
-        background.forEach(el => {
-          el.classList.remove('bg');
-          el.classList.add('bg--type-fixed');
+        $('.bg').each(function() {
+          $(this).removeClass('bg').addClass('bg--type-fixed');
         });
       }
     },
