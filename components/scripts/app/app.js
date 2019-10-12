@@ -113,7 +113,7 @@ $(function() {
     },
 
     setLandscapeHeaderPos: function() {
-      const windHeight = window.innerHeight;
+      var windHeight = window.innerHeight;
 
       if (windHeight < 450) {
         App.dom.headerWrapper.addClass('header__wrapper--landscape');
@@ -124,8 +124,8 @@ $(function() {
 
     setBackgroundType: function() {
       //if device is not mobile set class for parallax background
-      const isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
-      const background = document.querySelectorAll('.bg');
+      var isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
+      var background = document.querySelectorAll('.bg');
 
       if (!isMobile) {
         $('.bg').each(function() {
