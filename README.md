@@ -3,7 +3,7 @@ This is an update of the 2016 version of my portfolio website. I added new proje
 
 ## Technolgies used for this project
 - HTML
-- Sass
+- CSS3 / Sass
 - JavaScript
 - Bootstrap
 - jQuery
