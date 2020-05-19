@@ -9,7 +9,9 @@
   "author": "Florian Adu-Gyamfi",
   "license": "ISC",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "dev": "gulp",
+    "prod": "NODE_ENV=production gulp"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -36,6 +38,7 @@
     "lodash.template": "^4.5.0",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
-    "yargs-parser": "^18.1.3"
+    "yargs-parser": "^18.1.3",
+    "http-proxy": "^1.18.1"
   }
 }
