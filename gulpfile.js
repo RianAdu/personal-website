@@ -8,7 +8,6 @@ var gulp = require('gulp'),
 	cleanCSS = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
 	htmlmin = require('gulp-htmlmin'),
-	jsonminify = require('gulp-jsonminify'),
 	babel = require('gulp-babel'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -97,7 +96,7 @@ gulp.task('babel-compile', function() {
 		.pipe(gulp.dest('components/scripts/babel_output/'));
 }); // END of babel-compile
 
-//compile-es6 has to be done before scripts runs that's why it's added as an dependency
+//compile-es6 has to be done before scripts runs that's why it's added as a dependency
 gulp.task('scripts', ['babel-compile'], function() {
 	gulp.src(jsScripts)
 		.pipe(concat('app.js'))
