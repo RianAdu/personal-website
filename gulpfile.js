@@ -121,7 +121,7 @@ gulp.task('server', ['styles'], function() {
 	});
 
 	gulp.watch(htmlSources, ['markup']).on('change', browserSync.reload);
-	gulp.watch([jsScripts, es6Scripts], ['scripts']).on('change', browserSync.reload);
+	gulp.watch([es6Scripts], ['scripts']).on('change', browserSync.reload);
 	gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['styles']);
 }); // END OF server & watch task
 
