@@ -138,4 +138,8 @@ gulp.task('move', function() {
 
 }); //END OF move task
 
-gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server', 'move']);
+gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server']);
+
+gulp.task('staging', ['markup', 'plugins', 'scripts', 'styles', 'server', 'move']);
+
+gulp.task('build', ['markup', 'plugins', 'scripts', 'styles', 'move']);

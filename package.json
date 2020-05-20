@@ -11,7 +11,8 @@
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
     "dev": "gulp",
-    "prod": "NODE_ENV=production gulp"
+    "staging": "NODE_ENV=production gulp staging",
+    "prod": "NODE_ENV=production gulp build"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
