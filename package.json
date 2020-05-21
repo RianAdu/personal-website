@@ -9,7 +9,10 @@
   "author": "Florian Adu-Gyamfi",
   "license": "ISC",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "dev": "gulp",
+    "staging": "NODE_ENV=production gulp staging",
+    "prod": "NODE_ENV=production gulp build"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
@@ -23,11 +26,10 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^4.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-jsonminify": "^1.1.0",
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.2"
   },
   "resolutions": {
     "acorn": "^7.2.0",
@@ -36,6 +38,7 @@
     "lodash.template": "^4.5.0",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
-    "yargs-parser": "^18.1.3"
+    "yargs-parser": "^18.1.3",
+    "http-proxy": "^1.18.1"
   }
 }

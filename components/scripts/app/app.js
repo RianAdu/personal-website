@@ -3,7 +3,7 @@
  * ======================================================================== */
 
 $(function() {
-  var App = {
+  const App = {
 
     variables: {
       navbarHeight: 65,
@@ -69,8 +69,6 @@ $(function() {
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
       App.dom.showMoreButton.on('click', App.showProjectDetails);
 
-      //$(window).scroll(App.setParallax);
-
       //user can hit the back button when project details are visible
       $(window).on('popstate', function() {
         if (App.variables.historyFlag) {
@@ -113,19 +111,13 @@ $(function() {
     },
 
     setLandscapeHeaderPos: function() {
-      var windHeight = window.innerHeight;
-
-      if (windHeight < 450) {
-        App.dom.headerWrapper.addClass('header__wrapper--landscape');
-      } else {
-        App.dom.headerWrapper.removeClass('header__wrapper--landscape');
-      }
+      const windHeight = window.innerHeight;
+      windHeight < 450 ? App.dom.headerWrapper.addClass('header__wrapper--landscape') : App.dom.headerWrapper.removeClass('header__wrapper--landscape');
     },
 
     setBackgroundType: function() {
       //if device is not mobile set class for parallax background
-      var isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
-      var background = document.querySelectorAll('.bg');
+      const isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
 
       if (!isMobile) {
         $('.bg').each(function() {
@@ -134,16 +126,11 @@ $(function() {
       }
     },
 
-    setParallax: function() {
-      var wScroll = $(window).scrollTop();
-      $('.bg--type-parallax').css('background-position', 'center ' + (wScroll * 0.5) + 'px');
-    },
-
     setSmoothScroll: function(duration) {
       $('a[href^="#"]').on('click', function(e) {
-        var target = $($(this).attr('href'));
-        var dataTag = $(this).attr('data-tag');
-        var hashTag = this.hash;
+        const target = $($(this).attr('href'));
+        const dataTag = $(this).attr('data-tag');
+        const hashTag = this.hash;
 
         if (target.length) {
           e.preventDefault();
@@ -163,7 +150,8 @@ $(function() {
 
     //setting browser history in case user uses back button instead of menu
     setBrowserHistory: function(hashID) {
-      var section = hashID.split('#')[1];
+      const section = hashID.split('#')[1];
+
       if (history.pushState) {
         history.pushState(null, null, null);
       } else {
@@ -172,7 +160,7 @@ $(function() {
     },
 
     setNavbarBgColor: function(wScrollTop) {
-      var headerTitlePos = App.dom.headerTitle.offset().top;
+      const headerTitlePos = App.dom.headerTitle.offset().top;
 
       if (wScrollTop == undefined) {
         wScrollTop = $(window).scrollTop();
@@ -187,7 +175,7 @@ $(function() {
 
     setNavbarBgOnScroll: function() {
       $(window).scroll(function() {
-        var wScroll = $(window).scrollTop();
+        const wScroll = $(window).scrollTop();
         App.setNavbarBgColor(wScroll);
       });
     },
@@ -199,20 +187,16 @@ $(function() {
     },
 
     showProjectDetails: function() {
-      var clickedProject = $(this).parent().parent().parent().attr('id');
-      App.variables.historyFlag = clickedProject;
-      var detailsMarkup;
+      let detailsMarkup;
+      const clickedProject = $(this).parent().parent().parent().attr('id');
 
+      App.variables.historyFlag = clickedProject;
       $('.portfolio-details__overlay').remove();
 
-      for (var i in projectObject) {
-        var projects = projectObject[i];
-
-        for (var x in projects) {
-          var project = projects[x];
-
-          if (x == clickedProject) {
-            detailsMarkup = Mustache.render(projectTemplate, project);
+      for (projects of projectObject) {
+        for (projectKey in projects) {
+          if (projectKey === clickedProject) {
+            detailsMarkup = Mustache.render(projectTemplate, projects[projectKey]);
           }
         }
       }
@@ -220,7 +204,7 @@ $(function() {
     },
 
     finalizeProjectDetails: function(projectView, id) {
-      var tag = '#' + id;
+      const tag = '#' + id;
       App.dom.pageBody.prepend(projectView);
 
       //checking window width to decide which animation to use!

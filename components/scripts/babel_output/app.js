@@ -1,5 +1,11 @@
 "use strict";
 
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 /* ========================================================================
  * Custom JavaScript - App.js
  * ======================================================================== */
@@ -63,8 +69,7 @@ $(function () {
     },
     bindEvents: function bindEvents() {
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
-      App.dom.showMoreButton.on('click', App.showProjectDetails); //$(window).scroll(App.setParallax);
-      //user can hit the back button when project details are visible
+      App.dom.showMoreButton.on('click', App.showProjectDetails); //user can hit the back button when project details are visible
 
       $(window).on('popstate', function () {
         if (App.variables.historyFlag) {
@@ -102,27 +107,17 @@ $(function () {
     },
     setLandscapeHeaderPos: function setLandscapeHeaderPos() {
       var windHeight = window.innerHeight;
-
-      if (windHeight < 450) {
-        App.dom.headerWrapper.addClass('header__wrapper--landscape');
-      } else {
-        App.dom.headerWrapper.removeClass('header__wrapper--landscape');
-      }
+      windHeight < 450 ? App.dom.headerWrapper.addClass('header__wrapper--landscape') : App.dom.headerWrapper.removeClass('header__wrapper--landscape');
     },
     setBackgroundType: function setBackgroundType() {
       //if device is not mobile set class for parallax background
       var isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
-      var background = document.querySelectorAll('.bg');
 
       if (!isMobile) {
         $('.bg').each(function () {
           $(this).removeClass('bg').addClass('bg--type-fixed');
         });
       }
-    },
-    setParallax: function setParallax() {
-      var wScroll = $(window).scrollTop();
-      $('.bg--type-parallax').css('background-position', 'center ' + wScroll * 0.5 + 'px');
     },
     setSmoothScroll: function setSmoothScroll(duration) {
       $('a[href^="#"]').on('click', function (e) {
@@ -180,21 +175,28 @@ $(function () {
       }
     },
     showProjectDetails: function showProjectDetails() {
+      var detailsMarkup;
       var clickedProject = $(this).parent().parent().parent().attr('id');
       App.variables.historyFlag = clickedProject;
-      var detailsMarkup;
       $('.portfolio-details__overlay').remove();
 
-      for (var i in projectObject) {
-        var projects = projectObject[i];
+      var _iterator = _createForOfIteratorHelper(projectObject),
+          _step;
 
-        for (var x in projects) {
-          var project = projects[x];
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          projects = _step.value;
 
-          if (x == clickedProject) {
-            detailsMarkup = Mustache.render(projectTemplate, project);
+          for (projectKey in projects) {
+            if (projectKey === clickedProject) {
+              detailsMarkup = Mustache.render(projectTemplate, projects[projectKey]);
+            }
           }
         }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
       }
 
       App.finalizeProjectDetails(detailsMarkup, clickedProject);

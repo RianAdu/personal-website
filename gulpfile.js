@@ -8,7 +8,6 @@ var gulp = require('gulp'),
 	cleanCSS = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
 	htmlmin = require('gulp-htmlmin'),
-	jsonminify = require('gulp-jsonminify'),
 	babel = require('gulp-babel'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -20,7 +19,7 @@ var gulp = require('gulp'),
 var enviroment,
 	jsPlugins,
 	jsScripts,
-	jsApp,
+	es6Scripts,
 	sassSources,
 	htmlSources,
 	outputDir;
@@ -39,7 +38,11 @@ if (enviroment === 'development') {
 //setting the files
 sassSources = ['components/sass/app.scss'];
 htmlSources = ['builds/development/*.html'];
-jsApp = ['components/scripts/app/app.js'];
+es6Scripts = [
+	'components/scripts/app/app.js',
+	'components/scripts/inc/project-template.js',
+	'components/scripts/inc/projects.js'
+];
 
 jsPlugins = [
 	'components/scripts/plugins/picturefill.min.js',
@@ -55,9 +58,9 @@ jsScripts = [
 	'components/scripts/bootstrap/dropdown.js',
 	'components/scripts/bootstrap/scrollspy.js',
 	'components/scripts/bootstrap/transition.js',
-	'components/scripts/inc/projects.js',
-	'components/scripts/inc/project-template.js',
-	'components/scripts/app/babel_output/app.js'
+	'components/scripts/babel_output/project-template.js',
+	'components/scripts/babel_output/projects.js',
+	'components/scripts/babel_output/app.js'
 ];
 
 
@@ -88,12 +91,12 @@ gulp.task('styles', function() {
 }); //END OF styles task
 
 gulp.task('babel-compile', function() {
-	gulp.src(jsApp)
+	gulp.src(es6Scripts)
 		.pipe(babel())
-		.pipe(gulp.dest('components/scripts/app/babel_output/'));
+		.pipe(gulp.dest('components/scripts/babel_output/'));
 }); // END of babel-compile
 
-//compile-es6 has to be done before scripts runs that's why it's added as an dependency
+//compile-es6 has to be done before scripts runs that's why it's added as a dependency
 gulp.task('scripts', ['babel-compile'], function() {
 	gulp.src(jsScripts)
 		.pipe(concat('app.js'))
@@ -117,7 +120,7 @@ gulp.task('server', ['styles'], function() {
 	});
 
 	gulp.watch(htmlSources, ['markup']).on('change', browserSync.reload);
-	gulp.watch([jsScripts, jsApp], ['scripts']).on('change', browserSync.reload);
+	gulp.watch([es6Scripts], ['scripts']).on('change', browserSync.reload);
 	gulp.watch(['components/sass/*.scss', 'components/sass/*/*.scss'], ['styles']);
 }); // END OF server & watch task
 
@@ -135,4 +138,8 @@ gulp.task('move', function() {
 
 }); //END OF move task
 
-gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server', 'move']);
+gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server']);
+
+gulp.task('staging', ['markup', 'plugins', 'scripts', 'styles', 'server', 'move']);
+
+gulp.task('build', ['markup', 'plugins', 'scripts', 'styles', 'move']);
