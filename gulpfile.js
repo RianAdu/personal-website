@@ -58,6 +58,7 @@ jsScripts = [
 	'components/scripts/bootstrap/dropdown.js',
 	'components/scripts/bootstrap/scrollspy.js',
 	'components/scripts/bootstrap/transition.js',
+	'components/scripts/bootstrap/carousel.js',
 	'components/scripts/babel_output/project-template.js',
 	'components/scripts/babel_output/projects.js',
 	'components/scripts/babel_output/app.js'

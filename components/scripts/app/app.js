@@ -128,11 +128,12 @@ $(function() {
 
     setSmoothScroll: function(duration) {
       $('a[href^="#"]').on('click', function(e) {
+
         const target = $($(this).attr('href'));
         const dataTag = $(this).attr('data-tag');
         const hashTag = this.hash;
 
-        if (target.length) {
+        if (target.length && hashTag !== '#testimonial-carousel') {
           e.preventDefault();
 
           //close mobile menu before scrolling when nav menu link and brand logo was clicked

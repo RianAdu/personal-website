@@ -125,7 +125,7 @@ $(function () {
         var dataTag = $(this).attr('data-tag');
         var hashTag = this.hash;
 
-        if (target.length) {
+        if (target.length && hashTag !== '#testimonial-carousel') {
           e.preventDefault(); //close mobile menu before scrolling when nav menu link and brand logo was clicked
 
           if (App.variables.windowWidth < 768 && dataTag == undefined || !App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home') {
