@@ -128,7 +128,6 @@ $(function() {
 
     setSmoothScroll: function(duration) {
       $('a[href^="#"]').on('click', function(e) {
-
         const target = $($(this).attr('href'));
         const dataTag = $(this).attr('data-tag');
         const hashTag = this.hash;
