@@ -403,7 +403,7 @@
                   email</span>
               </span>
 
-              <form target="_blank" method="POST" data-netlify="true" id="contact-form" class="contact__form row">
+              <form target="_blank" method="POST" data-netlify-recaptcha="true" data-netlify="true" id="contact-form" class="contact__form row">
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group">
                     <label class="contact__form-label" for="client-name">Your name<sup>*</sup></label>
@@ -415,7 +415,7 @@
                     <input type="email" id="client-email" name="email" class=" contact__form-textfield form-control" required />
                     <span class="glyphicon form-control-feedback"></span>
                   </div>
-                  <div class="data-netlify-recaptcha"></div>
+                  <div data-netlify-recaptcha="true"></div>
                 </div>
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group contact__form-group--textarea">
