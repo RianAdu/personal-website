@@ -12908,8 +12908,8 @@ $(function () {
       App.setSmoothScroll(1300);
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
-      App.setNavbarBgOnScroll();
-      App.setFormAction();
+      App.setNavbarBgOnScroll(); //App.setFormAction();
+
       App.formValidation();
       App.bindEvents();
       App.pageStart();
@@ -13141,20 +13141,12 @@ $(function () {
           $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
         },
         // added custom pre validation to avoid autobot spam
-        submitHandler: function submitHandler(form, e) {
-          if (App.dom.hiddenField.val().length > 0) {
-            e.preventDefault();
-            App.dom.formInputs.each(function () {
-              $(this).val('').blur();
-            });
-            return false;
-          } else {
-            form.submit();
-            $(window).on('focus', function () {
-              form.reset();
-              App.resetContactForm();
-            });
-          }
+        submitHandler: function submitHandler(form) {
+          form.submit();
+          $(window).on('focus', function () {
+            form.reset();
+            App.resetContactForm();
+          });
         }
       });
     }

@@ -42,7 +42,7 @@ $(function() {
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
-      App.setFormAction();
+      //App.setFormAction();
       App.formValidation();
       App.bindEvents();
       App.pageStart();
@@ -294,21 +294,12 @@ $(function() {
         },
 
         // added custom pre validation to avoid autobot spam
-        submitHandler: function(form, e) {
-          if (App.dom.hiddenField.val().length > 0) {
-            e.preventDefault();
-
-            App.dom.formInputs.each(function() {
-              $(this).val('').blur();
-            });
-            return false;
-          } else {
-            form.submit();
-            $(window).on('focus', function() {
-              form.reset();
-              App.resetContactForm();
-            });
-          }
+        submitHandler: function(form) {
+          form.submit();
+          $(window).on('focus', function() {
+            form.reset();
+            App.resetContactForm();
+          });
         }
       });
     }
