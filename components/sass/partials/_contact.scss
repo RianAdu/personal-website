@@ -101,16 +101,20 @@
     &-textfield {
       border: 1px solid $section-border-color;
       -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       @include rem(font-size, 16px);
     }
 
     &-textarea {
       -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       @include rem(height, 127px !important);
+    }
+
+    .g-recaptcha {
+      margin-bottom: 20px;
     }
   }
 
@@ -131,7 +135,10 @@
 
       &--btn {
         float: right;
-        margin-top: 15px;
+      }
+
+      .g-recaptcha {
+        float: right;
       }
     }
   }
