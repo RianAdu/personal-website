@@ -1,13 +1,13 @@
 .thank-you {
   border-bottom: 0;
 
+  @media screen and (min-width: $screen-sm-min) {
+    @include rem(padding, 2.8865rem 0 6.58325rem);
+  }
+
   &__wrapper {
-    border-radius: 4px;
-    background-color: $white;
-    border: 1px solid $section-border-color;
-    max-width: calc(100% - 30px);
     margin: 0 auto;
-    @include rem(padding, 32.437px 0);
+    padding: 0;
   }
 
   &__headline {
@@ -22,14 +22,25 @@
     color: $dark-grey;
     @include rem(font-size, 93.628px);
   }
-}
 
-@media screen and (min-width: $screen-sm-min) {
-  .thank-you{
-    @include rem(padding, 2.8865rem 0 6.58325rem);
-    
-    &__wrapper {
-      max-width: calc(100% - 100px);
+  &__copy {
+    @include rem(font-size, 20.25px);
+  }
+
+  &__modal {
+
+    .modal-header,
+    .modal-footer {
+      border: 0;
+    }
+
+    .close {
+      color: $dark-grey;
+      opacity: 1;
+
+      &:hover {
+        color: $black;
+      }
     }
   }
 }

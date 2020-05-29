@@ -28,9 +28,9 @@ $(function () {
       mobileNav: null,
       showMoreButton: null,
       contactForm: null,
+      submitModal: null,
       formGroups: null,
       formInputs: null,
-      hiddenField: null,
       pageInitOverlay: null
     },
     init: function init() {
@@ -59,7 +59,7 @@ $(function () {
       App.dom.contactForm = $('#contact-form');
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
-      App.dom.hiddenField = $('.contact__form--custom-field');
+      App.dom.submitModal = $('#myModal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
     },
     bindEvents: function bindEvents() {
@@ -75,6 +75,10 @@ $(function () {
         App.setLandscapeHeaderPos();
         App.setNavbarBgColor();
         App.getWindowWidth();
+      }); //Modal clears form when close button is called
+
+      App.dom.submitModal.on('hide.bs.modal', function () {
+        App.resetContactForm();
       });
     },
     getWindowWidth: function getWindowWidth() {
@@ -242,6 +246,7 @@ $(function () {
     },
     //resetting the form input after submit
     resetContactForm: function resetContactForm() {
+      App.dom.contactForm.trigger('reset');
       App.dom.formGroups.each(function () {
         $(this).removeClass('has-success has-error has-feedback');
       });
@@ -267,13 +272,10 @@ $(function () {
           $(element).parents(".form-group").addClass("has-success has-feedback").removeClass("has-error");
           $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
         },
-        // added custom pre validation to avoid autobot spam
         submitHandler: function submitHandler(form, e) {
           e.preventDefault();
           $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function () {
-            alert("Thank you!");
-            form.reset();
-            App.resetContactForm();
+            App.dom.submitModal.modal();
           });
         }
       });
