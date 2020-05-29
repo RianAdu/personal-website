@@ -12878,11 +12878,7 @@ $(function () {
       navbarHeight: 65,
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
-      windowWidth: null,
-      mailService: 'https://formspree.io/',
-      mailName: 'info',
-      mailDomain: 'rian-adu',
-      formMethod: 'POST'
+      windowWidth: null
     },
     dom: {
       pageBody: null,
@@ -12908,8 +12904,7 @@ $(function () {
       App.setSmoothScroll(1300);
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
-      App.setNavbarBgOnScroll(); //App.setFormAction();
-
+      App.setNavbarBgOnScroll();
       App.formValidation();
       App.bindEvents();
       App.pageStart();
@@ -13115,11 +13110,6 @@ $(function () {
       });
       $('form span.glyphicon').removeClass('glyphicon-remove glyphicon-ok');
     },
-    //setting the form action to not have the email address exposed to autobots.
-    setFormAction: function setFormAction() {
-      App.dom.contactForm.attr('action', '' + App.variables.mailService + App.variables.mailName + '@' + App.variables.mailDomain + '.' + 'com').attr('method', '' + App.variables.formMethod);
-      $(window).off('focus');
-    },
     //Using jQuery validate plugin combined with bootstrap error classes
     formValidation: function formValidation() {
       App.dom.contactForm.validate({
@@ -13141,9 +13131,10 @@ $(function () {
           $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
         },
         // added custom pre validation to avoid autobot spam
-        submitHandler: function submitHandler(form) {
-          form.submit();
-          $(window).on('focus', function () {
+        submitHandler: function submitHandler(form, e) {
+          e.preventDefault();
+          $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function () {
+            alert("Thank you!");
             form.reset();
             App.resetContactForm();
           });
