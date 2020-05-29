@@ -23,6 +23,7 @@ $(function() {
       mobileNav: null,
       showMoreButton: null,
       contactForm: null,
+      hiddenField: null,
       submitModal: null,
       formGroups: null,
       formInputs: null,
@@ -56,6 +57,7 @@ $(function() {
       App.dom.contactForm = $('#contact-form');
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
+      App.dom.hiddenField = $('.contact__form--custom-field');
       App.dom.submitModal = $('#myModal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
     },
@@ -252,7 +254,7 @@ $(function() {
       $('html, body').scrollTop($('#' + viewedProject + '').offset().top - (App.variables.navbarHeight - 1));
     },
 
-    //resetting the form input after submit
+    //resetting the form input after submit or when a SPAM bot was trying to submit
     resetContactForm: function() {
       App.dom.contactForm.trigger('reset');
 
@@ -290,9 +292,15 @@ $(function() {
         submitHandler: function(form, e) {
           e.preventDefault();
 
-          $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
-            App.dom.submitModal.modal();
-          });
+          if (App.dom.hiddenField.val().length > 0) {
+            App.resetContactForm();
+
+            return false;
+          } else {
+            $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
+              App.dom.submitModal.modal();
+            });
+          }
         }
       });
     }
