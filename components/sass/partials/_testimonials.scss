@@ -16,9 +16,18 @@
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
     box-sizing: content-box;
     @include rem(padding, 40px);
-    @include rem(margin-top, 24px);
     position: relative;
     background: $white;
+
+    &--mt {
+      @include rem(margin-top, 24px);
+    }
+
+    &--mt-sm-0 {
+      @media screen and (min-width: $screen-sm) {
+        margin-top: 0;
+      }
+    }
 
     .quote-icon-left,
     .quote-icon-right {
