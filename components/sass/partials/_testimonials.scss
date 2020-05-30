@@ -1,55 +1,71 @@
 .testimonials {
 
-
-  &__img-container {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: auto;
-    overflow: hidden;
-
-    img {
-      width: 100%;
+  &__row {
+    @media screen and (min-width: $screen-sm) {
+      display: flex;
     }
   }
 
-  .carousel-control {
-    color: $black;
-    text-shadow: none;
-    opacity: 0;
+  &__wrapper {
+    @media screen and (min-width: $screen-sm) {
+      display: flex;
+    }
+  }
 
-    &:hover {
-      opacity: 1;
+  &__item {
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    box-sizing: content-box;
+    @include rem(padding, 40px);
+    @include rem(margin-top, 24px);
+    position: relative;
+    background: $white;
+
+    .quote-icon-left,
+    .quote-icon-right {
       color: $dark-grey;
+      @include rem(font-size, 20px);
     }
 
-    &.left,
-    &.right {
-      background: transparent;
+    .quote-icon-left {
+      display: inline-block;
+      left: -5px;
+      position: relative;
+    }
+
+    .quote-icon-right {
+      display: inline-block;
+      right: -5px;
+      position: relative;
+      top: 10px;
     }
   }
 
-  .carousel-caption {
-    position: static;
-    padding-bottom: 15px;
-    padding-top: 0;
+  &__img {
+    width: 90px;
+    border-radius: 50px;
+    border: 6px solid $white;
+    float: left;
+    margin: 0 10px 0 0;
+  }
 
-    h3 {
-      color: $black;
-      text-shadow: none;
-      margin-top: 15px;
+  &__client {
+    &-name {
+      @include rem(font-size, 18px);
+      font-weight: bold;
+      margin: 10px 0 5px 0;
     }
 
-    h4 {
-      color: $black;
-      text-shadow: none;
+    &-position {
+      @include rem(font-size, 14px);
+      color: $dark-grey;
+      margin: 0;
     }
+  }
 
-    p {
-      color: $black;
-      text-shadow: none;
-      margin: auto;
-      width: 70%;
-    }
+  &__statement {
+    @include rem(line-height, 28.833px);
+    font-style: italic;
+    margin: 15px 0 0 0;
+    padding: 0;
   }
 }

@@ -9,11 +9,11 @@
 }
 
 .bg--type-fixed {
-  background-attachment: fixed !important;   
+  background-attachment: fixed !important;
 }
 
 .bg--type-dark {
-  background-color:$light-grey;
+  background-color: $light-grey;
 }
 
 .page {
@@ -22,12 +22,16 @@
   @include rem(padding, 20.25px 0 83.225px);
 
   &:nth-child(even) {
-    background-color:$light-grey;
+    background-color: $light-grey;
   }
 
   &--thank-you {
     border-bottom: 0;
   }
+}
+
+.no-padding {
+  padding: 0;
 }
 
 @media screen and (min-width: $screen-md-min) {
