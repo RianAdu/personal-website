@@ -2,7 +2,7 @@
 /* ************************** */
 
 .contact {
-  
+
   &__social-media-container {
     @include rem(margin-bottom, 28.833px);
   }
@@ -15,14 +15,16 @@
     display: inline-block;
     color: $black;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: none;
     }
 
     &--linkedin {
-      color:$linkedin;
+      color: $linkedin;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $linkedin;
       }
     }
@@ -30,7 +32,8 @@
     &--twitter {
       color: $twitter;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $twitter;
       }
     }
@@ -38,7 +41,8 @@
     &--github {
       color: $github;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $github;
       }
     }
@@ -46,7 +50,8 @@
     &--instagram {
       color: darken($instagram, 15);
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: darken($instagram, 15);
       }
     }
@@ -68,11 +73,11 @@
 
   &__social-media-icon-title {
     display: inline-block;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     transition: all .4s ease;
 
     &:hover {
-      transform: scale(1.1,1.1);
+      transform: scale(1.1, 1.1);
     }
 
     &--email {
@@ -83,28 +88,36 @@
       }
     }
   }
-  
+
   &__form {
     @include rem (max-width, 540px);
-  
+
     &-label {
       font-weight: $light;
       margin-bottom: 0;
       @include rem(font-size, 16px);
     }
-  
+
     &-textfield {
       border: 1px solid $section-border-color;
+      -webkit-appearance: none;
+      -moz-appearance: none;
       appearance: none;
       @include rem(font-size, 16px);
     }
-  
+
     &-textarea {
+      -webkit-appearance: none;
+      -moz-appearance: none;
       appearance: none;
-      @include rem(height, 127px!important);
+      @include rem(height, 127px !important);
+    }
+
+    .g-recaptcha {
+      margin-bottom: 20px;
     }
   }
-  
+
   &__form-group--textarea {
     margin-bottom: 30px;
   }
@@ -122,6 +135,11 @@
 
       &--btn {
         float: right;
+        clear: right;
+      }
+
+      .g-recaptcha {
+        float: right;
       }
     }
   }
@@ -129,7 +147,7 @@
 
 
 //bootstrap feedback icon position
-.has-feedback label ~ .form-control-feedback {
+.has-feedback label~.form-control-feedback {
   top: 33px;
 }
 

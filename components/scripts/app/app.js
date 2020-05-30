@@ -9,11 +9,7 @@ $(function() {
       navbarHeight: 65,
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
-      windowWidth: null,
-      mailService: 'https://formspree.io/',
-      mailName: 'info',
-      mailDomain: 'rian-adu',
-      formMethod: 'POST'
+      windowWidth: null
     },
 
     dom: {
@@ -27,9 +23,10 @@ $(function() {
       mobileNav: null,
       showMoreButton: null,
       contactForm: null,
+      hiddenField: null,
+      submitModal: null,
       formGroups: null,
       formInputs: null,
-      hiddenField: null,
       pageInitOverlay: null
     },
 
@@ -42,7 +39,6 @@ $(function() {
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
-      App.setFormAction();
       App.formValidation();
       App.bindEvents();
       App.pageStart();
@@ -62,6 +58,7 @@ $(function() {
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
       App.dom.hiddenField = $('.contact__form--custom-field');
+      App.dom.submitModal = $('#myModal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
     },
 
@@ -80,6 +77,11 @@ $(function() {
         App.setLandscapeHeaderPos();
         App.setNavbarBgColor();
         App.getWindowWidth();
+      });
+
+      //Modal clears form when close button is called
+      App.dom.submitModal.on('hide.bs.modal', function() {
+        App.resetContactForm();
       });
     },
 
@@ -252,21 +254,15 @@ $(function() {
       $('html, body').scrollTop($('#' + viewedProject + '').offset().top - (App.variables.navbarHeight - 1));
     },
 
-    //resetting the form input after submit
+    //resetting the form input after submit or when a SPAM bot was trying to submit
     resetContactForm: function() {
+      App.dom.contactForm.trigger('reset');
+
       App.dom.formGroups.each(function() {
         $(this).removeClass('has-success has-error has-feedback');
       });
 
       $('form span.glyphicon').removeClass('glyphicon-remove glyphicon-ok');
-    },
-
-    //setting the form action to not have the email address exposed to autobots.
-    setFormAction: function() {
-      App.dom.contactForm
-        .attr('action', '' + App.variables.mailService + App.variables.mailName + '@' + App.variables.mailDomain + '.' + 'com')
-        .attr('method', '' + App.variables.formMethod);
-      $(window).off('focus');
     },
 
     //Using jQuery validate plugin combined with bootstrap error classes
@@ -293,20 +289,16 @@ $(function() {
           $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
         },
 
-        // added custom pre validation to avoid autobot spam
         submitHandler: function(form, e) {
-          if (App.dom.hiddenField.val().length > 0) {
-            e.preventDefault();
+          e.preventDefault();
 
-            App.dom.formInputs.each(function() {
-              $(this).val('').blur();
-            });
+          if (App.dom.hiddenField.val().length > 0) {
+            App.resetContactForm();
+
             return false;
           } else {
-            form.submit();
-            $(window).on('focus', function() {
-              form.reset();
-              App.resetContactForm();
+            $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
+              App.dom.submitModal.modal();
             });
           }
         }

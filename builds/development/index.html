@@ -16,7 +16,7 @@
   <meta name="keywords" content=" Web Developer, Freelance, Front End, Developer, Front End Developer, Websites, web, HTML, CSS, Sass, JavaScript, jQuery, ES6, Bootstrap, WordPress, UX, User Experience, Canada, Toronto, Florian Adu-Gyamfi, RianAdu, Rian Adu, Hamburg, Germany, Florian, Adu-Gyamfi" />
   <title>Florian Adu-Gyamfi | Front End Web Developer | Toronto</title>
 
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/app.css?v=3.0">
   <link rel="shortcut icon" href="img/brand_icons/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/brand_icons/apple_app_icon.png">
   <link rel="canonical" href="https://www.rian-adu.com" />
@@ -470,7 +470,7 @@
                   email</span>
               </span>
 
-              <form target="_blank" id="contact-form" class="contact__form row">
+              <form id="contact-form" class="contact__form row" method="POST" name="contact-form" data-netlify="true">
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group">
                     <label class="contact__form-label" for="client-name">Your name<sup>*</sup></label>
@@ -489,12 +489,9 @@
                     <textarea id="client-message" name="message" class="contact__form-textarea form-control" minlength="20" row="5" required></textarea>
                     <span class="glyphicon form-control-feedback"></span>
                   </div>
+                  <input type="text" class="contact__form--custom-field" style="display:none;" />
                   <button type="submit" class="contact__form--btn btn-custom btn">Send message</button>
                 </div>
-
-                <input type="text" name="_gotcha" class="contact__form--custom-field" style="display:none;" />
-                <input type="hidden" name="_subject" value="Client Request / Message from Portfolio" />
-                <input type="hidden" name="_next" value="thankyou.html" />
               </form>
             </div>
 
@@ -536,7 +533,31 @@
       </div>
     </noscript>
   </div>
-  <script src="js/app.js?v=2.6"></script>
+
+  <div class="modal thank-you__modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="thank-you__wrapper clearfix">
+            <div class="col-xs-12 text-center">
+              <h1 class="thank-you__headline">Thanks for your e&#8209;mail!</h1>
+              <span class="thank-you__envelope lnr lnr-envelope"></span>
+              <p class="thank-you__copy">
+                I will get in touch with you as soon <span class="text-nowrap">as possible.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-custom" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <script src="js/app.js?v=3.0"></script>
 </body>
 
 </html>
