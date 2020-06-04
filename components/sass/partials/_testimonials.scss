@@ -55,9 +55,11 @@
   }
 
   &__img {
+    display: block;
     width: 90px;
+    height: auto;
     border-radius: 50px;
-    border: 6px solid $white;
+    border: 5px solid $white;
     float: left;
     margin: 0 10px 0 0;
   }
