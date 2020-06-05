@@ -32,6 +32,7 @@ $(function () {
       submitModal: null,
       formGroups: null,
       formInputs: null,
+      currentYear: null,
       pageInitOverlay: null
     },
     init: function init() {
@@ -44,6 +45,7 @@ $(function () {
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
       App.formValidation();
+      App.setCurrentYear();
       App.bindEvents();
       App.pageStart();
     },
@@ -63,6 +65,7 @@ $(function () {
       App.dom.hiddenField = $('.contact__form--custom-field');
       App.dom.submitModal = $('#submit-success-modal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
+      App.dom.currentYear = document.querySelector('.footer__content-year');
     },
     bindEvents: function bindEvents() {
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
@@ -82,6 +85,9 @@ $(function () {
       App.dom.submitModal.on('hide.bs.modal', function () {
         App.resetContactForm();
       });
+    },
+    setCurrentYear: function setCurrentYear() {
+      App.dom.currentYear.innerText = new Date().getFullYear();
     },
     getWindowWidth: function getWindowWidth() {
       App.variables.windowWidth = window.innerWidth;
