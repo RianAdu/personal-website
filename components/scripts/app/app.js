@@ -31,7 +31,7 @@ $(function() {
       pageInitOverlay: null
     },
 
-    init: function() {
+    init() {
       App.cacheDom();
       App.loadWebFonts();
       App.getWindowWidth();
@@ -46,7 +46,7 @@ $(function() {
       App.pageStart();
     },
 
-    cacheDom: function() {
+    cacheDom() {
       App.dom.pageBody = $('body');
       App.dom.hamburgerMenu = $('.navbar-toggle');
       App.dom.headerWrapper = $('.header__wrapper');
@@ -66,7 +66,7 @@ $(function() {
 
     },
 
-    bindEvents: function() {
+    bindEvents() {
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
       App.dom.showMoreButton.on('click', App.showProjectDetails);
 
@@ -89,19 +89,19 @@ $(function() {
       });
     },
 
-    setCurrentYear: function() {
+    setCurrentYear() {
       App.dom.currentYear.innerText = new Date().getFullYear();
     },
 
-    getWindowWidth: function() {
+    getWindowWidth() {
       App.variables.windowWidth = window.innerWidth;
     },
 
-    fadeAnimation: function(element, animation) {
+    fadeAnimation(element, animation) {
       element.addClass('animated ' + animation);
     },
 
-    loadWebFonts: function() {
+    loadWebFonts() {
       WebFont.load({
         google: {
           families: ['Open+Sans:300,400,600', 'Orbitron', 'Exo+2:300,400,700']
@@ -109,7 +109,7 @@ $(function() {
       });
     },
 
-    pageStart: function() {
+    pageStart() {
       setTimeout(function() {
         App.dom.pageInitOverlay.fadeOut('slow', function() {
           App.fadeAnimation(App.dom.headerTitle, 'fadeInUp');
@@ -120,12 +120,12 @@ $(function() {
       }, 500);
     },
 
-    setLandscapeHeaderPos: function() {
+    setLandscapeHeaderPos() {
       const windHeight = window.innerHeight;
       windHeight < 450 ? App.dom.headerWrapper.addClass('header__wrapper--landscape') : App.dom.headerWrapper.removeClass('header__wrapper--landscape');
     },
 
-    setBackgroundType: function() {
+    setBackgroundType() {
       //if device is not mobile set class for parallax background
       const isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
 
@@ -136,7 +136,7 @@ $(function() {
       }
     },
 
-    setSmoothScroll: function(duration) {
+    setSmoothScroll(duration) {
       $('a[href^="#"]').on('click', function(e) {
         const target = $($(this).attr('href'));
         const dataTag = $(this).attr('data-tag');
@@ -159,7 +159,7 @@ $(function() {
     },
 
     //setting browser history in case user uses back button instead of menu
-    setBrowserHistory: function(hashID) {
+    setBrowserHistory(hashID) {
       const section = hashID.split('#')[1];
 
       if (history.pushState) {
@@ -169,7 +169,7 @@ $(function() {
       }
     },
 
-    setNavbarBgColor: function(wScrollTop) {
+    setNavbarBgColor(wScrollTop) {
       const headerTitlePos = App.dom.headerTitle.offset().top;
 
       if (wScrollTop == undefined) {
@@ -183,20 +183,20 @@ $(function() {
       }
     },
 
-    setNavbarBgOnScroll: function() {
+    setNavbarBgOnScroll() {
       $(window).scroll(function() {
         const wScroll = $(window).scrollTop();
         App.setNavbarBgColor(wScroll);
       });
     },
 
-    setNavbarBgOnMobile: function() {
+    setNavbarBgOnMobile() {
       if (App.variables.windowWidth < 768) {
         App.dom.navbar.toggleClass('navbar-inverse--faded-in-mobile');
       }
     },
 
-    showProjectDetails: function() {
+    showProjectDetails() {
       let detailsMarkup;
       const clickedProject = $(this).parent().parent().parent().attr('id');
 
@@ -213,7 +213,7 @@ $(function() {
       App.finalizeProjectDetails(detailsMarkup, clickedProject);
     },
 
-    finalizeProjectDetails: function(projectView, id) {
+    finalizeProjectDetails(projectView, id) {
       const tag = '#' + id;
       App.dom.pageBody.prepend(projectView);
 
@@ -236,7 +236,7 @@ $(function() {
       });
     },
 
-    closeProjectDetails: function(id) {
+    closeProjectDetails(id) {
       App.dom.pageBody.removeClass('body--prevent-scrolling');
       $('.portfolio-details__overlay').css('overflow-y', 'hidden');
 
@@ -257,13 +257,13 @@ $(function() {
       App.variables.historyFlag = undefined;
     },
 
-    scrollBackToProject: function(viewedProject) {
+    scrollBackToProject(viewedProject) {
       // this function scrolls the body back to the last clicked Project, after the overlay has been closed
       $('html, body').scrollTop($('#' + viewedProject + '').offset().top - (App.variables.navbarHeight - 1));
     },
 
     //resetting the form input after submit or when a SPAM bot was trying to submit
-    resetContactForm: function() {
+    resetContactForm() {
       App.dom.contactForm.trigger('reset');
 
       App.dom.formGroups.each(function() {
@@ -274,9 +274,9 @@ $(function() {
     },
 
     //Using jQuery validate plugin combined with bootstrap error classes
-    formValidation: function() {
+    formValidation() {
       App.dom.contactForm.validate({
-        errorPlacement: function(error, element) {
+        errorPlacement(error, element) {
           // Add the Bootstrap `help-block` class to the error element
           error.addClass("help-block");
           error.insertBefore(element);
@@ -287,17 +287,17 @@ $(function() {
           }
         },
 
-        highlight: function(element, errorClass, validClass) {
+        highlight(element, errorClass, validClass) {
           $(element).parents(".form-group").addClass("has-error has-feedback").removeClass("has-success");
           $(element).next("span").addClass("glyphicon-remove").removeClass("glyphicon-ok");
         },
 
-        unhighlight: function(element, errorClass, validClass) {
+        unhighlight(element, errorClass, validClass) {
           $(element).parents(".form-group").addClass("has-success has-feedback").removeClass("has-error");
           $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
         },
 
-        submitHandler: function(form, e) {
+        submitHandler(form, e) {
           e.preventDefault();
 
           if (App.dom.hiddenField.val().length > 0) {
