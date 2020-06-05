@@ -1,13 +1,13 @@
 .testimonials {
 
   &__row {
-    @media screen and (min-width: $screen-sm) {
+    @media screen and (min-width: $screen-md) {
       display: flex;
     }
   }
 
   &__wrapper {
-    @media screen and (min-width: $screen-sm) {
+    @media screen and (min-width: $screen-md) {
       display: flex;
     }
   }
@@ -22,14 +22,14 @@
     &--mt {
       @include rem(margin-top, 20px);
 
-      @media screen and (min-width: $screen-sm) {
+      @media screen and (min-width: $screen-md) {
         @include rem(margin-top, 30px);
       }
 
     }
 
     &--mt-sm-0 {
-      @media screen and (min-width: $screen-sm) {
+      @media screen and (min-width: $screen-md) {
         margin-top: 0;
       }
     }
