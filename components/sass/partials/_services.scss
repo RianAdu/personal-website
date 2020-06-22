@@ -5,6 +5,10 @@
 
   &__intro {
     @include rem(margin-bottom, 8.879px);
+
+    @media screen and (min-width: $screen-sm-min) {
+      @include rem(margin-bottom, 20.25px);
+    }
   }
 
   &__col {
@@ -14,26 +18,25 @@
     &--last {
       margin-bottom: 0;
     }
-    
+
     &-icon {
+      position: relative;
       @include rem(font-size, 64px);
+
+      &--seo {
+        &::after {
+          content: 'SEO';
+          font-family: $font-family-header;
+          @include rem(font-size, 15px);
+          position: absolute;
+          left: 11px;
+          top: 17px;
+        }
+      }
     }
-  
+
     &-headline {
       @include rem (margin-bottom, 7.892px);
-    }
-  }
-}
-
-@media screen and (min-width: $screen-sm-min) {
-  .services {
-
-    &--intro {
-      @include rem(margin-bottom, 20.25px);
-    }
-    
-    &__col {
-      margin-bottom: 0;
     }
   }
 }
