@@ -1,8 +1,8 @@
 //custom core variables and mixins
 @import 'partials/custom-variables';
 @import 'partials/mixins';
- 
-//bootstrap 
+
+//bootstrap
 @import 'vendor/bootstrap-sass/bootstrap';
 @import 'vendor/bootstrap-sass/bootstrap-compass';
 
@@ -15,11 +15,14 @@
 //linear icons
 @import 'vendor/linearicons';
 
-//lazyload 
+//lazyload
 @import 'vendor/lazysizes';
 
 //animate.css
 @import 'vendor/animate';
+
+//boxicons
+@import 'vendor/boxicons';
 
 //custom partials
 @import 'partials/base';
@@ -31,6 +34,7 @@
 @import 'partials/services';
 @import 'partials/portfolio';
 @import 'partials/portfolio-details';
+@import 'partials/testimonials';
 @import 'partials/contact';
 @import 'partials/footer';
 @import 'partials/thank-you';

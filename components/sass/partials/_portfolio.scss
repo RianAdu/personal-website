@@ -9,7 +9,7 @@
     @include rem(padding-bottom, 60px);
 
     &--first {
-      @include rem(padding-top, 30px);
+      @include rem(padding-top, 15px);
     }
 
     &:last-of-type {
@@ -22,7 +22,7 @@
       &--macbook {
         @include rem(margin-bottom, 30px);
       }
-      
+
       &-ratio-container {
         margin: auto;
         max-width: 600px;
@@ -39,7 +39,7 @@
       }
 
       &-headline {
-        font-weight: $semi-bold;  
+        font-weight: $semi-bold;
         margin-top: 0;
         @include rem (margin-bottom, 7.892px);
         @include rem(font-size, 18px);
@@ -50,13 +50,13 @@
 
 @media screen and (min-width: $screen-sm-min) {
   .portfolio {
-    
+
     &__project {
       @include rem(padding-top, 100px);
       @include rem(padding-bottom, 100px);
 
       &--first {
-        @include rem(padding-top, 30px);
+        @include rem(padding-top, 15px);
       }
 
       &-column {
@@ -64,7 +64,7 @@
         &--macbook {
           margin-bottom: 0;
         }
-        
+
         &--text-right {
           text-align: right;
         }

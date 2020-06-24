@@ -1,6 +1,6 @@
 "use strict";
 
-function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
@@ -32,6 +32,7 @@ $(function () {
       submitModal: null,
       formGroups: null,
       formInputs: null,
+      currentYear: null,
       pageInitOverlay: null
     },
     init: function init() {
@@ -44,6 +45,7 @@ $(function () {
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
       App.formValidation();
+      App.setCurrentYear();
       App.bindEvents();
       App.pageStart();
     },
@@ -61,8 +63,9 @@ $(function () {
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
       App.dom.hiddenField = $('.contact__form--custom-field');
-      App.dom.submitModal = $('#myModal');
+      App.dom.submitModal = $('#submit-success-modal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
+      App.dom.currentYear = document.querySelector('.footer__content-year');
     },
     bindEvents: function bindEvents() {
       App.dom.mobileNav.on('show.bs.collapse hide.bs.collapse', App.setNavbarBgOnMobile);
@@ -82,6 +85,9 @@ $(function () {
       App.dom.submitModal.on('hide.bs.modal', function () {
         App.resetContactForm();
       });
+    },
+    setCurrentYear: function setCurrentYear() {
+      App.dom.currentYear.innerText = new Date().getFullYear();
     },
     getWindowWidth: function getWindowWidth() {
       App.variables.windowWidth = window.innerWidth;
@@ -126,7 +132,7 @@ $(function () {
         var dataTag = $(this).attr('data-tag');
         var hashTag = this.hash;
 
-        if (target.length) {
+        if (target.length && hashTag !== '#testimonial-carousel') {
           e.preventDefault(); //close mobile menu before scrolling when nav menu link and brand logo was clicked
 
           if (App.variables.windowWidth < 768 && dataTag == undefined || !App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home') {

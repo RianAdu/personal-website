@@ -15,8 +15,8 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	sassGlob = require('gulp-sass-glob');
 
-// declarating enviroment and component sources
-var enviroment,
+// declarating nodeEnv and component sources
+var nodeEnv,
 	jsPlugins,
 	jsScripts,
 	es6Scripts,
@@ -27,9 +27,9 @@ var enviroment,
 
 //distinguishing between development and production enviroment
 //to change to production enter (NODE_ENV=production gulp) in terminal
-enviroment = process.env.NODE_ENV || 'development';
+nodeEnv = process.env.NODE_ENV || 'development';
 
-if (enviroment === 'development') {
+if (nodeEnv === 'development') {
 	outputDir = 'builds/development/';
 } else {
 	outputDir = 'builds/production/';
@@ -67,26 +67,26 @@ jsScripts = [
 
 gulp.task('markup', function() {
 	gulp.src('builds/development/*.html')
-		.pipe(gulpif(enviroment === 'production', htmlmin({
+		.pipe(gulpif(nodeEnv === 'production', htmlmin({
 			collapseWhitespace: true,
 			removeComments: true,
 			minifyCSS: true
 		})))
-		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir)));
+		.pipe(gulpif(nodeEnv === 'production', gulp.dest(outputDir)));
 }); //END OF markup task
 
 
 gulp.task('styles', function() {
 	gulp.src(sassSources)
-		.pipe(gulpif(enviroment === 'development', sourcemaps.init()))
+		.pipe(gulpif(nodeEnv === 'development', sourcemaps.init()))
 		.pipe(sassGlob())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefix({
 			browsers: ['last 2 versions'],
 			cascade: false
 		}))
-		.pipe(gulpif(enviroment === 'development', sourcemaps.write()))
-		.pipe(gulpif(enviroment === 'production', cleanCSS()))
+		.pipe(gulpif(nodeEnv === 'development', sourcemaps.write()))
+		.pipe(gulpif(nodeEnv === 'production', cleanCSS()))
 		.pipe(gulp.dest(outputDir + 'css'))
 		.pipe(browserSync.stream());
 }); //END OF styles task
@@ -101,7 +101,7 @@ gulp.task('babel-compile', function() {
 gulp.task('scripts', ['babel-compile'], function() {
 	gulp.src(jsScripts)
 		.pipe(concat('app.js'))
-		.pipe(gulpif(enviroment === 'production', uglify()))
+		.pipe(gulpif(nodeEnv === 'production', uglify()))
 		.pipe(gulp.dest(outputDir + '/js'));
 }); //END OF script task
 
@@ -131,11 +131,11 @@ gulp.task('move', function() {
 
 	//images
 	gulp.src('builds/development/img/**/*.*')
-		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir + 'img')));
+		.pipe(gulpif(nodeEnv === 'production', gulp.dest(outputDir + 'img')));
 
 	//fonts
 	gulp.src('builds/development/fonts/**/*.*')
-		.pipe(gulpif(enviroment === 'production', gulp.dest(outputDir + 'fonts')));
+		.pipe(gulpif(nodeEnv === 'production', gulp.dest(outputDir + 'fonts')));
 
 }); //END OF move task
 
