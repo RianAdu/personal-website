@@ -113,8 +113,9 @@
       @include rem(height, 127px !important);
     }
 
-    &--special-field {
-      display: none;
+    &--custom-field {
+      visibility: hidden !important;
+      @include rem(margin-bottom, -72px !important);
     }
   }
 
