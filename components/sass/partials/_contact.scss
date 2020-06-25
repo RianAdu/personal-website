@@ -113,8 +113,8 @@
       @include rem(height, 127px !important);
     }
 
-    .g-recaptcha {
-      margin-bottom: 20px;
+    &--special-field {
+      display: none;
     }
   }
 
