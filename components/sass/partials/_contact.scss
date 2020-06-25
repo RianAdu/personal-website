@@ -116,6 +116,11 @@
     &--custom-field {
       visibility: hidden !important;
       @include rem(margin-bottom, -72px !important);
+
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @include rem(margin-bottom, 0px !important);
+      }
+
     }
   }
 
