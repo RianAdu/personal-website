@@ -59,7 +59,6 @@ $(function() {
       App.dom.contactForm = $('#contact-form');
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
-      App.dom.hiddenField = $('.contact__form--custom-field');
       App.dom.submitModal = $('#submit-success-modal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
 
