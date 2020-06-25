@@ -469,26 +469,29 @@
                   email</span>
               </span>
 
-              <form id="contact-form" class="contact__form row" method="POST" name="contact-form" data-netlify="true">
+              <form id="contact-form" class="contact__form row" method="POST" name="contact-form" netlify-honeypot="special-field" data-netlify="true">
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group">
-                    <label class="contact__form-label" for="client-name">Your name<sup>*</sup></label>
+                    <label class="contact__form-label" for="client-name">Your name*</label>
                     <input type="text" id="client-name" name="name" minlength="2" class="contact__form-textfield form-control" required />
                     <span class="glyphicon form-control-feedback"></span>
                   </div>
                   <div class="form-group">
-                    <label class="contact__form-label" for="client-email">Your e-mail<sup>*</sup></label>
+                    <label class="contact__form-label" for="client-email">Your e-mail*</label>
                     <input type="email" id="client-email" name="email" class=" contact__form-textfield form-control" required />
                     <span class="glyphicon form-control-feedback"></span>
+                  </div>
+                  <div class="form-group contact__form--special-field">
+                    <label class="contact__form-label" for="client-phone">Your phone number</label>
+                    <input type="phone" name="special-field" class="contact__form--custom-field" />
                   </div>
                 </div>
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group contact__form-group--textarea">
-                    <label class="contact__form-label" for="client-message">Your message<sup>*</sup></label>
+                    <label class="contact__form-label" for="client-message">Your message*</label>
                     <textarea id="client-message" name="message" class="contact__form-textarea form-control" minlength="20" row="5" required></textarea>
                     <span class="glyphicon form-control-feedback"></span>
                   </div>
-                  <input type="text" class="contact__form--custom-field" style="display:none;" />
                   <button type="submit" class="contact__form--btn btn-custom btn">Send message</button>
                 </div>
               </form>

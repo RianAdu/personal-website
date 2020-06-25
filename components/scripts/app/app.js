@@ -300,16 +300,9 @@ $(function() {
 
         submitHandler(form, e) {
           e.preventDefault();
-
-          if (App.dom.hiddenField.val().length > 0) {
-            App.resetContactForm();
-
-            return false;
-          } else {
-            $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
-              App.dom.submitModal.modal();
-            });
-          }
+          $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
+            App.dom.submitModal.modal();
+          });
         }
       });
     }
