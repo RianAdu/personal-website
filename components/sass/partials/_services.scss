@@ -11,6 +11,15 @@
     }
   }
 
+  &__row {
+
+    &--first {
+      @media screen and (min-width: $screen-sm-min) {
+        @include rem(margin-bottom, 10px);
+      }
+    }
+  }
+
   &__col {
     text-align: center;
     @include rem(margin-bottom, 20.25px);
