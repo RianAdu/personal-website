@@ -59,9 +59,9 @@ $(function() {
       App.dom.contactForm = $('#contact-form');
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
-      App.dom.hiddenField = $('.contact__form--custom-field');
       App.dom.submitModal = $('#submit-success-modal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
+
       App.dom.currentYear = document.querySelector('.footer__content-year');
 
     },
@@ -299,16 +299,9 @@ $(function() {
 
         submitHandler(form, e) {
           e.preventDefault();
-
-          if (App.dom.hiddenField.val().length > 0) {
-            App.resetContactForm();
-
-            return false;
-          } else {
-            $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
-              App.dom.submitModal.modal();
-            });
-          }
+          $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
+            App.dom.submitModal.modal();
+          });
         }
       });
     }

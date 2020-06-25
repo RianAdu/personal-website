@@ -113,8 +113,9 @@
       @include rem(height, 127px !important);
     }
 
-    .g-recaptcha {
-      margin-bottom: 20px;
+    &--custom-field {
+      visibility: hidden !important;
+      @include rem(margin-bottom, -72px !important);
     }
   }
 

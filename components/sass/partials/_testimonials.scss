@@ -1,5 +1,11 @@
 .testimonials {
 
+  &__headline-xxs {
+    @media screen and (max-width: 345px) {
+      @include rem(font-size, 53px);
+    }
+  }
+
   &__row {
     @media screen and (min-width: $screen-md) {
       display: flex;
@@ -15,9 +21,13 @@
   &__item {
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
     box-sizing: content-box;
-    @include rem(padding, 40px);
+    @include rem(padding, 30px);
     position: relative;
     background: $white;
+
+    @media screen and (min-width: $screen-sm) {
+      @include rem(padding, 40px);
+    }
 
     &--mt {
       @include rem(margin-top, 20px);
@@ -73,6 +83,7 @@
 
     &-position {
       @include rem(font-size, 14px);
+      @include rem(line-height, 18px);
       color: $dark-grey;
       margin: 0;
     }

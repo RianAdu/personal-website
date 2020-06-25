@@ -1,6 +1,6 @@
 "use strict";
 
-function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
@@ -62,7 +62,6 @@ $(function () {
       App.dom.contactForm = $('#contact-form');
       App.dom.formGroups = $('.form-group');
       App.dom.formInputs = $('.form-control');
-      App.dom.hiddenField = $('.contact__form--custom-field');
       App.dom.submitModal = $('#submit-success-modal');
       App.dom.pageInitOverlay = $('.page_init_overlay');
       App.dom.currentYear = document.querySelector('.footer__content-year');
@@ -282,15 +281,9 @@ $(function () {
         },
         submitHandler: function submitHandler(form, e) {
           e.preventDefault();
-
-          if (App.dom.hiddenField.val().length > 0) {
-            App.resetContactForm();
-            return false;
-          } else {
-            $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function () {
-              App.dom.submitModal.modal();
-            });
-          }
+          $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function () {
+            App.dom.submitModal.modal();
+          });
         }
       });
     }

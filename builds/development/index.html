@@ -380,13 +380,13 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <h1>testimonials</h1>
+              <h1 class="testimonials__headline-xxs">testimonials</h1>
             </div>
             <div class="no-padding col-xs-12">
               <div class="testimonials__row">
                 <div class="testimonials__wrapper col-md-6">
                   <div class="testimonials__item">
-                    <img class="testimonials__img lazyload" data-src="img/testimonials/janina-stecker-medicare.jpg" alt="Janina Stecker CEO of Medicare Hamburg">
+                    <img class="testimonials__img lazyload" data-src="img/testimonials/janina-stecker-medicare.jpg" alt="Janina Stecker is the CEO of MBD Medicare which is a nursing service from Hamburg Germany">
                     <h3 class="testimonials__client-name">Janina Stecker</h3>
                     <h4 class="testimonials__client-position">CEO of MBD Medicare Brigitte Dornia <span class="text-nowrap">GmbH & Co. KG</span></h4>
                     <p class="testimonials__statement">
@@ -398,12 +398,12 @@
                 </div>
                 <div class="testimonials__wrapper col-md-6">
                   <div class="testimonials__item testimonials__item--mt testimonials__item--mt-sm-0">
-                    <img class="testimonials__img lazyload" data-src="img/testimonials/Predram-Banaei-heureka.jpg" alt="Pedram Banei CEO of Heureka Baufinanzierung GmbH in Hamburg Germany">
+                    <img class="testimonials__img lazyload" data-src="img/testimonials/predram-banaei-heureka.jpg" alt="Pedram Banei is the CEO of Heureka Baufinanzierung GmbH which is a construction mortgages company from Hamburg Germany">
                     <h3 class="testimonials__client-name">Pedram Banaei</h3>
                     <h4 class="testimonials__client-position">CEO of Heureka <span class="text-nowrap">Baufinanzierung GmbH</span></h4>
                     <p class="testimonials__statement">
                       <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      I really appreciate working with a web developer like Florian. He is accurate in his estimates for project timelines and scope. In addition, he is very reliable, responds quickly to my requests and implements them in a timely manner. Knowing that the maintenance of my company’s website is in Florian’s professional hands gives me the confidence to just focus on my <span class="text-nowrap">daily business.<i class="bx bxs-quote-alt-right quote-icon-right"></i></span>
+                      I really appreciate working with a web developer like Florian. <span class="text-nowrap">He is</span> accurate in his estimates for project timelines and scope. In addition, he is very reliable, responds quickly to my requests and implements them in a timely manner. Knowing that the maintenance of my company’s website is in Florian’s professional hands gives me the confidence to just focus on my <span class="text-nowrap">daily business.<i class="bx bxs-quote-alt-right quote-icon-right"></i></span>
                     </p>
                   </div>
                 </div>
@@ -411,17 +411,17 @@
               <div class="testimonials__row">
                 <div class=" testimonials__wrapper col-md-6">
                   <div class="testimonials__item testimonials__item--mt">
-                    <img class="testimonials__img lazyload" data-src="img/testimonials/nicole-klueg-moku-studio.jpg" alt="Nicole Klüg Co-Founder of Mokū Studio in Toronto">
+                    <img class="testimonials__img lazyload" data-src="img/testimonials/nicole-klueg-moku-studio.jpg" alt="Nicole Klüg is the Co-Founder of Mokū Studio from Toronto Canada">
                     <h3 class="testimonials__client-name">Nicole Klüg</h3>
-                    <h4 class="testimonials__client-position"><span class="text-nowrap">Co-Founder</span> of Mokū Studio</h4>
+                    <h4 class="testimonials__client-position"><span class="text-nowrap">Co-Founder</span> of <span class="text-nowrap">Mokū Studio</span></h4>
                     <p class="testimonials__statement">
                       <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Florian is a rare blend of awesome communicator and heads down developer with pixel perfect coding skills to boot. I know I can count on him whenever I'm in a pinch and need a solid job executed.
+                      Florian is a rare blend of awesome communicator and heads down developer with pixel perfect coding skills to boot. I know I can count on him whenever I'm in a pinch and need a solid <span class="text-nowrap">job executed.</span>
                       <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
                   </div>
                 </div>
-                <div class="testimonials__wrapper col-md-6">
+                <!-- <div class="testimonials__wrapper col-md-6">
                   <div class="testimonials__item testimonials__item--mt">
                     <img src="https://randomuser.me/api/portraits/women/62.jpg" class="testimonials__img" alt="">
                     <h3 class="testimonials__client-name">Jena Karlis</h3>
@@ -432,7 +432,7 @@
                       <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -446,7 +446,7 @@
               <h1>contact me</h1>
             </div>
             <div class="contact__social-media-container col-xs-12">
-              <p>Get in touch if you have a project in mind that you think I can help you with.</p>
+              <p>Get in touch if you have a project in mind that you think I can help <span class="text-nowrap">you with.</span></p>
               <div class="row">
                 <div class="contact__social-media-row col-xs-12 col-md-4">
                   <a class="contact__social-media-channel contact__social-media-channel--linkedin" href="https://www.linkedin.com/in/florianadugyamfi" title="Florian Adu-Gyamfi - LinkedIn" target="_blank" rel="noopener">
@@ -476,26 +476,29 @@
                   email</span>
               </span>
 
-              <form id="contact-form" class="contact__form row" method="POST" name="contact-form" data-netlify="true">
+              <form id="contact-form" class="contact__form row" method="POST" name="contact-form" netlify-honeypot="custom-field" data-netlify="true">
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group">
-                    <label class="contact__form-label" for="client-name">Your name<sup>*</sup></label>
+                    <label class="contact__form-label" for="client-name">Your name*</label>
                     <input type="text" id="client-name" name="name" minlength="2" class="contact__form-textfield form-control" required />
                     <span class="glyphicon form-control-feedback"></span>
                   </div>
                   <div class="form-group">
-                    <label class="contact__form-label" for="client-email">Your e-mail<sup>*</sup></label>
+                    <label class="contact__form-label" for="client-email">Your e-mail*</label>
                     <input type="email" id="client-email" name="email" class=" contact__form-textfield form-control" required />
                     <span class="glyphicon form-control-feedback"></span>
+                  </div>
+                  <div class="form-group contact__form--custom-field">
+                    <label class="contact__form-label" for="client-phone">Your phone number</label>
+                    <input type="phone" name="custom-field" class="form-control" />
                   </div>
                 </div>
                 <div class="contact__form-row col-xs-12 col-sm-6">
                   <div class="form-group contact__form-group--textarea">
-                    <label class="contact__form-label" for="client-message">Your message<sup>*</sup></label>
+                    <label class="contact__form-label" for="client-message">Your message*</label>
                     <textarea id="client-message" name="message" class="contact__form-textarea form-control" minlength="20" row="5" required></textarea>
                     <span class="glyphicon form-control-feedback"></span>
                   </div>
-                  <input type="text" class="contact__form--custom-field" style="display:none;" />
                   <button type="submit" class="contact__form--btn btn-custom btn">Send message</button>
                 </div>
               </form>
@@ -510,7 +513,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <span class="footer__content">&copy; <span class="footer__content-year">2019</span></span>
+          <span class="footer__content">&copy; <span class="footer__content-year"></span></span>
           <span class="footer__divider">|</span>
           <span class="footer__content">Designed and developed by Florian Adu-Gyamfi</span>
           <span class="footer__divider">|</span>
