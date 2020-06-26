@@ -35,7 +35,7 @@ $(function() {
       App.cacheDom();
       App.loadWebFonts();
       App.getWindowWidth();
-      App.setBackgroundType();
+      App.setMobileOnlySettings();
       App.setSmoothScroll(1300);
       App.setLandscapeHeaderPos();
       App.setNavbarBgColor();
@@ -125,14 +125,19 @@ $(function() {
       windHeight < 450 ? App.dom.headerWrapper.addClass('header__wrapper--landscape') : App.dom.headerWrapper.removeClass('header__wrapper--landscape');
     },
 
-    setBackgroundType() {
+    setMobileOnlySettings() {
       //if device is not mobile set class for parallax background
       const isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
 
+
       if (!isMobile) {
+        //set mobile device hero background styles
         $('.bg').each(function() {
           $(this).removeClass('bg').addClass('bg--type-fixed');
         });
+      } else {
+        //Add class to navbar to prevent hover on mobile devices
+        App.dom.pageBody.addClass('isTouch');
       }
     },
 
