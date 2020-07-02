@@ -16,6 +16,10 @@
   &__wrapper {
     width: 100%;
 
+    @media screen and (min-width: $screen-xs-min) {
+      width: auto;
+    }
+
     &--landscape {
       @include rem(padding, 100px 0 46.192px !important);
     }
@@ -28,6 +32,8 @@
     border-top: 2px solid $white;
     border-bottom: 2px solid $white;
 
+    -webkit-animation-duration: 1.4s;
+
     animation-duration: 1.4s;
     opacity: 0;
 
@@ -36,6 +42,14 @@
     @include rem (padding, 10px 15px 5px 15px);
     @include rem(letter-spacing, 5px);
     @include rem(margin-bottom, 18px);
+
+    @media screen and (min-width: $screen-xs-min) {
+      @include rem(padding, 24px 0 16px 0);
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+      @include rem(font-size, 38.4px);
+    }
   }
 
   &__subtitle {
@@ -44,13 +58,28 @@
     letter-spacing: 1.1px;
     margin-bottom: 0;
     @include rem(font-size, 22px);
+    @include rem(line-height, 35.2px);
 
     opacity: 0;
+    -webkit-animation-duration: 1.3s;
     animation-duration: 1.3s;
+    -webkit-animation-delay: 0.6s;
     animation-delay: 0.6s;
+
+    @media screen and (min-width: 375px) {
+      display: inline-block;
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+      @include rem(font-size, 24px);
+    }
 
     &--space {
       display: none;
+
+      @media screen and (min-width: 375px) {
+        display: inline-block;
+      }
     }
   }
 
@@ -61,64 +90,32 @@
     transition: all .4s ease-out;
     transform: scale(1, 1);
     @include rem(font-size, 46px);
-    @include rem (margin, 9.989px auto 0px);
+    @include rem (margin, 12px auto 0px);
 
     opacity: 0;
+    -webkit-animation-duration: .7s;
     animation-duration: .7s;
+    -webkit-animation-delay: 1.3s;
     animation-delay: 1.3s;
 
-    &:hover,
     &:focus {
       color: $white;
       text-decoration: none;
       outline: 0;
     }
-  }
-}
 
-@media screen and (min-width: 375px) {
-  .header {
+    &:hover {
+      color: $white;
+      text-decoration: none;
+      outline: 0;
 
-    &__subtitle {
-      display: inline-block;
-
-      &--space {
-        display: inline-block;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $screen-xs-min) {
-  .header {
-
-    &__wrapper {
-      width: auto;
-    }
-
-    &__title-name {
-      @include rem(padding, 24px 0 16px 0);
-    }
-  }
-}
-
-@media screen and (min-width: $screen-sm-min) {
-  .header {
-
-    &__title-name {
-      @include rem(font-size, 38.4px);
-    }
-
-    &__subtitle {
-      @include rem(font-size, 24px);
-    }
-
-    &__enter-icon {
-      @include rem(font-size, 52px);
-
-      &:hover {
+      @media screen and (min-width: $screen-sm-min) {
         transform: scale(1.2, 1.2);
       }
+    }
+
+    @media screen and (min-width: $screen-sm-min) {
+      @include rem(font-size, 52px);
     }
   }
 }
