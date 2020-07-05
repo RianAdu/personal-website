@@ -2,7 +2,7 @@
 
   &__headline-xxs {
     @media screen and (max-width: 345px) {
-      @include rem(font-size, 53px);
+      @include rem(font-size, 53px !important);
     }
   }
 

@@ -11,9 +11,9 @@
   }
 
   &__headline {
-    @include rem(font-size, 46.184px);
-    @include rem(line-height, 46.184px);
-    @include rem(letter-spacing, -2px);
+    @include rem(font-size, 46.184px !important);
+    @include rem(line-height, 46.184px !important);
+    @include rem(letter-spacing, -2px !important);
   }
 
   &__envelope {
