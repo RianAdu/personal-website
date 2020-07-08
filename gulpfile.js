@@ -137,6 +137,10 @@ gulp.task('move', function() {
 	gulp.src('builds/development/fonts/**/*.*')
 		.pipe(gulpif(nodeEnv === 'production', gulp.dest(outputDir + 'fonts')));
 
+	//robot.txt
+	gulp.src('components/server/robots.txt')
+		.pipe(gulpif(nodeEnv === 'production', gulp.dest(outputDir)));
+
 }); //END OF move task
 
 gulp.task('default', ['markup', 'plugins', 'scripts', 'styles', 'server']);
