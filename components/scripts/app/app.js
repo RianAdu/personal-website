@@ -103,7 +103,7 @@ $(function() {
 
     loadWebFonts() {
       WebFont.load({
-        google: {
+        google: { 
           families: ['Open+Sans:300,400,600', 'Orbitron', 'Exo+2:300,400,700']
         }
       });
