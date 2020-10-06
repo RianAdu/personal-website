@@ -268,24 +268,24 @@ $(function () {
       App.dom.contactForm.validate({
         errorPlacement: function errorPlacement(error, element) {
           // Add the Bootstrap `help-block` class to the error element
-          error.addClass("help-block");
+          error.addClass('help-block');
           error.insertBefore(element); // Add the span element, if doesn't exists, and apply the icon classes to it.
 
-          if (!element.next("span")[0]) {
+          if (!element.next('span')[0]) {
             $("<span class='glyphicon glyphicon-remove form-control-feedback'></span>").insertAfter(element);
           }
         },
         highlight: function highlight(element, errorClass, validClass) {
-          $(element).parents(".form-group").addClass("has-error has-feedback").removeClass("has-success");
-          $(element).next("span").addClass("glyphicon-remove").removeClass("glyphicon-ok");
+          $(element).parents('.form-group').addClass('has-error has-feedback').removeClass('has-success');
+          $(element).next('span').addClass('glyphicon-remove').removeClass('glyphicon-ok');
         },
         unhighlight: function unhighlight(element, errorClass, validClass) {
-          $(element).parents(".form-group").addClass("has-success has-feedback").removeClass("has-error");
-          $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
+          $(element).parents('.form-group').addClass('has-success has-feedback').removeClass('has-error');
+          $(element).next('span').addClass('glyphicon-ok').removeClass('glyphicon-remove');
         },
         submitHandler: function submitHandler(form, e) {
           e.preventDefault();
-          $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function () {
+          $.post(App.dom.contactForm.attr('action'), App.dom.contactForm.serialize()).then(function () {
             App.dom.submitModal.modal();
           });
         }

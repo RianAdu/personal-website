@@ -2,14 +2,13 @@
  * Custom JavaScript - App.js
  * ======================================================================== */
 
-$(function() {
+$(function () {
   const App = {
-
     variables: {
       navbarHeight: 65,
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
-      windowWidth: null
+      windowWidth: null,
     },
 
     dom: {
@@ -28,7 +27,7 @@ $(function() {
       formGroups: null,
       formInputs: null,
       currentYear: null,
-      pageInitOverlay: null
+      pageInitOverlay: null,
     },
 
     init() {
@@ -63,7 +62,6 @@ $(function() {
       App.dom.pageInitOverlay = $('.page_init_overlay');
 
       App.dom.currentYear = document.querySelector('.footer__content-year');
-
     },
 
     bindEvents() {
@@ -71,20 +69,20 @@ $(function() {
       App.dom.showMoreButton.on('click', App.showProjectDetails);
 
       //user can hit the back button when project details are visible
-      $(window).on('popstate', function() {
+      $(window).on('popstate', function () {
         if (App.variables.historyFlag) {
           App.closeProjectDetails(App.variables.historyFlag);
         }
       });
 
-      $(window).on('orientationchange, resize', function() {
+      $(window).on('orientationchange, resize', function () {
         App.setLandscapeHeaderPos();
         App.setNavbarBgColor();
         App.getWindowWidth();
       });
 
       //Modal clears form when close button is called
-      App.dom.submitModal.on('hide.bs.modal', function() {
+      App.dom.submitModal.on('hide.bs.modal', function () {
         App.resetContactForm();
       });
     },
@@ -103,15 +101,15 @@ $(function() {
 
     loadWebFonts() {
       WebFont.load({
-        google: { 
-          families: ['Open+Sans:300,400,600', 'Orbitron', 'Exo+2:300,400,700']
-        }
+        google: {
+          families: ['Open+Sans:300,400,600', 'Orbitron', 'Exo+2:300,400,700'],
+        },
       });
     },
 
     pageStart() {
-      setTimeout(function() {
-        App.dom.pageInitOverlay.fadeOut('slow', function() {
+      setTimeout(function () {
+        App.dom.pageInitOverlay.fadeOut('slow', function () {
           App.fadeAnimation(App.dom.headerTitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerSubtitle, 'fadeInUp');
           App.fadeAnimation(App.dom.headerEnter, 'fadeIn');
@@ -122,17 +120,17 @@ $(function() {
 
     setLandscapeHeaderPos() {
       const windHeight = window.innerHeight;
-      windHeight < 450 ? App.dom.headerWrapper.addClass('header__wrapper--landscape') : App.dom.headerWrapper.removeClass('header__wrapper--landscape');
+      windHeight < 450
+        ? App.dom.headerWrapper.addClass('header__wrapper--landscape')
+        : App.dom.headerWrapper.removeClass('header__wrapper--landscape');
     },
 
     setMobileOnlySettings() {
       //if device is not mobile set class for parallax background
       const isMobile = /Android|iPad|iPhone|iPod|webOS|Windows Phone|SymbianOS/.test(navigator.userAgent) && !window.MSStream;
-
-
       if (!isMobile) {
         //set mobile device hero background styles
-        $('.bg').each(function() {
+        $('.bg').each(function () {
           $(this).removeClass('bg').addClass('bg--type-fixed');
         });
       } else {
@@ -142,7 +140,7 @@ $(function() {
     },
 
     setSmoothScroll(duration) {
-      $('a[href^="#"]').on('click', function(e) {
+      $('a[href^="#"]').on('click', function (e) {
         const target = $($(this).attr('href'));
         const dataTag = $(this).attr('data-tag');
         const hashTag = this.hash;
@@ -151,13 +149,16 @@ $(function() {
           e.preventDefault();
 
           //close mobile menu before scrolling when nav menu link and brand logo was clicked
-          if (App.variables.windowWidth < 768 && dataTag == undefined || !App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home') {
+          if ((App.variables.windowWidth < 768 && dataTag == undefined) || (!App.dom.hamburgerMenu.hasClass('collapsed') && dataTag == 'home')) {
             App.dom.hamburgerMenu.click();
           }
 
-          $('html, body').animate({
-            scrollTop: target.offset().top - (App.variables.navbarHeight - 1)
-          }, duration);
+          $('html, body').animate(
+            {
+              scrollTop: target.offset().top - (App.variables.navbarHeight - 1),
+            },
+            duration
+          );
         }
         App.setBrowserHistory(hashTag);
       });
@@ -189,7 +190,7 @@ $(function() {
     },
 
     setNavbarBgOnScroll() {
-      $(window).scroll(function() {
+      $(window).scroll(function () {
         const wScroll = $(window).scrollTop();
         App.setNavbarBgColor(wScroll);
       });
@@ -224,19 +225,23 @@ $(function() {
 
       //checking window width to decide which animation to use!
       if (App.variables.windowWidth < 992) {
-        $('.portfolio-details__overlay').addClass('animated slideInRight').one(App.variables.animationEnd, function() {
-          App.dom.pageBody.addClass('body--prevent-scrolling');
-          $(this).css('overflow-y', 'auto');
-        });
+        $('.portfolio-details__overlay')
+          .addClass('animated slideInRight')
+          .one(App.variables.animationEnd, function () {
+            App.dom.pageBody.addClass('body--prevent-scrolling');
+            $(this).css('overflow-y', 'auto');
+          });
       } else {
-        $('.portfolio-details__overlay').addClass('animated slideInDown').one(App.variables.animationEnd, function() {
-          App.dom.pageBody.addClass('body--prevent-scrolling');
-          $(this).css('overflow-y', 'auto');
-        });
+        $('.portfolio-details__overlay')
+          .addClass('animated slideInDown')
+          .one(App.variables.animationEnd, function () {
+            App.dom.pageBody.addClass('body--prevent-scrolling');
+            $(this).css('overflow-y', 'auto');
+          });
       }
 
       App.setBrowserHistory(tag);
-      $('.portfolio-details__close-button, .portfolio-details__button--close').on('click', function() {
+      $('.portfolio-details__close-button, .portfolio-details__button--close').on('click', function () {
         return App.closeProjectDetails(id);
       });
     },
@@ -250,13 +255,17 @@ $(function() {
 
       //checking window width to decide which animation to use!
       if (App.variables.windowWidth < 992) {
-        $('.portfolio-details__overlay').addClass('animated slideOutRight').one(App.variables.animationEnd, function() {
-          $(this).remove();
-        });
+        $('.portfolio-details__overlay')
+          .addClass('animated slideOutRight')
+          .one(App.variables.animationEnd, function () {
+            $(this).remove();
+          });
       } else {
-        $('.portfolio-details__overlay').addClass('animated slideOutUp').one(App.variables.animationEnd, function() {
-          $(this).remove();
-        });
+        $('.portfolio-details__overlay')
+          .addClass('animated slideOutUp')
+          .one(App.variables.animationEnd, function () {
+            $(this).remove();
+          });
       }
       //setting the flag undefined so that popstate only calls this function when neccessary
       App.variables.historyFlag = undefined;
@@ -271,7 +280,7 @@ $(function() {
     resetContactForm() {
       App.dom.contactForm.trigger('reset');
 
-      App.dom.formGroups.each(function() {
+      App.dom.formGroups.each(function () {
         $(this).removeClass('has-success has-error has-feedback');
       });
 
@@ -283,36 +292,36 @@ $(function() {
       App.dom.contactForm.validate({
         errorPlacement(error, element) {
           // Add the Bootstrap `help-block` class to the error element
-          error.addClass("help-block");
+          error.addClass('help-block');
           error.insertBefore(element);
 
           // Add the span element, if doesn't exists, and apply the icon classes to it.
-          if (!element.next("span")[0]) {
+          if (!element.next('span')[0]) {
             $("<span class='glyphicon glyphicon-remove form-control-feedback'></span>").insertAfter(element);
           }
         },
 
         highlight(element, errorClass, validClass) {
-          $(element).parents(".form-group").addClass("has-error has-feedback").removeClass("has-success");
-          $(element).next("span").addClass("glyphicon-remove").removeClass("glyphicon-ok");
+          $(element).parents('.form-group').addClass('has-error has-feedback').removeClass('has-success');
+          $(element).next('span').addClass('glyphicon-remove').removeClass('glyphicon-ok');
         },
 
         unhighlight(element, errorClass, validClass) {
-          $(element).parents(".form-group").addClass("has-success has-feedback").removeClass("has-error");
-          $(element).next("span").addClass("glyphicon-ok").removeClass("glyphicon-remove");
+          $(element).parents('.form-group').addClass('has-success has-feedback').removeClass('has-error');
+          $(element).next('span').addClass('glyphicon-ok').removeClass('glyphicon-remove');
         },
 
         submitHandler(form, e) {
           e.preventDefault();
-          $.post(App.dom.contactForm.attr("action"), App.dom.contactForm.serialize()).then(function() {
+          $.post(App.dom.contactForm.attr('action'), App.dom.contactForm.serialize()).then(function () {
             App.dom.submitModal.modal();
           });
-        }
+        },
       });
-    }
+    },
   }; // App
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     App.init();
   });
 });

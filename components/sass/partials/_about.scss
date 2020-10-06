@@ -2,7 +2,6 @@
 /* ************************************ */
 
 .about {
-
   &__ratio-container_profile-picture {
     max-width: 85%;
     margin: auto;
@@ -10,8 +9,8 @@
     @media screen and (min-width: 430px) {
       max-width: 340px;
     }
-   
-    @media screen and (min-width:$screen-md-min) {
+
+    @media screen and (min-width: $screen-md-min) {
       max-width: 100%;
     }
 
@@ -36,8 +35,7 @@
     margin-bottom: 0;
   }
 
-  &__skillset{
-    
+  &__skillset {
     &-wrapper {
       display: flex;
       flex-direction: row;
@@ -47,11 +45,11 @@
       align-items: flex-end;
       max-width: 700px;
       padding-left: 0;
-      padding-right: 0; 
+      padding-right: 0;
     }
 
     &-icon-wrap {
-      margin:15px 10px;
+      margin: 15px 10px;
 
       &--ajax {
         margin: 15px 5px;
@@ -69,14 +67,14 @@
         display: block;
         text-align: center;
         font-weight: $semi-bold;
-        @include rem (font-size, 14px);
+        @include rem(font-size, 14px);
       }
 
       &--ajax {
         width: 90px;
         height: 43.3px;
       }
-      
+
       &--npm {
         height: 27.34px;
       }
@@ -84,15 +82,13 @@
   }
 }
 
-@media screen and (min-width:$screen-md-min) {
+@media screen and (min-width: $screen-md-min) {
   .about {
-
     &--intro-paragraph {
       margin-top: 0;
     }
 
-    &__skillset{
-      
+    &__skillset {
       &-wrapper {
         max-width: 100%;
         padding-left: 15px;
