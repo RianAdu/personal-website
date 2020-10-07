@@ -8,7 +8,7 @@ $(function () {
       navbarHeight: 65,
       historyFlag: null,
       animationEnd: 'animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd',
-      windowWidth: null,
+      windowWidth: null
     },
 
     dom: {
@@ -27,7 +27,7 @@ $(function () {
       formGroups: null,
       formInputs: null,
       currentYear: null,
-      pageInitOverlay: null,
+      pageInitOverlay: null
     },
 
     init() {
@@ -102,8 +102,8 @@ $(function () {
     loadWebFonts() {
       WebFont.load({
         google: {
-          families: ['Open+Sans:300,400,600', 'Orbitron', 'Exo+2:300,400,700'],
-        },
+          families: ['Open+Sans:300,400,600', 'Orbitron', 'Exo+2:300,400,700']
+        }
       });
     },
 
@@ -155,7 +155,7 @@ $(function () {
 
           $('html, body').animate(
             {
-              scrollTop: target.offset().top - (App.variables.navbarHeight - 1),
+              scrollTop: target.offset().top - (App.variables.navbarHeight - 1)
             },
             duration
           );
@@ -316,9 +316,9 @@ $(function () {
           $.post(App.dom.contactForm.attr('action'), App.dom.contactForm.serialize()).then(function () {
             App.dom.submitModal.modal();
           });
-        },
+        }
       });
-    },
+    }
   }; // App
 
   $(document).ready(function () {
