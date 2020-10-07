@@ -4,7 +4,7 @@
   "description": "This is my personal portfolio website, which includes a selection of work that I have done",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://www.florianadugyamfi.com"
   },
   "author": "Florian Adu-Gyamfi",
   "license": "ISC",
@@ -18,7 +18,7 @@
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^8.0.0",
