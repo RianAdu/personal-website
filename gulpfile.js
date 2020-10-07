@@ -1,7 +1,6 @@
 /****
 Gulp file for automation
 ****/
-
 const { src, dest, task, parallel, series, watch } = require('gulp');
 const concat = require('gulp-concat');
 const gulpif = require('gulp-if');
@@ -14,12 +13,11 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefix = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const sassGlob = require('gulp-sass-glob');
+let outputDir;
 
 //distinguishing between development and production enviroment
 //to change to production enter (NODE_ENV=production gulp) in terminal
 const nodeEnv = process.env.NODE_ENV || 'development';
-
-var outputDir;
 nodeEnv === 'development' ? (outputDir = 'builds/development/') : (outputDir = 'builds/production/');
 
 //setting the files
