@@ -19,11 +19,8 @@ const sassGlob = require('gulp-sass-glob');
 //to change to production enter (NODE_ENV=production gulp) in terminal
 const nodeEnv = process.env.NODE_ENV || 'development';
 
-if (nodeEnv === 'development') {
-  var outputDir = 'builds/development/';
-} else {
-  var outputDir = 'builds/production/';
-}
+var outputDir;
+nodeEnv === 'development' ? (outputDir = 'builds/development/') : (outputDir = 'builds/production/');
 
 //setting the files
 const sassSources = ['components/sass/app.scss'];
@@ -34,7 +31,7 @@ const es6Scripts = ['components/scripts/app/app.js', 'components/scripts/inc/pro
 const jsPlugins = [
   'components/scripts/plugins/picturefill.min.js',
   'components/scripts/plugins/lazysizes.min.js',
-  'components/scripts/plugins/mustache.min.js',
+  'components/scripts/plugins/mustache.min.js'
 ];
 
 const jsScripts = [
@@ -49,7 +46,7 @@ const jsScripts = [
   'components/scripts/bootstrap/transition.js',
   'components/scripts/babel_output/project-template.js',
   'components/scripts/babel_output/projects.js',
-  'components/scripts/babel_output/app.js',
+  'components/scripts/babel_output/app.js'
 ];
 
 function markup() {
@@ -60,7 +57,7 @@ function markup() {
         htmlmin({
           collapseWhitespace: true,
           removeComments: true,
-          minifyCSS: true,
+          minifyCSS: true
         })
       )
     )
@@ -75,7 +72,7 @@ function styles() {
     .pipe(
       autoprefix({
         browsers: ['last 2 versions'],
-        cascade: false,
+        cascade: false
       })
     )
     .pipe(gulpif(nodeEnv === 'development', sourcemaps.write()))
@@ -105,7 +102,7 @@ function plugins() {
 function server() {
   browserSync.init({
     server: outputDir,
-    browser: 'google chrome',
+    browser: 'google chrome'
   });
   watch(htmlSources, series(markup)).on('change', reload);
   watch(es6Scripts, series(babelCompile, scripts)).on('change', reload);
