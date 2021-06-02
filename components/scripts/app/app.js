@@ -40,7 +40,6 @@ $(function () {
       App.setNavbarBgColor();
       App.setNavbarBgOnScroll();
       App.formValidation();
-      App.setCurrentYear();
       App.bindEvents();
       App.pageStart();
     },
