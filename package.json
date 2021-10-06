@@ -53,6 +53,7 @@
 		"ws": "^6.2.2",
 		"tar": "^4.4.18",
 		"socket.io-parser": "^3.3.2",
+		"socket.io": "^2.4.0",
 		"glob-parent": "^5.1.2",
 		"axios": "^0.21.2",
 		"xmlhttprequest-ssl": "^1.6.2",
