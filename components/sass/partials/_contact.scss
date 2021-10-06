@@ -2,164 +2,160 @@
 /* ************************** */
 
 .contact {
+	&__social-media-container {
+		@include rem(margin-bottom, 28.833px);
+	}
 
-  &__social-media-container {
-    @include rem(margin-bottom, 28.833px);
-  }
+	&__social-media-row {
+		@include rem(margin, 7.892px 0);
+	}
 
-  &__social-media-row {
-    @include rem(margin, 7.892px 0);
-  }
+	&__social-media-channel {
+		display: inline-block;
+		color: $black;
 
-  &__social-media-channel {
-    display: inline-block;
-    color: $black;
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
 
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
+		&--linkedin {
+			color: $linkedin;
 
-    &--linkedin {
-      color: $linkedin;
+			&:hover,
+			&:focus {
+				color: $linkedin;
+			}
+		}
 
-      &:hover,
-      &:focus {
-        color: $linkedin;
-      }
-    }
+		&--twitter {
+			color: $twitter;
 
-    &--twitter {
-      color: $twitter;
+			&:hover,
+			&:focus {
+				color: $twitter;
+			}
+		}
 
-      &:hover,
-      &:focus {
-        color: $twitter;
-      }
-    }
+		&--github {
+			color: $github;
 
-    &--github {
-      color: $github;
+			&:hover,
+			&:focus {
+				color: $github;
+			}
+		}
 
-      &:hover,
-      &:focus {
-        color: $github;
-      }
-    }
+		&--instagram {
+			color: darken($instagram, 15);
 
-    &--instagram {
-      color: darken($instagram, 15);
+			&:hover,
+			&:focus {
+				color: darken($instagram, 15);
+			}
+		}
 
-      &:hover,
-      &:focus {
-        color: darken($instagram, 15);
-      }
-    }
+		&--email {
+			@include rem(margin-bottom, 22.781px);
+		}
+	}
 
-    &--email {
-      @include rem(margin-bottom, 22.781px);
-    }
-  }
+	&__social-media-icon {
+		vertical-align: middle;
+		@include rem(font-size, 51.957px);
+		@include rem(margin-right, 9.989px);
 
-  &__social-media-icon {
-    vertical-align: middle;
-    @include rem(font-size, 51.957px);
-    @include rem(margin-right, 9.989px);
+		&--email {
+			@include rem(font-size, 46.184px);
+		}
+	}
 
-    &--email {
-      @include rem(font-size, 46.184px);
-    }
-  }
+	&__social-media-icon-title {
+		display: inline-block;
+		transform: scale(1, 1);
+		transition: all 0.4s ease;
 
-  &__social-media-icon-title {
-    display: inline-block;
-    transform: scale(1, 1);
-    transition: all .4s ease;
+		&:hover {
+			transform: scale(1.1, 1.1);
+		}
 
-    &:hover {
-      transform: scale(1.1, 1.1);
-    }
+		&--email {
+			transform: none !important;
 
-    &--email {
-      transform: none !important;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
+	&__form {
+		@include rem(max-width, 540px);
 
-  &__form {
-    @include rem (max-width, 540px);
+		&-label {
+			font-weight: $light;
+			margin-bottom: 0;
+			@include rem(font-size, 16px);
+		}
 
-    &-label {
-      font-weight: $light;
-      margin-bottom: 0;
-      @include rem(font-size, 16px);
-    }
+		&-textfield {
+			border: 1px solid $section-border-color;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			@include rem(font-size, 16px);
+		}
 
-    &-textfield {
-      border: 1px solid $section-border-color;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      @include rem(font-size, 16px);
-    }
+		&-textarea {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			@include rem(height, 127px !important);
+		}
 
-    &-textarea {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      @include rem(height, 127px !important);
-    }
+		&--custom-field {
+			visibility: hidden !important;
+			@include rem(margin-bottom, -72px !important);
 
-    &--custom-field {
-      visibility: hidden !important;
-      @include rem(margin-bottom, -72px !important);
+			@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+				@include rem(margin-bottom, 0px !important);
+			}
+		}
+	}
 
-      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-        @include rem(margin-bottom, 0px !important);
-      }
-
-    }
-  }
-
-  &__form-group--textarea {
-    margin-bottom: 30px;
-  }
+	&__form-group--textarea {
+		margin-bottom: 30px;
+	}
 }
 
 @media screen and (min-width: $screen-sm-min) {
-  .contact {
+	.contact {
+		&__social-media-wrapper {
+			@include rem(margin-bottom, 32.437px);
+		}
 
-    &__social-media-wrapper {
-      @include rem(margin-bottom, 32.437px);
-    }
+		&__form {
+			max-width: 100%;
 
-    &__form {
-      max-width: 100%;
+			&--btn {
+				float: right;
+				clear: right;
+			}
 
-      &--btn {
-        float: right;
-        clear: right;
-      }
-
-      .g-recaptcha {
-        float: right;
-      }
-    }
-  }
+			.g-recaptcha {
+				float: right;
+			}
+		}
+	}
 }
 
-
 //bootstrap feedback icon position
-.has-feedback label~.form-control-feedback {
-  top: 33px;
+.has-feedback label ~ .form-control-feedback {
+	top: 33px;
 }
 
 .help-block {
-  display: inline-block;
-  margin: 0;
-  font-style: italic;
-  @include rem(font-size, 14.222px);
+	display: inline-block;
+	margin: 0;
+	font-style: italic;
+	@include rem(font-size, 14.222px);
 }
