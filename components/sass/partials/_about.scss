@@ -2,111 +2,111 @@
 /* ************************************ */
 
 .about {
-  &__ratio-container_profile-picture {
-    max-width: 85%;
-    margin: auto;
+	&__ratio-container_profile-picture {
+		max-width: 85%;
+		margin: auto;
 
-    @media screen and (min-width: 430px) {
-      max-width: 340px;
-    }
+		@media screen and (min-width: 430px) {
+			max-width: 340px;
+		}
 
-    @media screen and (min-width: $screen-md-min) {
-      max-width: 100%;
-    }
+		@media screen and (min-width: $screen-md-min) {
+			max-width: 100%;
+		}
 
-    &:after {
-      padding-bottom: 100%;
-    }
-  }
+		&:after {
+			padding-bottom: 100%;
+		}
+	}
 
-  &__profile-picture {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+	&__profile-picture {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
 
-  &--intro-paragraph {
-    @include rem(font-size, 25.63px);
-    @include rem(line-height, 36.5px);
-    @include rem(margin-top, 20.25px);
-  }
+	&--intro-paragraph {
+		@include rem(font-size, 25.63px);
+		@include rem(line-height, 36.5px);
+		@include rem(margin-top, 20.25px);
+	}
 
-  &--no-margin-bottom {
-    margin-bottom: 0;
-  }
+	&--no-margin-bottom {
+		margin-bottom: 0;
+	}
 
-  &__skillset {
-    &-wrapper {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      white-space: nowrap;
-      justify-content: space-around;
-      align-items: flex-end;
-      max-width: 700px;
-      padding-left: 0;
-      padding-right: 0;
-    }
+	&__skillset {
+		&-wrapper {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			white-space: nowrap;
+			justify-content: space-around;
+			align-items: flex-end;
+			max-width: 700px;
+			padding-left: 0;
+			padding-right: 0;
+		}
 
-    &-icon-wrap {
-      margin: 15px 10px;
+		&-icon-wrap {
+			margin: 15px 10px;
 
-      &--ajax {
-        margin: 15px 5px;
-      }
-    }
+			&--ajax {
+				margin: 15px 5px;
+			}
+		}
 
-    &-icon {
-      display: block;
-      margin: auto;
-      width: 70px;
-      height: 70px;
-      font-size: 6px;
+		&-icon {
+			display: block;
+			margin: auto;
+			width: 70px;
+			height: 70px;
+			font-size: 6px;
 
-      &-label {
-        display: block;
-        text-align: center;
-        font-weight: $semi-bold;
-        @include rem(font-size, 14px);
-      }
+			&-label {
+				display: block;
+				text-align: center;
+				font-weight: $semi-bold;
+				@include rem(font-size, 14px);
+			}
 
-      &--ajax {
-        width: 90px;
-        height: 43.3px;
-      }
+			&--ajax {
+				width: 90px;
+				height: 43.3px;
+			}
 
-      &--npm {
-        height: 27.34px;
-      }
-    }
-  }
+			&--npm {
+				height: 27.34px;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: $screen-md-min) {
-  .about {
-    &--intro-paragraph {
-      margin-top: 0;
-    }
+	.about {
+		&--intro-paragraph {
+			margin-top: 0;
+		}
 
-    &__skillset {
-      &-wrapper {
-        max-width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-        justify-content: space-between;
-      }
+		&__skillset {
+			&-wrapper {
+				max-width: 100%;
+				padding-left: 15px;
+				padding-right: 15px;
+				justify-content: space-between;
+			}
 
-      &-icon-wrap {
-        margin: 15px 20px 15px 0;
+			&-icon-wrap {
+				margin: 15px 20px 15px 0;
 
-        &--html {
-          margin-left: -4px;
-        }
+				&--html {
+					margin-left: -4px;
+				}
 
-        &--desktop-last {
-          margin-right: 0;
-        }
-      }
-    }
-  }
+				&--desktop-last {
+					margin-right: 0;
+				}
+			}
+		}
+	}
 }

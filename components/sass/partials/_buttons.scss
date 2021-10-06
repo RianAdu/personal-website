@@ -1,24 +1,24 @@
 /* ************** CUSTOM BUTTONS ************* */
 /**********************************************/
 .btn-custom {
-  background: $black;
-  border: 1px solid $black;
-  color: $white;
-  font-weight: $normal;
-  transition: all 0.3s ease;
-  @include rem(font-size, 16px);
-  @include rem(width, $custom-btn-width);
-  @include rem (padding, 8px 12px);
+	background: $black;
+	border: 1px solid $black;
+	color: $white;
+	font-weight: $normal;
+	transition: all 0.3s ease;
+	@include rem(font-size, 16px);
+	@include rem(width, $custom-btn-width);
+	@include rem(padding, 8px 12px);
 
-  &:hover{
-    background: $white;
-    color: $black;
-  }
+	&:hover {
+		background: $white;
+		color: $black;
+	}
 
-  &:focus {
-    outline: none;
-    color: #999;
-    border: 1px solid $white;
-    box-shadow: 0 0 6px $black;
-  }
+	&:focus {
+		outline: none;
+		color: #999;
+		border: 1px solid $white;
+		box-shadow: 0 0 6px $black;
+	}
 }
