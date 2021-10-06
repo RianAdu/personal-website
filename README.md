@@ -21,4 +21,4 @@ The website uses the responsive bootstrap grid system. The single page design an
 
 ## Development Enviroment
 
-Node v8.17.0
+Node v14.6.0
